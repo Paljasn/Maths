@@ -1,0 +1,1004 @@
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+\DeclareExerciseCollection[topic=mat01]{mat01}
+\DeclareExerciseCollection[topic=mat02]{mat02}
+\DeclareExerciseCollection[topic=mat03]{mat03}
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+\chapter*{Matrices}
+
+\section{Notion de matrices}
+
+\begin{definition}Une \textbf{matrice} de dimension $n \times p$ est la données de $np$ nombres (réels, complexes, entiers...) présentés sous la forme d'un tableau composé de $n$ lignes et $p$ colonnes.\end{definition}
+
+\begin{example} $\begin{pmatrix}7 & 3 & 1 \\ 2 & 5 &-6\end{pmatrix}$ est une matrice d'entiers relatifs de dimension $2 \times 3$. \\
+$\begin{pmatrix}1+5i & 3-i \\ 2 & i \end{pmatrix}$ est une matrice complexe de dimension $2 \times 2$.\end{example}
+
+\begin{definition}Quelques \textbf{matrices particulières}...
+
+\begin{itemize}
+\item Une matrice composée d'une seule ligne est appelée \textbf{matrice ligne}.
+\item Une matrice composée d'une seule colonne est appelée \textbf{matrice colonne}.
+\item Une matrice composée d'autant de lignes que de colonnes est appelée \textbf{matrice carrée}.
+\end{itemize}
+
+\end{definition}
+
+\begin{example} $\begin{pmatrix}7 \\ 1,2 \\ -3,8\end{pmatrix}$ est une matrice colonne de dimension $3 \times 1$.
+
+$\begin{pmatrix}\sqrt{3} & \pi & 1 & \dfrac{1}{3} \end{pmatrix}$ est une matrice ligne de dimension $1 \times 4$.
+
+$\begin{pmatrix}1 & 0 & 2 \\ -1 & \pi  & 5 \\ 2 & 0 & -7 \end{pmatrix}$ est une matrice carrée de dimension $3 \times 3$ (ou simplement matrice carrée de taille 3).
+\end{example}
+
+\begin{definition}Soit $A$ une matrice de dimension $n \times p$, $i$ un entier compris entre 1 et $n$ et $j$ un entier compris entre 1 et $p$. 
+
+On appelle \textbf{coefficient} $(i,j)$ de la matrice $A$ le nombre situé à l'intersection de la ligne $i$ et de la colonne $j$. 
+
+Lorsque la matrice est désigné par une lettre majuscule, ses coefficients sont en général désignés par la lettre minuscule associée. 
+
+On écrira alors $A = (a_{i,j})_{ 1 \leqslant i \leqslant n ,\, 1 \leqslant j \leqslant p}$.
+
+\[ A = \begin{pmatrix} a_{1,1} & a_{1,2} & \cdots & \cdots & a_{1,p} \\
+a_{2,1} & a_{2,2} & \cdots & \cdots & a_{2,p} \\
+\vdots & \vdots & \ddots & & \vdots \\
+\vdots & \vdots & & \ddots & \vdots \\
+a_{n,1} & a_{n,2} & \cdots & \cdots & a_{n,p} \end{pmatrix}\]\end{definition}
+
+\begin{example}Dans la matrice $A=\begin{pmatrix} 7 & 3 & 4 \\ 1 & -2 & 9\end{pmatrix}$, pour laquelle le coefficient $(i,j)$ est noté $a_{i,j}$, on a $a_{1,1}=7$, $a_{2,1} = 1$ et $a_{2,3}=9$.\end{example}
+
+\begin{example}On considère la matrice $A$ de dimension $2 \times 3$ dont le coefficient $(i,j)$ vaut $a_{i,j}=ij^2$. 
+
+On a alors
+\begin{itemize}
+\item $a_{1,1}=1 \times 1^2 = 1$
+\item $a_{1,2}=1 \times 2^2 = 4$
+\item $\dots$
+\item $a_{2,3}=2 \times  3^2=18$
+\end{itemize}
+Finalement, on obtient \(A=\begin{pmatrix}
+1 & 4 & 9 \\
+2 & 8 & 18
+\end{pmatrix}\)\end{example}
+
+\begin{definition}Soit $A =  (a_{i,j})_{ 1 \leqslant i \leqslant n ,\, 1 \leqslant j \leqslant p}$ et $B= (b_{i,j})_{ 1 \leqslant i \leqslant n ,\, 1 \leqslant j \leqslant p}$ deux matrices de même dimension.
+
+Les matrices $A$ et $B$ sont égales si et seulement si, pour tout entier $i$ entre 1 et $n$ et tout entier $j$ entre 1 et $p$, on a $a_{i,j}=b_{i,j}$.\end{definition}
+
+Autrement dit, deux matrices sont égales si leurs coefficients sont égaux...
+
+\begin{definition}Quelques matrices particulières...
+
+\begin{itemize}
+\item On appelle \textbf{matrice nulle} de dimension $n \times p$ la matrice notée $0_{n,p}$ dont tous les coefficients valent 0.
+\item On appelle \textbf{matrice identité} de dimension $n$ la matrice carrée notée $I_n$ dont tous les coefficients diagonaux valent 1 et tous les autres valent 0.
+\end{itemize}\end{definition}
+
+\begin{example} $0_{2,3} = \begin{pmatrix}
+0 & 0 & 0 \\ 0& 0&0
+\end{pmatrix} \qquad I_3 = \begin{pmatrix}
+1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 &1
+\end{pmatrix}$\end{example}
+
+\section{Opérations sur les matrices}
+
+\subsection{Produit d'une matrice par un réel}
+
+\begin{definition} Soit $A = (a_{i,j})_{ 1 \leqslant i \leqslant n ,\, 1 \leqslant j \leqslant p}$ une matrice et $\lambda$ un complexe. La matrice $\lambda A$ est la matrice de taille $n \times p$ dont les coefficients sont égaux aux coefficients de $A$ multipliés par $\lambda$. Autrement dit,
+\[ \lambda A = (\lambda\, a_{i,j})_{ 1 \leqslant i \leqslant n ,\, 1 \leqslant j \leqslant p} =  \begin{pmatrix} \lambda\,a_{1,1} & \lambda\,a_{1,2} & \cdots & \cdots & \lambda\,a_{1,p} \\
+\lambda\,a_{2,1} & \lambda\,a_{2,2} & \cdots & \cdots & \lambda\,a_{2,p} \\
+\vdots & \vdots & \ddots & & \vdots \\
+\vdots & \vdots & & \ddots & \vdots \\
+\lambda\,a_{n,1} & \lambda\,a_{n,2} & \cdots & \cdots & \lambda\,a_{n,p} \end{pmatrix}\]\end{definition}
+
+\begin{example} Si $A = \begin{pmatrix}
+1 & 5 & -2 \\ 
+3 & -8 & 9
+\end{pmatrix}$, alors $9A = \begin{pmatrix}
+ 9 & 45 & -18 \\ 27 & -72 & 81
+\end{pmatrix}$.\end{example}
+
+\subsection{Somme de matrices}
+
+\begin{definition}Soit $A = (a_{i,j})_{ 1 \leqslant i \leqslant n ,\, 1 \leqslant j \leqslant p}$ et $B = (b_{i,j})_{ 1 \leqslant i \leqslant n ,\, 1 \leqslant j \leqslant p}$ deux matrices de même dimension.
+
+La matrice $A+B$ est la matrice de dimension $n \times p$ dont le coefficient $(i,j)$ vaut $a_{i,j}+b_{i,j}$.
+
+\[A+B = (a_{i,j}+b_{i,j})_{ 1 \leqslant i \leqslant n ,\, 1 \leqslant j \leqslant p} = \begin{pmatrix} a_{1,1} + b_{1,1} & \cdots & a_{1,p} +b_{1,p} \\
+\vdots & \ddots  & \vdots \\
+a_{n,1} + b_{n,1} & \cdots &a_{n,p} +b_{n,p}\end{pmatrix}\]\end{definition}
+
+\begin{example}Soit $A= \begin{pmatrix} 1 & 3 \\ 4 & -3 \\ 2 & 7 \end{pmatrix}$ et $B=\begin{pmatrix}3  & -2 \\ 7 & 8 \\ 2 & 5\end{pmatrix}$. Alors $A+B = \begin{pmatrix} 4 & 1 \\ 11 & 5 \\ 4 & 12 \end{pmatrix}$.\end{example}
+
+\begin{proposition}Soit $A$, $B$ et $C$ deux matrices de dimension $n \times p$, $\lambda$ et $\mu$ deux complexes.
+\begin{itemize}
+\item $A+B =B+A$ : l'addition de matrice est\textbf{ commutative}.
+\item $A + 0_{n,p}=A$
+\item $(A+B)+C = A + (B+C)$ : l'addition de matrices est \textbf{associative}.
+\item $\lambda(A+B)=\lambda A+\lambda B$.
+\item $(\lambda + \mu) A = \lambda A + \mu A$.
+\end{itemize}\end{proposition}
+
+Pour le moment, tout se passe pour le mieux.
+
+\subsection{Produit de matrices}
+
+\subsubsection{Produit d'une matrice ligne par une matrice colonne}
+
+\begin{definition}Soit $A = \begin{pmatrix}a_1 & a_2 & \cdots & a_p \end{pmatrix}$ une matrice ligne de dimension $1 \times p$ et $B= \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_p\end{pmatrix}$ une matrice colonne de dimension $p \times 1$.
+
+Le produit $AB$ est la matrice de dimension $1 \times 1$ qui vaut
+\[AB = \begin{pmatrix}
+a_1b_1+a_2b_2+\dots + a_pb_p
+\end{pmatrix} = \left( \sum_{i=1}^p a_ib_i \right)\]\end{definition}
+
+\begin{example}Soit $A=\begin{pmatrix}
+1 & 3 & -5
+\end{pmatrix}$ et $B=\begin{pmatrix}
+8 \\ -2 \\ 3
+\end{pmatrix}$. $AB = ( 1 \times 8 + 3 \times (-2) + (-5) \times 3) = (-13) $\end{example}
+\newpage
+\subsubsection{Produit de deux matrices}
+
+\begin{definition}
+Soit $A$ une matrice de dimension $n \times p$ et $B$ une matrice de dimension $p \times q$.
+
+Le produit $AB$ est la matrice de dimension $n \times q$ dont le coefficient $(i,j)$ est égal au coefficient du produit de la $i$-ième ligne de $A$ par la $j$-ième colonne de $B$.
+
+\[AB = \begin{pmatrix}
+a_{1,1}b_{1,1}+a_{1,2}b_{2,1}+\dots + a_{1,p}b_{p,1} & \dots & a_{1,1}b_{1,q}+a_{1,2}b_{2,q}+\dots + a_{1,p}b_{p,q}\\
+\vdots & \ddots & \vdots \\
+ a_{n,1}b_{1,1}+a_{n,2}b_{2,1}+\dots + a_{n,p}b_{p,1} & \dots & a_{n,1}b_{1,q}+a_{n,2}b_{2,q}+\dots + a_{n,p}b_{p,q}\\
+\end{pmatrix}\]
+
+\end{definition}
+
+\begin{minipage}{0.3\linewidth}
+\includegraphics[width=\linewidth]{produit}
+\end{minipage}\hfill \begin{minipage}{0.65\linewidth}
+\paragraph{Important} Il n'est pas possible de multiplier n'importe quels matrices entre elles. Deux matrices peuvent être multipliées si et seulement si le nombre de colonnes de la première est égal au nombre de lignes de la seconde.
+
+
+\paragraph{Illustration} Pour ne pas se perdre dans le calcul du produit de deux matrices, il peut être utile de se les représenter sous cette forme. La première matrice est à gauche et la deuxième matrice est au-dessus de la matrice produit à obtenir.
+\end{minipage}
+
+\begin{center}
+\textbf{À retenir} : (Matrice  $ \color{red}{N} \color{black} \times$ \textbf{P} ) $\times$ (Matrice \textbf{P} $\times \, \color{blue}{Q}$ ) = Matrice $\color{red}{N} \color{black}\times \color{blue}{Q}$
+\end{center}
+
+
+\newcommand{\myunit}{1 cm}
+\tikzset{
+    node style sp/.style={draw,circle,minimum size=\myunit},
+    node style ge/.style={circle,minimum size=\myunit},
+    arrow style mul/.style={draw,sloped,midway,fill=white},
+    arrow style plus/.style={midway,sloped,fill=white},
+}
+
+\begin{center}
+\begin{tikzpicture}[scale =0.9,>=latex]
+% les matrices
+\matrix (A) [matrix of math nodes,
+             nodes = {node style ge},
+             left delimiter  = (,
+             right delimiter = )] at (0,0)
+{
+  a_{11} & a_{12} & \ldots & a_{1p}  \\
+  |[node style sp]| a_{21}
+         & |[node style sp]| a_{22}
+                  & \ldots
+                           & |[node style sp]| a_{2p} \\
+  \vdots & \vdots & \ddots & \vdots  \\
+  a_{n1} & a_{n2} & \ldots & a_{np}  \\
+};
+\node [draw,below=10pt] at (A.south) 
+    { $A$ : \textcolor{red}{$n$ lignes} $p$ colonnes};
+
+\matrix (B) [matrix of math nodes,
+             nodes = {node style ge},
+             left delimiter  = (,
+             right delimiter = )] at (6*\myunit,6*\myunit)
+{
+  b_{11} & |[node style sp]| b_{12}
+                  & \ldots & b_{1q}  \\
+  b_{21} & |[node style sp]| b_{22}
+                  & \ldots & b_{2q}  \\
+  \vdots & \vdots & \ddots & \vdots  \\
+  b_{p1} & |[node style sp]| b_{p2}
+                  & \ldots & b_{pq}  \\
+};
+\node [draw,above=10pt] at (B.north) 
+    { $B$ : $p$ lignes \textcolor{red}{$q$ colonnes}};
+% matrice rÃ©sultat
+\matrix (C) [matrix of math nodes,
+             nodes = {node style ge},
+             left delimiter  = (,
+             right delimiter = )] at (6*\myunit,0)
+{
+  c_{11} & c_{12} & \ldots & c_{1q} \\
+  c_{21} & |[node style sp,red]| c_{22}
+                  & \ldots & c_{2q} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  c_{n1} & c_{n2} & \ldots & c_{nq} \\
+};
+% les fleches
+\draw[blue] (A-2-1.north) -- (C-2-2.north);
+\draw[blue] (A-2-1.south) -- (C-2-2.south);
+\draw[blue] (B-1-2.west)  -- (C-2-2.west);
+\draw[blue] (B-1-2.east)  -- (C-2-2.east);
+\draw[<->,red](A-2-1) to[in=180,out=90]
+	node[arrow style mul] (x) {$a_{21}\times b_{12}$} (B-1-2);
+\draw[<->,red](A-2-2) to[in=180,out=90]
+	node[arrow style mul] (y) {$a_{22}\times b_{22}$} (B-2-2);
+\draw[<->,red](A-2-4) to[in=180,out=90]
+	node[arrow style mul] (z) {$a_{2p}\times b_{p2}$} (B-4-2);
+\draw[red,->] (x) to node[arrow style plus] {$+$} (y)%
+    to node[arrow style plus] {$+\raisebox{.5ex}{\ldots}+$} (z)
+    to (C-2-2.north west);
+
+
+\node [draw,below=10pt] at (C.south) 
+    {$ C=A\times B$ : \textcolor{red}{$n$ lignes}
+                      \textcolor{red}{$q$ colonnes}};
+
+\end{tikzpicture}
+\end{center}
+
+
+\begin{example}On considère les matrices $A=\begin{pmatrix} 1 & 2 & 5 \\
+3 & 1 & 2
+\end{pmatrix}$ et $B=\begin{pmatrix}
+1 & 5 & 6 & 0\\
+7 & 0 & 1 & 2\\
+2 & 1 & 0 & -1
+\end{pmatrix}$
+
+$A$ est de dimension $2 \times 3$ et $B$ est de dimension $3 \times 4$. Il est donc possible de calculer le produit $AB$ : ce produit sera de dimension $2 \times 4$.
+
+\begin{itemize}
+\item Le coefficient $(1,1)$ de $AB$ est égal au coeff du produit de la ligne 1 de $A$ et de la colonne 1 de $B$.
+
+$\begin{pmatrix} 1 & 2 & 5 \end{pmatrix} \times \begin{pmatrix}
+1 \\ 7 \\ 2
+\end{pmatrix} = ( 1 \times 1 + 2 \times 7 + 5 \times 2) = (25)$.
+
+Le coefficient $(1,1)$ de $AB$ vaut donc 25.
+\item Le coefficient $(2,1)$ de $AB$ vaut $3 \times 1 + 1 \times 7 + 2 \times 2 = 14$
+\item $\dots$
+\item Le coefficient $(2,3)$ de $AB$ vaut $3 \times 6 + 1 \times 1 + 2 \times 0 = 19$
+\end{itemize}
+
+En faisant ainsi tous les calculs, on obtient
+\[AB = \begin{pmatrix} 25 & 10 & 8 & -1 \\ 14 & 17 & 19 & 0 \end{pmatrix}\]
+\end{example}
+
+
+
+\begin{remark}Attention ! La multiplication des matrices n'est pas commutative, même lorsque les matrices sont de même taille.\end{remark}
+
+\begin{example}Soit $A=\begin{pmatrix}1 & 2 \\ 0 & 1\end{pmatrix}$ et $B = \begin{pmatrix}2 & 0 \\ -1 & 3\end{pmatrix}$. Alors,
+
+\begin{itemize}
+\item $AB = \begin{pmatrix}1 & 2 \\ 0 & 1\end{pmatrix} \begin{pmatrix}2 & 0 \\ -1 & 3\end{pmatrix} = \begin{pmatrix} 1 \times 2 + 2 \times (-1) & 1 \times 0 + 2 \times 3 \\0 \times 2 + 1 \times (-1) & 0 \times 0 + 1 \times 3\end{pmatrix} = \begin{pmatrix} 0 & 6 \\ -1 & 3\end{pmatrix} $
+\vskip5pt
+\item $BA = \begin{pmatrix}2 & 0 \\ -1 & 3\end{pmatrix}\begin{pmatrix}1 & 2 \\ 0 & 1\end{pmatrix}=\begin{pmatrix} 2 \times 1 + 0 \times 0 & 2 \times 1 + 0 \times 1 \\ -1 \times 1 + 3 \times 2 & -1 \times 2 + 3 \times 1 \end{pmatrix} = \begin{pmatrix}
+2 & 4 \\ -1 & 1
+\end{pmatrix}$
+\vskip5pt
+Ainsi, $AB \neq BA$. On dit que les matrices $A$ et $B$ ne commutent pas.
+\end{itemize}\end{example}
+
+\subsubsection{Propriétés de calcul}
+
+\begin{proposition}Soit $A$ une matrice de dimension $n \times p$.
+
+\begin{itemize}
+\item $0_{m,n} \times A = 0_{m,p}$ et $A \times 0_{p,q} = 0_{n,q}$.
+\item $I_n \times A = A \times I_p = A$
+\end{itemize}\end{proposition}
+
+La seule difficulté ici se trouve dans les dimensions des matrices.
+
+Attention : ce n'est pas parce que l'on a deux matrices $A$ et $B$ qui vérifient $AB=0$ que l'on a forcément $A=0$ ou $B=0$ !
+
+\begin{example}Prenons $A=\begin{pmatrix}
+0 & 0 \\ 1 & 0
+\end{pmatrix}$ et $B=\begin{pmatrix}0 & 0 \\ 0 & 1\end{pmatrix}$. Alors $AB = \begin{pmatrix}
+0 & 0 \\ 0 & 0
+\end{pmatrix}$\end{example}
+
+\begin{proposition}Soit $A$ et $B$ deux matrices de dimension $n \times p$, $C$ et $D$ deux matrices de taille $p \times q$, $\lambda$ et $\mu$ deux complexes.
+\begin{itemize}
+\item $(\lambda A + \mu B)C = \lambda AC + \mu BC$
+\item $A(\lambda C + \mu D) = \lambda AC + \mu AD$\end{itemize}
+\end{proposition}
+
+\begin{example}
+
+\[\begin{array}{rcl}
+
+\begin{pmatrix}1 & 3\\ 2 & 5\end{pmatrix} \begin{pmatrix} 2 & -1 \\ 1 & 3\end{pmatrix} + \begin{pmatrix}1 & 3\\ 2 & 5\end{pmatrix} \begin{pmatrix} 1 & 1 \\ -1 & 0\end{pmatrix} 
+& = & \begin{pmatrix}1 & 3\\ 2 & 5\end{pmatrix} \left( \begin{pmatrix} 2 & -1 \\ 1 & 3\end{pmatrix} + \begin{pmatrix} 1 & 1 \\ -1 & 0\end{pmatrix}\right) \\
+& = & \begin{pmatrix}1 & 3\\ 2 & 5\end{pmatrix} \begin{pmatrix} 3 & 0 \\ 0 & 3
+\end{pmatrix} \\
+& = & \begin{pmatrix}1 & 3\\ 2 & 5\end{pmatrix} \times 3 I_2 \\
+& = & 3 \begin{pmatrix}1 & 3\\ 2 & 5\end{pmatrix} \\
+& = & \begin{pmatrix}3 & 9\\ 6 & 15\end{pmatrix}
+\end{array}\]
+\vspace{-0.5cm}\end{example}
+
+Attention, on rappelle que la multiplication de matrices n'est pas commutative ! Il faut, lorsque l'on factorise, que la matrice soit à chaque fois « du bon côté ».
+
+Par exemple, on ne factorisera par par $\begin{pmatrix}
+1 & 3 \\ 2 & 1
+\end{pmatrix}$ dans l'expression $\begin{pmatrix}
+1 & 3 \\ 2 & 1
+\end{pmatrix} \begin{pmatrix} 7 & 2 \\ -1 & 3\end{pmatrix} + \begin{pmatrix}3 & 2 \\ 5 & -4\end{pmatrix}\begin{pmatrix}
+1 & 3 \\ 2 & 1
+\end{pmatrix}$
+
+\begin{proposition}Soit $A$ une matrice de dimension $m \times n$, $B$ une matrice de dimension $n \times p$ et $C$ une matrice de dimension $p \times q$. Alors $(AB)C = A(BC)$.\end{proposition}
+
+\subsection{Puissance d'une matrice carrée}
+
+\begin{definition}Soit $A$ une matrice carrée de dimension $p$ et $n$ un entier naturel.
+
+On définit par $A^n$ la matrice égale à $A \times A \times \dots \times A$ où la matrice $A$ apparaît $n$ fois.
+
+Par ailleurs, $A^0 = I_n$.\end{definition}
+
+\begin{example} Soit $A=\begin{pmatrix}
+1 & 3 \\ 2 & -1
+\end{pmatrix}$. Alors
+\begin{itemize}
+\item $A^2 = A \times A = \begin{pmatrix}
+1 & 3 \\ 2 & -1
+\end{pmatrix} \begin{pmatrix}
+1 & 3 \\ 2 & -1
+\end{pmatrix} = \begin{pmatrix}1 \times 1 + 3 \times 2 & 1 \times 3 + 3 \times -1 \\ 2 \times 1 + (-1) \times 2 & 2 \times 3 + (-1) \times (-1) \end{pmatrix} = \begin{pmatrix}7 & 0 \\ 0 & 7 \end{pmatrix} =7I_2$
+\item $A^3 = A^2 \times A = 7I_2 \times \begin{pmatrix}
+1 & 3 \\ 2 & -1
+\end{pmatrix} = 7 \begin{pmatrix}
+1 & 3 \\ 2 & -1
+\end{pmatrix} = \begin{pmatrix}
+7 & 21 \\ 14 & -7
+\end{pmatrix}$
+\end{itemize}
+On pourrait d'ailleurs montrer que pour tout entier naturel $n$, $A^{2n} = 7^n I_2$ et $A^{2n+1}=7^n A$...
+\end{example}
+
+\begin{proposition}Soit $A$ une matrice carrée, $k$ et $\ell$ deux entiers naturels. On a $A^{k} \times A^{\ell} =A ^{k+\ell}$ et $(A^k)^l=A^{kl}$.\end{proposition}
+
+En revanche, si $A$ et $B$ sont deux matrices carrées de même dimension et $k$ un entier naturel, on n'a pas toujours $(AB)^k = A^kB^k$.
+
+\section{Matrices inversibles}
+
+\subsection{Inverse d'une matrice}
+
+\begin{definition}Soit $A$ une matrice carré de dimension $n$. On dit que $A$ est inversible s'il existe une matrice carrée $B$ de dimension $n$ telle que $AB = BA = I_n$.
+
+Si une telle matrice existe, elle est unique et est appelée inverse de $A$. On la note alors $A^{-1}$.\end{definition}
+
+\begin{demonstration}Supposons qu'il existe deux matrices $B$ et $B'$ telles que $AB=BA=I_n$ et $AB'=B'A=I_n$.
+
+Alors $B' = I_n B = (BA) B' = B(AB') = BI_n = B$. On a donc $B'=B$.\end{demonstration}
+
+\begin{proposition}Soit $A$ et $B$ deux matrices carrées de dimension $n$. Alors $AB=I_n \Leftrightarrow BA=I_n$.\end{proposition}
+
+Dans les faits, pour montrer qu'une matrice $B$ est l'inverse d'une matrice $A$, il suffit seulement de vérifier que $AB=I_n$.
+
+\begin{example}L'inverse de la matrice $\begin{pmatrix}2 & 4 \\ 2 & 5\end{pmatrix}$ est la matrice $\begin{pmatrix}2,5 & -2 \\ -1 & 1
+\end{pmatrix}$.
+En effet, 
+\[\begin{pmatrix}2 & 4 \\ 2 & 5\end{pmatrix}\begin{pmatrix}2,5 & -2 \\ -1 & 1
+\end{pmatrix} = \begin{pmatrix} 2 \times 2,5 + 4 \times (-1) & 2 \times (-2) +4 \times 1 \\2 \times 2,5 +5 \times(-1) & 2 \times (-2) + 5 \times 1 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1\end{pmatrix}=I_2\]\end{example}
+
+\begin{example}On considère la matrice $A=\begin{pmatrix} 1 & 0 \\ 3 & 4\end{pmatrix}$. On souhaite déterminer si la matrice $A$ est inversible et, si c'est le cas, calculer son inverse. Soit $B=\begin{pmatrix}
+a & b \\ c & d
+\end{pmatrix}$
+
+\[ AB = \begin{pmatrix} 1 & 0 \\ 3 & 4\end{pmatrix}\begin{pmatrix}
+a & b \\ c & d\end{pmatrix} = \begin{pmatrix}
+a & b \\ 3a+4c & 3b+4d 
+\end{pmatrix}\]
+Ainsi,
+\[AB=I_2 \Leftrightarrow  \begin{pmatrix}
+a & b \\ 3a+4c & 3b+4d 
+\end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1\end{pmatrix} \Leftrightarrow \left\{\begin{array}{rcl}
+a &=& 1 \\
+b&=& 0 \\
+3a+4c &=& 0 \\
+ 3b+4d &= &1
+\end{array}\right. \Leftrightarrow \left\{\begin{array}{rcl}
+a &=& 1 \\
+b&=& 0 \\
+c &=& -\dfrac{3}{4} \\
+d &= & \dfrac{1}{4}
+\end{array}\right. \]
+
+Ainsi, l'inverse de $\begin{pmatrix} 1 & 0 \\ 3 & 4\end{pmatrix}$ est $\begin{pmatrix}
+1 & 0 \\ -\frac{3}{4} & \frac{1}{4}
+\end{pmatrix}$
+\end{example}
+
+\newpage
+
+\subsection{Matrice de dimension $2 \times 2$}
+
+\begin{proposition}Soit $A = \begin{pmatrix}
+a & b \\ c & d
+\end{pmatrix}$ une matrice de dimension $2 \times 2$. Alors $A$ est inversible si et seulement si $ac-bc \neq 0$. Dans ce cas,
+\[A^{-1}=\dfrac{1}{ad-bc}\begin{pmatrix}
+d & -b \\ -c & a
+\end{pmatrix}\]\end{proposition}
+
+\begin{demonstration}
+On a
+\[\begin{pmatrix}
+a & b \\ c & d
+\end{pmatrix} \times \begin{pmatrix}
+d & -b \\ -c & a
+\end{pmatrix} = \begin{pmatrix}
+ad-bc & -ac+ac \\ bd-bd & -bc+ad
+\end{pmatrix} = \begin{pmatrix}ad-bc & 0 \\ 0 & ad-bc\end{pmatrix} = (ad-bc)I_2\]
+
+\begin{itemize}
+\item Si $ad-bc \neq 0$, alors $\begin{pmatrix}
+a & b \\ c & d
+\end{pmatrix} \times \dfrac{1}{ad-bc}\begin{pmatrix}
+d & -b \\ -c & a
+\end{pmatrix}=I_2$, et on obtient le résultat voulu
+\item Si $ad-bc=0$, supposons que $A$ est inversible. Notons $A^{-1}$ son inverse et $B$ la matrice  $\begin{pmatrix}
+d & -b \\ -c & a
+\end{pmatrix}$
+\[B = I_2B = (A^{-1}A)B = A^{-1}(AB)=A^{-1} \times (ad-bc)I_2 = A^{-1} \times 0_{2,2}=0_{2,2}\]
+Ainsi, $B=0_{2,2}$ et tous ses coefficients sont nuls. On a alors $a=b=c=d=0$. C'est absurde, car on a supposé la matrice $A$ inversible. La matrice $A$ n'est donc pas inversible.
+\end{itemize}\end{demonstration}
+
+\begin{example}Soit $A=\begin{pmatrix} 1 & 3 \\ 2 & -4\end{pmatrix}$. $A$ est inversible et son inverse est $A^{-1}=-\dfrac{1}{10}\begin{pmatrix}-4 & -3 \\ -2 & 1\end{pmatrix}$.\end{example}
+
+
+\subsection{Application : systèmes linéaires}
+
+\begin{proposition}Soit $A$ une matrice carrée de dimension $n$, $X$ et $B$ deux matrices colonnes de dimension $n \times 1$.
+
+Si $A$ est inversible, alors $AX = B$ si et seulement si $X=A^{-1}B$.\end{proposition}
+
+\begin{example}On considère le système suivant : $\left\{\begin{array}{rcl}2x +3y -z &=& 1 \\ 3x-y+z&=& 3 \\ 4x-2y+z &=&5 \end{array}\right.$
+
+Ce système peut se traduire par l'écriture matricielle $\begin{pmatrix}2 & 3 & -1 \\ 3 & -1 & 1 \\ 4 & -2 & 1\end{pmatrix} \times \begin{pmatrix} x \\ y \\z\end{pmatrix} = \begin{pmatrix}
+1 \\ 3 \\ 5
+\end{pmatrix}$
+
+Or, la matrice $\begin{pmatrix}2 & 3 & -1 \\ 3 & -1 & 1 \\ 4 & -2 & 1\end{pmatrix}$ est inversible, d'inverse, $\dfrac{1}{7} \times \begin{pmatrix} 1 & -1 & 2 \\ 1 & 6 & -5 \\ -2 & 16 & -11\end{pmatrix}$.
+
+Ainsi, $\begin{pmatrix}2 & 3 & -1 \\ 3 & -1 & 1 \\ 4 & -2 & 1\end{pmatrix} \times \begin{pmatrix} x \\ y \\z\end{pmatrix} = \begin{pmatrix}
+1 \\ 3 \\ 5
+\end{pmatrix} \Leftrightarrow \begin{pmatrix} x \\ y \\z\end{pmatrix} = \dfrac{1}{7} \times \begin{pmatrix} 1 & -1 & 2 \\ 1 & 6 & -5 \\ -2 & 16 & -11\end{pmatrix} \times \begin{pmatrix}
+1 \\ 3 \\ 5
+\end{pmatrix} = \begin{pmatrix}
+6 \\5 \\3
+\end{pmatrix}$
+
+\end{example}
+
+\chapter*{Matrices}
+ 
+\section*{Notion de matrices}
+
+\begin{exercise}[topic=mat01]
+\vskip2pt
+\begin{minipage}{0.45\linewidth}
+Soit la matrice \(A = \begin{pmatrix}
+1 & 5 & 9 & -3 \\ 2 & 6 & -8 & 0 \\ 7 & -1 & -4 & 3
+\end{pmatrix}\)
+\end{minipage} \hfill\begin{minipage}{0.5\linewidth}
+\begin{enumerate}
+\item Quelle est la dimension de la matrice $A$ ?
+\item Que valent $a_{1,2}$, $a_{3,3}$ et $a_{2,4}$ ?
+\end{enumerate}
+\end{minipage}
+\end{exercise}
+
+\begin{solution}La matrice \(A\) est de dimension \(3\times 4\).
+
+On a \(a_{1,2} = 5\), \(a_{3,3} = -4\) et \(a_{2,4} = 0\).\end{solution}
+
+\begin{exercise}[topic=mat01]Écrire sous la forme d'un tableau de nombres la matrice $3 \times 3$ dont le coefficient $(i,j)$ vaut $i^j$.\end{exercise}
+
+\begin{solution}Il s'agit de la matrice \(\begin{pmatrix}1 & 1 & 1 \\ 2 & 4 & 8 \\ 3 & 9 & 27 \end{pmatrix}\).\end{solution}
+
+\begin{exercise}[topic=mat01]Écrire les matrices suivantes sous la forme d'un tableau de nombres.
+
+\begin{itemize}
+\item $A = ( i+j)_{1 \leqslant i \leqslant 3, 1\leqslant j \leqslant 3} \qquad \qquad \qquad \bullet B = ( \max (i,j))_{1 \leqslant i \leqslant 3, 1\leqslant j \leqslant 4}$
+\vskip5pt
+\item $C = \left( \dfrac{np}{n+p} \right) _{1 \leqslant n \leqslant 3, 1 \leqslant p \leqslant 2} \qquad \quad \qquad \bullet D = \left(  i+1 \right) _{1 \leqslant i \leqslant 2, 1 \leqslant j \leqslant 2}$
+\vskip5pt
+\item $E = (i^{n+p})_{1 \leqslant n \leqslant 4, 1 \leqslant p \leqslant 4}$ où $i$ désigne ici un nombre complexe vérifiant $i^2=-1$.
+\end{itemize}\end{exercise}
+
+\begin{solution}\(A = \begin{pmatrix} 2 & 3 & 4\\3&4&5 \\ 4&5&6 \end{pmatrix}\) ; \( B= \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 2 & 3 & 4 \\ 3 & 3 & 3 & 4 \\ 4&4&4&4\end{pmatrix} \) ; \(C = \begin{pmatrix} \frac{1}{2} & \frac{2}{3} \\ \frac{2}{3} & 1 \\ \frac{3}{4} & \frac{6}{5} \end{pmatrix}\) ; \( D = \begin{pmatrix} 2 &2 \\ 3&3\end{pmatrix}\) ;  \(E = \begin{pmatrix} -1 & -i & 1 & i \\ -i & 1 & i & -1 \\ 1 & i & -1 & -i \\ i & -1 & -i & 1 \end{pmatrix} \).\end{solution}
+
+\begin{exercise}[topic=mat01]Soit $A$ une matrice de dimension $n \times p$. On appelle transposée de $A$, notée $A^T$, la matrice de dimension $p \times n$ dont le coefficient $(i,j)$ vaut $a_{j,i}$. 
+
+Déterminer la transposée de la matrice $\begin{pmatrix}2 & 0 & 1  \\ 4 & -1 & 3  \end{pmatrix}$.\end{exercise}
+
+\begin{solution}Il s'agit de la matrice \(\begin{pmatrix}2 & 4 \\ 0 & -1 \\ 1 & 3 \end{pmatrix}\).\end{solution}
+
+\begin{exercise}[topic=mat01]Soit $A=(a_{i,j})_{1 \leqslant i \leqslant n, 1\leqslant j \leqslant n}$ une matrice carrée de dimension $n$. On appelle trace de $A$ la somme des coefficients diagonaux de la matrice $A$. On a donc $tr(A)=\displaystyle\sum_{i=1}^n a_{i,i}$. Determiner la trace des matrices suivantes.
+
+\begin{tabularx}{\linewidth}{XXXX}
+$A=\begin{pmatrix} 1 & 2 & -1 \\ 2 & 3 & 5 \\ -1 & 2 & 4\end{pmatrix}$ & $B=( ij)_{1 \leqslant i \leqslant 3, 1\leqslant j \leqslant 3}$ & $C=I_n$ & $D= ( i+j)_{1 \leqslant i \leqslant n, 1\leqslant j \leqslant n}$\end{tabularx}
+\vspace{-1cm}
+\end{exercise}
+
+\begin{solution}
+\begin{itemize}
+\item \(tr(A)=1+3+4=8\).
+\item La matrice $B$ est de taille \(3\times 3\) et le coefficient \((i,i)\) vaut \(i^2\). Ainsi, \(tr(B)=1^2+2^2+3^2 = 14\).
+\item La matrice \(I_n\) est de taille \(n\times n\) et le coefficient \((i,i)\) vaut 1. Ainsi, \(tr(I_n)=1+1+1+\dots+1=n\).
+\item La matrice \(D\) est de taille \(n\times n\) et le coefficient \((i,i)\) vaut \(2i\). Ainsi, \[tr(D)=2+4+6+\dots + 2n = 2(1+2+3+\dots + n)=2 \times \dfrac{n(n+1)}{2} = n(n+1) .\]
+\end{itemize}
+\end{solution}
+
+
+\printcollection{mat01}
+
+\section*{Opérations sur les matrices}
+
+\begin{exercise}[topic=mat02] Soit $A = \begin{pmatrix} 3 & -1 & 2 \\ 5 & -1 & 3\end{pmatrix}$ et $B=\begin{pmatrix}1 & 0 & 3 \\ 2 & 1& 4\end{pmatrix}$. Calculer $A+B$, $3A-2B$ et $\dfrac{2}{3}A + \dfrac{1}{4}B$.\end{exercise}
+
+\begin{solution}\[A+B = \begin{pmatrix} 3+1 & -1+0 & 2+3 \\ 5+2 & -1+1 & 3+4 \end{pmatrix} = \begin{pmatrix} 4 & -1 & 5 \\ 7 & 0 & 7\end{pmatrix}\]
+
+\[3A-2B = \begin{pmatrix} 3\times 3-2\times 1 & 3\times(-1)-2\times0 & 3\times2-2\times3 \\ 3\times5-2\times 2 & 3\times(-1)-2\times1 & 3\times 3-2\times 4 \end{pmatrix} =\begin{pmatrix} 7 & -3 & 0 \\ 11 & -5 & 1\end{pmatrix}\]
+
+\[ \dfrac{2}{3}A + \dfrac{1}{4}B = \begin{pmatrix} \dfrac{2}{3}\times 3+ \dfrac{1}{4}\times 1 & \dfrac{2}{3}\times(-1)+ \dfrac{1}{4}\times0 & \dfrac{2}{3}\times2+ \dfrac{1}{4}\times3 \\ \dfrac{2}{3}\times5+ \dfrac{1}{4}\times 2 & \dfrac{2}{3}\times(-1)+ \dfrac{1}{4}\times1 & \dfrac{2}{3}\times 3+ \dfrac{1}{4}\times 4 \end{pmatrix} = \begin{pmatrix} \dfrac{9}{4} & - \dfrac{2}{3} & \dfrac{25}{12} \\ \dfrac{23}{6} & -\dfrac{5}{12} & 3\end{pmatrix} \]\end{solution}
+
+\begin{exercise}[topic=mat02]Effectuer les calculs suivants.
+
+\begin{tabularx}{\linewidth}{XXX}
+$\begin{pmatrix}1 & 3 & 2 \end{pmatrix} \times \begin{pmatrix} -2 \\ 3 \\ 0\end{pmatrix}$ & $\begin{pmatrix}-1 & 3 & -5\end{pmatrix} \times \begin{pmatrix} 2 \\ -5 \\ -7\end{pmatrix}$ & $\begin{pmatrix}1-2i & i & 3\end{pmatrix} \times \begin{pmatrix} 2+3i \\ 1+i \\ i-5\end{pmatrix}$
+\end{tabularx}\end{exercise}
+
+\begin{solution}\(\begin{pmatrix}1 & 3 & 2 \end{pmatrix} \times \begin{pmatrix} -2 \\ 3 \\ 0\end{pmatrix} = (1 \times (-2) + 3 \times 3 + 2 \times 0) = (7)\)
+
+\(\begin{pmatrix}-1 & 3 & -5\end{pmatrix} \times \begin{pmatrix} 2 \\ -5 \\ -7\end{pmatrix} = (-1 \times 2 + 3 \times (-5) + (-5) \times (-7) = (18)\)
+
+\(\begin{pmatrix}1-2i & i & 3\end{pmatrix} \times \begin{pmatrix} 2+3i \\ 1+i \\ i-5\end{pmatrix}  = ((1-2i)(2+3i)+i(1+i)+3(i-5))  =((1-2i)(2+3i)+i(1+i)+3(i-5)) = (2+3i-4i+6+i-1+3i-15) = (-8+3i)\)
+\end{solution}
+
+\begin{exercise}[topic=mat02]Déterminer la valeur du réel $x$ pour que $\begin{pmatrix} 3x & 2 & -1 \end{pmatrix} \begin{pmatrix} -5 \\ x \\ 3\end{pmatrix} = (12)$.\end{exercise}
+
+\begin{solution}\(\begin{pmatrix} 3x & 2 & -1 \end{pmatrix} \begin{pmatrix} -5 \\ x \\ 3\end{pmatrix} = (3x \times(-5) +2x -3) = (-13x-3)\).
+
+Or, \(-13x-3= 12 \Leftrightarrow x = -\dfrac{15}{13}\). Le réel recherché est donc \(-\dfrac{15}{13}\).\end{solution}
+
+\begin{exercise}[topic=mat02]Soit $A=\begin{pmatrix} 1 & 3 & -1 & 2 \\ 2 & 3 & 0 & -3\end{pmatrix}$, $B = \begin{pmatrix} 1 & 3 & -1 \\ 0 & 1 & 0 \\ -2 & 1 & 0 \\ -1 & 3 & 0\end{pmatrix}$, $C= \begin{pmatrix} 3 & -2 & 1 & 7 \end{pmatrix}$ et $D = \begin{pmatrix} 3 \\ -1 \\ 5\end{pmatrix}$.
+
+Parmi les produits suivants, déterminer ceux qui ont un sens et déterminer le résultat.
+
+\begin{tabularx}{\linewidth}{XXXXX}
+$AB$ & $AC$ & $BC$ & $CA$ & $CB$  \\
+$AD$ & $CD$ & $DC$ & $BD$ & $DB$\end{tabularx}\end{exercise}
+
+\begin{solution}
+Le produit \(AB\) a du sens, le résultat est une matrice \(2 \times 3\). 
+
+\[ AB = \begin{pmatrix} 1 \times 1 + 3 \times 0 + (-1) \times (-2) + 2 \times (-1) & 1 \times 3 + 3 \times 1 + (-1) \times 1 + 2 \times 3 & 1 \times (-1) + 3 \times 0 + (-1) \times 0 + 2 \times 0 \\ 2 \times 1 + 3 \times 0 + 0 \times (-2) + (-3) \times (-1) & 2 \times 3 + 3 \times 1 + 0 \times 1 + (-3) \times 3 & 2 \times (-1) + 3 \times 0 + 0 \times 0 + (-3) \times 0 \end{pmatrix}\]
+
+soit \(AB = \begin{pmatrix} 1 & 11 & -1 \\ 5 & 0 & -2\end{pmatrix}\).
+
+Les produits \(AC\), \(BC\) et \(CA\) n'ont pas de sens.
+
+Le produit \(CB\) a du sens. Le résultat est une matrice \(1 \times 3\).
+
+\[CB = \begin{pmatrix}3 \times 1  + (-2) \times 0 + 1 \times (-2) + 7 \times (-1) & 3 \times 3  + (-2) \times 1 + 1 \times 1 + 7 \times 3 & 3 \times (-1)  + (-2) \times 0 + 1 \times 0 + 7 \times 0\end{pmatrix}\]
+
+soit \(CB = \begin{pmatrix} -6 & 29 & -3 \end{pmatrix}\).
+
+Les produit \(AD\) et \(CD\) n'ont pas de sens.
+
+Le produit \(DC\) a un sens. Le résultat est une matrice \(3 \times 4\)
+\[DC= \begin{pmatrix} 3 \times 3 & 3 \times (-2) & 3 \times 1 & 3 \times 7 \\ -1 \times 3 & -1 \times (-2) & -1 \times 1 & -1 \times 7 \\ 5 \times 3 & 5 \times (-2) & 5 \times 1 & 5 \times 7\end{pmatrix} = \begin{pmatrix}9 & -6 & 3 & 21 \\ -3 & 2 & -1& -7 \\  15 & -10 & 5 & 35\end{pmatrix}.\]
+
+Le produit \(BD\) a un sens. Le résultat est une matrice \(4 \times 1\).
+\[BD = \begin{pmatrix} 1 \times 3 + 3 \times (-1) + (-1) \times 5 \\ 0 \times 3 + 1 \times (-1) + 0 \times 5 \\ -2 \times 3 + 1 \times (-1) + 0 \times 5 \\ -1 \times 3 + 3 \times (-1) + 0 \times 5\end{pmatrix} = \begin{pmatrix} -5 \\ -1 \\ -7 \\ -6\end{pmatrix}.\]
+
+Le produit \(DB\) n'a pas de sens.
+\end{solution}
+
+\begin{exercise}[topic=mat02]Déterminer les valeurs des réels $a$, $b$, $c$ et $d$ pour que $\begin{pmatrix}1 & 3 \\-1 & -4\end{pmatrix}\begin{pmatrix}a & b \\ c & d\end{pmatrix} = \begin{pmatrix}1 & -7 \\ -2 & 10\end{pmatrix}$.\end{exercise}
+
+\begin{solution}On a \(\begin{pmatrix}1 & 3 \\-1 & -4\end{pmatrix}\begin{pmatrix}a & b \\ c & d\end{pmatrix} = \begin{pmatrix}a+3c & b+3d \\-a-4c & -b-4d\end{pmatrix}\). Nous sommes donc amenés à résoudre un système.
+
+\(\left\{\begin{array}{rcl} a+3c&=& 1 \\ -a-4c & =& -2 \\ b + 3d &=&-7 \\ -b-4d &=& 10 \end{array} \right.\Leftrightarrow \left\{\begin{array}{rcl} a+3c&=& 1 \\ -c & =& -1 \qquad \qquad \color{red}{(L_2 \leftarrow L_2 + L_1) } \\ b + 3d &=&-7 \\ -d &=& 3 \qquad \qquad \color{red}{(L_4 \leftarrow L_4 + L_3) } \end{array}\right.\)
+
+\(\Leftrightarrow \left\{\begin{array}{rcl} a+3&=& 1 \\ c & =& 1 \\ b + -9 &=&-7 \\ d &=& -3 \end{array}\right.\Leftrightarrow \left\{\begin{array}{rcl} a&=& -2 \\ c & =& 1 \\ b   &=&2 \\ d &=& -3 \end{array}\right. \)
+
+La matrice recherchée est donc \(\begin{pmatrix} -2 & 2 \\ 1 & -3\end{pmatrix}\).\end{solution}
+
+\begin{exercise}[topic=mat02]Soit $A=\begin{pmatrix}-1 & 2 & 1 \\ 0 & 2 & 0 \\ -3 & 2 & 3\end{pmatrix}$. Montrer que $A^2=2A$ et en déduire $A^n$ pour tout entier naturel non nul $n$.\end{exercise}
+
+\begin{solution}
+\[A^2  = \begin{pmatrix}-1 & 2 & 1 \\ 0 & 2 & 0 \\ -3 & 2 & 3\end{pmatrix}\begin{pmatrix}-1 & 2 & 1 \\ 0 & 2 & 0 \\ -3 & 2 & 3\end{pmatrix}\] 
+\[= \begin{pmatrix} (-1) \times (-1) + 2 \times 0 + 1 \times (-3) & (-1) \times 2 + 2 \times 2 +1 \times 2 & -1 \times 1 + 2 \times 0 + 1 \times 3 \\ 0 \times (-1) + 2 \times 0 + 0 \times (-3) & 0 \times 2 + 2 \times 2 + 0 \times 2 & 0 \times 1 + 2 \times 0 + 0 \times 3 \\ -3 \times (-1) + 2 \times 0 +3 \times(-3) & -3 \times 2 + 2 \times 2 + 3 \times 2 & -3 \times 1 + 2 \times 0 +3 \times 3\end{pmatrix} = \begin{pmatrix} -2 & 4 & 2 \\ 0 & 4 & 0 \\ -6 & 4 & 6 \end{pmatrix} = 2A.\]
+
+Ainsi, pour tout entier naturel \(n\), 
+\[A^n = 2^nA =\begin{pmatrix}-2^n & 2^{n+1} & 2^n \\ 0 & 2^{n+1} & 0 \\ -3 \times 2^n & 2^{n+1} & 3 \times 2^n\end{pmatrix}.\]\end{solution}
+
+\begin{exercise}[topic=mat02]Soit $A=\begin{pmatrix}3 & 2 \\ -2 & -1\end{pmatrix}$ et $B=A-I_2$.
+\begin{enumerate}
+\item Calculer $B$ puis $B^2$.
+\item Montrer par récurrence que pour tout entier naturel $n$, $A^n = I_2+nB$.
+\end{enumerate}\end{exercise}
+
+\begin{solution}On a \(B=\begin{pmatrix}2 & 2 \\ -2 & -2\end{pmatrix}\) et $ B^2 = \begin{pmatrix}2 & 2 \\ -2 & -2\end{pmatrix}\begin{pmatrix}2 & 2 \\ -2 & -2\end{pmatrix} = \begin{pmatrix}0 & 0 \\ 0 &0\end{pmatrix}$.
+
+Pour tout entier naturel \(n\), on considère la proposition \(P(n)\) : « \(A^n = I_2+nB\) »
+\begin{itemize}\item \textbf{Initialisation} : Pour \(n=0\), on a bien \(A^0 = I_2 = I_2 + 0B\). \(P(0)\) est donc vraie.
+	\item \textbf{Hérédité} : Soit \(n\) un entier naturel. Supposons \(P(n)\) vraie. On a alors \(A^n = I_2+nB\). Ainsi,
+		\[A^{n+1}=A^n \times A = (I_2+nB)A = I_2 \times A +nBA = A + nBA.\]
+		Or, \(B=A-I_2\) d'où \(A=B+I_2\). Ainsi, 
+		\[A^{n+1}=I_2+B+nB(B+I_2)=I_2+B+nB+nB^2=I_2+(n+1)B\]
+	puisque \(B^2=0_2\). \(P(n+1)\) est donc vraie.
+	\item Conclusion : \(P(0)\) est vraie et \(P\) est héréditaire. Par récurrence, \(P(n)\) est vraie pour tout entier  naturel \(n\).\end{itemize}\end{solution}
+
+\begin{exercise}[topic=mat02]Soit $A=\begin{pmatrix} 1 & -1 \\ -1 & 1\end{pmatrix}$. Montrer par récurrence que pour tout entier $n \geqslant 1$, $A^n = \begin{pmatrix} 2^{n-1} & -2^{n-1} \\ -2^{n-1} & 2^{n-1}\end{pmatrix}$.\end{exercise}
+
+\begin{solution}Pour tout entier naturel non nul \(n\), on considère la proposition \(P(n)\) : « \(A^n = \begin{pmatrix} 2^{n-1} & -2^{n-1} \\ -2^{n-1} & 2^{n-1}\end{pmatrix}\) »
+\begin{itemize}\item \textbf{Initialisation} : Pour \(n=1\), on \(\begin{pmatrix} 2^{1-1} & -2^{1-1} \\ -2^{1-1} & 2^{1-1}\end{pmatrix}= \begin{pmatrix} 1 & -1 \\ -1 & 1\end{pmatrix}=A\). \(P(1)\) est donc vraie.
+	\item \textbf{Hérédité} : Soit \(n\) un entier naturel non nul. Supposons \(P(n)\) vraie. On a alors \(A^n = \begin{pmatrix} 2^{n-1} & -2^{n-1} \\ -2^{n-1} & 2^{n-1}\end{pmatrix}\). Ainsi,
+		\[A^{n+1} = A \times A^n = \begin{pmatrix} 1 & -1 \\ -1 & 1\end{pmatrix}\begin{pmatrix} 2^{n-1} & -2^{n-1} \\ -2^{n-1} & 2^{n-1}\end{pmatrix}.\]
+		Ainsi,
+		\[A^{n+1} = \begin{pmatrix} 1 \times 2^{n-1} -1 \times(-2^{n-1}) & 1 \times (-2^{n-1}) -1 \times 2^{n-1} \\ -1 \times 2^{n-1} +1 \times (-2^{n-1}) & -1 \times (-2^{n-1}) + 1 \times 2^{n-1} \end{pmatrix}  \]
+		et donc,
+		\[A^{n+1} = \begin{pmatrix} 2 \times 2^{n-1}  & -2\times 2^{n-1})  \\ -2 \times 2^{n-1}  &  2 \times 2^{n-1} \end{pmatrix}  \]
+		et finalement,
+		\[A^{n+1} = \begin{pmatrix} 2^{n}  & - 2^{n}  \\ -2^{n}  &  2^{n}\end{pmatrix}.\]
+	 \(P(n+1)\) est donc vraie.
+	\item \textbf{Conclusion }: \(P(1)\) est vraie et \(P\) est héréditaire. Par récurrence, \(P(n)\) est vraie pour tout entier  naturel \(n\).\end{itemize}
+\end{solution}
+
+
+\begin{exercise}[topic=mat02]
+\begin{minipage}{0.2\linewidth}Soit $A=\begin{pmatrix}1 & 1 \\0 & 1 \end{pmatrix}$.
+\end{minipage}\hfill \begin{minipage}{0.75\linewidth}
+\begin{enumerate}
+\item Calculer $A^2$ et $A^3$.
+\item Conjecturer une expression de $A^n$ en fonction de $n$.
+\item Démontrer cette conjecture par récurrence.
+\end{enumerate}
+\end{minipage}\end{exercise}
+
+\begin{solution}\[A^2 =  \begin{pmatrix}1 & 1 \\0 & 1 \end{pmatrix}\begin{pmatrix}1 & 1 \\0 & 1 \end{pmatrix} = \begin{pmatrix} 1 \times 1 + 1 \times 0 & 1 \times 1 + 1 \times 1 \\ 0 \times 1 + 1 \times 0 & 0 \times 1 + 1 \times 1\end{pmatrix} = \begin{pmatrix}1&2 \\ 0& 1\end{pmatrix}\]
+
+\[A^3 =  \begin{pmatrix}1 & 2 \\0 & 1 \end{pmatrix}\begin{pmatrix}1 & 1 \\0 & 1 \end{pmatrix} = \begin{pmatrix} 1 \times 1 + 2 \times 0 & 1 \times 1 + 2 \times 1 \\ 0 \times 1 + 1 \times 0 & 0 \times 1 + 1 \times 1\end{pmatrix} =\begin{pmatrix}1&3 \\ 0& 1\end{pmatrix}\]
+
+Pour tout entier naturel \(n\), on pose \(P(n)\) : « \(A^n = \begin{pmatrix} 1 & n \\ 0 & 1\end{pmatrix}\) ».
+
+\begin{itemize}\item \textbf{Initialisation} : Pour \(n=0\), on \(A^0 = I_2 = \begin{pmatrix} 1&0\\0&1\end{pmatrix}\). \(P(0)\) est vraie.
+	\item \textbf{Hérédité} : Soit \(n\) un entier naturel. Supposons \(P(n)\) vraie. On a alors \(A^n = \begin{pmatrix} 1 & n \\ 0 & 1\end{pmatrix}\). Ainsi,
+		\[A^{n+1} = A \times A^n = \begin{pmatrix} 1 & 1 \\ 0 & 1\end{pmatrix}\begin{pmatrix} 1 & n \\ 0 & 1\end{pmatrix}.\]
+		Ainsi, $A^{n+1} = \begin{pmatrix} 1 \times 1 + n \times 0 & 1 \times n +1 \times 1 \\ 0 \times 1 +1 \times 1 & 0 \times n + 1 \times 1 \end{pmatrix}$ et donc, $A^{n+1} = \begin{pmatrix} 1  & n+1  \\ 0 &  1 \end{pmatrix}$.
+	 \(P(n+1)\) est donc vraie.
+	\item \textbf{Conclusion} : \(P(0)\) est vraie et \(P\) est héréditaire. Par récurrence, \(P(n)\) est vraie pour tout entier  naturel \(n\).\end{itemize}\end{solution}
+
+
+\begin{exercise}[topic=mat02]
+\begin{minipage}{0.4\linewidth}Soit $a$, $b$ et $c$ trois réels et $A=\begin{pmatrix}a & 0 & 0 \\0 & b & 0 \\ 0 & 0 & c\end{pmatrix}$.
+\end{minipage}\hfill \begin{minipage}{0.55\linewidth}
+\begin{enumerate}
+\item Calculer $A^2$ et $A^3$.
+\item Conjecturer une expression de $A^n$ en fonction de $n$.
+\item Démontrer cette conjecture par récurrence.
+\end{enumerate}
+\end{minipage}\end{exercise}
+
+\begin{solution}\[A^2 = \begin{pmatrix}a & 0 & 0 \\0 & b & 0 \\ 0 & 0 & c\end{pmatrix}\begin{pmatrix}a & 0 & 0 \\0 & b & 0 \\ 0 & 0 & c\end{pmatrix} = \begin{pmatrix}a^2 & 0 & 0 \\0 & b^2 & 0 \\ 0 & 0 & c^2\end{pmatrix}\]
+\[A^3=\begin{pmatrix}a^2 & 0 & 0 \\0 & b^2 & 0 \\ 0 & 0 & c^2\end{pmatrix}\begin{pmatrix}a & 0 & 0 \\0 & b & 0 \\ 0 & 0 & c\end{pmatrix}=\begin{pmatrix}a^3 & 0 & 0 \\0 & b^3 & 0 \\ 0 & 0 & c^3\end{pmatrix}\]
+
+Pour tout entier naturel non nul \(n\), on considère la proposition \(P(n)\) : « \(A^n=\begin{pmatrix}a^n & 0 & 0 \\0 & b^n & 0 \\ 0 & 0 & c^n\end{pmatrix}\) ».
+
+\begin{itemize}\item \textbf{Initialisation} : Pour \(n=1\), on a \(\begin{pmatrix}a^1 & 0 & 0 \\0 & b^1 & 0 \\ 0 & 0 & c^1\end{pmatrix}=\begin{pmatrix}a & 0 & 0 \\0 & b & 0 \\ 0 & 0 & c\end{pmatrix}=A\). \(P(1)\) est vraie.
+
+	\item \textbf{Hérédité} : Soit \(n\) un entier naturel non nul. Supposons \(P(n)\) vraie. On a alors
+		\[A^{n+1}=A^n \times A = \begin{pmatrix}a^n & 0 & 0 \\0 & b^n & 0 \\ 0 & 0 & c^n\end{pmatrix}\begin{pmatrix}a & 0 & 0 \\0 & b & 0 \\ 0 & 0 & c\end{pmatrix}=\begin{pmatrix}a^{n+1} & 0 & 0 \\0 & b^{n+1} & 0 \\ 0 & 0 & c^{n+1}\end{pmatrix}.\]
+
+	\(P(n+1)\) est donc vraie.
+	\item \textbf{Conclusion} : Par récurrence, \(P(n)\) est vraie pour tout entier naturel non nul \(n\).\end{itemize}\end{solution}
+
+
+\begin{exercise}[topic=mat02]
+\begin{minipage}{0.2\linewidth}Soit $A=\begin{pmatrix}1 & 2 \\-2 & 3 \end{pmatrix}$.
+\end{minipage}\hfill \begin{minipage}{0.75\linewidth}
+\begin{enumerate}
+\item Calculer $A^2$.
+\item Déterminer deux réels $\alpha$ et $\beta$ tels que $A^2+\alpha A + \beta I_2 = 0$.
+\end{enumerate}
+\end{minipage}\end{exercise}
+
+\begin{solution}
+\[ A^2 = \begin{pmatrix}1 & 2 \\-2 & 3 \end{pmatrix}\begin{pmatrix}1 & 2 \\-2 & 3 \end{pmatrix} = \begin{pmatrix} 1 \times 1 + 2 \times -2 & 1 \times 2 + 2 \times 3 \\ -2 \times 1 + 3 \times -2 & -2 \times 2 + 3 \times 3\end{pmatrix}= \begin{pmatrix} -3 & 8 \\ -8 & 5\end{pmatrix}\]
+
+Supposons qu'il existe deux réels \(\alpha\) et \(\beta\) tels que  \(A^2+\alpha A + \beta I_2 = 0_2\). On a alors
+\[ \begin{pmatrix} -3 + \alpha + \beta & 8 + 2\alpha \\ -8 -2\alpha & 5 + 3\alpha + \beta\end{pmatrix} = \begin{pmatrix}0&0\\0&0\end{pmatrix}.\]
+
+L'égalité sur le coefficient \((1,2)\) donne \(8+2\alpha = 0\) et donc \(\alpha = -4\).
+En substituant \(\alpha\) par \(-4\) dans le coefficient \((1,1)\), on a alors \(-3-4+\beta = 0\) et donc \(\beta = 7\).
+
+Réciproquement, on vérifie facilement que \(A^2-4 A + +7I_2 = 0_2\).
+\end{solution}
+
+\begin{exercise}[topic=mat02]Soit $A=\begin{pmatrix}a & c \\b & d \end{pmatrix}$. Montrer que $A^2 - (a+d)A + (ad-bc)I_2=0$.\end{exercise}
+
+\begin{solution}On a 
+\[A^2=\begin{pmatrix}a & c \\b & d \end{pmatrix}\begin{pmatrix}a & c \\b & d \end{pmatrix}=\begin{pmatrix}a^2+bc & ac+cd \\ ab+bd & bc + d^2\end{pmatrix}.\]
+
+Ainsi,
+\[ A^2 - (a+d)A + (ad-bc)I_2 = \begin{pmatrix} a^2+bc - (a+d)a + ad - bc & ac + cd  -(a+d)c \\ ab+bd-(a+d)b & d^2+bc - (a+d)d +ad-bc\end{pmatrix} = \begin{pmatrix} 0 &0\\0&0\end{pmatrix}.\]\end{solution}
+
+\begin{exercise}[topic=mat02]Soit $A=\begin{pmatrix}0&0&1\\1&0&0\\0&1&0 \end{pmatrix}$. Calculer $A^{2025}$.\end{exercise}
+
+\begin{solution}On a $A^2=\begin{pmatrix}0&1&0 \\0&0&1\\1&0&0\end{pmatrix}$ et $A^3=I_3$. Ainsi, $A^{2025}=A^{3 \times 675}=(A^3)^{675}=I_3^{675}=I_3$.\end{solution}
+
+\begin{exercise}[topic=mat02]Soit $B = \begin{pmatrix} 0 & -1 \\ 1 & 0\end{pmatrix}$. Pour tous réels $a$, et $b$, on note $M(a,b)=aI_2 + bB$.
+\begin{enumerate}
+\item Calculer $M(0,1)^2$.
+\item Soit $a$, $b$, $a'$ et $b'$ quatre réels. Exprimer les produits $M(a,b) \times M(a,-b)$ et $M(a,b) \times M(a',b')$.
+\item Quel ensemble de nombres les différents résultats trouvés ici vous rappellent-ils ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}On a $M(0,1)^2=B^2=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}=M(-1,0)$.
+
+On a $M(a,b) \times M(a,-b) = \begin{pmatrix}a&-b\\b&a\end{pmatrix} \times \begin{pmatrix}a&b\\-b&a\end{pmatrix} =\begin{pmatrix}a^2+b^2 & 0 \\ 0 & a^2+b^2\end{pmatrix}=M(a^2+b^2,0)$.
+
+Enfin, $M(a,b) \times M(a',b')=\begin{pmatrix}a&-b\\b&a\end{pmatrix} \times \begin{pmatrix}a'&-b'\\b'&a'\end{pmatrix}=\begin{pmatrix}aa-bb' & -(ab'+a'b) \\ ab'+a'b & aa'-bb'\end{pmatrix} = M(aa'-bb',ab'+a'b)$.
+
+Ces propriétés rappellent celles des nombres complexes ($a$ et $b$ correspondant aux parties réelles imaginaires).\end{solution}
+
+\printcollection{mat02}
+
+\section*{Matrices inversibles}
+
+
+\begin{exercise}[topic=mat03]
+\begin{minipage}{0.3\linewidth}Soit $A=\begin{pmatrix}-1 & 1 & 1\\1&-1&1\\1&1&-1 \end{pmatrix}$.
+\end{minipage}\hfill \begin{minipage}{0.65\linewidth}
+\begin{enumerate}
+\item Calculer $A^2$.
+\item Vérifier que $A^2+A=2I_3$.
+\item En déduire que $A$ est inversible et déterminer son inverse.
+\end{enumerate}
+\end{minipage}\end{exercise}
+
+\begin{solution}\[\begin{array}{rcl}A^2 & =& \begin{pmatrix}-1 & 1 & 1\\1&-1&1\\1&1&-1 \end{pmatrix}\begin{pmatrix}-1 & 1 & 1\\1&-1&1\\1&1&-1 \end{pmatrix} \\
+&=& \begin{pmatrix}(-1) \times (-1) +1\times 1 + 1 \times 1 & -1 \times 1 + 1 \times(-1) + 1 \times 1 & -1 \times 1 + 1 \times 1 + 1 \times(-1) \\ 1 \times (-1) + (-1) \times 1 + 1 \times 1 & 1 \times 1 + (-1) \times(-1) + 1 \times 1 & 1 \times 1 + (-1) \times 1 + 1 \times (-1) \\ 1 \times (-1) + 1 \times 1 + (-1) \times 1 & 1 \times 1 + 1 \times(-1) + (-1) \times 1 & 1 \times 1 + 1 \times 1 + (-1) \times (-1) \end{pmatrix} \\ &=& \begin{pmatrix}3 & -1 & -1 \\ -1 & 3 & -1 \\ -1&-1&3\end{pmatrix}\end{array}\]
+
+Ainsi, 
+\[A^2+A = \begin{pmatrix}3 & -1 & -1 \\ -1 & 3 & -1 \\ -1&-1&3\end{pmatrix} + \begin{pmatrix}-1 & 1 & 1\\1&-1&1\\1&1&-1 \end{pmatrix} = \begin{pmatrix}2&0&0\\0&2&0\\0&0&2\end{pmatrix} =2I_3.\]
+
+On a donc \(A(A+I_3)=2I_3\) et donc \(A \times \dfrac{1}{2}(A+I_3)=I_3\). \(A\) est donc inversible et
+\[A^{-1}= \dfrac{1}{2}(A+I_3) = \begin{pmatrix} 0 & 1/2 & 1/2 \\ 1/2 & 0 & 1/2 \\ 0 & 0 & 1/2\end{pmatrix}.\]\end{solution}
+
+
+\begin{exercise}[topic=mat03]
+\begin{minipage}{0.3\linewidth}Soit $A=\begin{pmatrix}1 & 2 & 1\\0&-1&2\\1&0&1 \end{pmatrix}$.
+\end{minipage}\hfill \begin{minipage}{0.65\linewidth}
+\begin{enumerate}
+\item Calculer $A^2$ et $A^3$.
+\item Vérifier que $A^3-A^2-2A=4I_3$
+\item En déduire que $A$ est inversible et déterminer son inverse.
+\end{enumerate}
+\end{minipage}
+\end{exercise}
+
+\begin{solution}\[A^2 =\begin{pmatrix}1 & 2 & 1\\0&-1&2\\1&0&1 \end{pmatrix}=\begin{pmatrix}1 & 2 & 1\\0&-1&2\\1&0&1 \end{pmatrix} = \begin{pmatrix}2& 0 & 6\\2&1&0\\2&2&2 \end{pmatrix}\]
+
+\[A^3 =  \begin{pmatrix}2& 0 & 6\\2&1&0\\2&2&2 \end{pmatrix}=\begin{pmatrix}1 & 2 & 1\\0&-1&2\\1&0&1 \end{pmatrix}= \begin{pmatrix}8& 4 & 8\\2&3&4\\4&2&8 \end{pmatrix}\]
+
+Ainsi, \[A^3-A^2-2A = \begin{pmatrix} 8-2-2 \times 1 & 4 -0 -2\times 2 & 8 -6-2 \times 1 \\ 2 -2-2\times 0 & 3 -1-2 \times(-1) & 4 -0 - 2\times 2 \\ 4-2-2\times 1 &2-2-2\times 0 & 8-2-2\times 1\end{pmatrix}= \begin{pmatrix}4&0&0\\0&4&0\\0&0&4\end{pmatrix}=4I_3.\]
+
+Ainsi, \(A(A^2-A-2I_3)=4I_3\) et donc \(A \times \dfrac{1}{4}(A^2-A-2I_3)=I_3\). Finalement, \(A\) est inversible et
+\[A^{-1}=\dfrac{1}{4}(A^2-A-2I_3)=\begin{pmatrix}-1/4 & -1/2 & 5/4 \\ 1/2 & 0 & -1/2 \\ 1/4 & 1/2 & -1/4\end{pmatrix}.\]\end{solution}
+
+\begin{exercise}[topic=mat03]Déterminer si les matrices suivantes sont inversibles et, le cas échéant, déterminer leur inverse.
+
+\begin{tabularx}{\linewidth}{XXXX}
+$\begin{pmatrix}1 & 2 \\ 3 & 1\end{pmatrix}$ & $\begin{pmatrix}6 & 9 \\ 8 & 12\end{pmatrix}$ & $\begin{pmatrix}i & 2 \\ 1+i & 1\end{pmatrix}$ & $\begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}$\end{tabularx}\end{exercise}
+
+\begin{solution}\(1\times 1 - 2 \times 3 = -5\). \(A\) est donc inversible et \(A^{-1}=-\dfrac{1}{5} \begin{pmatrix} 1&-2\\-3&1\end{pmatrix}\).
+
+\(6\times 12 - 8 \times 9 = 72-72 = 0\). \(B\) n'est donc pas inversible.
+
+\(i \times 1 - 2(1+i) = -2-i \neq 0\). \(C\) est donc inversible et \(C^{-1}=\dfrac{1}{-2-i}\begin{pmatrix}1 & -2 \\ -1-i & i\end{pmatrix}\).
+
+ Mettons \(\dfrac{1}{-2-i}\) sous forme algébrique.
+\[ \dfrac{1}{-2-i}=\dfrac{-2+i}{(-2-i)(-2+i)}=\dfrac{-2+i}{2^2-i^2}=-\dfrac{2}{5}+\dfrac{i}{5}\]
+
+Ainsi, \(C^{-1} = \left(-\dfrac{2}{5}+\dfrac{i}{5}\right)\begin{pmatrix}1 & -2 \\ -1-i & i\end{pmatrix}\).
+
+Puisque \(I_3 \times I_3 = I_3\), \(D\) est inversible et \(D^{-1}=I_3\).\end{solution}
+
+
+\begin{exercise}[topic=mat03]Soit $n$ un entier naturel, $A$ et $B$ deux matrices carrées de dimension $n$ et $C=AB$.
+\begin{enumerate}
+\item On suppose que la première ligne de $A$ est uniquement composée de 0. Calculer $c_{1,1}$.
+\item La matrice $A$ peut-elle être inversible ?
+\item Généraliser : une matrice peut-elle être inversible si une de ses lignes ou colonnes est nulle ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}\(c_{1,1}\) est également au produit matriciel de la première ligne de \(A\) et de la première colonne de \(B\). Or, la première ligne de \(A\) étant nulle, on a \(c_{1,1} = 0\). La matrice \(A\) ne peut donc pas être inversible : si tel était le cas, il existerait une matrice \(B\) telle que \(AB=I_n\). Or, le coefficient \((1,1)\) de \(I_n\) vaut 1 et celui de \(AB\) vaut 0.
+
+De la même manière, si la \(k\)-ième ligne de \(A\) est nulle, alors le coefficient \((k,k)\) du produit \(AB\) est égal à 0. A fortiori, il est différent de 1 et un tel produit ne peut donc mener à la matrice identité.
+
+On peut raisonner de même sur les colonnes : si la colonne \(k\) de la matrice \(B\) est nulle, alors le coefficient \((k,k)\) du produit \(AB\) vaut 0 pour toute matrice \(A\). Il ne vaut donc jamais 1 et ce produit n'est donc jamais égal à la matrice identité.\end{solution}
+
+
+
+\begin{exercise}[topic=mat03]Soit $n$ un entier naturel et $M$ une matrice de dimension $n$. 
+
+On dit que $M$ est nilpotente de rang $p$ si $M^p=0_n$ et $M^{p-1}\neq 0_n$.
+\begin{enumerate}
+\item Soit $B$ une matrice nilpotente de rang $p$
+\begin{enumerate}
+\item Calculer le produit $(I_3-B)(I_3+B+B^2+...+B^{p-1})$.
+\item En déduire que $I_3-B$ est inversible et déterminer son inverse.
+\end{enumerate}
+\item Soit $A = \begin{pmatrix} 0 & 2 & 1 \\ 0 & 0 & -1 \\ 0 & 0 & 0\end{pmatrix}$. Montrer que $A$ est nilpotente puis déterminer l'inverse de $I_3-A$.\end{enumerate} \newpage \end{exercise}
+
+\begin{solution}En développant, on obtient
+\[(I_n-B)(I_n+B+B^2+...+B^{p-1})=I_n-B+B-B^2+B^2+\dots -B^{p-1}+B^{p-1}+B^p.\]
+
+Or, \(B^p=0_n\). Il en vient que 
+\[(I_n-B)(I_n+B+B^2+...+B^{p-1}) = I_n.\]
+Ainsi, \(I_n-B\) est inversible, d'inverse \((I_n+B+B^2+...+B^{p-1}) \). On a par ailleurs
+\[ A^2 = \begin{pmatrix} 0 & 0 & -2 \\ 0 & 0 & 0 \\ 0& 0& 0\end{pmatrix} \quad \text{et}\quad A^3 = \begin{pmatrix} 0&0&0\\0&0&0\\0&0&0\end{pmatrix}.\]
+
+\(A\) est donc nilpotente d'ordre 3. D'après la question précédente, \(I_3-A\) est inversible, d'inverse \(I_3+A+A_2\).
+\[(I_3-A)^{-1}=\begin{pmatrix}1&2&-1\\0&1&-1\\0&0&1\end{pmatrix}.\]\end{solution}
+
+
+
+\begin{exercise}[topic=mat03]Soit $P=\begin{pmatrix}1 & 1 & 1 \\ 0 & 1& 1 \\ 0 & 0 & 1\end{pmatrix}$, $Q=\begin{pmatrix}1 & -1 & 0 \\ 0&1&-1 \\0 & 0 & 1\end{pmatrix}$ et $A=\begin{pmatrix}1 & -2 & -2 \\0 & 3 & 5 \\ 0 & 0 & -2\end{pmatrix}$.
+\begin{enumerate}
+\item Calculer $PQ$.
+\item On note $B=PAQ$. Calculer $B$ puis $B^n$ pour tout entier naturel $n$.
+\item En déduire une expression de $A^n$ pour tout entier naturel $n$.\end{enumerate}\end{exercise}
+
+\begin{solution}On a \(PQ = \begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}\) \(P\) est donc inversible et \(P^{-1}=Q\) et réciproquement. 
+
+Par ailleurs \( B =PAQ = \begin{pmatrix}1&0&0\\0&3&0\\0&0&-2\end{pmatrix}\).
+
+D'après un exercice précédent, pour tout entier naturel \(n\), \(B^n = \begin{pmatrix}1&0&0\\0&3^n&0\\0&0&(-2)^n\end{pmatrix}\).
+
+Or, puisque \(B=PAQ\), on a donc, en multipliant à gauche par \(P^{-1}\) et à droite par \(Q^{-1}\) 
+\[ P^{-1}BQ^{-1} = P^{-1}PAQQ^{-1} = I_3AI_3=A.\]
+
+et donc \(A=QBP\). Ainsi, pour tout entier naturel \(n\), 
+\[A^n = QBP \times QBP \times ... \times QBP.\]
+
+Les produits \(PQ\) se simplifient car ces matrices sont inverses l'une de l'autre. On a donc
+\[A^n = QB^nP = \begin{pmatrix} 1 & 1-3^n & 1-3^n \\ 0 & 3^n & 3n -(-2)^n \\ 0 & 0 & (-2)^n\end{pmatrix}.\]\end{solution}
+
+
+
+\begin{exercise}[topic=mat03]Traduire les systèmes suivants sous forme matricielle.
+
+\begin{tabularx}{\linewidth}{XXX}
+
+$\left\{\begin{array}{rcl} 4x -5y  &= &1 \\ 2x+3y& = &0\end{array}\right.$ & $\left\{\begin{array}{rcl} 2x + 3y - z& = &2 \\ 3x + y -z& =& 5 \\ 5x + 2y +4z &= &1\end{array}\right.$ & $\left\{\begin{array}{rcl} x  - z +3t& = &1 \\ y - z +t &=& 5 \\ 2x + 3y -4z +2t& =& 3\end{array}\right.$\end{tabularx}
+
+\end{exercise}
+
+\begin{solution}
+On a les systèmes suivants.
+
+$\begin{pmatrix}4&-5\\2&3\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}
+1\\0\end{pmatrix}\qquad \begin{pmatrix}
+2&3&-1\\3&1&-1\\5&2&4\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}2\\5\\1\end{pmatrix}\qquad \begin{pmatrix}1&0&-1&3\\0&1&-1&1\\2&3&-5&2\end{pmatrix}\begin{pmatrix}x\\y\\z\\t\end{pmatrix}=\begin{pmatrix}1\\5\\3\end{pmatrix}$
+\end{solution}
+
+\begin{exercise}[topic=mat03]Soit $A=\begin{pmatrix}1 & -1 & 1\\ -1 & 2 & -1 \\ -1 & 2 & -2\end{pmatrix}$ et $B=\begin{pmatrix}2 & 0 & 1 \\ 1&1&0 \\ 0& 1& -1\end{pmatrix}$.
+\begin{enumerate}
+\item Calculer le produit $AB$.
+\item Traduire sous forme matricielle puis résoudre les système suivants.
+
+\begin{tabularx}{\linewidth}{XX}
+
+$\left\{\begin{array}{rcl} x-y+z & =& 2 \\ -x+2y-z&=& 0 \\ -x+2y-2z &=&3\end{array}\right.$ & $\left\{\begin{array}{rcl} 2x+z&=&1 \\ x+y &=& 3 \\ y - z &=& 6\end{array}\right.$ \end{tabularx}
+
+\end{enumerate}\end{exercise}
+
+\begin{solution}
+
+On a $AB=I_3$. $A$ est donc inversible et $B$ est son inverse et réciproquement.
+
+Le premier système se traduit par $\begin{pmatrix}1 & -1 & 1\\ -1 & 2 & -1 \\ -1 & 2 & -2\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}2\\0\\3\end{pmatrix}$, c'est-à-dire $A\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}2\\0\\3\end{pmatrix}$. 
+
+On a donc $\begin{pmatrix}x\\y\\z\end{pmatrix}=A^{-1}\begin{pmatrix}2\\0\\3\end{pmatrix}=B\begin{pmatrix}2\\0\\3\end{pmatrix}$. Ainsi, $\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}2 & 0 & 1 \\ 1&1&0 \\ 0& 1& -1\end{pmatrix}\begin{pmatrix}2\\0\\3\end{pmatrix}=\begin{pmatrix}
+7\\2\\-3\end{pmatrix}$.
+
+
+Le second système se traduit par $\begin{pmatrix}2 & 0 & 1 \\ 1&1&0 \\ 0& 1& -1\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}1\\3\\6\end{pmatrix}$, c'est-à-dire $B\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}1\\3\\6\end{pmatrix}$. 
+
+On a donc $\begin{pmatrix}x\\y\\z\end{pmatrix}=B^{-1}\begin{pmatrix}1\\3\\6\end{pmatrix}=A\begin{pmatrix}1\\3\\6\end{pmatrix}$. Ainsi, $\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}1 & -1 & 1\\ -1 & 2 & -1 \\ -1 & 2 & -2\end{pmatrix}\begin{pmatrix}1\\3\\6\end{pmatrix}=\begin{pmatrix}
+4\\-1\\-7\end{pmatrix}$.\end{solution}
+
+
+
+\begin{exercise}[topic=mat03]Soit $a$, $b$ et $c$ trois réels et $f$ la fonction définie pour tout réel $x$ par $f(x)=ax^2+bx+c$. 
+
+On souhaite déterminer les valeurs des réels $a$ tels que $f(-1)=15$, $f(1)=2$ et $f(2)=6$.
+
+\begin{enumerate}
+\item Justifier que ce problème revient à résoudre le système matriciel $\begin{pmatrix}-1 & 1 & 1 \\ 1 & 1& 1 \\ 4 & 2 & 1\end{pmatrix}\begin{pmatrix}a \\ b \\c \end{pmatrix} = \begin{pmatrix}15\\2\\6\end{pmatrix}$.
+\item On admet que l'inverse de la matrice $\begin{pmatrix}-1 & 1 & 1 \\ 1 & 1& 1 \\ 4 & 2 & 1\end{pmatrix}$ est de la forme $\dfrac{1}{6}\begin{pmatrix}1 & \alpha & 2 \\ \beta & 3 & 0 \\ \gamma & 6 & \delta \end{pmatrix}$. \\Déterminer les valeurs manquantes.
+\item En déduire les valeurs des réels $a$, $b$ et $c$ solutions du problème.
+\end{enumerate}\end{exercise}
+
+\begin{solution}
+
+On a $f(-1)=a-b+c$, $f(1)=a+b+c$ et $f(2)=4a+2b+c$. On cherche donc à résoudre le système $\left\{\begin{array}{rcl}a-b+c&=&15\\a+b+c&=&2\\4a+2b+c&=&6\end{array}\right.$ soit $\begin{pmatrix}1 & -1 & 1 \\ 1 & 1& 1 \\ 4 & 2 & 1\end{pmatrix}\begin{pmatrix}a \\ b \\c \end{pmatrix} = \begin{pmatrix}15\\2\\6\end{pmatrix}$.
+
+On a alors $\begin{pmatrix}-1 & 1 & 1 \\ 1 & 1& 1 \\ 4 & 2 & 1\end{pmatrix} \times \dfrac{1}{6}\begin{pmatrix}1 & \alpha & 2 \\ \beta & 3 & 0 \\ \gamma & 6 & \delta \end{pmatrix} = \dfrac{1}{6}\begin{pmatrix}-\beta+\gamma+1 & \alpha+3 & \delta+2 \\ \beta + \gamma + 1 & \alpha + 9 & \delta + 2 \\ 2\beta + \gamma +4 & 4\alpha + 12 & \delta + 8\end{pmatrix}$.
+
+Cette matrice doit valoir $I_3$. En utilisant la deuxième colonne, on a alors $\alpha = -3$. En utilisant la troisième colonne, on a $\delta= -2$.
+
+Enfin, d'après la première colonne, on a $-\beta  +\gamma +1=6$ (ne pas oublier qu'il y a un facteur $\frac{1}{6}$ devant la matrice) et $\beta + \gamma + 1=0$. En additionnant ces deux équations, on a alors $2\gamma + 2=6$ soit $\gamma =2$. On a alors $\beta + 2+1=0$ soit $\beta = -3$.
+
+Ainsi, $\begin{pmatrix}1 & -1 & 1 \\ 1 & 1& 1 \\ 4 & 2 & 1\end{pmatrix}\begin{pmatrix}a \\ b \\c \end{pmatrix} = \begin{pmatrix}15\\2\\6\end{pmatrix}$ si et seulement si $\begin{pmatrix}a\\b\\c\end{pmatrix} = \dfrac{1}{6}\begin{pmatrix}1 & -3 & 2 \\ -3 & 3 & 0 \\ 2 & 6 & -2 \end{pmatrix}\begin{pmatrix}15\\2\\6\end{pmatrix}=\begin{pmatrix}7/2 \\ -13/2 \\ 5\end{pmatrix}$.
+
+\end{solution}
+
+\begin{exercise}[topic=mat03]
+On considère la matrice $M=\begin{pmatrix}1&1&1\\1&-1&1\\4&2&1\end{pmatrix}$.
+
+\begin{enumerate}
+\item Vérifier que $M^3=M^2+8M+6I_3$.
+\item En déduire que $M$ est inversible et déterminer son inverse.
+\item On cherche à déterminer trois entiers tels que la parabole d'équation $y=ax^2+bx+c$ passe par les points $A(1;1)$, $B(-1;-1)$ et $C(2;5)$.
+\begin{enumerate}
+\item Traduire matriciellement le problème.
+\item Déterminer les valeurs des entiers $a$, $b$ et $c$.
+\end{enumerate}
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+On a $M^2=\begin{pmatrix}6&2&3\\4&4&1\\10&4&7\end{pmatrix}$ et $M^3=\begin{pmatrix}20&10&11\\12&2&9\\42&20&21\end{pmatrix}$.
+
+Ainsi, $M^2+8M+6I_3=\begin{pmatrix}6&2&3\\4&4&1\\10&4&7\end{pmatrix}+\begin{pmatrix}8&8&8\\8&-8&8\\32&16&8\end{pmatrix}+\begin{pmatrix}6&0&0\\0&6&0\\0&0&6\end{pmatrix}=\begin{pmatrix}20&10&11\\12&2&9\\42&20&21\end{pmatrix}=M^3$.
+
+Ainsi, $M^3=M^2+8M+6I_3$ d'où $M^3-M^2-8M=6I_3$ et donc $M\times \dfrac{1}{6}(M^2-M-8I_3)=I_3$.
+
+$M$ est donc inversible, d'inverse $\dfrac{1}{6}\begin{pmatrix}-3&1&2\\ 3&-3&0\\ 6&2&-2\end{pmatrix}$.
+
+Le problème revient à résoudre le système $\left\{\begin{array}{l}1=a+b+c \\ -1 = a-b+c \\ 5 = 4a+2b+c\end{array}\right.$ c'est-à-dire $M\begin{pmatrix}a\\b\\c\end{pmatrix}=\begin{pmatrix}1\\-1\\5\end{pmatrix}$.
+
+On a donc $\begin{pmatrix}a\\b\\c\end{pmatrix} = M^{-1}\begin{pmatrix}1\\-1\\5\end{pmatrix} = \dfrac{1}{6}\begin{pmatrix}-3&1&2\\ 3&-3&0\\ 6&2&-2\end{pmatrix}\begin{pmatrix}1\\-1\\5\end{pmatrix}=\begin{pmatrix}1\\1\\-1\end{pmatrix}$.
+\end{solution}
+
+\printcollection{mat03}
+
+\chapter{Corrigés}
+
+\section*{Notion de matrices}
+
+\printsolutions[collection={mat01}, headings={false} ]
+
+\section*{Opérations sur les matrices}
+
+\printsolutions[collection={mat02}, headings={false} ]
+
+\section*{Matrices inversibles}
+
+\printsolutions[collection={mat03}, headings={false} ]
+
+
+\end{document}

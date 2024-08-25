@@ -1,0 +1,888 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+\DeclareExerciseCollection[topic=cpx01]{cpx01}
+\DeclareExerciseCollection[topic=cpx02]{cpx02}
+\DeclareExerciseCollection[topic=cpx03]{cpx03}
+\DeclareExerciseCollection[topic=cpx04]{cpx04}
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+\chapter{Nombres complexes : forme algébrique}
+
+
+\section{Ensemble $\mathbb{C}$ des nombres complexes}
+
+\begin{definition}Il existe un ensemble de nombres appelé \textbf{nombres complexes} et noté $\mathbb{C}$ tel que
+\begin{itemize}
+\item L'ensemble des réels $\mathbb{R}$ est inclus dans $\mathbb{C}$.
+\item Il existe un nombre complexe, noté $i$, et tel que $i^2=-1$.
+\item L'addition et la multiplication des réels se prolonge "naturellement" dans l'ensemble des complexes.
+\item Pour tout nombre complexe $z$, il existe un unique couple de réels $(a,b)$ tel que $z=a+ib$.
+\begin{itemize}
+\item $a$ est appelée \textbf{partie réelle} de $z$, notée $Re(z)$.
+\item $b$ est appelée \textbf{partie imaginaire} de $z$, notée $Im(z)$.
+\item L'écriture $z=a+ib$ est la \textbf{forme algébrique} de $z$.
+\end{itemize}
+\end{itemize}\end{definition}
+
+\begin{example}$2+3i$, $7i$, $\sqrt{5}$, $\frac{1}{2}-\frac{4}{5}i$ sont des nombres complexes.\end{example}
+
+\begin{definition}Soit $z$ un nombre complexe.
+\begin{itemize}
+\item $z$ est un nombre réel si et seulement si sa partie imaginaire est nulle.
+\item Si $Re(z)=0$, on dit que $z$ est un nombre imaginaire pur. On note $z \in i\mathbb{R}$.
+\end{itemize}\end{definition}
+
+\begin{example}$2i$ est un nombre imaginaire pur.\end{example}
+
+L'addition et la multiplication des nombres réels se prolongent naturellement pour les nombres complexes. Le nombre $i$ joue le rôle de facteur. Il ne faut toutefois pas oublier que $i^2=-1$, notamment pour la multiplication. Ainsi, on peut développer, factoriser, et l'on retrouve évidemment les identités remarquables.
+
+\begin{example}Soit $z=2+5i$ et $z'=1-3i$. Alors $z +z'=2+5i+1-3i=3+2i$ et
+\[zz' = (2+5i)(1-3i)=2 \times 1 + 5i \times 1 + 2 \times (-3i) + 5i \times (-3i)=2+5i-6i -15i^2=17-i.\]
+Enfin, $z^2=(2+5i)^2=4^2+2\times 2 \times 5i + (5i)^2 = 16+20i-25=-9+20i$.\end{example}
+
+\begin{proposition}Soit $z$ un nombre complexe. On a $z=0$ si et seulement si $Re(z)=0$ et $Im(z)=0$.\end{proposition}
+
+\begin{demonstration}
+D'une part, si $Re(z)=0$ et $Im(z)=0$, alors $z = Re(z) + i \times Im(z) = 0 + i0 = 0$.
+
+D'autre part, si $z=0$, notons $a$ et $b$ les parties réelles et imaginaires de $z$. Ainsi, $a+ib=0$. 
+
+Nous allons raisonner par l'absurde pour montrer que nécessairement, $a$ et $b$ valent tous deux 0. Pour cela, nous allons supposer le contraire et aboutir à une absurdité, ce qui nous permettra de conclure que l'hypothèse faite au départ était fausse. Supposons donc que soit $a$, soit $b$ ne soit pas nul.
+\begin{itemize}
+\item Si $b=0$, puisque $a+ib=0$, on obtient également que $a=0$, ce qui est contraire à ce que nous avons supposé. Ainsi, on a forcément $b \neq 0$.
+\item Si $b\neq 0$, alors, puisque $a+ib=0$, on a donc $i=-\dfrac{a}{b}$. $i$ serait donc réel. C'est absurde.\end{itemize}
+
+Ainsi, $a=b=0$.\end{demonstration}
+
+\begin{proposition}Soit $z$ et $z'$ deux complexes. Alors $z = z'$ si et seulement si $Re(z)=Re(z')$  et $Im(z)=Im(z')$.\end{proposition}
+
+\begin{demonstration}Notons $z=a+ib$ et $z'=a'+ib'$. On a $z=z'$ si et seulement si $a+ib=a'+ib'$ si et seulement si $a-a'+i(b-b')=0$. D'après le premier point, c'est équivalent à dire que $a-a'=0$ et $b-b'=0$. 
+
+Finalement, $z=z'$ si et seulement si $a=a'$ et $b=b'$.\end{demonstration}
+
+Cette propriété nous permet notamment de résoudre des équations dans $\mathbb{C}$.
+
+\begin{example}Résoudre l'équation $2z+i-3=5i+4z-7$, d'inconnue $z \in \mathbb{C}$.
+
+Soit $z \in \mathbb{C}$. On a
+\[2z+i-3=5i+4z-7  \Leftrightarrow  2z-4z = 5i - 7 +3 - i  \Leftrightarrow -2z = -4 +4i  \Leftrightarrow  z = 2 - 2i\]
+
+Ainsi, $S=\{2-2i\}$.
+
+\end{example}
+
+
+\section{Conjugué d'un nombre complexe}
+
+\subsection{Définition et propriétés}
+
+\begin{definition}Soit $z = a+ib$ un nombre complexe.
+
+Le \textbf{conjugué} de $z$ est le nombre complexe noté $\overline{z}$ et qui vaut $\overline{z}=a-ib$.\end{definition}
+
+\begin{example}Le conjuqué de $7+3i$ est $7-3i$. Le conjugué de $2i$ est $-2i$.\end{example}
+
+
+\begin{proposition}Soit $z \in \mathbb{C}$.
+\begin{itemize}
+\item $z$ est réel si et seulement si $\overline{z}=z$ ;
+\item $z$ est imaginaire pur si et seulement si $\overline{z}=-z$.
+\end{itemize}\end{proposition}
+
+\begin{demonstration}[Premier point]Soit $z=a+ib$ avec $a$ et $b$ des réels. On a donc $\overline{z}=a-ib$.
+\begin{itemize}
+\item Si $z=\overline{z}$, alors $a+ib=a-ib$ ce qui implique que $2ib=0$ et donc $b=0$. $z$ est donc réel.
+\item Si $z$ est réel, alors $b=0$. Ainsi, $z=a$ et $\overline{z}=a$. On a bien $z=\overline{z}$.
+\end{itemize}\end{demonstration}
+
+La démonstration du deuxième point fait l'objet d'un exercice.
+
+\begin{proposition}Soit $z$ et $z'$ deux nombres complexes. On a les propriétés suivantes
+\[\overline{\overline{z}} = z \qquad \qquad \overline{z+z'}=\overline{z}+\overline{z'} \qquad \qquad \overline{zz'}=\overline{z}\times \overline{z'}\]
+\end{proposition}
+
+\begin{demonstration}Notons $z=a+ib$ et $z'=a'+ib'$.
+
+On a $\overline{\overline{z}} = \overline{a-ib}=a-(-ib)=a+ib=z$.
+
+Par ailleurs, $\overline{z+z'} = \overline{a+ib+a'+ib'}=\overline{a+a'+i(b+b')}=a+a'-i(b+b')=a-ib+a'-ib'=z-z'$.
+
+Pour montrer la propriété sur le produit, on raisonne en deux temps.
+\begin{itemize}
+\item D'une part, \[\overline{z} \times \overline{z'}=(a-ib)(a'-ib')=aa'-iab'-ia'b+i^2bb'=aa'-bb'-i(ab'+a'b).\]
+ \item D'autre part, 
+ \[zz'=(a+ib)(a'+ib')=aa'+iab'+ia'b+i^2bb'=aa'-bb'+i(ab'+a'b).\]
+\end{itemize}
+ On a bien $\overline{zz'}=\overline{z}\times \overline{z'}$.\end{demonstration}
+
+
+
+\begin{proposition}Soit $z$ un nombre complexe et $n$ un entier naturel non nul. Alors $\overline{z^n}=\overline{z}^n$.\end{proposition}
+
+\begin{demonstration}Soit $z$ un nombre complexe. Nous allons démontrer cette propriété par récurrence.
+
+Pour tout entier naturel non nul $n$, on considère la proposition $\mathcal{P}(n)$ : « $\overline{z^n}=\overline{z}^n$ ».
+
+\begin{itemize}
+\item \textbf{Initialisation} : Pour $n=1$, on a $\overline{z^1}=\overline{z}=\overline{z}^1$. $\mathcal{P}(1)$ est vraie.
+\item \textbf{Hérédité} : Soit $n$ un entier naturel non nul. Supposons que $\mathcal{P}(n)$ est vraie. On a donc $\overline{z^n}=\overline{z}^n$.
+
+Or, $\overline{z^{n+1}}=\overline{z^n  \times z}$. La propriété précédente nous assure donc que $\overline{z^{n+1}}=\overline{z^n} \times \overline{z}$. 
+
+Or, par hypothèse de récurrence, $\overline{z^n}=\overline{z}^n$.
+
+Ainsi, $\overline{z^{n+1}}=\overline{z}^n \times \overline{z}=\overline{z}^{n+1}$. $\mathcal{P}(n+1)$ est donc vraie.
+\item \textbf{Conclusion} : $\mathcal{P}(1)$ est vraie et $\mathcal{P}$ est héréditaire. Par récurrence, $\mathcal{P}(n)$ est vraie pour tout entier naturel non nul $n$.
+\end{itemize}\end{demonstration}
+
+\subsection{Résolution d'équation en $z$ et $\overline{z}$}
+
+Lorsque des équations font intervenir $z$ et $\overline{z}$, il est préférable d'écrire ces nombres sous forme algébrique, puis d'identifier les parties réelles et imaginaires de chaque membre de l'équation.
+
+\begin{example}On souhaite résoudre l'équation $(E) \,: \,2z + 3i -5 = 3i\overline{z}-2i+5$, d'inconnue $z \in \mathbb{C}$.
+
+On pose alors $z=a+ib$. On a donc $\overline{z}=a-ib$. Ainsi,
+
+\begin{eqnarray*}
+2z + 3i -5 = 3\overline{z}-2i+7 & \Leftrightarrow & 2(a+ib)+3i-5=3i(a-ib)-2i+5 \\
+& \Leftrightarrow & 2a+2ib+3i-5=3ia+3b-2i+5=0 \\
+& \Leftrightarrow & 2a-3b-5-5 +i(2b+3-3a+2)=0 \\
+& \Leftrightarrow & 2a -3b-10 + i (2b-3a+5)=0
+\end{eqnarray*}
+Or, un complexe est nul si et seulement si sa partie réelle et sa partie imaginaires sont nulles. On obtient donc le système suivant.
+\[(E) \quad \Leftrightarrow \quad \left\{\begin{array}{rcl}
+2a -3b-10 &=& 0\\
+-3a+2b+5 &=& 0
+\end{array}\right.\]
+
+On peut alors résoudre ce système avec la méthode de son choix. Par exemple, en procédant par combinaison. On multiplie la première ligne par 3 et la deuxième par 2.
+\[(E) \quad \Leftrightarrow \quad\left\{\begin{array}{rcl}
+6a -9b-30 &=& 0\\
+-6a+4b+10 &=& 0
+\end{array}\right.\]
+
+On remplace $L_2$ par $L_2+L_1$
+\[(E) \quad \Leftrightarrow \quad\left\{\begin{array}{rcl}
+6a -9b-30 &=& 0\\
+-5b-20 &=& 0
+\end{array}\right.\]
+
+On obtient donc
+\[(E) \quad \Leftrightarrow \quad\left\{\begin{array}{rcl}
+6a -9\times (-4)-30 &=& 0\\
+b &=& -4
+\end{array}\right. \Leftrightarrow \quad\left\{\begin{array}{rcl}
+6a +6 &=& 0\\
+b &=& -4
+\end{array}\right.  \Leftrightarrow \quad\left\{\begin{array}{rcl}
+a &=& -1\\
+b &=& -4
+\end{array}\right.\]
+On a donc $S=\{ -1-4i\}$.
+\end{example}
+
+\section{Division dans $\mathbb{C}$}
+
+\begin{definition}Soit $z$ un nombre complexe non nul. Il existe un unique complexe $z'$ tel que $zz'=1$. 
+
+$z'$ est appelé inverse de $z$ et est noté $\dfrac{1}{z}$.\end{definition}
+
+\begin{example} On a $(1+2i)\left(\dfrac{1}{5}-\dfrac{2}{5}i\right)=\dfrac{1}{5}+\dfrac{2}{5}i-\dfrac{2}{5}i+\dfrac{4}{5}=1$. On a donc $\dfrac{1}{5}-\dfrac{2}{5}i=\dfrac{1}{1+2i}$.\end{example}
+
+
+\begin{definition}Soit $z$ un complexe et $\overline{z}$ un complexe non nul. 
+
+On définit le quotient de $z$ par $z'$ par  $\dfrac{z}{z'}=z \times \dfrac{1}{z'}$.\end{definition}
+
+\begin{example} Calculons $\dfrac{3+i}{1+2i}$. On a alors $\dfrac{3+i}{1+2i} = (3+i) \times \dfrac{1}{1+2i}$.
+
+Or, d'après l'exemple précédent, $\dfrac{1}{1+2i}=\dfrac{1}{5}-\dfrac{2}{5}i$. Ainsi,
+\[ \dfrac{3+i}{1+2i} = (3+i)\left(\dfrac{1}{5}-\dfrac{2}{5}i\right) = \dfrac{3}{5}-\dfrac{6}{5}i+\dfrac{i}{5}-\dfrac{2}{5}i^2=1-i.\]\end{example}
+
+
+Dans un précédent exercice sur les conjugués, nous avons pu exprimer le produit $z\overline{z}$ et constater que ce produit était en fait un réel.
+
+Pour mettre sous forme algébrique un quotient, on multiplie le numérateur et le dénominateur par le conjugué du dénominateur. Ainsi, le dénominateur du quotient obtenu sera un nombre réel.
+
+\begin{example}On souhaite exprimer $\dfrac{4+3i}{3-i}$ sous forme algébrique. 
+
+Le dénominateur est $3-i$, dont le conjugué est $3+i$. 
+
+On multiplie donc numérateur et dénominateur par $3+i$.
+\[ \dfrac{4+3i}{3-i}= \dfrac{(4+3i)(3+i)}{(3-i)(3+i)}=\dfrac{12+4i+9i+3i^2}{3^2-i^2}=\dfrac{12+13i-3}{9-(-1)}=\dfrac{9}{10}+\dfrac{13}{10}i.\]\vspace{-0.5cm}\end{example}
+
+\begin{example}On souhaite résoudre l'équation $2z+3-i=(1+i)z-2+i$. Soit donc $z \in \mathbb{C}$
+\begin{eqnarray*}
+2z+3-i=(1+i)z-2+i & \Leftrightarrow & 2z-(1+i)z=-2+i-3+i \\
+& \Leftrightarrow & (1-i)z = -5+2i \\
+& \Leftrightarrow & z = \dfrac{-5+2i}{1-i}
+\end{eqnarray*}
+
+Il reste alors à écrire $\dfrac{-5+2i}{1-i}$ sous forme algébrique.
+\[\dfrac{-5+2i}{1-i}=\dfrac{(-5+2i)(1+i)}{(1-i)(1+i)}=\dfrac{-5-5i+2i-2}{1^2-i^2}=\dfrac{-7-3i}{2}=-\dfrac{7}{2}-\dfrac{3}{2}i\]
+L'unique solution de l'équation $2z+3-i=(1+i)z-2+i$ est donc $-\dfrac{7}{2}-\dfrac{3}{2}i$.\end{example}
+
+\begin{proposition}Soit $z$ un complexe et $z'$ un complexe non nul. Alors
+\[ \overline{\left(\dfrac{1}{z'}\right)} = \dfrac{1}{\overline{z'}} \quad \text{et} \overline{\left(\dfrac{z}{z'}\right)} = \dfrac{\overline{z}}{\overline{z'}}.\]\end{proposition}
+
+\begin{demonstration}Soit $z$ un complexe non nul. 
+
+D'après la propriété sur le produit des conjugués, on a $\overline{z} \times \overline{\dfrac{1}{z}}=\overline{z \times \dfrac{1}{z}} = \overline{1}=1$ et donc
+$\overline{\left(\dfrac{1}{z}\right)} = \dfrac{1}{\overline{z}}$.
+
+Par ailleurs, $\overline{\left(\dfrac{z}{z'}\right)} = \overline{z \times \dfrac{1}{z'}} = \overline{z} \times \overline{\left(\dfrac{1}{z'}\right)}$
+d'après la proposition sur le conjugué du produit. 
+
+Mais alors, d'après la propriété précédemment démontrée, $\overline{\left(\dfrac{z}{z'}\right)} = \overline{z} \times \dfrac{1}{\overline{z'}}= \dfrac{\overline{z}}{\overline{z'}}$.
+\end{demonstration}
+
+\section{Équations du second degré à coefficients réels}
+
+\begin{proposition}Soit $a$ un réel strictement positif.
+
+Les solutions de l'équation $z^2=-a$ d'inconnue complexe $z$ sont les réels $i\sqrt{a}$ et $-i\sqrt{a}$.\end{proposition}
+
+\begin{demonstration}On a en effet $z^2+a=z^2-i^2\times a = z^2 - (i\sqrt{a})^2=(z-i\sqrt{a})(z+i\sqrt{a})$.
+
+Ainsi, $z^2+a=0$ si et seulement si $z-i\sqrt{a}=0$ ou $z+i\sqrt{a}=0$, d'où le résultat.\end{demonstration}
+
+
+\begin{example}Les solutions de l'équation $z^2=-4$ sont $2i$ et $-2i$.\end{example}
+
+L'exemple que nous venons de voir est un peu simpliste mais permet de vous rafraîchir la mémoire. Passons donc aux choses sérieuses.
+
+\newpage
+
+\begin{theorem}Soit $a$, $b$ et $c$ des \textbf{réels}. Soit $P : z \mapsto az^2+bz+c$.
+
+Notons $\Delta = b^2-4ac$ le discriminant du polynôme $P$.
+\begin{itemize}
+\item Si $\Delta >0$, alors $P$ admet deux racines réelles distinctes : $\dfrac{-b-\sqrt{\Delta}}{2a}$ et $\dfrac{-b+\sqrt{\Delta}}{2a}$ ;
+\item Si $\Delta = 0$, alors $P$ admet une racine réelle double : $-\dfrac{b}{2a}$ ;
+\item Si $\Delta <0$, alors $P$ admet deux racines complexes conjuguées : $\dfrac{-b-i\sqrt{-\Delta}}{2a}$ et $\dfrac{-b+i\sqrt{-\Delta}}{2a}$.
+\end{itemize}
+\end{theorem}
+
+\begin{demonstration}
+Écrivons $P$ sous forme canonique. Pour tout complexe $z$,
+\[az^2+bz+c = a\left(z+\dfrac{b}{2a}\right)^2- \dfrac{\Delta}{4a} = a\left(\left(z+\dfrac{b}{2a}\right)^2- \dfrac{\Delta}{4a^2}\right).\]
+
+\begin{itemize}
+\item Si $\Delta > 0$, alors, pour tout complexe $z$, 
+\[az^2+bz+c = a\left(\left(z+\dfrac{b}{2a}\right)^2- \left(\dfrac{\sqrt{\Delta}}{2a}\right)^2\right) = a\left(z+\dfrac{b-\sqrt{\Delta}}{2a}\right)\left(z+\dfrac{b+\sqrt{\Delta}}{2a}\right).\]
+Ainsi, $P$ possède deux racines réelles qui sont $\dfrac{-b-\sqrt{\Delta}}{2a}$ et $\dfrac{-b+\sqrt{\Delta}}{2a}$.
+\item Si $\Delta =0$, alors pour tout complexe $z$, $az^2+bz+c = a\left(z+\dfrac{b}{2a}\right)^2$. L'unique racine de $P$ est $-\dfrac{b}{2a}$.
+\item Si $\Delta <0$, alors $-\Delta >0$. Ainsi, pour tout complexe $z$,
+\[az^2+bz+c = a\left(\left(z+\dfrac{b}{2a}\right)^2+ \left(- \dfrac{\Delta}{4a^2}\right)\right)= a\left(\left(z+\dfrac{b}{2a}\right)^2- i^2 \times \left(\sqrt{\dfrac{-\Delta}{4a^2}}\right)^2\right).\]
+
+On se retrouve dans le même cas que dans la propriété précédente, et on procède donc de la même manière. Pour tout complexe $z$,
+\[az^2+bz+c=a\left(\left(z+\dfrac{b}{2a}\right)^2-   \left(\dfrac{i\sqrt{-\Delta}}{2a}\right)^2\right) = a\left(z+\dfrac{b-i\sqrt{-\Delta}}{2a}\right)\left(z+\dfrac{b+i\sqrt{-\Delta}}{2a}\right).\]
+Ainsi, $P$ admet deux racines complexes conjuguées : $\dfrac{-b-i\sqrt{-\Delta}}{2a}$ et $\dfrac{-b+i\sqrt{-\Delta}}{2a}$.
+\end{itemize}
+\end{demonstration}
+
+\begin{example}
+On cherche à résoudre l'équation $2z^2+3z+5=0$. 
+
+Le discriminant du polynôme $2z^2+3z+5$ vaut $3^2-4\times 2  \times 5=-31<0$.
+
+L'équation $2z^2+3z+5=0$ possède donc deux solutions : $z_1=\dfrac{-3+i\sqrt{31}}{4}$ et $z_2=\dfrac{-3-i\sqrt{31}}{4}$. 
+\end{example}
+
+\textbf{Remarque} : La démonstration met en évidence la factorisation de tout polynôme de degré 2 à coefficients réels, peu importe la nature de leurs racines (réelles ou imaginaires). 
+
+Si $z_1$ et $z_2$ sont les deux racines du polynôme $az^2+bz+c$, alors pour tout complexe $z$, on a \[az^2+bz+c=a(z-z_1)(z-z_2).\]
+
+
+
+\chapter{Exercices : Nombres complexes (1)}
+ 
+\section*{Ensemble $\mathbb{C}$ des nombres complexes}
+
+
+
+\begin{exercise}[topic=cpx01] Exprimer les nombres complexes suivants sous forme algébrique.
+
+\begin{tabularx}{\linewidth}{XXX}
+$1+2i-4i+7-3i^2$ & $(1+2i)(5-4i)$ & $\left(\dfrac{1}{3}+\dfrac{2}{5}i\right)\left(\dfrac{5}{2}+\dfrac{1}{4}i\right)$\\
+
+$(5+3i)(10-6i)$ & $(2i)^{10}$ & $\left(\dfrac{\sqrt{2}}{2}+i \dfrac{\sqrt{2}}{2}\right)^8$
+
+\end{tabularx}
+\vspace{-1cm}\end{exercise}
+
+\begin{solution}
+On a 
+\begin{itemize}
+\item \(1+2i-4i+7-3i^2=8-2i+3=11-2i\).
+\item \((1+2i)(5-4i)=1\times 5 + 1 \times (-4i) + 2i \times 5 +2i \times (-4i) = 5-4i+10i+8=13+6i\).
+\item \(\left(\dfrac{1}{3}+\dfrac{2}{5}i\right)\left(\dfrac{5}{2}+\dfrac{1}{4}i\right)=\dfrac{1}{3} \times \dfrac{5}{2} + \dfrac{1}{3} \times \dfrac{1}{4}i+\dfrac{2}{5}i \times \dfrac{5}{2} +\dfrac{2}{5}i \times \dfrac{1}{4}i = \dfrac{5}{6}+\dfrac{1}{12}i+i-\dfrac{1}{10}=\dfrac{11}{15}+\dfrac{13}{12}i\).
+\item \((5+3i)(10-6i)=5\times 10 + 5 \times(-6i)+3i \times 10 +3i \times (-6i) = 50 -30i+30i+18=68\).
+\item \((2i)^{10}=2^{10} \times i^{10}=1024 \times (i^2)^5=1024 \times (-1)^5=-1024\).
+\item Calculons d'abord \(\left(\dfrac{\sqrt{2}}{2}+i \dfrac{\sqrt{2}}{2}\right)^2\) en utilisant une identité remarquable.
+
+On a \(\left(\dfrac{\sqrt{2}}{2}+i \dfrac{\sqrt{2}}{2}\right)^2 = \left(\dfrac{\sqrt{2}}{2}\right)^2 + 2 \times \dfrac{\sqrt{2}}{2} \times \dfrac{\sqrt{2}}{2}i + \left(\dfrac{\sqrt{2}}{2}i\right)^2=\dfrac{2}{4}+i-\dfrac{2}{4}=i \).
+
+Ainsi, \(\left(\dfrac{\sqrt{2}}{2}+i \dfrac{\sqrt{2}}{2}\right)^8 = \left(\left(\dfrac{\sqrt{2}}{2}+i \dfrac{\sqrt{2}}{2}\right)^2\right)^4=i^4=i\times i \times i \times i = (-1) \times (-1) = 1\)
+\end{itemize}
+\end{solution}
+
+\begin{exercise}[topic=cpx01]Résoudre les équations suivantes, d'inconnue $z\in\mathbb{C}$.
+
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{XXX}
+$z+2i-4=5i+3$ & $\dfrac{z-4i}{3}=\dfrac{1}{2}+5i$ & $(3+2i)z+i-5=1+5i$ \\
+$(z-3+i)(2z-5i)=0$ & $\dfrac{z+1+i}{1-z}=0$ & $\dfrac{z-3i+1}{z-3}=\dfrac{1}{4}$
+
+\end{tabularx}
+\vspace{-1cm}\end{exercise}
+
+\begin{solution}
+\begin{itemize}
+\item \(z+2i-4=5i+3 \Leftrightarrow z = 3+4+5i-2i \Leftrightarrow z = 7+3i\).
+\item \(\dfrac{z-4i}{3}=\dfrac{1}{2}+5i \Leftrightarrow z = 3 \times \left(\dfrac{1}{2}+5i\right)+4i \Leftrightarrow z = \dfrac{3}{2}+19i\).
+\item \((3+2i)z+i-5=1+5i \Leftrightarrow (3+2i)z = 1+5+5i-i \Leftrightarrow (3+2i)z = 6+4i \Leftrightarrow (3+2i)z = 2\times (3+2i) \Leftrightarrow z = 2\).
+\item \((z-3+i)(2z-5i)=0 \Leftrightarrow z-3+i=0\) ou \(2z-5i=0 \Leftrightarrow z = -3-i\) ou \(z= \dfrac{5}{2}i\).
+\item Soit \(z\in\mathbb{C}\setminus \{1\}\),
+\(\dfrac{z+1+i}{1-z}=0 \Leftrightarrow z+1+i = 0 \Leftrightarrow z=-1-i\).
+\item Soit \(z \in \mathbb{C}\setminus \{3\}\).
+
+\(\dfrac{z-3i+1}{z-3}=\dfrac{1}{4} \Leftrightarrow 4(z-3i+1)=z-3 \Leftrightarrow 4z-12i+4=z-3 \Leftrightarrow 3z = -7+12i \Leftrightarrow z = -\dfrac{7}{3}+4i\).
+\end{itemize}
+\end{solution}
+
+\begin{exercise}[topic=cpx01]Résoudre les système suivants, d'inconnues complexes $z_1$ et $z_2$.
+
+
+\begin{tabularx}{\linewidth}{XX}$\left\{\begin{array}{rcl}
+2z_1+3z_2 &=& 5-3i\\
+z_1-3z_2&=&4+6i\end{array}\right.$ & $\left\{\begin{array}{rcl}
+3z_1+4z_2 &=& 1+2i\\
+z_1-2z_2&=&2+i\end{array}\right.$ \end{tabularx}
+\vspace{-0.5cm}\end{exercise}
+
+\begin{solution}\hspace{0pt}
+
+\textbf{Premier système}
+
+\(\left\{\begin{array}{rcl}
+2z_1+3z_2 &=& 5-3i\\
+z_1-3z_2&=&4+6i\end{array}\right.\)\(\Leftrightarrow \left\{\begin{array}{rcl}
+2z_1+3z_2 &=& 5-3i\\
+3z_1 &=&9+3i \end{array}\right. \Leftrightarrow \left\{\begin{array}{rcl}
+2z_1+3z_2 &=& 5-3i\\
+z_1 &=&3+i \end{array}\right.\Leftrightarrow \left\{\begin{array}{rcl}
+2(3+i)+3z_2 &=& 5-3i\\
+z_1 &=&3+i \end{array}\right.\)
+
+\(\Leftrightarrow \left\{\begin{array}{rcl}
+6+2i+3z_2 &=& 5-3i\\
+z_1 &=&3+i \end{array}\right.\Leftrightarrow \left\{\begin{array}{rcl}
+3z_2 &=& -1-5i\\
+z_1 &=&3+i \end{array}\right.\Leftrightarrow \left\{\begin{array}{rcl}
+z_1 &=& -3+i\\
+z_2 &=& -\dfrac{1}{3}-\dfrac{5}{3}i \end{array}\right.\)
+
+\newpage 
+\textbf{Second système}
+
+\(\left\{\begin{array}{rcl}
+3z_1+4z_2 &=& 1+2i\\
+z_1-2z_2&=&2+i\end{array}\right.\)\(\Leftrightarrow \left\{\begin{array}{rcl}
+3z_1+4z_2 &=& 1+2i\\
+3z_1-6z_2 &=&6+3i\end{array}\right.\Leftrightarrow \left\{\begin{array}{rcl}
+3z_1+4z_2 &=& 1+2i\\
+10z_2 &=&-5-i  \end{array}\right.\Leftrightarrow \left\{\begin{array}{rcl}
+3z_1+4z_2 &=& 1+2i\\
+z_2 &=&-\dfrac{1}{2}-\dfrac{i}{10} \end{array}\right.\)
+
+\(\Leftrightarrow \left\{\begin{array}{rcl}
+3z_1+4\left(-\dfrac{1}{2}-\dfrac{i}{10}\right) &=& 1+2i\\
+z_2 &=&-\dfrac{1}{2}-\dfrac{i}{10} \end{array}\right.\Leftrightarrow \left\{\begin{array}{rcl}
+3z_1-2-\dfrac{2i}{5} &=& 1+2i\\
+z_2 &=&-\dfrac{1}{2}-\dfrac{i}{10} \end{array}\right.\Leftrightarrow \left\{\begin{array}{rcl}
+3z_1 &=& 3+\dfrac{12i}{5}\\
+z_2 &=&-\dfrac{1}{2}-\dfrac{i}{10} \end{array}\right.\)
+
+\(\Leftrightarrow \left\{\begin{array}{rcl}
+z_1 &=& 1+\dfrac{4i}{5}\\
+z_2 &=&-\dfrac{1}{2}-\dfrac{i}{10} \end{array}\right.\)
+
+\end{solution}
+
+
+\begin{exercise}[topic=cpx01]Soit $x$ un réel et $z=2x+1+i(x^2+5x-4)$
+\begin{enumerate}
+\item Déterminer la valeurs de $x$ pour laquelle $z$ est un imaginaire pur. Que vaut alors $z$ ?
+\item Existe-t-il des valeurs de $x$ pour lesquelles $z$ est réel ? Que vaut alors $z$ ?
+
+\end{enumerate}\end{exercise}
+
+\begin{solution}
+\(z\) est imaginaire pur si sa partie réelle est nulle, c'est-à-dire \(2x+1=0\) et donc \(x=-\dfrac{1}{2}\). Dans ce cas,
+\[z=\left( \left(-\dfrac{1}{2}\right)^2+5\times \left(-\dfrac{1}{2}\right)-4\right)i=\left(\dfrac{1}{4}-\dfrac{5}{2}-4\right)i=-\dfrac{25i}{4}.\]
+
+\(z\) est réel si sa partie imaginaire est nulle, c'est-à-dire \(x^2+5x-4=0\). Les solutions sont \(-\dfrac{5}{2}-\dfrac{\sqrt{41}}{2}\) et \(-\dfrac{5}{2}+\dfrac{\sqrt{41}}{2}\). Dans le premier cas, on a alors \(z=-4-\sqrt{41}\). Dans le second cas, on a \(z=-4+\sqrt{41}\).
+
+\end{solution}
+
+
+\begin{exercise}[topic=cpx01]Soit $z$ et $z'$ deux complexes tels que $Re(zz')=Re(z) \times Re(z')$. Montrer que $z$ ou $z'$ est réel.\end{exercise}
+
+\begin{solution}Notons $z=a+ib$ et $z'=a'+ib'$. On a alors $Re(z) \times Re(z')=aa'$.
+
+Par ailleurs, $zz'=aa'-bb'+i(ab'+a'b)$ et donc $Re(zz')=aa'-bb'$. Ainsi, $Re(zz')=Re(z)\times Re(z')$ si et seulement si $aa'-bb'=aa'$ soit $bb'=0$ et donc $b=0$ ou $b'=0$. Autrement dit, $z$ ou $z'$ est réel.\end{solution}
+
+\begin{exercise}[topic=cpx01]On considère la fonction $f$ définie pour tout $z$ dans $\mathbb{C}$ par $f(z)=z^2+2z+9$.
+\begin{enumerate}
+\item Soit $z=a+ib$ un complexe. Exprimer les parties réelles et imaginaires de $f(z)$ en fonction de $a$ et $b$.
+\item Quels sont les nombres complexes dont l'image par $f$ est un réel ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}
+
+\(f(a+ib)=(a+ib)^2+2(a+ib)+9=a^2+2aib+(ib)^2+2a+2ib+9=a^2-b^2+2a+i \times 2b(a+1)\).
+
+\(f(a+ib)\) est réel si sa partie imaginaire, c'est-à-dire \( 2b(a+1)\) vaut 0. Ainsi, \(f(z)\) est réel si et seulement si \(z\) est réel ou \(Re(z)=-1\).
+\end{solution}
+
+
+\begin{exercise}[topic=cpx01]Pour tout complexe $z$, on note $P(z)=6z^3+(1-30i)z^2-(12+5i)z+60i$.
+\begin{enumerate}
+\item Montrer que l'équation $P(z)=0$ admet une unique solution imaginaire pure que l'on déterminera.
+\item Montrer qu'il existe trois réels $a$, $b$ et $c$ tels que, pour tout complexe $z$, $P(z)=(z-5i)(az^2+bz+c)$.
+\item En déduire toutes les solutions de l'équation $P(z)=0$.
+\end{enumerate}\end{exercise}
+
+\begin{solution}Soit $b$ un réel. On a alors
+\[P(ib)=6(ib)^3+(1-30i)(ib)^2-(12+5i)ib+60i=-6ib^3-b^2+30ib^2-12ib+5b+60i\]
+\[=-b^2+5b+i(-6b^3+30b^2+12b+60).\]
+Ainsi, $P(ib)=0$ si et seulement si $-b^2+5b=0$ et $-6b^3+30b^2+12b+60=0$.
+
+La première équation donne $b=0$ ou $b=5$. Testons donc ces deux valeurs.
+
+On a $P(0i)=P(0)=60i\neq 0$. Par ailleurs, 
+\[P(5i)=6 \times (5i)^3+(1-30i) \times (5i)^2-(12+5i)\times 5i+60i=-750i-25+750i-60i+25+60i=0\]
+Ainsi, l'équation $P(z)=0$ admet bien une unique solution imaginaire pure. Cette solution est $5i$.
+
+Pour tout complexe $z$, on a $(z-5i)(az^2+bz+c)=az^3+(b-5ai)z^2+(c-5bi)z-5ci$.
+
+Ainsi, en identifiant les coefficients, on a $P(z)=(z-5i)(az^2+bz+c)$ si et seulement si $a=6$, $b-5ai=1-30i$, $c-5bi=-12-5i$ et $-5ci=60i$.
+
+On obtient donc $a=6$, $b=1$ et $c=-12$. Pour tout complexe $z$, on a $P(z)=(z-5i)(6z^2+z-12)$.
+
+Or, $6z^2+z-12$ est un polynôme du second degré à coefficients réels. 
+
+Son discriminant vaut $1^2-4\times 6 \times (-12)=289>0$. Ce polynôme admet donc deux racines réelles qui sont $\dfrac{-1-\sqrt{289}}{2\times 6}=-\dfrac{3}{2}$ et $\dfrac{-b+\sqrt{289}}{2\times 6}=\dfrac{4}{3}$.
+
+Les solutions de l'équation $P(z)=0$ sont donc $5i$, $-\dfrac{3}{2}$ et $\dfrac{4}{3}$.
+\end{solution}
+
+
+\begin{exercise}[topic=cpx01]Résoudre l'équation $z^2=-3+4i$ sur $\mathbb{C}$. On pourra par exemple poser $z=a+ib$.\end{exercise}
+
+\begin{solution}Posons $z=a+ib$, avec $a$ et $b$ réels. On a alors $z^2=a^2-b^2+2iab=-3+4i$.
+
+Ainsi, en identifiant parties réelles et imaginaires, on a $a^2-b^2=-3$ et $2ab=4$.\\ En particulier, $a$ et $b$ sont non nuls et on a donc $b=\dfrac{2}{a}$.
+
+En remplaçant $b$ dans la première équation, on obtient $a^2-\dfrac{4}{a^2}=-3$ et donc $\dfrac{a^4+3a^2-4}{a^2}=0$.
+
+Posons $x=a^2$, on a alors $x^2+3x-4=0$, un polynôme du second degré dont les racines sont 1 et $-4$.
+
+On a donc $a^2=1$ ou $a^2=-4$. Puisque $a$ est réel, cette dernière égalité est impossible.\\ Finalement, on a forcément $a^2=1$ et donc $a=1$ ou $a=-1$.
+
+Si $a=1$, alors $b=\dfrac{2}{a}=2$. Si $a=-1$, alors $b=\dfrac{2}{a}=-2$. On a donc $z=1+2i$ ou $z=-1-2i$.
+
+Vérifions :
+\begin{itemize}
+\item $(1+2i)^2=1^2+4i+(2i)^2=1+4i-4=-3+4i$.
+\item $(-1-2i)^2=(-(1+2i))^2=-3+4i$.
+\end{itemize}
+Les solutions de l'équation $z^2=-3+4i$ sont donc $1+2i$ et $-1-2i$.
+\end{solution}
+\printcollection{cpx01}
+
+\section*{Conjugué d'un nombre complexe}
+
+
+
+\begin{exercise}[topic=cpx02]Soit $z=a+ib$ un nombre complexe. Exprimer le produit $z\overline{z}$ en fonction de $a$ et $b$. \end{exercise}
+
+\begin{solution}On a \(z\overline{z}=(a+ib)(a-ib)=a^2-(ib)^2=a^2+b^2\). Une formule bien utile et qui nous sera bien utile dans un prochain chapitre !\end{solution}
+
+\begin{exercise}[topic=cpx02]Démontrer la propriété du cours suivante : Soit $z\in\mathbb{C}$. On a $z\in i\mathbb{R}$ si et seulement si $\overline{z}=-z$.\end{exercise}
+
+\begin{solution}Soit \(z=a+ib\) un complexe.
+
+Si \(z\) est un imaginaire pur, alors \(a=0\). Ainsi, \(z=ib\) et \(\overline{z}=-ib=-z\).
+
+Si \(z=-\overline{z}\), alors \(a+ib=-(a-ib)=-a+ib\). Il en résulte que \(2a=0\) et donc \(a=0\). \(z\) est donc imaginaire pur.\end{solution}
+
+\begin{exercise}[topic=cpx02]Soit $z$ un nombre complexe.
+\begin{enumerate}
+\item Montrer que $Re(z)=\dfrac{z+\overline{z}}{2}$
+\item Trouver et démontrer une relation similaire pour exprimer $Im(z)$ en fonction de $z$ et $\overline{z}$.
+\end{enumerate}\end{exercise}
+
+\begin{solution}
+Soit \(z=a+ib\) un complexe.
+\[\dfrac{z+\overline{z}}{2}=\dfrac{a+ib+a-ib}{2}=\dfrac{2a}{2}=a=Re(z).\]
+De même,
+\[\dfrac{z-\overline{z}}{2i}=\dfrac{a+ib-(a-ib)}{2}=\dfrac{2ib}{2i}=b=Im(z).\]
+\end{solution}
+
+\begin{exercise}[topic=cpx02]On considère le complexe $z=(1-3i)(5+4i)(1+3i)(10-8i)$. Sans calcul, montrer que $z\in\mathbb{R}$.\end{exercise}
+
+\begin{solution}D'une part, remarquons que \(10-8i=2(5-4i)\). Ainsi, \(z=2(1-3i)(5+4i)(1+3i)(5-4i)\)
+
+D'après les formules sur le produit de conjugués, on a
+\[\overline{z}=\overline{2(1-3i)(5+4i)(1+3i)(5-4i)}=\overline{2}\times\overline{(1-3i)} \times \overline{(5+4i)} \times \overline{(1+3i)} \times \overline{(5-4i)}.\]
+
+Ainsi,
+\[\overline{z}=2(1+3i)(5-4i)(1-3i)(5+4i)=z\]
+Puisque \(\overline{z}=z\), on en conclut que \(z\) est réel.\end{solution}
+
+
+\begin{exercise}[topic=cpx02]Résoudre les équations suivantes, d'inconnue $z\in\mathbb{C}$.
+
+\begin{tabularx}{\linewidth}{XXX}
+$2z+3=3\overline{z}+4-i$ & $2z-4\overline{z}= 6-3i$ & $z+\overline{z}=3+4i$ \\
+
+$2z+4+i=(3+i)\overline{z}+2-3i$  &  $\overline{z}-1=z\overline{z}-i$ & $\overline{z}=iz$
+
+\end{tabularx}\end{exercise}
+
+\begin{solution}
+\begin{itemize}
+\item Soit \(z=a+ib\in\mathbb{C}\). 
+
+On a \(2z+3=3\overline{z}+4-i \Leftrightarrow 2(a+ib)+3=3(a-ib)+4-i \Leftrightarrow 2a-3a+3-4+i(2b+3b+1)=0 \Leftrightarrow -a-1 +i(5b+1)=0\).
+
+On a donc le système \(\left\{\begin{array}{rcl}-a-1&=&0 \\ 5b+1&=&0\end{array}\right.\) ce qui conduit à \(a=-1\) et \(b=-\dfrac{1}{5}\)
+
+La solution de cette équation est donc \(-1-\dfrac{i}{5}\).
+\vskip5pt
+\item Soit \(z=a+ib\in\mathbb{C}\). 
+
+On a \(2z-4\overline{z}= 6-3i \Leftrightarrow 2(a+ib)-4(a-ib)=6-3i \Leftrightarrow 2a-4a-6+i(2b+4b+3) = 0 \Leftrightarrow -2a-6+i(6b+3)=0\).
+
+On a donc le système \(\left\{\begin{array}{rcl}-2a-6&=&0 \\ 6b+3 &=&0\end{array}\right.\) ce qui conduit à \(a=-3\) et \(b=-\dfrac{1}{2}\).
+
+La solution de cette équation est donc \(-3-\dfrac{i}{2}\).
+\vskip5pt
+\item Soit \(z=a+ib\in\mathbb{C}\).  
+
+On a \(z+\overline{z}=3+4i \Leftrightarrow a+ib+a-ib=3+4i \Leftrightarrow 2a-3-4i = 0\).
+
+Or, la partie imaginaire du membre de gauche est non nulle. Cette équation n'admet aucune solution (on aurait également tout simplement pu utiliser un exercice précédent : \(z+\overline{z} = 2Re(z)\).
+\vskip5pt
+\item Soit \(z=a+ib\in\mathbb{C}\). 
+
+On a \(2z+4+i=(3+i)\overline{z}+2-3i \Leftrightarrow 2(a+ib)+4+i=(3+i)(a-ib)+2-3i \Leftrightarrow 2a+2ib+i+4=3a-3ib+ia+b+2-3i\).
+
+\(\Leftrightarrow 2a-3a -b-2+4 +i(2b+1+3b-a+3) \Leftrightarrow -a-b+2+i(-a+5b+4)=0\).
+
+Ceci nous amène à résoudre le système 
+
+\(\left\{\begin{array}{rcl}-a-b+2&=&0 \\ -a+5b+4 &=&0\end{array}\right. \Leftrightarrow \left\{\begin{array}{rcl}-a-b+2&=&0 \\ -6b-2 &=&0\end{array}\right. \Leftrightarrow \left\{\begin{array}{rcl}-a-b+2&=&0 \\ b &=& - \dfrac{1}{3} \end{array}\right.\)
+
+\( \Leftrightarrow \left\{\begin{array}{rcl}-a-\left(-\dfrac{1}{3}\right)+2&=&0 \\ b &=& - \dfrac{1}{3} \end{array}\right.\Leftrightarrow \left\{\begin{array}{rcl} a &=& \dfrac{7}{3} \\ b &=& - \dfrac{1}{3} \end{array}\right.\)
+
+La solution de cette équation est \(\dfrac{7}{3}-\dfrac{i}{3}\).
+\vskip5pt
+\item Soit \(z=a+ib\in\mathbb{C}\). 
+
+On a  \(\overline{z}-1=z\overline{z}-i \Leftrightarrow a-ib-1=(a+ib)(a-ib)-i \Leftrightarrow a-ib-1=a^2+b^2-i \Leftrightarrow a-a^2-b^2 +i(b+1)=0\).
+
+On a donc le système  \(\left\{\begin{array}{rcl}a-a^2-b^2&=&0 \\ b+1 &=&0\end{array}\right.\).
+
+La seconde ligne nous donne \(b=-1\). En remplaçant \(b\) par \(-1\) dans la première équation, on a alors \(a-a^2-1=0\). C'est un polynôme du second degré dont le discriminant vaut \(1^2-4\times(-1) \times (-1) = -3\). Ainsi, l'équation \(a-a^2-1=0\) n'admet pas de solution réelle. L'équation de départ n'a donc pas de solution.
+\vskip5pt
+\item Soit \(z=a+ib\in\mathbb{C}\) 
+
+On a \(\overline{z}=iz \Leftrightarrow a-ib = i(a+ib) \Leftrightarrow a+b -i(a+b)=0\).
+
+Cette équation est équivalente à \(a=-b\). Les solutions sont donc les nombres complexes \(a-ia\) pour tout réel \(a\).
+\end{itemize}
+\end{solution}
+
+
+\begin{exercise}[topic=cpx02]Résoudre dans $\mathbb{C}$ l'équation $z^2-\overline{z}+1=0$.\end{exercise}
+
+\begin{solution}Soit \(z=a+ib\in\mathbb{C}\). On a 
+ \[z^2-\overline{z}+1=0 \Leftrightarrow (a+ib)^2-(a-ib)+1=0 \Leftrightarrow a^2 +2aib -b^2-a+ib+1=0 \Leftrightarrow a^2-b^2-a+1+ib(2a+1)=0.\]
+
+On a donc le système \(\left\{\begin{array}{rcl}a^2-b^2-a+1&=&0 \\ b(2a+1) &=&0\end{array}\right.\).
+
+La deuxième ligne nous amène à différencier deux cas :
+\begin{itemize}
+\item Soit \(b=0\). La première équation devient alors \(a^2-a+1=0\). C'est un polynôme du second degré dont le discriminant vaut \(-3\). Il ne possède donc pas de racine réelle.
+\item Soit \(a=-\dfrac{1}{2}\). La première équation devient alors \( \left(-\dfrac{1}{2}\right)^2+\dfrac{1}{2}+1=b^2\) soit \(b^2=\dfrac{7}{4}\) ce qui conduit à \(b=\dfrac{\sqrt{7}}{2}\) ou \(b=-\dfrac{\sqrt{7}}{2}\).\end{itemize}
+
+Les solutions sont donc \(-\dfrac{1}{2}+\dfrac{i\sqrt{7}}{2}\) et \(-\dfrac{1}{2}-\dfrac{i\sqrt{7}}{2}\). \end{solution}
+
+
+\printcollection{cpx02}
+
+\section*{Division dans $\mathbb{C}$}
+
+\begin{exercise}[topic=cpx03]Ecrire les nombres suivants sous forme algébrique.
+
+\begin{tabularx}{\linewidth}{XXXXXX}
+$\dfrac{1}{i}$ & $\dfrac{1}{1+i}$ & $\dfrac{2}{4-5i}$ & $\dfrac{2i}{i-3}$ & $\dfrac{1-6i}{2+4i}$ & $\dfrac{3-2i}{2i-3}$
+\end{tabularx}\end{exercise}
+
+\begin{solution}On a ...
+\begin{itemize}
+\item \( \dfrac{1}{i} = \dfrac{-i}{i \times -i} = \dfrac{-i}{1}=-i\).
+\vskip5pt
+\item \(\dfrac{1}{1+i} = \dfrac{1-i}{(1+i)(1-i)}=\dfrac{1-i}{1^2-i^2}=\dfrac{1-i}{2}=\dfrac{1}{2}-\dfrac{i}{2}\).
+\vskip5pt
+\item \(\dfrac{2}{4-5i} = \dfrac{2(4+5i)}{(4-5i)(4+5i)}=\dfrac{8+10i}{4^2-(5i)^2}=\dfrac{8}{41}+\dfrac{10i}{41}\).
+\vskip5pt
+\item \(\dfrac{2i}{i-3} = \dfrac{(2i)(-i-3)}{(i-3)(-i-3)}=\dfrac{2-6i}{3^2-i^2}=\dfrac{2}{10}-\dfrac{6i}{10}=\dfrac{1}{5}-\dfrac{3i}{5}\).
+\vskip5pt
+\item \(\dfrac{1-6i}{2+4i} = \dfrac{(1-6i)(2-4i)}{(2+4i)(2-4i)}=\dfrac{2-4i-12i-24}{2^2-(4i)^2}=-\dfrac{22}{20}-\dfrac{16i}{22}=-\dfrac{11}{10}-\dfrac{8i}{11}\).
+\vskip5pt
+\item \(\dfrac{3-2i}{2i-3}=\dfrac{-(2i-3)}{2i-3}=-1\). Attention à ne pas se lancer précipitamment dans les calculs !
+\end{itemize}\end{solution}
+
+\begin{exercise}[topic=cpx03]Résoudre les équations suivantes, d'inconnues complexes $z$. On exprimera le résultat sous forme algébrique.
+
+\begin{tabularx}{\linewidth}{XXX}
+$(1+2i)z+3=5-4i$ & $(3-4i)z+1-3i=2iz$ & $\dfrac{z-i}{iz-1}=\dfrac{1}{3}$
+\end{tabularx}
+
+\end{exercise}
+
+\begin{solution}
+\begin{itemize}
+\item Soit \(z\in\mathbb{C}\). On a \((1+2i)z+3=5-4i \Leftrightarrow (1-2i)z=2-4i \Leftrightarrow z=\dfrac{2-4i}{1+2i}\)
+
+On met alors \(\dfrac{2-4i}{1+2i}\) sous forme algébrique : \(\dfrac{2-4i}{1+2i}=\dfrac{(2-4i)(1-2i)}{(1+2i)(1-2i)}=\dfrac{2-4i-4i-8}{1^2-(2i)^2}=-\dfrac{6}{5}-\dfrac{8i}{5}\)
+
+La solution de cette équation est donc \(-\dfrac{6}{5}-\dfrac{8i}{5}\).
+
+\item Soit \(z\in\mathbb{C}\). 
+
+On a \((3-4i)z+1-3i=2iz \Leftrightarrow (3-4i)z-2iz=-1+3i \Leftrightarrow (3-6i)z=-1+3i\Leftrightarrow z=\dfrac{-1+3i}{3-6i}\).
+
+On met alors \(\dfrac{-1+3i}{3-6i}\) sous forme algébrique.
+
+\(\dfrac{-1+3i}{3-6i}=\dfrac{(-1+3i)(3+6i)}{(3-6i)(3+6i)}=\dfrac{-3-6i+9i-18}{3^2-(6i)^2}=-\dfrac{21}{45}+\dfrac{3i}{45}=-\dfrac{7}{15}+\dfrac{i}{15}\).
+
+La solution de cette équation est donc \(-\dfrac{7}{15}+\dfrac{i}{15}\).
+
+\item Voyons d'abord quand le dénominateur s'annule. Soit \(z\in\mathbb{C}\). On a \(iz-1=0 \Leftrightarrow iz=1 \Leftrightarrow z=\dfrac{1}{i} \Leftrightarrow z = -i\).
+
+Soit donc \(z \in \mathbb{C}\setminus \{-i\}\).
+\[\dfrac{z-i}{iz-1}=\dfrac{1}{3} \Leftrightarrow 3(z-i)=iz-1 \Leftrightarrow 3z-iz=-1+3i \Leftrightarrow (3-i)z=(-1+3i) \Leftrightarrow z =\dfrac{-1+3i}{3-i}.\]
+
+On met alors \(\dfrac{-1+3i}{3-i}\) sous forme algébrique.
+\[\dfrac{-1+3i}{3-i}=\dfrac{(-1+3i)(3+i)}{(3-i)(3+i)}=\dfrac{-3-i+9i-3}{3^2-i^2}=-\dfrac{6}{45}+\dfrac{8i}{45}=-\dfrac{3}{5}+\dfrac{4i}{5}.\]
+La solution de cette équation est donc \(-\dfrac{3}{5}+\dfrac{4i}{5}\).\end{itemize}
+\end{solution}
+
+
+\begin{exercise}[topic=cpx03]Pour tout complexe $z$ différent de 1, on pose $f(z)=\dfrac{2-iz}{1-z}$
+\begin{enumerate}
+\item Montrer que $f(z)$ ne peut pas être égal à $i$.
+\item Soit $Z$ un complexe différent de $i$. Déterminer, s'il(s) existe(nt), le(s) antécédent(s) de $Z$ par $f$.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}Supposons qu'il existe un complexe \(z\) différent de 1 tel que \(\dfrac{2-iz}{1-z}=i\). 
+
+On a alors \(2-iz=i(1-z)\) et donc \(2-iz=i-iz\) et finalement \(2=i\). C'est absurde ! Ainsi, pour tout complexe \(z\) différent de 1, \(f(z)\) est différent de \(i\).
+
+Soit \(Z\) un complexe différent de \(i\) et \(z\) un complexe différent de 1.
+
+\(f(z)=Z \Leftrightarrow \dfrac{2-iz}{1-z}=Z \Leftrightarrow 2-iz = Z(1-z) \Leftrightarrow zZ-iz = Z - 2 \Leftrightarrow z(Z-i)=Z-2 \Leftrightarrow z = \dfrac{Z-2}{Z-i}\).\end{solution}
+
+
+\begin{exercise}[topic=cpx03]Soit $z$ un complexe non nul. Montrer de deux manières différentes que $\dfrac{1}{z}+\dfrac{1}{\overline{z}}$ est un réel.\newpage \end{exercise}
+
+\begin{solution}
+
+\textbf{Méthode 1 :} D'après le cours, on sait que \(\overline{\left(\dfrac{1}{z}\right)} = \dfrac{1}{\overline{z}} \). Or, on a vu plus tôt dans un exercice que pour tout complexe \(Z\), \(Z+\overline{Z}=Re(Z)\). En particulier, \(Z+\overline{Z}\) est réel. \(\dfrac{1}{z}+\dfrac{1}{\overline{z}}\) est donc un réel.
+
+\textbf{Méthode 2 :} Soit \(z=a+ib\) un complexe,
+\[\dfrac{1}{z}+\dfrac{1}{\overline{z}} = \dfrac{1}{a+ib}+\dfrac{a-ib}=\dfrac{a-ib}{(a+ib)(a-ib)}+\dfrac{a+ib}{(a+ib)(a-ib)}=\dfrac{2a}{a^2+b^2}.\]
+
+Ainsi, \(a\) et \(b\) étant réels, \(\dfrac{1}{z}+\dfrac{1}{\overline{z}}\) est aussi un réel.\end{solution}
+
+
+\begin{exercise}[topic=cpx03]Soit $j=-\dfrac{1}{2}+\dfrac{i\sqrt{3}}{2}$. Montrer que $j^2=\dfrac{1}{j}=\overline{j}$.\end{exercise}
+
+\begin{solution}D'une part,
+\[j^2=\left(-\dfrac{1}{2}+\dfrac{i\sqrt{3}}{2}\right)^2=\left(\dfrac{1}{2}\right)^2+2\times \left(-\dfrac{1}{2}\right) \times \dfrac{\sqrt{3}}{2} + \left(\dfrac{\sqrt{3}}{2}\right)^2=\dfrac{1}{4}-\dfrac{i\sqrt{3}}{2}-\dfrac{3}{4}=-\dfrac{1}{2}-\dfrac{i\sqrt{3}}{2}\]
+
+Ainsi, \(j^2=\overline{j}\). De plus, 
+\[j^3 = j^2 \times j = \left(-\dfrac{1}{2}-\dfrac{i\sqrt{3}}{2}\right) \left(-\dfrac{1}{2}+\dfrac{i\sqrt{3}}{2}\right)=\left(\dfrac{1}{2}\right)^2-\left(\dfrac{i\sqrt{3}}{2}\right)^2=\dfrac{1}{4}+\dfrac{3}{4}=1\]
+
+On a donc \(j^3=1\), soit \(j^2 \times j =1\) et donc \(j^2 = \dfrac{1}{j}\).\end{solution}
+
+\begin{exercise}[topic=cpx03]On considère la suite $(z_n)$ définie par $z_0=1$ et, pour tout entier naturel $n$, $z_{n+1}=\dfrac{z_n-6}{1+i}$
+\begin{enumerate}
+\item Exprimer $z_1$ et $z_2$ sous forme algébrique.
+\item Pour tout entier naturel $n$, on pose $u_n=z_n-6i$
+\begin{enumerate}
+\item Exprimer $u_{n+1}$ en fonction de $u_n$. Quelle est la nature de la suite $(u_n)$ ?
+\item En déduire une expression de $u_n$ puis de $z_n$ en fonction de $n$.
+\end{enumerate}
+\item On considère la suite $(t_n)$ définie par $t_0=1$ et, pour tout entier naturel $n$, $t_{n+1}=\dfrac{t_n-6}{1-i}$. 
+\begin{enumerate}
+\item Montrer par récurrence que pour tout entier naturel $n$, $t_n = \overline{z_n}$
+\item Sans avoir recours à un nouveau calcul, exprimer $t_n$ en fonction de $n$ pour tout entier naturel $n$.
+\end{enumerate}\end{enumerate}\end{exercise}
+
+\begin{solution}\hspace{0pt}
+
+\begin{enumerate}\item 
+On a \begin{itemize}\item \(z_1=\dfrac{1-6}{1+i}=\dfrac{-5(1-i)}{(1+i)(1-i)}=\dfrac{-5+5i}{1^2-i^2}=-\dfrac{5}{2}+\dfrac{5i}{2}\).
+\item \(z_2 = \dfrac{-\frac{5}{2}+\frac{5i}{2}+1}{1+i}=\dfrac{\left(-\frac{3}{2}+\dfrac{5i}{2}\right)(1-i)}{(1+i)(1-i)}=\dfrac{1}{2} \times \left(-\dfrac{3}{2}+\dfrac{3i}{2}+\dfrac{5i}{2}+\dfrac{5}{2}\right)=\dfrac{1+4i}{2}\).\end{itemize}
+
+\item 
+\begin{enumerate} 
+\item Pour tout entier naturel \(n\), 
+\[ u_{n+1}=z_{n+1}-6i = \dfrac{z_n-6}{1+i} - 6i = \dfrac{z_n-6-6i(1+i)}{1+i}=\dfrac{z_n-6-6i+6}{1+i}=\dfrac{z_n-6i}{1+i}=\dfrac{u_n}{1+i}\]
+La suite \((u_n)\) est géométrique de raison \(\dfrac{1}{1+i}\).
+
+\item On sait que \(u_0 = z_0 -6i = 1-6i\). Pour tout entier naturel \(n\), on a donc \(u_n = \dfrac{1-6i}{(1+i)^n}\) et donc \(z_n=u_n+6i=\dfrac{1-6i}{(1+i)^n}+6i\).\end{enumerate}
+\item \begin{enumerate}
+\item Pour tout entier naturel \(n\), on considère la proposition \(P(n)\) : \(t_n = \overline{z_n}\).
+\begin{itemize}\item \textbf{Initialisation} : On a \(t_0=1\) et \(z_0=1\). Ainsi, \(t_0 = \overline{z_0}\). \(P(0)\) est vraie.
+\item \textbf{Hérédité} : Soit \(n\in \mathbb{N}\). Supposons que \(P(n)\) est vraie. On a donc \(t_n = \overline{z_n}\). Or,
+\[t_{n+1}=\dfrac{t_n-6}{1-i}=\dfrac{\overline{z_n}-6}{1-i}=\dfrac{\overline{z_n-6}}{\overline{1+i}}=\overline{\left(\dfrac{z_n-6}{1+i}\right)}=\overline{z_{n+1}}\]
+Ainsi, \(P(n+1)\) est vraie.
+\item \textbf{Conclusion} : \(P(0)\) est vraie et \(P\) est héréditaire. Par récurrence, \(P(n)\) est vraie pour tout entier naturel \(n\).\end{itemize}
+\item Pour tout entier naturel \(n\),
+\[t_n = \overline{z_n}=\overline{\dfrac{1-6i}{(1+i)^n}+6i}=\dfrac{1+6i}{(1-i)^n}-6i.\]\end{enumerate}\end{enumerate}
+\end{solution}
+
+\begin{exercise}[topic=cpx03]On considère la fonction $f:z\mapsto \dfrac{z-i}{z+i}$, définie sur $\mathbb{C} \setminus \{-i\}$.
+
+\begin{enumerate}
+\item Exprimer $f(1+2i)$ sous forme algébrique.
+\item Montrer que pour tout complexe $z \neq -i$, $f(z) \neq 1$.
+\item Soit $Z$ un complexe différent de 1. Déterminer l'unique antécédent de $Z$ par $f$.
+\item Soit $x$ un réel. Montrer que $f(x) \times \overline{f(x)}=1$.
+\item Réciproquement, soit $z$ un complexe différent de $-i$ tel que $f(z) \times \overline{f(z)}=1$. Montrer que $z$ est réel.
+\end{enumerate}\end{exercise}
+
+\begin{solution}On a \(f(1+2i)=\dfrac{1+2i-i}{1+2i+i}=\dfrac{1+i}{1+3i}=\dfrac{(1+i)(1-3i)}{(1+3i)(1-3i)}=\dfrac{1-3i+i+3}{1^2-(3i)^2}=\dfrac{4}{10}-\dfrac{2i}{10}=\dfrac{2}{5}-\dfrac{i}{5}\).
+
+Supposons qu'il existe un complexe \(z\) différent de \(-i\) tel que \(f(z)=1\).
+
+On a alors  \(\dfrac{z-i}{z+i} = 1\) et donc \(z-i=z+i\) et finalement \(2i=0\), ce qui est absurde. Ainsi, pour tout complexe \(z \neq -i\), \(f(z) \neq 1\).
+
+Soit \(Z\) un complexe différent de 1 et \(z\) un complexe différent de \(-i\),
+\[f(z)=Z \Leftrightarrow \dfrac{z-i}{z+i} = Z \Leftrightarrow z-i=Z(z+i)\Leftrightarrow z-zZ=i+Zi \Leftrightarrow z(1-Z)=i+Zi \Leftrightarrow z = \dfrac{i(1+Z)}{1-Z}.\]
+
+Soit \(x\) un réel. On a alors \(\overline{x}=x\). Ainsi, \(f(x) \times \overline{f(x)} = \dfrac{x-i}{x+i} \times \overline{\left(\dfrac{x-i}{x+i}\right)} = \dfrac{x-i}{x+i} \times \dfrac{x+i}{x-i}=1.\)
+
+Soit \(z\) un complexe différent de \(-i\) tel que \(f(z) \times \overline{f(z)}=1\). 
+
+On a alors \(\dfrac{z-i}{z+i} \times \overline{\left(\dfrac{z-i}{z+i}\right)}=1 \) et donc \( \dfrac{z-i}{z+i} \times \dfrac{\overline{z}+i}{\overline{z}-i}=1 \).
+
+En développant, on obtient que \(\dfrac{z\overline{z}-i\overline{z}+iz+1}{z\overline{z}+i\overline{z}-iz+1}=1\) et donc \(z\overline{z}-i\overline{z}+iz+1 = z\overline{z}+i\overline{z}-iz+1.\)
+
+On en déduit que \(2i(z-\overline{z})=0.\) Or, \(z-\overline{z}=\dfrac{Im(z)}{2i}\). Ainsi
+\(Im(z)=0.\)
+\(z\) est donc un réel.\end{solution}
+
+\printcollection{cpx03}
+
+\section*{Équations du second degré}
+
+\begin{exercise}[topic=cpx04]Résoudre les équations suivantes, d'inconnue complexe $z$.
+
+\begin{tabularx}{\linewidth}{XXX}
+$z^2-2z+5=0$ & $z^2=-9$ & $2z^2=3-\pi$ \\
+$4z^2+3z+2=0$ & $z^3+2z^2+3z=0$ & $(z^2+3)(z^2+z+1)=0$.
+\end{tabularx}\end{exercise}
+
+\begin{solution}\hspace{0pt}
+
+\begin{itemize}
+\item Le discriminant de $z^2-2z+5$ vaut $(-2)^2-4 \times 5=-16<0$. L'équation $z^2-2z+5=0$ admet donc deux solutions complexes conjuguées qui sont $z_1=\dfrac{-(-2)+i\sqrt{16}}{2}=1+2i$ et $z_2=1-2i$.
+\vskip5pt
+\item Les solutions de $z^2=-9$ sont $z_1=3i$ et $z_2=-3i$.
+\vskip5pt
+\item Remarquons que $3-\pi<0$. On a $2z^2=3-\pi$ si et seulement si $z^2=\dfrac{3-\pi}{2}$ et donc $z=i\sqrt{\dfrac{\pi-3}{2}}$ ou $z=-i\sqrt{\dfrac{\pi-3}{2}}$.
+\vskip5pt
+\item Le discriminant de $4z^2+3z+2$ vaut $3^2-4 \times 4 \times 2 =23$. L'équation $4z^2+3z+2=0$ admet donc deux solutions complexes conjuguées qui sont $z_1=\dfrac{-3+i\sqrt{23}}{8}$ et $z_2=\dfrac{-3-i\sqrt{23}}{8}$.
+\vskip5pt
+\item On a $z^3+2z^2+3z=0$ si et seulement si $z(z^2+2z+3)=0$, c'est-à-dire $z=0$ ou $z^2+2z+3=0$. Le discriminant de $s^2+2z+3$ vaut $2^2-4 \times 3 \times 1 =-8<0$. L'équation $z^2+2z+3=0$ admet donc deux solutions complexes conjuguées qui sont $z_1=\dfrac{-2-i\sqrt{8}}{2\times 1}=-1-i\sqrt{2}$ et $z_2=-1+i\sqrt{2}$. Les solutions de l'équation $z^3+2z^2+3z=0$ sont donc 0, $-1-i\sqrt{2}$ et $-1+i\sqrt{2}$.
+\vskip5pt
+\item On a $z^2+3=0$ si et seulement si $z^2=-3$ soit $z=i\sqrt{3}$ ou $z=-i\sqrt{3}$. Par ailleurs, $z^2+z+1$ est un polynôme du second degré dont le discriminant vaut $1^2-4 \times 1 \times 1 =-3<0$. Ce polynôme admet donc deux racines complexes conjuguées qui sont $\dfrac{-1-i\sqrt{3}}{2}$ et $\dfrac{-1+i\sqrt{3}}{2}$.
+
+Les solutions de l'équation sont donc $-i\sqrt{3}$, $i\sqrt{3}$, $\dfrac{-1+i\sqrt{3}}{2}$ et $\dfrac{-1-i\sqrt{3}}{2}$.
+\end{itemize}
+\end{solution}
+
+
+\begin{exercise}[topic=cpx04]Trouver deux nombres complexes dont la somme vaut 5 et le produit vaut 12.\end{exercise}
+
+\begin{solution}Notons $z_1$ et $z_2$ les deux nombres recherchés. On a alors $z_1+z_2=5$ et donc $z_1=5-z_2$. De plus, on a $z_1z_2=12$ soit $(5-z_2)z_2=12$ et donc $-z_2^2+5z_2-12=0$. Il s'agit d'une équation du second degré. Le discriminant du polynôme $-z^2+5z-12$ vaut $5^2-4 \times (-12) \times (-1) = -23<0$. Ce polynôme admet donc deux racines complexes conjuguées $\dfrac{-5-i\sqrt{23}}{-2}$ et $\dfrac{-5+i\sqrt{23}}{-2}$. Ces deux racines sont les nombres recherchées.\end{solution}
+
+\begin{exercise}[topic=cpx04]En utilisant un changement de variable, résoudre l'équation $z^4+2z^2-8=0$\end{exercise}
+
+\begin{solution}
+Posons $Z=z^2$. On a $z^4+2z^2-8=0$ si et seulement si $Z^2+2Z-8=0$. Il s'agit d'une équation du second degré dont les solutions sont réelles et valent $-4$ et 2. 
+
+Ainsi, $z^4+2z^2-8=0$ si et seulement si $z^2=-4$ ou $z^2=2$. Les solutions de cette équation sont donc $2i$, $-2i$, $\sqrt{2}$ et $-\sqrt{2}$.
+\end{solution}
+
+\begin{exercise}[topic=cpx04]Pour tout complexe $z$, on pose $P(z)=z^3-3z^2+7z-5$.
+\begin{enumerate}
+\item Déterminer une solution « évidente » de l'équation $P(z)=0$. On note $\alpha$ cette solution.
+\item Déterminer des réels $a$, $b$ et $c$ tels que pour tout complexe $z$, $P(z)=(z-\alpha)(az^2+bz+c)$.
+\item Résoudre l'équation $P(z)=0$ sur $\mathbb{C}$.
+\end{enumerate}\end{exercise}
+
+\begin{solution}
+Remarquons que $P(1)=0$.
+
+On a alors $(z-1)(az^2+bz+c)=az^3+(b-a)z^2+(c-b)z-c$. Ainsi, $P(z)=(z-1)(az^2+bz+c)$ si et seulement si $a=1$, $b-a=-3$, $c-b=7$ et $-c=-5$ soit  $a=1$, $b=-2$ et $c=5$.
+
+Ainsi, pour tout complexe $z$, $P(z)=(z-1)(z^2-2z+5)$.
+
+$z^2-2z+5$ est un polynôme du second degré dont le discriminant vaut $(-2)^2-4\times 1 \times 5=-16<0$. Ses racines sont donc $\dfrac{-(-2)+i\sqrt{16}}{2 \times 1}=1+2i$ et $1-2i$.
+
+Les solutions de l'équation $P(z)=0$ sont donc $1$, $1+2i$ et $1-2i$.
+\end{solution}
+
+\begin{exercise}[topic=cpx04]Soit $x\in]0;\pi[$. Résoudre l'équation $z^2+2z\cos(x)+1=0$, d'inconnue complexe $z$.\end{exercise}
+
+\begin{solution}Le discriminant de $z^2+2z\cos(x)+1$ vaut $(2\cos(x))^2-4\times 1 \times 1=4(cos^2(x)-1)=-4\sin^2(x)<0$ puisque $x\in]0;\pi[$. De plus, sur cet intervalle, on a $\sin(x)>0$.
+
+Les racines de ce polynôme sont donc $\dfrac{-2\cos(x)+i\sqrt{4\sin^2(x)}}{2 \times 1}=-\cos(x)+i\sin(x)$ et $-\cos(x)-i\sin(x)$.\end{solution}
+
+\printcollection{cpx04}
+
+\chapter{Corrigés}
+
+\section*{Ensemble $\mathbb{C}$ des nombres complexes}
+
+\printsolutions[collection={cpx01}, headings={false} ]
+
+\section*{Conjugué d'un nombre complexe}
+
+\printsolutions[collection={cpx02}, headings={false} ]
+
+\section*{Division dans $\mathbb{C}$}
+
+\printsolutions[collection={cpx03}, headings={false} ]
+
+\section*{Équations du second degré}
+
+\printsolutions[collection={cpx04}, headings={false} ]
+
+\end{document}
