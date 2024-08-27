@@ -2,9 +2,6 @@
 
 \input{../../structure.tex}
 
-\DeclareExerciseCollection[topic=cont01]{cont01}
-\DeclareExerciseCollection[topic=cont02]{cont02}
-\DeclareExerciseCollection[topic=cont03]{cont03}
 
 \begin{document}
 
@@ -358,7 +355,7 @@ Dans le cas où $f(a) \geqslant k \geqslant f(b)$, il suffit de changer le sens 
 
 \section*{Continuité d'une fonction}
 
-\begin{exercise}[topic=cont01] On considère la fonction \renewcommand{\arraystretch}{1}$f:x\mapsto \left\{ \begin{array}{ll}
+\begin{exercise} On considère la fonction \renewcommand{\arraystretch}{1}$f:x\mapsto \left\{ \begin{array}{ll}
 6x+8 & \text{si }x\leqslant -1\\
 -3x+7 & \text{si }-1< x < 2\\
 x-1 & \text{si } x \geqslant 2
@@ -377,7 +374,7 @@ La fonction $f$ est continue en $2$.\end{solution}
 
 
 
-\begin{exercise}[topic=cont01]On considère la fonction $f:x\mapsto \left\{ \renewcommand{\arraystretch}{1} \begin{array}{ll}
+\begin{exercise}On considère la fonction $f:x\mapsto \left\{ \renewcommand{\arraystretch}{1} \begin{array}{ll}
 \frac{1}{2}x -3 & \text{si }x\leqslant -2\\
 x+1 & \text{sinon }
 \end{array}\right.$ définie sur $\mathbb{R}$.
@@ -414,7 +411,7 @@ x+1 & \text{sinon }
 
 
 
-\begin{exercise}[topic=cont01]
+\begin{exercise}
 Soit $a$ et $b$ deux réels. On considère la fonction \renewcommand{\arraystretch}{1}$f:x\mapsto \left\{ \begin{array}{ll} ax^2+bx+1 & \text{si } x<1 \\ x^2+ax+b & \text{si } x\geqslant 1 \end{array}\right.$.\\
 Montrer que la fonction $f$ est continue sur $\mathbb{R}$.\end{exercise}
 \begin{solution}
@@ -429,13 +426,13 @@ Montrer que la fonction $f$ est continue sur $\mathbb{R}$.\end{exercise}
  
 
 
-\begin{exercise}[topic=cont01]On considère la fonction $f$ définie par $f(0)=0$ et, pour tout réel non nul $x$, $f(x)=\exp\left(-\dfrac{1}{x^2}\right)$. \\ Montrer que $f$ est continue sur $\mathbb{R}$.\end{exercise}
+\begin{exercise}On considère la fonction $f$ définie par $f(0)=0$ et, pour tout réel non nul $x$, $f(x)=\exp\left(-\dfrac{1}{x^2}\right)$. \\ Montrer que $f$ est continue sur $\mathbb{R}$.\end{exercise}
 
 \begin{solution}La fonction $f$ est continue sur $]-\infty ;0[$ et $]0;+\infty[$.
 
 On sait que $\displaystyle\lim_{x\to 0^+}\left(-\dfrac{1}{x^2}\right)=-\infty$. Or, $\displaystyle \lim_{X \to -\infty}e^X=0$. Ainsi, $\displaystyle\lim_{x\to 0^+}f(x)=0$. De la même manière, $\displaystyle\lim_{x\to 0^-}f(x)=0=f(0)$. $f$ est donc continue en 0.\end{solution}
 
-\begin{exercise}[topic=cont01]
+\begin{exercise}
 On considère la fonction $f$ définie par $f(0)=0$ et, pour tout réel non nul $x$, $f(x)=x \sin\left(\dfrac{1}{x}\right)$. \\ Montrer que $f$ est continue sur $\mathbb{R}$.\end{exercise}
 
 \begin{solution}La fonction $f$ est continue sur $]-\infty ;0[$ et $]0;+\infty[$.
@@ -444,11 +441,10 @@ Pour tout $x>0$, on a $-1 \leqslant \sin\left(\dfrac{1}{x}\right) 1$ et donc $-x
 
 De même, on montre que $\displaystyle\lim_{x\to 0^-}f(x)=0$. Ainsi, la fonction $f$ est aussi continue en 0.\end{solution}
 
-\printcollection{cont01}
 
 \section*{Suites et fonction continue}
 
-\begin{exercise}[topic=cont02]Déterminer$\displaystyle\lim_{n\to +\infty} \sqrt{\dfrac{4n^2+1}{n^2+3n+2}}$ et $\displaystyle\lim_{n\to +\infty} \exp\left( \dfrac{1}{n}\right)$, en énonçant bien les propriétés utilisées.\end{exercise}
+\begin{exercise}Déterminer$\displaystyle\lim_{n\to +\infty} \sqrt{\dfrac{4n^2+1}{n^2+3n+2}}$ et $\displaystyle\lim_{n\to +\infty} \exp\left( \dfrac{1}{n}\right)$, en énonçant bien les propriétés utilisées.\end{exercise}
 
 
 \begin{solution}Pour tout entier naturel non nul $n$, 
@@ -460,7 +456,7 @@ On sait que $\displaystyle \lim_{n \to + \infty} \dfrac{1}{n}=0$. De plus, la fo
 
 
 
-\begin{exercise}[topic=cont02]On considère la fonction $f$ définie par $f(0)=1$ et pour tout réel non nul $x$, $f(x)=\sin\left(\dfrac{1}{x}\right)$. \\ Pour tout entier naturel non nul $n$, on pose $u_n=\dfrac{1}{2n\pi}$.
+\begin{exercise}On considère la fonction $f$ définie par $f(0)=1$ et pour tout réel non nul $x$, $f(x)=\sin\left(\dfrac{1}{x}\right)$. \\ Pour tout entier naturel non nul $n$, on pose $u_n=\dfrac{1}{2n\pi}$.
 \begin{enumerate}
 \item Que vaut $f(u_n)$ pour tout entier naturel $n$ ?
 \item Comparer $\displaystyle\lim_{n \to +\infty}f(u_n)$ et $f(\displaystyle\lim_{n \to + \infty}u_n)$. La fonction $f$ est-elle continue en 0 ?\end{enumerate}\newpage
@@ -475,7 +471,7 @@ Ainsi, $\displaystyle\lim_{n \to + \infty}f(u_n)=0$. Or, $\displaystyle\lim_{n\t
 
 
 
-\begin{exercise}[topic=cont02]On considère la suite $(u_n)$ par $u_0=1$ et, pour tout entier naturel $n$, $u_{n+1}=-\dfrac{3}{u_n+1}+3$.
+\begin{exercise}On considère la suite $(u_n)$ par $u_0=1$ et, pour tout entier naturel $n$, $u_{n+1}=-\dfrac{3}{u_n+1}+3$.
 \begin{enumerate}
 \item Montrer par récurrence que pour tout entier naturel $n$, $1\leqslant u_n\leqslant 2$ et que la suite $(u_n)$ est croissante.
 \item En déduire que la suite $(u_n)$ converge et déterminer la limite de la suite $(u_n)$.
@@ -503,7 +499,7 @@ Ainsi, on trouve $\dfrac{\ell(2-\ell)}{\ell+1}=0$ et donc $l=0$ ou $l=2$. Puisqu
 
 
 
-\begin{exercise}[topic=cont02]
+\begin{exercise}
 On considère la suite $(u_n)$ définie par $u_0=0$ et pour tout entier naturel $n$, $u_{n+1}=\sqrt{6+u_n}$.
 \begin{enumerate}
 \item Supposons que $(u_n)$ converge : quelle peut-être sa limite ?
@@ -555,7 +551,7 @@ On remarquera pour la suite de l'exercice que, pour tout entier naturel $n$, $u_
 \item Justifier que, selon ce modèle, le biologiste a raison.
 \item Le biologiste a programmé en langage Python la fonction menace() ci-dessous.
 
-\input{prog01}
+\input{prog091}
 
 
 Donner la valeur numérique renvoyée lorsqu'on appelle la fonction menace().
@@ -606,13 +602,13 @@ Ainsi, $f(x)=x$ si et seulement si $x=0$ ou $-0.25-0.1125x = 0$, soit $x=0$ ou $
 
 
 
-\printcollection{cont02}
+
 
 
 \section*{Théorème des valeurs intermédiaires}
 
 
-\begin{exercise}[topic=cont03]Pour tout réel $x>0$, on pose $f(x)=e^x-\dfrac{1}{x}$.
+\begin{exercise}Pour tout réel $x>0$, on pose $f(x)=e^x-\dfrac{1}{x}$.
 \begin{enumerate}
 \item Donner une valeur approchée à $10^{-1 }$ près de $f(1)$ et $f(2)$.
 \item En déduire que l'équation $f(x)=2$ possède au moins une solution sur l'intervalle $[1;2]$.\end{enumerate}
@@ -642,7 +638,7 @@ Les images de -1 et de 1 par $h$ ne nous donnent aucune information sur le compo
 
 
 
-\begin{exercise}[topic=cont03]
+\begin{exercise}
 On considère la fonction $f:x \mapsto e^x+x$, définie sur $\mathbb{R}$.
 \begin{enumerate}
 \item Justifier que $f$ est continue et dérivable sur $\mathbb{R}$ et déterminer $f'(x)$ pour tout réel $x$.
@@ -660,7 +656,7 @@ La fonction $f$ est continue sur $[-1;0]$. On a $f(-1)<0$ et $f(0)>0$. Ainsi, d'
 
 
 
-\begin{exercise}[topic=cont03] On considère la fonction $f:x \mapsto 2x^3+9x^2-60x+3$, définie sur $\mathbb{R}$.
+\begin{exercise} On considère la fonction $f:x \mapsto 2x^3+9x^2-60x+3$, définie sur $\mathbb{R}$.
 \begin{enumerate}
 \item Étudier les variations de la fonction $f$.
 \item En déduire la nombre de solutions de l'équation $f(x)=0$ sur $\mathbb{R}$.
@@ -687,7 +683,7 @@ De la même manière, l'équation $f(x)=0$ admet une unique solution sur $]-5;2[
 
 
 
-\begin{exercise}[topic=cont03]Montrer que l'équation $x^3-5x^2+3x+1=0$ admet exactement trois solutions réelles.\end{exercise}
+\begin{exercise}Montrer que l'équation $x^3-5x^2+3x+1=0$ admet exactement trois solutions réelles.\end{exercise}
 
 \begin{solution} $f$ est dérivable (et donc continue) sur $\mathbb{R}$. De plus, pour tout réel $x$, $f'(x)=3x^2-10x+3=3(x-3)\left(x-\dfrac{1}{3}\right)$. Les racines peuvent aussi se calculer à l'aide de la méthode du discriminant. On peut alors dresser le tableau de variations de $f$.
 
@@ -771,7 +767,7 @@ En particulier, $f(1)<f(0)$. La population ne fait pas qu'augmenter en permanenc
 
 
 
-\begin{exercise}[topic=cont03]On considère la fonction $f$ définie pour tout réel $x$ par $f(x)=x^5-3x^4+2x+1$. On note $\mathcal{C}_f$ la courbe représentative de $f$ dans un repère orthonormé.
+\begin{exercise}On considère la fonction $f$ définie pour tout réel $x$ par $f(x)=x^5-3x^4+2x+1$. On note $\mathcal{C}_f$ la courbe représentative de $f$ dans un repère orthonormé.
 \begin{enumerate}
 \item Déterminer l'équation réduite de $\mathcal{T}$, la tangente à $\mathcal{C}_f$ à l'abscisse 1.
 \item Montrer qu'il existe une unique autre tangente à $\mathcal{C}_f$ qui soit parallèle à $\mathcal{T}$. 
@@ -800,7 +796,7 @@ Or, $f'$ est continue sur $\left[ \dfrac{9}{5} ; +\infty\right[$. Par ailleurs, 
 
 
 
-\begin{exercise}[topic=cont03]Pour tout réel $x$, on pose $f(x)=x^5-2x-4$. 
+\begin{exercise}Pour tout réel $x$, on pose $f(x)=x^5-2x-4$. 
 \begin{enumerate}
 \item Calculer $f(1)$ et $f(2)$.
 \item En déduire que l'équation $x^5-2x-4=0$ possède au moins une solution sur $[1;2]$.
@@ -820,7 +816,7 @@ En poursuivant ainsi, on trouve que $c\simeq 1.47$
 
 
 
-\begin{exercise}[topic=cont03]Soit $f$ et $g$ les fonction définies pour tout réel $x$ par $f(x)=(1-x)e^x+1$ et $g(x)=\dfrac{x}{e^x+1}$.
+\begin{exercise}Soit $f$ et $g$ les fonction définies pour tout réel $x$ par $f(x)=(1-x)e^x+1$ et $g(x)=\dfrac{x}{e^x+1}$.
 \begin{enumerate}
 \item Construire le tableau de variations de $f$ en y incluant les limites.
 \item En déduire que l'équation $f(x)=0$ admet une unique solution sur $\mathbb{R}$ et en donner une valeur à $10^{-2}$ près. On note $\alpha$ ce réel.
@@ -868,13 +864,13 @@ $f$ est par ailleurs dérivable sur $\mathbb{R}$ et pour tout réel $x$, $f'(x)=
 Soit deux réels $a$ et $b$ avec $a<b$. On considère une fonction $f$ définie, continue, strictement croissante sur l'intervalle $[a;b]$ et qui s'annule en un réel $\alpha$. Parmi les propositions suivantes, quelle est la fonction en langage Python qui permet de donner une valeur approchée de $\alpha$ à 0.001 près ?
 
 \begin{minipage}{0.23\linewidth}
-\input{prog02}
+\input{prog092}
 \end{minipage}\hfill\begin{minipage}{0.23\linewidth}
-\input{prog03}
+\input{prog093}
 \end{minipage}\hfill\begin{minipage}{0.23\linewidth}
-\input{prog04}
+\input{prog094}
 \end{minipage}\hfill\begin{minipage}{0.23\linewidth}
-\input{prog05}
+\input{prog095}
 \end{minipage}\end{exercise}
 
 \begin{solution}Puisque $f$ est strictement croissante sur $[a,b]$, on en déduit que $f(a)<0$ et que $f(b)>0$.
@@ -887,13 +883,13 @@ Si $f(m)<0$, cela signifie que $f(a)$ et $f(m)$ sont du même signe, il faut don
 
 
 
-\begin{exercise}[topic=cont03]Soit $f$ une fonction continue sur $[0,1]$ telle que, pour tout réel $x \in[0;1]$, on a $f(x) \in[ 0;1]$. Montrer que l'équation $f(x)=x$ admet au moins une solution sur $[0;1]$.\newpage
+\begin{exercise}Soit $f$ une fonction continue sur $[0,1]$ telle que, pour tout réel $x \in[0;1]$, on a $f(x) \in[ 0;1]$. Montrer que l'équation $f(x)=x$ admet au moins une solution sur $[0;1]$.\newpage
 \end{exercise}
 
 \begin{solution}Pour tout réel $x$, on pose $g(x)=f(x)-x$. $g$ est continue sur $[0;1]$. De plus, $g(0)=f(0)-0\geqslant 0$ et $g(1)=f(1)-1\leqslant 0$ puisque $f(1)\in [0;1]$. D'après le théorème des valeurs intermédiaires, il existe un réel $c \in [0;1]$ tel que $g(c)=0$, c'est-à-dire $f(c)-c=0$ ou encore $f(c)=c$.\end{solution}
 
 
-\begin{exercise}[topic=cont03, subtitle={(Démontrer le théorème des valeurs intermédiaires)}]
+\begin{exercise}[subtitle={(Démontrer le théorème des valeurs intermédiaires)}]
 
 Le but de cet exercice est de démontrer le théorème des valeurs intermédiaires... Mais pour commencer, nous avons besoin de résultats supplémentaires sur les suites.
 
@@ -993,21 +989,11 @@ Dans tous les cas, $b_{n+1}-a_{n+1}=\dfrac{b_n-a_n}{2}$
 
 \end{solution}
 
-\printcollection{cont03}
 
 \chapter{Corrigés}
 
-\section*{Continuité d'une fonction}
 
-\printsolutions[collection={cont01}, headings={false} ]
-
-\section*{Suites et fonction continue}
-
-\printsolutions[collection={cont02}, headings={false} ]
-
-\section*{Théorème des valeurs intermédiaires}
-
-\printsolutions[collection={cont03}, headings={false} ]
+\printsolutions[headings={false} ]
 
 
 

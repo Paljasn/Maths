@@ -2,9 +2,6 @@
 
 \input{../../structure.tex}
 
-\DeclareExerciseCollection[topic=prob11]{prob11}
-\DeclareExerciseCollection[topic=prob12]{prob12}
-\DeclareExerciseCollection[topic=prob13]{prob13}
 
 
 \begin{document}
@@ -551,7 +548,7 @@ Ainsi, $E[X]=20 \times \dfrac{1}{4}=5$. L'élève peut espérer avoir 5 bonnes r
 
 \section*{Succession d'épreuves indépendantes}
 
-\begin{exercise}[topic=prob11]On lance 3 fois un dé équilibré à 6 faces, numérotées de 1 à 6 et on regarde à chaque fois la face du dessus.
+\begin{exercise}On lance 3 fois un dé équilibré à 6 faces, numérotées de 1 à 6 et on regarde à chaque fois la face du dessus.
 \begin{enumerate}
 \item Quelle est la probabilité d'obtenir trois nombres pairs ?
 \item Quelle est la probabilité d'obtenir un 6 au premier lancer mais de ne pas en obtenir au deuxième et troisième lancer ?
@@ -564,7 +561,7 @@ La probabilité d'obtenir un 6 au premier lancer vaut $\dfrac{1}{6}$. La probabi
 
 
 
-\begin{exercise}[topic=prob11]Dix cartes sont placées sur la table, faces cachées : 2 piques, 4 carreaux et 4 trèfles. On sélectionne une carte au hasard, de manière uniforme. La carte est alors dévoilée et on note sa couleur. Puis elle est retournée et les cartes sont mélangées. On tire alors une autre carte et on regarde sa couleur. On notera $P$, $C$ et $T$ lorsque la carte choisie est respectivement un pique, un carreau ou un trèfle.
+\begin{exercise}Dix cartes sont placées sur la table, faces cachées : 2 piques, 4 carreaux et 4 trèfles. On sélectionne une carte au hasard, de manière uniforme. La carte est alors dévoilée et on note sa couleur. Puis elle est retournée et les cartes sont mélangées. On tire alors une autre carte et on regarde sa couleur. On notera $P$, $C$ et $T$ lorsque la carte choisie est respectivement un pique, un carreau ou un trèfle.
 \begin{enumerate}
 \item Construire l'arbre de probabilité de cette expérience. Combien a-t-on d'issues ?
 \item Quelle est la probabilité de tirer deux trèfles ?
@@ -652,7 +649,7 @@ La probabilité de tirer deux piques vaut $0,2 \times 0,2 = 0,04$. Celle de tire
 
 
 
-\begin{exercise}[topic=prob11]Une urne renferme deux boules rouges, trois boules bleues et cinq boules jaunes indiscernables au toucher. On tire successivement et avec remise trois boules dans l'urne
+\begin{exercise}Une urne renferme deux boules rouges, trois boules bleues et cinq boules jaunes indiscernables au toucher. On tire successivement et avec remise trois boules dans l'urne
 \begin{enumerate}
 \item Quelle hypothèse permet d'affirmer que les tirages sont indépendants ?
 \item Quelle est la probabilité de tirer 3 boules jaunes ?
@@ -671,7 +668,7 @@ Les issues ayant 3 boules de couleurs différentes sont $(J;B;R)$, $(J;R;B)$, $(
 
 
 
-\begin{exercise}[topic=prob11]Au dernier examen d'une université, composé de trois exercices, 70\% des élèves ont réussi l'exercice 1, 50\% ont réussi le deuxième et 25\% ont réussi le troisième. On suppose que la réussite d'un exercice est indépendante de la réussite de tous les autres. On interroge un étudiant uniformément au hasard.
+\begin{exercise}Au dernier examen d'une université, composé de trois exercices, 70\% des élèves ont réussi l'exercice 1, 50\% ont réussi le deuxième et 25\% ont réussi le troisième. On suppose que la réussite d'un exercice est indépendante de la réussite de tous les autres. On interroge un étudiant uniformément au hasard.
 \begin{enumerate}
 \item Quelle est la probabilité que cet étudiant ait réussi les trois exercices ?
 \item Quelle est la probabilité qu'il n'en ait réussi aucun ?
@@ -687,7 +684,7 @@ La probabilité qu'il ait seulement réussi l'exercice 1 vaut $0.7 \times (1-0.5
 
 
 
-\begin{exercise}[topic=prob11]On lance $n$ fois un dé équilibré à 6 faces, numérotées de 1 à 6, puis on regarde à chaque fois la face du dessus. On note $A_n$ l'événement « le nombre 6 a été obtenu au moins une fois ».
+\begin{exercise}On lance $n$ fois un dé équilibré à 6 faces, numérotées de 1 à 6, puis on regarde à chaque fois la face du dessus. On note $A_n$ l'événement « le nombre 6 a été obtenu au moins une fois ».
 \begin{enumerate}
 \item Décrire l'événement $\overline{A_n}$ à l'aide d'une phrase puis déterminer $\mathbb{P}(\overline{A_n})$ et $\mathbb{P}(A_n)$. 
 \item Quelle est la limite de $\mathbb{P}(A_n)$ ? Interpréter cette limite dans le contexte de l'exercice.
@@ -706,7 +703,7 @@ Cherchons les entiers $n$ tels que $=1-\left(\dfrac{5}{6}\right)^n \geqslant 0.9
 
 
 
-\begin{exercise}[topic=prob11]Un lycée présente $n$ candidats au recrutement dans une école, où $n$ est un entier naturel non nul.
+\begin{exercise}Un lycée présente $n$ candidats au recrutement dans une école, où $n$ est un entier naturel non nul.
 On admet que la probabilité pour un candidat quelconque du lycée d'être admis à l'école
 est égale à $0,24$ et que les résultats des candidats sont indépendants les uns des autres.
 \begin{enumerate}
@@ -721,13 +718,12 @@ La probabilité qu'au moins un élève soit admis vaut donc $1-0.76^n$. Or, $1-0
 
 
 
-\printcollection{prob11}
 
 \section*{Loi binomiale}
 
 
 %
-%\begin{exercise}[topic=prob12]Donner les valeurs de $\dbinom{5}{3}$, $\dbinom{7}{5}$, $\dbinom{10}{7}$,  $\dbinom{8}{4}$, $\dbinom{10}{4}$ et $\dbinom{7}{3}$.\end{exercise}
+%\begin{exercise}Donner les valeurs de $\dbinom{5}{3}$, $\dbinom{7}{5}$, $\dbinom{10}{7}$,  $\dbinom{8}{4}$, $\dbinom{10}{4}$ et $\dbinom{7}{3}$.\end{exercise}
 %
 %\begin{solution}\hspace{0pt}
 %\begin{itemize}
@@ -741,11 +737,11 @@ La probabilité qu'au moins un élève soit admis vaut donc $1-0.76^n$. Or, $1-0
 %
 %
 %
-%\begin{exercise}[topic=prob12]Calculer les coefficients binomiaux : $\dbinom{51}{2}$, $\dbinom{1475}{1474}$, $\dbinom{1321}{0}$, $\dbinom{26}{24}$\end{exercise}
+%\begin{exercise}Calculer les coefficients binomiaux : $\dbinom{51}{2}$, $\dbinom{1475}{1474}$, $\dbinom{1321}{0}$, $\dbinom{26}{24}$\end{exercise}
 %
 %\begin{solution} $\dbinom{51}{2} = \dfrac{51 \times 50}{2}= 1275$, $\dbinom{1475}{1474}=\dbinom{1475}{1}=1475$, $\dbinom{1321}{0}=1$, $\dbinom{26}{24}=\dbinom{26}{2}=\dfrac{26 \times 25}{2}=325$\end{solution}
 
-\begin{exercise}[topic=prob12]
+\begin{exercise}
 Pour chacune des situations suivantes, dire si la variable aléatoire  suit ou non une loi binomiale. Si c'est le cas, préciser ses paramètres.
 
 \begin{enumerate}
@@ -773,7 +769,7 @@ Pour chacune des situations suivantes, dire si la variable aléatoire  suit ou n
 \end{solution}
 
 
-\begin{exercise}[topic=prob12]Soit $X$ une variable aléatoire suivant une loi binomiale $\mathcal{B}\left(5;\dfrac{1}{3}\right)$. Calculer $\mathbb{P}(X=1)$,  $\mathbb{P}(X \geqslant 4)$ et $\mathbb{P}(X<3)$\end{exercise}
+\begin{exercise}Soit $X$ une variable aléatoire suivant une loi binomiale $\mathcal{B}\left(5;\dfrac{1}{3}\right)$. Calculer $\mathbb{P}(X=1)$,  $\mathbb{P}(X \geqslant 4)$ et $\mathbb{P}(X<3)$\end{exercise}
 
 \begin{solution}$\mathbb{P}(X=1)=\dbinom{5}{1} \times \dfrac{1}{3} \times \left(\dfrac{2}{3}\right)^4=5\times \dfrac{1}{3} \times \dfrac{16}{81}=\dfrac{80}{243}$
 
@@ -795,13 +791,13 @@ D'une part, $\mathbb{P}(X<3)=\mathbb{P}(X=0)+\mathbb{P}(X=1)+\mathbb{P}(X=2)$. O
 
 
 
-\begin{exercise}[topic=prob12, subtitle={(Amérique du Nord 2023)}]Soit $X$ une variable aléatoire suivant la loi binomiale $\mathcal{B}(3;p)$. On sait que $\mathbb{P}(X=0)=\dfrac{1}{125}$. Que vaut $p$ ?\end{exercise}
+\begin{exercise}[subtitle={(Amérique du Nord 2023)}]Soit $X$ une variable aléatoire suivant la loi binomiale $\mathcal{B}(3;p)$. On sait que $\mathbb{P}(X=0)=\dfrac{1}{125}$. Que vaut $p$ ?\end{exercise}
 
 \begin{solution}On sait que $\mathbb{P}(X=0)=\dbinom{3}{0}p^0(1-p)^3=(1-p)^3=\dfrac{1}{125}$. Ainsi, $1-p=\dfrac{1}{5}$ et $p=\dfrac{4}{5}$.\end{solution}
 
 
 
-%\begin{exercise}[topic=prob12]Soit $X$ une variable aléatoire suivant une loi binomiale $\mathcal{B}(4;0.25)$.
+%\begin{exercise}Soit $X$ une variable aléatoire suivant une loi binomiale $\mathcal{B}(4;0.25)$.
 %\begin{enumerate}
 %\item Résumer la loi de $X$ dans un tableau
 %\item Calculer l'espérance de $X$. Nous verrons un peu plus tard une formule bien commode pour la déterminer.
@@ -824,7 +820,7 @@ D'une part, $\mathbb{P}(X<3)=\mathbb{P}(X=0)+\mathbb{P}(X=1)+\mathbb{P}(X=2)$. O
 
 
 
-\begin{exercise}[topic=prob12]On lance 4 fois un dé équilibré à 6 faces, numérotées de 1 à 6. 
+\begin{exercise}On lance 4 fois un dé équilibré à 6 faces, numérotées de 1 à 6. 
 \begin{enumerate}
 \item On note $X$ la variable aléatoire qui compte le nombre de 3 obtenus. Quelle est la loi de $X$ ?
 \item Que valent $\mathbb{P}(X=1)$ et $\mathbb{P}(X \leqslant 3)$ ?
@@ -849,7 +845,7 @@ Ainsi,
 \[ \mathbb{P}(X\leqslant 3)=1- \mathbb{P}(X>3)=1-\dfrac{1}{1296}=\dfrac{1295}{1296}\]\end{solution}
 
 
-\begin{exercise}[topic=prob12, subtitle={(Amérique du Nord 2024)}]Dans cet exercice, les probabilités seront arrondies au dis-millième.
+\begin{exercise}[subtitle={(Amérique du Nord 2024)}]Dans cet exercice, les probabilités seront arrondies au dis-millième.
 
 On choisit 500 véhicules particuliers hybrides rechargeables immatriculés en France en 2022. On admettra que la probabilité qu'un tel véhicule soit neuf est égale à 0,65.
 On assimile le choix de ces 500 véhicules à un tirage aléatoire avec remise.
@@ -864,7 +860,7 @@ On appelle $X$ la variable aléatoire représentant le nombre de véhicules neuf
 
 \begin{solution}La variable aléatoire $X$ suit une loi binomiale de paramètres $n=500$ et $p=0,65$. En utilisant la calculatrice, on trouve $\mathbb{P}(X=325) \simeq 0,0374$ et $\mathbb{P}(X \geqslant 325)\simeq 0,5206$.\end{solution}
 
-\begin{exercise}[topic=prob12]
+\begin{exercise}
 
 Une entreprise produit des composants électroniques, dont on estime que 5\% d'entre eux sont défectueux. On prélève 10 composants parmi le stock. On suppose que le stock est assez grand pour que cette sélection soit assimilée à un tirage avec remise dans le stock. On note $X$ le nombre de composants défectueux ainsi piochés.
 
@@ -892,7 +888,7 @@ Soit $n$ le nombre de composants prélevés et $Y$ le nombre de composants défe
 \end{solution}
 
 
-\begin{exercise}[topic=prob12]
+\begin{exercise}
 On lance quatre fois une pièce équilibrée et on regarde sur quel côté elle tombe. On note $X$ la variable aléatoire qui compte le nombre de PILE
 \begin{enumerate}
 \item Quelle est la loi de $X$ ?
@@ -930,7 +926,7 @@ Enfin, $E[Y]=5 \times 0.6 = 3$. En moyenne, on obtiendra 3 PILE.
 
 
 
-\begin{exercise}[topic=prob12]Dans cet exercice, les probabilités calculées seront arrondies, si nécessaire, à $10^{-3}$ près.
+\begin{exercise}Dans cet exercice, les probabilités calculées seront arrondies, si nécessaire, à $10^{-3}$ près.
 
 Une entreprise produit des stylos en grande quantité. La probabilité qu'un stylo présente un défaut est de $0,1$.
 
@@ -956,7 +952,7 @@ Ainsi, $\mathbb{P}(X\leqslant 2) = 0.9^{10}+\dbinom{10}{1} \times 0.1^1 \times 0
 \end{enumerate}\end{solution}
 
 
-\begin{exercise}[topic=prob12, subtitle={(Asie 2024)}]
+\begin{exercise}[subtitle={(Asie 2024)}]
 Dans la revue \textit{Lancet Public Health}, les chercheurs affirment qu’au 11 mai 2020, 5,7\% des adultes français avaient déjà été infectés par la COVID 19.
 
 \begin{enumerate}
@@ -992,7 +988,7 @@ Interpréter ce résultat dans le contexte de l'exercice.\end{enumerate}
 \end{solution}
 
 
-\begin{exercise}[topic=prob12, subtitle={(Asie 2015)}]
+\begin{exercise}[subtitle={(Asie 2015)}]
 Un concurrent participe à un concours de tir à l'arc, sur une cible circulaire. A chaque tir, la probabilité qu'il atteigne la cible est égale à $0,8$.
 \begin{enumerate}
 \item Le concurrent tire quatre flèches. On considère que les tirs sont indépendants. Déterminer la probabilité qu'il atteigne au moins trois fois la cible.
@@ -1006,7 +1002,7 @@ Soit $X$ la variable aléatoire qui compte le nombre de flèches qui atteignent 
 Soit $n$ un entier naturel et $Y$ la variable aléatoire qui compte le nombre de flèches qui atteignent la cible en $n$ tirs. Les tirs étant indépendants, $Y$ suit une loi binomiale de paramètres $n$ et 0.8. Par ailleurs, $E(Y)=0.8n$. Ainsi, $E(Y)=12$ si $n=15$. Il lui faut 15 flèches pour espérer atteindre la cible 12 fois.
 \end{solution}
 
-\begin{exercise}[topic=prob12]
+\begin{exercise}
 Soit $X$ une variable aléatoire suivant une loi binomiale de paramètres $n$ et $p$. On suppose que $E[X]=3,36$ et $\sigma(X)=1,68$.
 
 Calculer $\pp (2\leqslant X \leqslant 5)$. On donnera une réponse arrondie au dix-millième.
@@ -1021,7 +1017,7 @@ $X$ suit donc une loi binomiale de paramètres $n=21$ et $p=0,84$. On trouve alo
 \end{solution}
 
 
-\begin{exercise}[topic=prob12]
+\begin{exercise}
 Une urne contient un très grand nombre de boules rouges et de boules noires, indiscernables au toucher. On note $p$ la proportion de boules rouges dans cette urne. On tire 20 fois, et avec remise, une boule dans cette urne et on note $X$ le nombre de boules rouges obtenues.
 
 \begin{enumerate}
@@ -1068,7 +1064,7 @@ La fonction $f$ admet un maximum sur $[0;1]$ en $\dfrac{1}{4}$.
 \end{solution}
 
 
-%\begin{exercise}[topic=prob12]Un examinateur fait passer des étudiants à un oral. Il possède 40 exercices différents, dont 3 concernent les probabilités. Pour chaque étudiant, l'examinateur choisit au hasard un de ses 40 sujets et ce, indépendamment des sujets précédemment tirés.
+%\begin{exercise}Un examinateur fait passer des étudiants à un oral. Il possède 40 exercices différents, dont 3 concernent les probabilités. Pour chaque étudiant, l'examinateur choisit au hasard un de ses 40 sujets et ce, indépendamment des sujets précédemment tirés.
 %\begin{enumerate}
 %\item La matinée de l'examinateur comporte 5 étudiants à faire passer. Quelle est la probabilité qu'un sujet de probabilité tombe au moins une fois durant cette matinée ?
 %\item Combien d'élèves l'examinateur doit-il interroger pour qu'en moyenne 6 élèves soient interrogés sur un sujet de probabilité ?
@@ -1096,14 +1092,12 @@ La fonction $f$ admet un maximum sur $[0;1]$ en $\dfrac{1}{4}$.
 %\end{solution}
 
 
-\printcollection{prob12}
-
 \section*{Exercices de synthèse}
 
 
 
 
-\begin{exercise}[topic=prob13, subtitle={(Réunion 2023)}]
+\begin{exercise}[subtitle={(Réunion 2023)}]
 Un commerçant vend deux types de matelas : matelas RESSORTS et matelas MOUSSE. On suppose que chaque client achète un seul matelas. On dispose des informations suivantes :
 \begin{itemize}
 \item 20\% des clients achètent un matelas RESSORTS. Parmi eux, 90\% sont satisfaits de leur achat.
@@ -1244,7 +1238,7 @@ remise.
 
 
 
-\begin{exercise}[topic=prob13, subtitle={(Antilles - Guyane 2016)}]
+\begin{exercise}[subtitle={(Antilles - Guyane 2016)}]
 
 Un fabricant d'ampoules possède deux machines, notées A et B. La machine A fournit 65\% de la production, et la machine B fournit le reste. Certaines ampoules présentent un défaut de fabrication :
 \begin{itemize}
@@ -1332,7 +1326,7 @@ On définit les événements suivants :
 
 
 
-\begin{exercise}[topic=prob13, subtitle={(Amérique du Nord 2021)}]
+\begin{exercise}[subtitle={(Amérique du Nord 2021)}]
 
 \textit{Les probabilités demandées dans cet exercice seront arrondies à $10^{-3}$.}\\
 Un laboratoire pharmaceutique vient d'élaborer un nouveau test anti-dopage. Une étude sur ce nouveau test donne les résultats suivants :
@@ -1434,7 +1428,7 @@ positif parmi les 5 athlètes contrôlés.
 
 
 
-\begin{exercise}[topic=prob13, subtitle={(Centres étrangers 2023)}] Une société de production s'interroge sur l'opportunité de programmer un jeu télévisé.
+\begin{exercise}[subtitle={(Centres étrangers 2023)}] Une société de production s'interroge sur l'opportunité de programmer un jeu télévisé.
 Ce jeu réunit quatre candidats et se déroule en deux phases :
 \begin{itemize}
 \item  La première phase est une phase de qualification.
@@ -1481,23 +1475,13 @@ $P(T=k)$ & 0.1792 & 0.3456 & 0.3456 & 0.1296 \\
 \end{center}
 Ainsi, $E[T]=0 \times 0.1792 + 5 \times 0.3456 + 9 \times 0.3456 + 11 \times 0.1296 = 6.264 >6$. La durée moyenne de la deuxième phase excède 6 minutes. La condition 2 n'est pas respectée et le jeu ne peut pas être programmé. \end{solution}
 
-\printcollection{prob13}
+
 
 \chapter{Corrigés}
 
 
 
-\section*{Succession d'épreuves indépendantes}
-
-\printsolutions[collection={prob11}, headings={false} ]
-
-\section*{Loi binomiale}
-
-\printsolutions[collection={prob12}, headings={false} ]
-\section*{Exercices de synthèse}
-
-
-\printsolutions[collection={prob13}, headings={false} ]
+\printsolutions[headings={false} ]
 
 
 

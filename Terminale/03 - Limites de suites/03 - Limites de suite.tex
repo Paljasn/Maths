@@ -2,13 +2,10 @@
 
 \input{../../structure.tex}
 
-\DeclareExerciseCollection[topic=lim01]{lim01}
-\DeclareExerciseCollection[topic=lim02]{lim02}
-\DeclareExerciseCollection[topic=lim03]{lim03}
 
 \begin{document}
 
-\chapterimage{../../Pictures/fond}
+\chapterimage{../../Pictures/background}
 
 
 \chapter{Cours : Limites de suite}
@@ -407,7 +404,7 @@ Le numérateur vaut 2 et le dénominateur tend vers $+\infty$. Ainsi, $\displays
 
 \section*{Limite d'une suite}
 
-\begin{exercise}[topic=lim01] Pour tout entier naturel $n$, on pose $u_n=\sqrt{n}$.
+\begin{exercise} Pour tout entier naturel $n$, on pose $u_n=\sqrt{n}$.
 \begin{enumerate}
 \item Résoudre l'inéquation $u_n \geqslant 100$.
 \item Résoudre l'inéquation $u_n \geqslant 100000$.
@@ -429,7 +426,7 @@ Puisque pour tout $A$, on a $u_n \geqslant A$ à partir d'un certain rang, on pe
 
 
 
-\begin{exercise}[topic=lim01]On considère la suite $(u_n)$ définie pour tout $n\in \mathbb{N}$ par  $u_n=4-3n$.
+\begin{exercise}On considère la suite $(u_n)$ définie pour tout $n\in \mathbb{N}$ par  $u_n=4-3n$.
 \begin{enumerate}
 \item Calculer $u_{30}$, $u_{70}$, $u_{1000}$. Quelle semble être la limite de la suite $(u_n)$ ?
 \item Soit $A$ un réel. Résoudre l'équation $u_n \leqslant A$, d'inconnue $n\in\mathbb{N}$.
@@ -443,7 +440,7 @@ $u_n\leqslant A$ si et seulement si $4-3n \leqslant A$ si et seulement si $n\geq
 
 
 
-\begin{exercise}[topic=lim01]Pour tout $n\in\mathbb{N}$, on note $u_n=\left\{\begin{array}{ll} 1 & \text{si } n \text{ est premier}\\
+\begin{exercise}Pour tout $n\in\mathbb{N}$, on note $u_n=\left\{\begin{array}{ll} 1 & \text{si } n \text{ est premier}\\
 n^2 & \text{sinon}
 
 \end{array}\right.$. A-t-on $\displaystyle \lim _{n\to +\infty} u_n = +\infty$ ?\end{exercise}
@@ -452,12 +449,12 @@ n^2 & \text{sinon}
 
 
 
-\begin{exercise}[topic=lim01]Pour tout $n\in\mathbb{N}$, on pose $u_n=\dfrac{3-5n}{10n+2}$. Quelle semble être la limite de la suite $(u_n)$ ?\end{exercise}
+\begin{exercise}Pour tout $n\in\mathbb{N}$, on pose $u_n=\dfrac{3-5n}{10n+2}$. Quelle semble être la limite de la suite $(u_n)$ ?\end{exercise}
 \begin{solution}Il semble que la limite de la suite $(u_n)$ soit $-\dfrac{1}{2}$.\end{solution}
 
 
 
-\begin{exercise}[topic=lim01]On considère la suite $(u_n)$ définie par $u_0=12$ et pour tout entier naturel $n$, $u_{n+1}= \dfrac{u_n}{2}+2$. 
+\begin{exercise}On considère la suite $(u_n)$ définie par $u_0=12$ et pour tout entier naturel $n$, $u_{n+1}= \dfrac{u_n}{2}+2$. 
 
 \begin{enumerate}
 \item Quelle semble être la limite de la suite $(u_n)$ ?
@@ -467,7 +464,8 @@ n^2 & \text{sinon}
 
 
 
-\begin{exercise}[topic=lim01]
+\begin{exercise}
+
 
 On considère la suite $(u_n)$ définie pour tout $n\in\mathbb{N}$ par $u_n=\dfrac{3n+6}{n+1}$.
 \begin{enumerate}
@@ -487,14 +485,14 @@ Ainsi, pour tout $\varepsilon > 0$, dès que $n > \dfrac{3}{\varepsilon}-1$, on 
 
 
 
-\begin{exercise}[topic=lim01]Pour tout entier naturel $n$, on pose $u_n=(-1)^n$. La suite $(u_n)$ semble-t-elle avoir une limite ?\end{exercise}
+\begin{exercise}Pour tout entier naturel $n$, on pose $u_n=(-1)^n$. La suite $(u_n)$ semble-t-elle avoir une limite ?\end{exercise}
 \begin{solution}Les termes de rang pair de cette suite valent 1 alors que les termes de rang impair valent -1. Cette suite n'admet pas de limite.\end{solution}
 
-\printcollection{lim01}
+
 
 \section*{Opérations sur les limites}
 
-\begin{exercise}[topic=lim02] Dans chacun des cas suivants, déterminer la limite, si elle existe, de la suite $(u_n)$  définie pour tout entier naturel non nul $n$.
+\begin{exercise}Dans chacun des cas suivants, déterminer la limite, si elle existe, de la suite $(u_n)$  définie pour tout entier naturel non nul $n$.
 
 \renewcommand{\arraystretch}{2.5}
 \begin{tabularx}{\linewidth}{XXX}
@@ -547,17 +545,17 @@ Ainsi, pour tout $\varepsilon > 0$, dès que $n > \dfrac{3}{\varepsilon}-1$, on 
 
 
 
-\begin{exercise}[topic=lim02]Donner deux suites $(u_n)$ et $(v_n)$ telles que $\displaystyle \lim_{n \to +\infty}u_n=+\infty$, $\displaystyle \lim_{n \to +\infty} v_n = 0$ et $\displaystyle \lim_{n \to +\infty} (u_n\,v_n)=0$.\end{exercise}
+\begin{exercise}Donner deux suites $(u_n)$ et $(v_n)$ telles que $\displaystyle \lim_{n \to +\infty}u_n=+\infty$, $\displaystyle \lim_{n \to +\infty} v_n = 0$ et $\displaystyle \lim_{n \to +\infty} (u_n\,v_n)=0$.\end{exercise}
 \begin{solution}Pour tout entier naturel non nul $n$, on pose $u_n=n$ et $v_n=\dfrac{1}{n^2}$. On a $\displaystyle\lim_{n \to+\infty}u_n=+\infty$ et $\displaystyle\lim_{n \to+\infty}v_n=0$. Or, pour tout entier naturel non nul $n$, $u_nv_n=\dfrac{1}{n}$. Ainsi, $\displaystyle\lim_{n \to+\infty}(u_nv_n)=0$.\end{solution}
 
 
 
-\begin{exercise}[topic=lim02] Donner deux suites $(u_n)$ et $(v_n)$ telles que $\displaystyle \lim_{n \to +\infty}u_n=+\infty$, $\displaystyle \lim_{n \to +\infty} v_n = -\infty$ et $\displaystyle \lim_{n \to +\infty} (u_n + v_n)=3$.\end{exercise}
+\begin{exercise} Donner deux suites $(u_n)$ et $(v_n)$ telles que $\displaystyle \lim_{n \to +\infty}u_n=+\infty$, $\displaystyle \lim_{n \to +\infty} v_n = -\infty$ et $\displaystyle \lim_{n \to +\infty} (u_n + v_n)=3$.\end{exercise}
 \begin{solution}Pour tout entier naturel non nul $n$, on pose $u_n=n$ et $v_n=3-n$. On a $\displaystyle\lim_{n \to+\infty}u_n=+\infty$ et $\displaystyle\lim_{n \to+\infty}v_n=-\infty$. Or, pour tout entier naturel non nul $n$, $u_n+v_n3$. Ainsi, $\displaystyle\lim_{n \to+\infty}(u_n+v_n)=3$\end{solution}
 
 
 
-\begin{exercise}[topic=lim02]Démontrer la propriété suivante : soit $(u_n)$ et $(v_n)$ deux suites telles que $\displaystyle\lim_{n \to + \infty}u_n=+\infty$ et $\displaystyle\lim_{n \to + \infty}v_n=\ell \in \mathbb{R}$, alors $\displaystyle\lim_{n \to + \infty}(u_n+v_n)=+\infty$.\end{exercise}
+\begin{exercise}Démontrer la propriété suivante : soit $(u_n)$ et $(v_n)$ deux suites telles que $\displaystyle\lim_{n \to + \infty}u_n=+\infty$ et $\displaystyle\lim_{n \to + \infty}v_n=\ell \in \mathbb{R}$, alors $\displaystyle\lim_{n \to + \infty}(u_n+v_n)=+\infty$.\end{exercise}
 \begin{solution}Soit $\varepsilon$ un réel strictement positif et $A$ un réel
 \begin{itemize}
 \item Puisque $\displaystyle\lim_{n \to+\infty}u_n=+\infty$, il existe un entier $N_1$ tel que, pour tout entier $n\geqslant N_1$, on a $u_n \geqslant A - l + \varepsilon$
@@ -567,13 +565,13 @@ Prenons alors $N=\max(N_1;N_2)$. Alors, pour tout entier naturel $n \geqslant N$
 
 
 
-\begin{exercise}[topic=lim02]Soit $(u_n)$ une suite convergente et $(v_n)$ une suite divergente. En procédant par l'absurde, montrer que la suite $(u_n+v_n)$ est divergente.\end{exercise}
+\begin{exercise}Soit $(u_n)$ une suite convergente et $(v_n)$ une suite divergente. En procédant par l'absurde, montrer que la suite $(u_n+v_n)$ est divergente.\end{exercise}
 
 \begin{solution}Supposons que la suite $(u_n+v_n)$ converge. Alors, pour tout entier naturel $n$, $v_n=(u_n+v_n)-u_n$. $(v_n)$ est donc la différence de deux suites convergentes, elle est donc convergente, ce qui est contraire à ce qu'indique l'énoncé. Finalement, la suite $(u_n+v_n)$ diverge.\end{solution}
 
 
 
-\begin{exercise}[topic=lim02]On considère la suite $(u_n)$ définie par $u_0=1$ et pour tout entier naturel $n$, $u_{n+1}=\dfrac{u_n}{1+2u_n}$.
+\begin{exercise}On considère la suite $(u_n)$ définie par $u_0=1$ et pour tout entier naturel $n$, $u_{n+1}=\dfrac{u_n}{1+2u_n}$.
 
 \begin{enumerate}
 \item Calculer $u_1$, $u_2$ et $u_3$.
@@ -610,7 +608,7 @@ Pour tout entier naturel  $n$, $v_n=v_0+2n=1+2n$ et $u_n=\dfrac{1}{v_n}=\dfrac{1
 
 
 
-\begin{exercise}[topic=lim02]On considère la suite $(u_n)$ définie par $u_0=3$ et, pour tout entier naturel $n$, $u_{n+1}=u_n+2n-1$.
+\begin{exercise}On considère la suite $(u_n)$ définie par $u_0=3$ et, pour tout entier naturel $n$, $u_{n+1}=u_n+2n-1$.
 
 Pour tout entier naturel $n$, on pose $v_n=u_n-n^2$.
 \begin{enumerate}
@@ -635,7 +633,7 @@ Par produit, $\displaystyle\lim_{n \to +\infty}u_n=+\infty$.\end{solution}
 
 
 
-\begin{exercise}[topic=lim02, subtitle={(Nouvelle-Calédonie 2023)}]
+\begin{exercise}[subtitle={(Nouvelle-Calédonie 2023)}]
 On considère la suite $(u_n)$ telle que $u_0=0$ et, pour tout entier naturel $n$,
 \[u_{n+1}=\dfrac{-u_n-4}{u_n+3}.\]
 
@@ -672,7 +670,7 @@ Par ailleurs, $\displaystyle\lim_{n \to +\infty}\dfrac{1}{n+0.5}=0$ et donc $\di
 
 
 
-\begin{exercise}[topic=lim02]On considère la suite $(u_n)$ définie par $u_0=2$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{3u_n-2}{2u_n-1}$.
+\begin{exercise}On considère la suite $(u_n)$ définie par $u_0=2$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{3u_n-2}{2u_n-1}$.
 
 \begin{enumerate}
 \item On considère la fonction $f: x\mapsto \dfrac{3x-2}{2x-1}$. Déterminer le sens de variations de $f$ sur son domaine de définition.
@@ -710,11 +708,11 @@ Par ailleurs, $v_n=\dfrac{1}{u_n-1}$ et donc $u_n=\dfrac{1}{v_n}+1=\dfrac{1}{1+2
 On en déduit que  $\displaystyle\lim_{n \to +\infty}u_n =1$.
 \end{solution}
 
-\printcollection{lim02}
+
 
 \section*{Formes indéterminées}
 
-\begin{exercise}[topic=lim03]En factorisant par le terme dominant, déterminer la limite de la suite $(u_n)$ dans chacun des cas suivants.
+\begin{exercise}En factorisant par le terme dominant, déterminer la limite de la suite $(u_n)$ dans chacun des cas suivants.
 \begin{center}
 \renewcommand{\arraystretch}{2.5}
 \begin{tabularx}{\linewidth}{XXXX}
@@ -751,7 +749,7 @@ Or, $\displaystyle \lim_{n \to +\infty} \dfrac{1}{n}=0$, $\displaystyle \lim_{n 
 
 
 
-%\begin{exercise}[topic=lim03]Déterminer les limites suivantes
+%\begin{exercise}Déterminer les limites suivantes
 %
 %\begin{tabularx}{\linewidth}{XX}
 %\textbf{a.} $\displaystyle\lim_{n\to+\infty} \left(4n^3+2n^2+5+\dfrac{1}{n^2}\right)$
@@ -781,7 +779,7 @@ Or, $\displaystyle \lim_{n \to +\infty} \dfrac{1}{n}=0$, $\displaystyle \lim_{n 
 
 
 
-\begin{exercise}[topic=lim03]On considère la suite $(u_n)$ définie par
+\begin{exercise}On considère la suite $(u_n)$ définie par
 \[ \left\{ \begin{array}{l}
       u_0 = 1 \\
       \text{Pour tout entier naturel } n,\; u_{n+1}=\dfrac{9}{6-u_n}
@@ -834,7 +832,7 @@ Finalement, $\displaystyle \lim_{n\to+\infty}u_n=\dfrac{6}{2}=3$.\end{solution}
 
 
 
-\begin{exercise}[topic=lim03] Déterminer la limite de la suite $(u_n)$ dans chacun des cas suivants.
+\begin{exercise} Déterminer la limite de la suite $(u_n)$ dans chacun des cas suivants.
 \begin{center}
 \begin{tabularx}{\linewidth}{XX}
 \textbf{a.} $ u_n = \sqrt{n-3}-\sqrt{n+8}$ & \textbf{b.} $ u_n=\sqrt{n+2}+\sqrt{2n+5}$ \\
@@ -857,7 +855,7 @@ Or, $\displaystyle \lim_{n\to+\infty}(\sqrt{n+1}+\sqrt{n+2})=+\infty$ et donc $\
 Ainsi, $\displaystyle\lim_{n \to+\infty}u_n=0$.\end{solution}
 
 
-\begin{exercise}[topic=lim03]Déterminer les limites suivantes.
+\begin{exercise}Déterminer les limites suivantes.
 
 \begin{tabularx}{\linewidth}{XXX}
 \textbf{a.} $\displaystyle\lim_{n\to +\infty}\dfrac{4+\sqrt{n}}{\sqrt{4+n}}$ & \textbf{b.} $\displaystyle\lim_{n\to +\infty}\dfrac{\sqrt{2n^2+1}}{n+\e^{-n}}$ & \textbf{c.} $\displaystyle\lim_{n\to +\infty}\sqrt{\dfrac{\e^n}{1+\e^n}}$
@@ -885,7 +883,7 @@ Par ailleurs,  $\displaystyle\lim_{n\to +\infty}\e^{-n}=0$ et donc $\displaystyl
 Or, $\displaystyle\lim_{n \to + \infty}\e^{-n}=0$ et donc $\displaystyle\lim_{n \to + \infty}\dfrac{1}{1+\e^{-n}}=1$. Ainsi, $\displaystyle\lim_{n \to + \infty}\sqrt{\dfrac{\e^n}{1+\e^n}}=\sqrt{1}=1$.\end{solution}
 
 
-\begin{exercise}[topic=lim03]Pour tout entier naturel $n>1$, on pose $ u_n = \sqrt{n^2+3n-2}-\sqrt{n^2-n-1}$.
+\begin{exercise}Pour tout entier naturel $n>1$, on pose $ u_n = \sqrt{n^2+3n-2}-\sqrt{n^2-n-1}$.
 
 \begin{enumerate}
 \item En utilisant la quantité conjuguée, montrer que pour tout entier naturel $n>1$
@@ -909,23 +907,10 @@ Or,  $\displaystyle \lim_{n \to +\infty}\left(4+\dfrac{3}{n}\right)=4$,   $\disp
 
 
 
-
-
-\printcollection{lim03}
-
 \chapter{Corrigés}
 \setcounter{section}{0}
-\section*{Limite d'une suite}
-\printsolutions[collection={lim01}, headings={false} ]
 
-
-\section*{Opérations sur les limites}
-
-\printsolutions[collection={lim02}, headings={false} ]
-
-
-\section*{Formes indéterminées}
-\printsolutions[collection={lim03}, headings={false} ]
+\printsolutions[headings={false} ]
 
 
 

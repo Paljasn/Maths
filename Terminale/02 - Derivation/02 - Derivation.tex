@@ -2,13 +2,10 @@
 
 \input{../../structure.tex}
 
-\DeclareExerciseCollection[topic=der01]{der01}
-\DeclareExerciseCollection[topic=der02]{der02}
-\DeclareExerciseCollection[topic=der03]{der03}
 
 \begin{document}
 
-\chapterimage{Pictures/background}
+\chapterimage{../../Pictures/background}
 \chapter{Cours : Compléments sur la dérivation}
 
 \section{Rappels sur la dérivation}
@@ -229,7 +226,7 @@ Bien que la fonction $f$ soit définie sur l'intervalle fermé $[-2;2]$, elle n'
 \setcounter{section}{0}
 \section*{Rappels sur la dérivation}
 
-\begin{exercise}[topic=der01]Dériver les fonctions suivantes, en précisant leur domaine de définition et de dérivation.
+\begin{exercise}Dériver les fonctions suivantes, en précisant leur domaine de définition et de dérivation.
 
 \renewcommand{\arraystretch}{2}
 \begin{tabularx}{\linewidth}{XX}
@@ -292,7 +289,7 @@ Ainsi, puisque $f=\dfrac{u}{v}$, $f$ est dérivable sur $\mathbb{R}$ et $f'=\dfr
 
 
 
-\begin{exercise}[topic=der01] On considère la fonction $f:x\mapsto x^3+3x^2-45x+21$.
+\begin{exercise} On considère la fonction $f:x\mapsto x^3+3x^2-45x+21$.
 \begin{enumerate}
 \item $f$ est dérivable pour tout $x\in\mathbb{R}$. Que vaut $f'(x)$ ?
 \item Construire le tableau de signes de $f'$ et en déduire le tableau de variations de $f$.
@@ -314,7 +311,7 @@ Par ailleurs, le signe d'un polynôme est celui de son coefficient dominant (ici
 \end{tikzpicture}
 \end{center}\end{solution}
 
-\begin{exercise}[topic=der01]On considère la fonction $f$ définie pour tout réel $x$ par $f(x)=\dfrac{10x+4}{5x^2+1}$
+\begin{exercise}On considère la fonction $f$ définie pour tout réel $x$ par $f(x)=\dfrac{10x+4}{5x^2+1}$
 \begin{enumerate}
 \item Justifier que $f$ est dérivable sur $\mathbb{R}$. Exprimer $f'(x)$ pour tout réel $x$.
 \item Construire le tableau de variations de $f$ sur $\mathbb{R}$
@@ -343,7 +340,7 @@ On peut alors construire le tableau de signes de $f'$ et en déduire le tableau 
 \end{solution}
 
 
-\begin{exercise}[topic=der01]Pour tout réel $x \neq -1$, on pose $f(x)=\dfrac{\e^x}{1+x}$.
+\begin{exercise}Pour tout réel $x \neq -1$, on pose $f(x)=\dfrac{\e^x}{1+x}$.
 \begin{enumerate}
 \item Justifier que $f$ est dérivable sur $]-\infty ; -1[$ et sur $]-1;+\infty[$ et que pour tout réel $x$ dans ces intervalles
 \[f'(x)=\dfrac{x\,\e^x}{(1+x)^2}.\]
@@ -371,7 +368,7 @@ Pour tout réel $x\neq -1$, $(1+x)^2> 0$ et $\e^x >0$. $f'(x)$ est donc du signe
 
 
 
-\begin{exercise}[topic=der01, subtitle={}]Construire le tableau de variations de la fonction $f:x\mapsto (-x^2+x+1)\e^{1-3x}$ définie sur $\mathbb{R}$.\end{exercise}
+\begin{exercise}Construire le tableau de variations de la fonction $f:x\mapsto (-x^2+x+1)\e^{1-3x}$ définie sur $\mathbb{R}$.\end{exercise}
 
 \begin{solution}Pour tout réel $x$, on pose $u(x)=-x^2+x+1$ et $v(x)=\e^x$.
 \begin{itemize}
@@ -398,7 +395,7 @@ On peut alors construire le tableau de signes de $f'$ et en déduire le tableau 
 
 
 
-\begin{exercise}[topic=der01, subtitle={(Centres étrangers 2024)}]On considère la suite \((u_n)\) définie par \(u_0=0,1\) et, pour tout entier naturel \(n\), $u_{n+1}=2u_n\e^{-u_n}$
+\begin{exercise}[subtitle={(Centres étrangers 2024)}]On considère la suite \((u_n)\) définie par \(u_0=0,1\) et, pour tout entier naturel \(n\), $u_{n+1}=2u_n\e^{-u_n}$
 \begin{enumerate}
  	\item Déterminer le sens de variations de la fonction \(f\) définie pour tout réel \(x\in [0;1] \) par \(f(x)=2x\e^{-x}\).
  	\item Montrer par récurrence que pour tout entier naturel \(n\), on a $0 \leqslant u_n \leqslant u_{n+1} \leqslant 1$.
@@ -431,7 +428,7 @@ Pour tout entier naturel \(n\), on considère la proposition \(\mathcal{P}(n)\) 
 
 
 
-\begin{exercise}[topic=der01] A l'aide d'une étude de fonction, montrer que pour tout réel $x$, on a $\e^x \geqslant 1+x$ \end{exercise}
+\begin{exercise} A l'aide d'une étude de fonction, montrer que pour tout réel $x$, on a $\e^x \geqslant 1+x$ \end{exercise}
 
 \begin{solution}Pour tout réel $x$, on pose $f(x)=\e^x-x-1$. $f$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $f'(x)=\e^x-1$. On sait par ailleurs que $e^x \geqslant 1 \Leftrightarrow x\geqslant 0$. On en déduit le tableau de signes de $f'$ et le tableau de variations de $f$.
 
@@ -447,12 +444,12 @@ On a en effet $f(0)=\e^0-0-1=0$. Ainsi, pour tout réel $x$, $f(x)\geqslant 0$, 
 
 Graphiquement, cela signifie que la courbe de la fonction exponentielle est toujours au-dessus de sa tangente en 0.\end{solution}
 
-\printcollection{der01}
+
 
 \section*{Dérivée seconde}
 
 
-\begin{exercise}[topic=der02]Pour chacune des fonctions suivantes, deux fois dérivables sur l'intervalle mentionné, donner une expression de la dérivée seconde.
+\begin{exercise}Pour chacune des fonctions suivantes, deux fois dérivables sur l'intervalle mentionné, donner une expression de la dérivée seconde.
 
 \begin{tabularx}{\linewidth}{XX}
  $f_1 : x \mapsto 6x^2+2x-1$ sur $\mathbb{R}$ &
@@ -500,7 +497,7 @@ Ainsi, pour tout réel $x>0$
 
 
 
-\begin{exercise}[topic=der02] On considère la fonction $f$ définie pour tout $x\in\mathbb{R}$ par $f(x)=3x^4+16x^3-66x^2-360x+120$.
+\begin{exercise} On considère la fonction $f$ définie pour tout $x\in\mathbb{R}$ par $f(x)=3x^4+16x^3-66x^2-360x+120$.
 \begin{enumerate}
 \item Soit $x$ un réel. Que vaut $f'(x)$ ?
 \item On note $f''$ la dérivée de $f'$. Que vaut $f''(x)$ ?
@@ -545,7 +542,7 @@ Puisque $f'$ est croissante sur $]-\infty;5]$ et que $f'(5)=0$, on en déduit qu
 
 
 
-\begin{exercise}[topic=der02]On considère une fonction $f$ deux fois dérivable. On a représenté ci-dessous la courbe de $f'$ dans un repère orthonormé.
+\begin{exercise}On considère une fonction $f$ deux fois dérivable. On a représenté ci-dessous la courbe de $f'$ dans un repère orthonormé.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -592,7 +589,7 @@ Par ailleurs, à l'aide du signe de \(f'\), on peut construire le tableau de var
 
 
 
-\begin{exercise}[topic=der02]Soit $f$ et $g$ deux fonctions deux fois dérivables sur un intervalle $I$. Justifier que $(fg)$ est deux fois dérivable sur $I$ et exprimer $(fg)''$ en fonction de $f$, $g$ et de leurs dérivées.\end{exercise}
+\begin{exercise}Soit $f$ et $g$ deux fonctions deux fois dérivables sur un intervalle $I$. Justifier que $(fg)$ est deux fois dérivable sur $I$ et exprimer $(fg)''$ en fonction de $f$, $g$ et de leurs dérivées.\end{exercise}
 
 \begin{solution}Si $f$ et $g$ sont dérivables, alors $fg$ l'est également et $(fg)'=f'g+fg'$. Si de plus $f'$ et $g'$ sont dérivables, alors $f'g$ et $fg'$ le sont également et
 \begin{itemize}
@@ -603,7 +600,7 @@ Ainsi, $(fg)'$ est dérivable et $(fg)''=f''g+f'g'+f'g'+fg''=f''g+2f'g'+fg''$.\e
 
 
 
-\begin{exercise}[topic=der02]Soit $a$ et $b$ deux réels. Pour tout réel $x$, on pose $f(x)=(ax+b)\e^x$.
+\begin{exercise}Soit $a$ et $b$ deux réels. Pour tout réel $x$, on pose $f(x)=(ax+b)\e^x$.
 \begin{enumerate}
 \item Justifier que $f$ est deux fois dérivable sur $\mathbb{R}$ puis donner une expression de $f'(x)$ et $f''(x)$.
 \item Montrer que pour tout réel $x$, $f''(x)-2f'(x)+f(x)=0$.
@@ -618,7 +615,7 @@ et donc
 
 
 
-\begin{exercise}[topic=der02]Soit $f$ une fonction définie sur un intervalle $I$ et $n$ un entier naturel. Lorsqu'il est possible de dériver $n$ fois la fonction $f$ sur $I$, on dit que $f$ est $n$ fois dérivable et on note $f^{(n)}$ la fonction obtenue en dérivant $n$ fois. On a alors $f^{(0)}=f$,  $f^{(1)}=f'$, $f^{(2)}=f''$...
+\begin{exercise}Soit $f$ une fonction définie sur un intervalle $I$ et $n$ un entier naturel. Lorsqu'il est possible de dériver $n$ fois la fonction $f$ sur $I$, on dit que $f$ est $n$ fois dérivable et on note $f^{(n)}$ la fonction obtenue en dérivant $n$ fois. On a alors $f^{(0)}=f$,  $f^{(1)}=f'$, $f^{(2)}=f''$...
 \begin{enumerate}
 \item On considère la fonction $f:x\mapsto x \e^x$. Montrer par récurrence que, pour tout entier naturel $n$, $f$ est $n$ fois dérivable et pour tout réel $x$, $f^{(n)}(x)=(x+n)\e^x$. 
 \item On considère la fonction $g:x\mapsto x \e^{-x}$. Montrer par récurrence que, pour tout entier naturel $n$, $g$ est $n$ fois dérivable et pour tout réel $x$, $g^{(n)}(x)=(-1)^n(x-n)\e^x$ .
@@ -643,11 +640,11 @@ Pour tout entier naturel \(n\), on considère la proposition \(P(n)\) : « \(g\)
 \end{itemize}
 \end{solution}
 
-\printcollection{der02}
+
 
 \section*{Composition de fonctions}
 
-\begin{exercise}[topic=der03]Pour tout réel $x$, on pose $f(x)=x^2+1$, $g(x)=3x+2$ et $h(x)=2-x$.\\
+\begin{exercise}Pour tout réel $x$, on pose $f(x)=x^2+1$, $g(x)=3x+2$ et $h(x)=2-x$.\\
 \noindent Donner une expression de $(f \circ g) (x)$, $(g \circ f) (x)$, $(h \circ g) (x)$ et   $(f \circ g \circ h) (x)$.
 \end{exercise}
 
@@ -663,7 +660,7 @@ Pour tout entier naturel \(n\), on considère la proposition \(P(n)\) : « \(g\)
 \end{itemize}
 \end{solution}
 
-\begin{exercise}[topic=der03]Exprimer chacune des fonctions suivantes comme la composition de deux fonctions « usuelles ». On ne se souciera pas des domaines de définition.
+\begin{exercise}Exprimer chacune des fonctions suivantes comme la composition de deux fonctions « usuelles ». On ne se souciera pas des domaines de définition.
 
 \renewcommand{\arraystretch}{2}
 \begin{tabularx}{\linewidth}{XXX}
@@ -681,7 +678,7 @@ Pour tout réel $x$, on pose $u(x)=x^7$ et $v(x)=3x+8$. On a alors $f_2=u \circ 
 Pour tout réel positif $x$ positif, on pose $u(x)=\sqrt(x)$. Pour tout réel $x$, on pose $v(x)=1+\e^x$. On a alors $f_3=u \circ v$.
 \end{solution}
 
-\begin{exercise}[topic=der03]Soit $f$ une fonction définie sur un ensemble $E$. On dit que $f$ est une involution de $E$ si pour tout $x\in E$, $(f \circ f)(x)=x$.
+\begin{exercise}Soit $f$ une fonction définie sur un ensemble $E$. On dit que $f$ est une involution de $E$ si pour tout $x\in E$, $(f \circ f)(x)=x$.
 \begin{enumerate}
 \item Montrer que la fonction $x\mapsto \dfrac{1}{x}$ est une involution de $\mathbb{R}^*$.
 \item Soit $a$ un réel. Montrer que la fonction $x\mapsto a-x$ est une involution de $\mathbb{R}$.
@@ -700,7 +697,7 @@ $f$ est une involution de $\mathbb{R}\setminus \{a\}$.\end{solution}
 
 
 
-\begin{exercise}[topic=der03]Dériver les fonctions suivantes, dérivables sur l'intervalle donné.
+\begin{exercise}Dériver les fonctions suivantes, dérivables sur l'intervalle donné.
 
 \renewcommand{\arraystretch}{2}
 \begin{tabularx}{\linewidth}{XX}
@@ -727,7 +724,7 @@ $f_6 : x \mapsto \e^{x+\frac{1}{x}}$,  sur $]-\infty;0[$
 
 
 
-\begin{exercise}[topic=der03]On considère la fonction $f:x\mapsto \e^{3x^2+2x-1}$, définie sur $\mathbb{R}$.
+\begin{exercise}On considère la fonction $f:x\mapsto \e^{3x^2+2x-1}$, définie sur $\mathbb{R}$.
 \begin{enumerate}
 \item Justifier que $f$ est dérivable sur $\mathbb{R}$ et calculer $f'(x)$ pour tout réel $x$.
 \item Construire le tableau de variations de $f$.
@@ -752,7 +749,7 @@ La tangente à la courbe de $f$ à l'abscisse $-1$ a pour équation $y=f'(-1)(x+
 
 
 
-\begin{exercise}[topic=der03]Construire le tableau de variations de la fonction $f:x\mapsto \sqrt{x^2-4x+5}$, définie et dérivable sur $\mathbb{R}$  puis tracer l'allure de sa courbe représentative dans un repère orthogonal.\end{exercise}
+\begin{exercise}Construire le tableau de variations de la fonction $f:x\mapsto \sqrt{x^2-4x+5}$, définie et dérivable sur $\mathbb{R}$  puis tracer l'allure de sa courbe représentative dans un repère orthogonal.\end{exercise}
 
 \begin{solution}
 Pour tout réel $x$, $x^2-4x+5>0$. En effet, il s'agit d'un polynôme du second degré dont le discriminant est strictement négatif. De plus, $f(x)=\sqrt{u(x)}$. Ainsi, $f$ est définie et dérivable sur $\mathbb{R}$ et $f'=\dfrac{u'}{2\sqrt{u}}$. 
@@ -787,7 +784,7 @@ Pour tout $x\in\mathbb{R}$, on a donc $f'(x)=\dfrac{2x-4}{2\sqrt{x^2-4x+5}}$. Pu
 
 
 
-\begin{exercise}[topic=der03]On considère la fonction $f:x\mapsto \sqrt{1-x^2}$. On note $D$ le domaine de définition de $f$ et $D'$ son domaine de dérivabilité.
+\begin{exercise}On considère la fonction $f:x\mapsto \sqrt{1-x^2}$. On note $D$ le domaine de définition de $f$ et $D'$ son domaine de dérivabilité.
 
 \begin{enumerate}
 \item Déterminer $D$ et $D'$.
@@ -841,7 +838,7 @@ Pour tout $x\in\mathbb{R}$, on a donc $f'(x)=\dfrac{2x-4}{2\sqrt{x^2-4x+5}}$. Pu
 
 
 
-\begin{exercise}[topic=der03]On considère la fonction $f:x\mapsto \e^{x^2+2x-5}$, définie et deux fois dérivable sur $\mathbb{R}$. 
+\begin{exercise}On considère la fonction $f:x\mapsto \e^{x^2+2x-5}$, définie et deux fois dérivable sur $\mathbb{R}$. 
 \begin{enumerate}
 \item Construire le tableau de variation de $f$.
 \item  Déterminer une expression de $f''(x)$ pour tout réel $x$.
@@ -864,7 +861,7 @@ En utilisant la dérivée d'un produit, pour tout réel $x$, on a
 
 
 
-\begin{exercise}[topic=der03]Pour tout réel $x$, on pose $f(x)=\left(\dfrac{x^2-2x-3}{2}\right)^2$.
+\begin{exercise}Pour tout réel $x$, on pose $f(x)=\left(\dfrac{x^2-2x-3}{2}\right)^2$.
 \begin{enumerate}
 \item Justifier que $f$ est dérivable sur $\mathbb{R}$ et calculer $f'(x)$ pour tout réel $x$.
 \item En déduire les variations de $f$ sur $\mathbb{R}$ et tracer la courbe représentative de $f$ dans un repère orthonormé.
@@ -908,7 +905,7 @@ $f'$ est le produit de deux fonctions dérivables sur $\mathbb{R}$ et est donc d
 
 
 
-\begin{exercise}[topic=der03]Donner une expression de la dérivée seconde de la fonction $f:x\mapsto \e^{1/x}$ sur $]0;+\infty[$.\end{exercise}
+\begin{exercise}Donner une expression de la dérivée seconde de la fonction $f:x\mapsto \e^{1/x}$ sur $]0;+\infty[$.\end{exercise}
 
 \begin{solution}Pour tout réel $x>0$, on pose $u(x)=\dfrac{1}{x}$. $u$ est dérivable sur $]0;+\infty[$ et $f=\e^u$. $f$ est donc dérivable sur $]0;+\infty[$ et $f'=u'\e^u$. Ainsi, pour tout réel $x>0$, $f'(x)=-\dfrac{\e^{1/x}}{x^2}$.
 
@@ -916,7 +913,7 @@ $f'$ est également dérivable comme quotient de fonctions dérivables dont le d
 \[f''(x)=-\left(\dfrac{-\dfrac{\e^{1/x}}{x^2}\times x^2 - \e^{1/x} \times 2x}{(x^2)^2}\right)=\dfrac{(2x+1)\e^{1/x}}{x^4}.\]\end{solution}
 
 
-\begin{exercise}[topic=der03]On considère la fonction \(f:x\mapsto \dfrac{\e^x}{\sqrt{x}}\), définie sur \(]0;+\infty[\).
+\begin{exercise}On considère la fonction \(f:x\mapsto \dfrac{\e^x}{\sqrt{x}}\), définie sur \(]0;+\infty[\).
 
 \begin{enumerate}
 \item Justifier que \(f\) est dérivable sur \(]0;+\infty [\) et que pour tout réel \(x>0\), $f'(x)=\dfrac{(2x-1)\e^x}{2x\sqrt{x}}$.
@@ -965,21 +962,12 @@ et donc
 \end{enumerate}
 \end{solution}
 
-\printcollection{der03}
+
 
 \chapter{Correction des exercices}
 
 
-\section*{Rappels sur la dérivation}
-\printsolutions[collection={der01}, headings={false} ]
-
-\section*{Dérivée seconde}
-
-\printsolutions[collection={der02}, headings={false} ]
-
-\section*{Composition de fonctions}
-
-\printsolutions[collection={der03}, headings={false} ]
+\printsolutions[headings={false} ]
 
 
 

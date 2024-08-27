@@ -2,10 +2,6 @@
 
 \input{../../structure.tex}
 
-\DeclareExerciseCollection[topic=cvx01]{cvx01}
-\DeclareExerciseCollection[topic=cvx02]{cvx02}
-\DeclareExerciseCollection[topic=cvx03]{cvx03}
-\DeclareExerciseCollection[topic=cvx04]{cvx04}
 
 \begin{document}
 
@@ -464,7 +460,7 @@ Puisque la fonction $\exp$ est convexe sur $\mathbb{R}$, la courbe de la fonctio
 
 \section*{Convexité}
 
-\begin{exercise}[topic=cvx01]On considère la fonction $f$ dont la courbe représentative est donnée ci-dessous. On a également tracé la tangente à cette courbe au point d'abscisse 0.
+\begin{exercise}On considère la fonction $f$ dont la courbe représentative est donnée ci-dessous. On a également tracé la tangente à cette courbe au point d'abscisse 0.
 
 \begin{minipage}{0.45\linewidth}
 \begin{center}
@@ -501,7 +497,7 @@ La fonction \(f\) semble convexe \([-5\, ;\, -2]\), concave sur \([-2\,;\,1]\) e
 
 
 
-\begin{exercise}[topic=cvx01]On considère une fonction $f$ dont le tableau de variations est donné ci-dessous.
+\begin{exercise}On considère une fonction $f$ dont le tableau de variations est donné ci-dessous.
 \begin{center}
 \begin{tikzpicture}[scale=1]
    \tkzTabInit[espcl=2.5]{$x$ / 1, $f$/2}{$-5$, $0$ ,$3$}
@@ -531,7 +527,7 @@ On sait de plus que $f$ est convexe sur $[-5;-2]$ puis concave sur $[-2;3]$. Tra
 
 
 
-\begin{exercise}[topic=cvx01]L'objectif de cet exercice est de démontrer que la fonction $x\mapsto x^2$ est convexe sur $\mathbb{R}$. Le plan est muni d'un repère orthonormé $\Oij$. On note $\mathcal{C}$ la courbe de la fonction $x\mapsto x^2$ dans ce repère.
+\begin{exercise}L'objectif de cet exercice est de démontrer que la fonction $x\mapsto x^2$ est convexe sur $\mathbb{R}$. Le plan est muni d'un repère orthonormé $\Oij$. On note $\mathcal{C}$ la courbe de la fonction $x\mapsto x^2$ dans ce repère.
 \begin{enumerate}
 \item \textbf{Cas particulier} : On considère les points $A$ et $B$ de coordonnées respectives $(-2;4)$ et $(3;9)$.
 \begin{enumerate}
@@ -556,7 +552,7 @@ On sait de plus que $f$ est convexe sur $[-5;-2]$ puis concave sur $[-2;3]$. Tra
 \end{solution}
 
 
-\begin{exercise}[topic=cvx01]En vous inspirant du cas général de l'exercice précédent, montrer que la fonction $x\mapsto \dfrac{1}{x}$ est convexe sur $]0;+\infty[$.\end{exercise}
+\begin{exercise}En vous inspirant du cas général de l'exercice précédent, montrer que la fonction $x\mapsto \dfrac{1}{x}$ est convexe sur $]0;+\infty[$.\end{exercise}
 
 \begin{solution}Soit $a$ et $b$ deux réels tels que $0<a<b$. On considère les points $A\left(a;\dfrac{1}{a}\right)$ et $B\left(b;\dfrac{1}{b}\right)$. Ces points se trouvent sur la courbe de la fonction inverse.
 
@@ -568,11 +564,11 @@ Or, $xab>0$. De plus, \(x^2-((a+b)x-ab)\) est un polynôme du second degré dont
 \end{solution}
 
 
-\printcollection{cvx01}
+
 
 \section*{Convexité des fonctions dérivables}
 
-\begin{exercise}[topic=cvx02]On considère la fonction $f:x\mapsto \dfrac{1}{x}$, définie et dérivable sur $]0;+\infty[$. Soit $a>0$.
+\begin{exercise}On considère la fonction $f:x\mapsto \dfrac{1}{x}$, définie et dérivable sur $]0;+\infty[$. Soit $a>0$.
 \begin{enumerate}
 \item Montrer que pour tout réel strictement positif $x$, 
 \[f(x)-(f'(a)(x-a)+f(a))=\dfrac{(a-x)^2}{a^2x}.\]
@@ -587,7 +583,7 @@ d'où
 
 Or, puisque \(x > 0\), cette quantité est positive. Il en vient que pour tout \(x>0\), \(f(x)-(f'(a)(x-a)+f(a)) \geqslant 0\) et donc que \(f(x)\geqslant (f'(a)(x-a)+f(a) \). Cela se traduit par le fait que sur \(]0;+\infty[\), la courbe de la fonction inverse est au-dessus de toutes ses tangentes : cette fonction est donc convexe sur \(]0;+\infty[\).\end{solution}
 
-\begin{exercise}[topic=cvx02, subtitle={(Polynésie 2022)}]
+\begin{exercise}[subtitle={(Polynésie 2022)}]
 
 On considère une fonction $f$ définie et dérivable sur $|-2;2]$. Le tableau de variations de la fonction $f'$, dérivée de la fonction $f$ sur l'intervalle $[-2;2]$ est donné par :
 \begin{center}
@@ -613,7 +609,7 @@ Parmi les affirmations suivantes, laquelle est exacte ?
 
 
 
-\begin{exercise}[topic=cvx02]On donne la représentation graphique de la \textbf{fonction dérivée} $f'$ d'une fonction $f$ définie sur $\mathbb{R}$. 
+\begin{exercise}On donne la représentation graphique de la \textbf{fonction dérivée} $f'$ d'une fonction $f$ définie sur $\mathbb{R}$. 
 
 \begin{minipage}{0.6\linewidth}
 Parmi les affirmations suivantes, laquelle est correcte ?
@@ -644,18 +640,18 @@ Parmi les affirmations suivantes, laquelle est correcte ?
 
 
 
-\begin{exercise}[topic=cvx02]Soit $a$ et $b$ deux réels. Montrer que la fonction $x\mapsto \e^{ax+b}$, définie et deux fois dérivable sur $\mathbb{R}$,  est également convexe sur $\mathbb{R}$.\end{exercise}
+\begin{exercise}Soit $a$ et $b$ deux réels. Montrer que la fonction $x\mapsto \e^{ax+b}$, définie et deux fois dérivable sur $\mathbb{R}$,  est également convexe sur $\mathbb{R}$.\end{exercise}
 
 \begin{solution}La fonction  \(f:x\mapsto \e^{ax+b}\) est deux fois dérivable sur \(\mathbb{R}\). De plus, pour tout réel \(x\), \(f'(x)=a\e^{ax+b}\) et \(f^{\prime\prime}(x)=a^2\e^{ax+b}\geqslant 0\). Cette fonction est donc convexe sur \(\mathbb{R}\).\end{solution}
 
 
-\begin{exercise}[topic=cvx02]Montrer que la fonction $\ln$ est concave sur $]0;+\infty[$.\end{exercise}
+\begin{exercise}Montrer que la fonction $\ln$ est concave sur $]0;+\infty[$.\end{exercise}
 
 \begin{solution}La fonction \(\ln\) est dérivable sur \(]0;+\infty[\) et, pour tout réel \(x>0\), \(\ln '(x)=\dfrac{1}{x}\) et \(\ln^{\prime\prime}(x)=-\dfrac{1}{x^2}\leqslant 0\). Il en vient que la fonction \(\ln\) est concave sur \(]0;+\infty[\).\end{solution}
 
 
 
-\begin{exercise}[topic=cvx02]Pour tout réel $x$, on pose $f(x)=3x^3+3x^2-4x+1$
+\begin{exercise}Pour tout réel $x$, on pose $f(x)=3x^3+3x^2-4x+1$
 \begin{enumerate}
 \item Pour tout réel $x$, déterminer $f''(x)$.
 \item En déduire les intervalles sur lesquels $f$ est convexe.
@@ -671,20 +667,20 @@ La convexité de \(f\) change à l'abscisse \(-\dfrac{1}{3}\). La courbe de \(f\
 
 
 
-\begin{exercise}[topic=cvx02]Pour tout réel $x$, on pose $f(x)=x^4+2x^2-3x+1$. La fonction $f$ admet-elle un point d'inflexion ?\newpage \end{exercise}
+\begin{exercise}Pour tout réel $x$, on pose $f(x)=x^4+2x^2-3x+1$. La fonction $f$ admet-elle un point d'inflexion ?\newpage \end{exercise}
 
 \begin{solution}
 \(f\) est deux fois dérivables sur \(\mathbb{R}\) et pour tout réel \(x\), \(f^{\prime\prime}(x)=12x^2+4\) qui est strictement positif. La fonction \(f\) est convexe sur \(\mathbb{R}\). Sa convexité ne change pas, la courbe de \(f\) ne possède donc pas de point d'inflexion.\end{solution}
 
 
 
-\begin{exercise}[topic=cvx02]Soit $a$, $b$, $c$ et $d$ des réels avec $a \neq 0$. Montrer que la fonction $f:x\mapsto ax^3+bx^2+cx+d$ admet un point d'inflexion.\end{exercise}
+\begin{exercise}Soit $a$, $b$, $c$ et $d$ des réels avec $a \neq 0$. Montrer que la fonction $f:x\mapsto ax^3+bx^2+cx+d$ admet un point d'inflexion.\end{exercise}
 
 \begin{solution}$f$ est deux fois dérivable sur $\mathbb{R}$ et pour tout réel $x$, $f'(x)=3ax^2+2bx+c$ et $f''(x)=6ax+2b$. Ainsi, $f''$ change de signe en $-\dfrac{b}{3a}$. $f$ admet donc un point d'inflexion.\end{solution}
 
 
 
-\begin{exercise}[topic=cvx02]On considère la fonction $f:x\mapsto \ln(1+x^2)$.
+\begin{exercise}On considère la fonction $f:x\mapsto \ln(1+x^2)$.
 \begin{enumerate}
 \item Justifier que $f$ est définie et dérivable sur $\mathbb{R}$ et calculer $f'(x)$.
 \item Construire le tableau de variations de $f$ en y incluant les limites.
@@ -733,7 +729,7 @@ Or, \(f^{\prime\prime}(x)\geqslant 0\) si et seulement si \(x \in [-1;1]\). \(f\
 
 
 
-\begin{exercise}[topic=cvx02]On considère la fonction définie pour tout réel $x$ par $f(x)=\dfrac{1}{1+\e^{-x}}$.
+\begin{exercise}On considère la fonction définie pour tout réel $x$ par $f(x)=\dfrac{1}{1+\e^{-x}}$.
 \begin{enumerate}
 \item Justifier que pour tout réel $x$, $0<f(x)<1$.
 \item Déterminer $\displaystyle \lim _{x \to +\infty}f(x)$ et $\displaystyle \lim _{x \to -\infty}f(x)$.
@@ -760,13 +756,13 @@ et donc
 
 
 
-\begin{exercise}[topic=cvx02, subtitle={(Amérique du Nord 2022)}]Vrai ou faux ? On considère la fonction h définie sur $\mathbb{R}$ par  $h(x) = \e^x(1-x^2)$. Dans le plan muni d'un repère orthonormé, la courbe représentative de la fonction $h$ n'admet pas de point d'inflexion.\end{exercise}
+\begin{exercise}[subtitle={(Amérique du Nord 2022)}]Vrai ou faux ? On considère la fonction h définie sur $\mathbb{R}$ par  $h(x) = \e^x(1-x^2)$. Dans le plan muni d'un repère orthonormé, la courbe représentative de la fonction $h$ n'admet pas de point d'inflexion.\end{exercise}
 
 \begin{solution}$f$ est deux fois dérivable sur $\mathbb{R}$ et pour tout réel $x$, $h'(x)=\e^x(1-x^2)+\e^x(-2x)=\e^x(1-2x-x^2)$ puis $h''(x)=\e^x(1-2x-x^2)+\e^x(-2-2x)=\e^x(-1-4x-x^2)=-\e^x(x^2+4x+1)$. Pour tout réel $x$, $\e^x>0$. Par ailleurs, $x^2+4x+1$ est un polynôme du second degré dont le discriminant vaut $12$. Il admet donc deux racines réelles qui correspond aux changements de signes du polynôme $x^2+4x+1$. En particulier, la courbe de $h$ admet deux points d'inflexion.\end{solution}
 
 
 
-\begin{exercise}[topic=cvx02]Soit $f$ une fonction dérivable, convexe et croissante sur un intervalle $[a;+\infty[$. \\Montrer que $\displaystyle\lim_{x \to + \infty}f(x)=+\infty$.\newpage \end{exercise}
+\begin{exercise}Soit $f$ une fonction dérivable, convexe et croissante sur un intervalle $[a;+\infty[$. \\Montrer que $\displaystyle\lim_{x \to + \infty}f(x)=+\infty$.\newpage \end{exercise}
 
 \begin{solution}
 Puisque \(f\) est dérivable est strictement croissante sur \([a;+\infty[\), il existe donc un réel \(c\) dans cet intervalle tel que \(f'(c)>0\).
@@ -778,11 +774,11 @@ Puisque \(f\) est dérivable est strictement croissante sur \([a;+\infty[\), il 
  Ainsi, pour tout \(x \in [a;+\infty[\), on a \(f(x) \geqslant f'(c)x -cf'(c)+f(c)\). \\Or, \(\displaystyle\lim_{x\to +\infty}(f'(c)x -cf'(c)+f(c))=+\infty\), et il en vient que, par comparaison, \(\displaystyle\lim_{x \to + \infty}f(x)=+\infty\).\end{solution}
  
  
- \printcollection{cvx02}
+
  
 \section*{Inégalités de convexité}
 
-\begin{exercise}[topic=cvx03]On considère la fonction $f:x\mapsto \sqrt{x}$, définie sur $[0;+\infty [$.
+\begin{exercise}On considère la fonction $f:x\mapsto \sqrt{x}$, définie sur $[0;+\infty [$.
 \begin{enumerate}
 \item Pour tout réel $x>0$, déterminer une expression de $f'(x)$ et de $f''(x)$.
 \item $f$ est-elle convexe ou concave sur $]0;+\infty[$ ?
@@ -806,7 +802,7 @@ L'équation de la tangente à la courbe de \(f\) au point d'abscisse 1 est
 
 
 
-\begin{exercise}[topic=cvx03]Soit $n$ un entier naturel non nul. On considère la fonction $f:x\mapsto (1+x)^n$.
+\begin{exercise}Soit $n$ un entier naturel non nul. On considère la fonction $f:x\mapsto (1+x)^n$.
 \begin{enumerate}
 \item La fonction $f$ est-elle convexe ou concave sur $[0;+\infty[$ ?
 \item En utilisant la tangente à la courbe de $f$ au point d'abscisse 0, montrer que pour tout réel $x\geqslant 0$,  on a $(1+x)^n \geqslant 1+nx$.
@@ -824,7 +820,7 @@ On retrouve ici l'inégalité de Bernoulli.\end{solution}
 
 
 
-\begin{exercise}[topic=cvx03]En utilisant la tangente à la courbe de la fonction $\ln$ en 1, montrer que pour tout $x>0$, $\ln(x) \leqslant x -1$.\end{exercise}
+\begin{exercise}En utilisant la tangente à la courbe de la fonction $\ln$ en 1, montrer que pour tout $x>0$, $\ln(x) \leqslant x -1$.\end{exercise}
 
 \begin{solution}
 La tangente à la courbe du logarithme népérien à l'abscisse 1 a pour équation
@@ -835,7 +831,7 @@ En particulier, pour tout réel \(x\), \(\ln(x) \leqslant x-1\).\end{solution}
 
 
 
-\begin{exercise}[topic=cvx03]On considère la fonction $f$ définie sur $]0;+\infty[$ par $f(x)=(\ln(x))^2$.
+\begin{exercise}On considère la fonction $f$ définie sur $]0;+\infty[$ par $f(x)=(\ln(x))^2$.
 \begin{enumerate}
 \item Déterminer les intervalles sur lesquels $f$ est convexe/concave.
 \item En utilisant une équation de la tangente à la courbe représentative de $f$ au point d'abscisse $e$, montrer que pour tout réel $x$ dans $]0;e]$,
@@ -853,7 +849,7 @@ Or, $f$ étant convexe sur $]0;e]$, la courbe représentative de $f$ est au-dess
 
 
 
-\begin{exercise}[topic=cvx03]En utilisant l'inégalité des milieux appliqué à la fonction $\ln$, montrer que pour tous réels strictement positif $a$ et $b$, on a
+\begin{exercise}En utilisant l'inégalité des milieux appliqué à la fonction $\ln$, montrer que pour tous réels strictement positif $a$ et $b$, on a
 \[ \sqrt{ab} \leqslant \dfrac{a+b}{2}.\]
 Cette inégalité s'appelle l'inégalité arithmético-géométrique.\end{exercise}
 
@@ -868,7 +864,7 @@ Ainsi, pour tous réels strictement positif $a$ et $b$, on a $\sqrt{ab} \leqslan
 
 
 
-\begin{exercise}[topic=cvx03]On considère la fonction $f : x \mapsto \ln( \ln(x))$.
+\begin{exercise}On considère la fonction $f : x \mapsto \ln( \ln(x))$.
 \begin{enumerate}
 \item Déterminer le domaine de définition $D$ de $f$.
 \item Montrer que la fonction $f$ est croissante sur $D$.
@@ -897,13 +893,13 @@ En appliquant la fonction exponentielle qui est strictement croissante sur \(\ma
 
 
 
-\printcollection{cvx03}
+
 
 \section*{Exercices de synthèse}
 
 
 
-\begin{exercise}[topic=cvx04]
+\begin{exercise}
 On considère la fonction $f$ définie pour tout réel $x$ par
 \[ f(x)=\mathrm{e}^{-2x^2+4x-\frac{3}{2}}.\]
 La courbe représentative de $f$ dans un repère orthogonal sera notée $\mathcal{C}_f$.
@@ -976,7 +972,7 @@ La courbe de \(f\) est symétrique par rapport à la droite d'équation \(x=1\).
 
 
 
-\begin{exercise}[topic=cvx04, subtitle={(Centres étrangers 2022)}]
+\begin{exercise}[subtitle={(Centres étrangers 2022)}]
 Soit $f$ la fonction définie sur l'intervalle $]0;+\infty[$ par
 \[f(x)=x\ln(x)+1.\]
 On note $\mathcal{C}_f$ sa courbe représentative dans un repère du plan.
@@ -1041,7 +1037,7 @@ On note $\mathcal{C}_f$ sa courbe représentative dans un repère du plan.
 
 
 
-\begin{exercise}[topic=cvx04, subtitle={(Métropole 2021)}]
+\begin{exercise}[subtitle={(Métropole 2021)}]
 
 \paragraph{Partie A}
 
@@ -1118,7 +1114,7 @@ On admet que $\displaystyle\lim_{x \to - \infty}f(x)=-\infty$.
 
 
 
-\begin{exercise}[topic=cvx04, subtitle={(Sujet zéro 2021)}]
+\begin{exercise}[subtitle={(Sujet zéro 2021)}]
 
 Sur le graphique ci-dessous, on a représenté dans un repère orthonormé :
 \begin{itemize}
@@ -1212,27 +1208,12 @@ On suppose maintenant que la fonction $f$ est définie pour tout réel $x \in ]0
 
 
 
-\printcollection{cvx04}
 
 
 \chapter{Corrigés}
 
-\section*{Convexité}
 
-\printsolutions[collection={cvx01}, headings={false} ]
-
-\section*{Convexité des fonctions dérivables}
-
-\printsolutions[collection={cvx02}, headings={false} ]
-
-
-\section*{Inégalités de convexité}
-
-\printsolutions[collection={cvx03}, headings={false} ]
-
-\section*{Exercices de synthèse}
-
-\printsolutions[collection={cvx04}, headings={false} ]
+\printsolutions[headings={false} ]
 
 
 

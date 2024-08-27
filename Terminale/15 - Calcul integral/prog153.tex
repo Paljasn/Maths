@@ -1,0 +1,12 @@
+\begin{lstlisting}[language=python]
+from math import exp
+
+def v_prime(x) :
+	return 3 * exp(-x/10)
+	
+def seuil() :
+	t = 0
+	while v_prime(t) > 0.1 :
+		t = t + 1
+	return t
+\end{lstlisting}

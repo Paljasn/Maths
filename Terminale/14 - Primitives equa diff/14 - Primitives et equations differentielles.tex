@@ -2,10 +2,7 @@
 
 \input{../../structure.tex}
 
-\DeclareExerciseCollection[topic=diff01]{diff01}
-\DeclareExerciseCollection[topic=diff02]{diff02}
-\DeclareExerciseCollection[topic=diff03]{diff03}
-\DeclareExerciseCollection[topic=diff04]{diff04}
+
 
 \begin{document}
 
@@ -91,7 +88,7 @@ Fonction $f$ & \textbf{UNE} Primitive $F$ & Intervalle $I$ \\
 \hline
 $x \mapsto x^n$, $n\in \mathbb{N}$ & $x\mapsto \dfrac{x^{n+1}}{n+1}$ & $\mathbb{R}$ \\
 \hline
-$x \mapsto \dfrac{1}{x^n}$, $n\in \mathbb{N}\setminus\{0;1\}$ & $x\mapsto -\dfrac{1}{(n+1)x^{n-1}}$ & $]-\infty;0[$ et $]0;+\infty[$ \\
+$x \mapsto \dfrac{1}{x^n}$, $n\in \mathbb{N}\setminus\{0;1\}$ & $x\mapsto -\dfrac{1}{(n-1)x^{n-1}}$ & $]-\infty;0[$ et $]0;+\infty[$ \\
 \hline
 $x\mapsto \dfrac{1}{\sqrt{x}}$ & $2\sqrt{x}$ & $]0;+\infty[$ \\
 \hline
@@ -284,7 +281,7 @@ Ces équations sont particulières puisque depuis l'an 2000, leur résolution es
 
 \section*{Notion d'équation différentielle}
 
-\begin{exercise}[topic=diff01]Montrer que $f:x \mapsto \e^{3x}+1$ est solution de l'équation différentielle $y'=3y-3$.\end{exercise}
+\begin{exercise}Montrer que $f:x \mapsto \e^{3x}+1$ est solution de l'équation différentielle $y'=3y-3$.\end{exercise}
 
 \begin{solution}
 
@@ -294,7 +291,7 @@ Ainsi, pour tout réel \(x\), \(f'(x)=3f(x)-3\). \(f\) est donc solution de l'é
 
 
 
-\begin{exercise}[topic=diff01]Montrer que $f:x\mapsto \dfrac{1}{1+x}$ est solution de l'équation différentielle $(1+x)y'+y=0$ sur $]-1;+\infty[$.\end{exercise}
+\begin{exercise}Montrer que $f:x\mapsto \dfrac{1}{1+x}$ est solution de l'équation différentielle $(1+x)y'+y=0$ sur $]-1;+\infty[$.\end{exercise}
 
 \begin{solution}
 
@@ -306,7 +303,7 @@ Pour tout réel \(x\neq -1\), \(f'(x)=-\dfrac{1}{(1+x)^2}\) et donc $(1+x)f'(x)+
  
  
 
-\begin{exercise}[topic=diff01]Montrer que $f:x \mapsto \dfrac{1}{1+\e^{-x}}$ est solution de l'équation différentielle $y'=y(1-y)$.\end{exercise}
+\begin{exercise}Montrer que $f:x \mapsto \dfrac{1}{1+\e^{-x}}$ est solution de l'équation différentielle $y'=y(1-y)$.\end{exercise}
 
 \begin{solution}
 
@@ -319,7 +316,7 @@ De plus, $f(x) \times (1-f(x)) = \dfrac{1}{1+\e^{-x}} \times \left(1-\dfrac{1}{1
 
 
 
-\begin{exercise}[topic=diff01]Soit $\lambda$ et $\mu$ des réels. Montrer que $f:x\mapsto (\lambda x + \mu)\e^{x}$ est solution de l'équation différentielle $y''-2y'+y=0$.\end{exercise}
+\begin{exercise}Soit $\lambda$ et $\mu$ des réels. Montrer que $f:x\mapsto (\lambda x + \mu)\e^{x}$ est solution de l'équation différentielle $y''-2y'+y=0$.\end{exercise}
 
 \begin{solution}
 
@@ -333,12 +330,11 @@ Ainsi, pour tout réel \(x\),
 
 \end{solution}
 
-\printcollection{diff01}
 
 
 \section*{Primitives}
 
-\begin{exercise}[topic=diff02, subtitle={(Centres étrangers 2023)}]On considère une fonction $h$ définie et continue sur $\mathbb{R}$ dont le tableau de variations est le suivant.
+\begin{exercise}[subtitle={(Centres étrangers 2023)}]On considère une fonction $h$ définie et continue sur $\mathbb{R}$ dont le tableau de variations est le suivant.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.7]
@@ -362,7 +358,7 @@ On note $H$ la primitive de $h$ définie sur $\mathbb{R}$ qui s'annule en 0. Que
 
 
 
-\begin{exercise}[topic=diff02]Montrer que la fonction $f:x\mapsto x\ln(x)-x$ est une primitive de $\ln$ sur $]0;+\infty [$.\end{exercise}
+\begin{exercise}Montrer que la fonction $f:x\mapsto x\ln(x)-x$ est une primitive de $\ln$ sur $]0;+\infty [$.\end{exercise}
 
 \begin{solution}Pour tout réel \(x>0\), on pose \(f(x)=x\ln(x)-x\). 
 
@@ -373,7 +369,7 @@ On note $H$ la primitive de $h$ définie sur $\mathbb{R}$ qui s'annule en 0. Que
  
  
 
-\begin{exercise}[topic=diff02]Montrer que $F:x\mapsto (2x+1)\e^{x^2-1}$ est une primitive de $f:x\mapsto (4x^2+2x+2)\e^{x^2-1}$ sur $\mathbb{R}$.\end{exercise}
+\begin{exercise}Montrer que $F:x\mapsto (2x+1)\e^{x^2-1}$ est une primitive de $f:x\mapsto (4x^2+2x+2)\e^{x^2-1}$ sur $\mathbb{R}$.\end{exercise}
 
 \begin{solution} Pour tout réel \(x\), on pose \(F(x)=(2x+1)\e^{x^2-1}\) et \(f(x)=(4x^2+2x+2)\e^{x^2-1}\). Montrer que \(F\) est une primitive de \(f\) sur \(\mathbb{R}\) revient à montrer que \(F'=f\).
 
@@ -385,7 +381,7 @@ La dérivée de \(x\mapsto \e^{x^2-1}\) est \(x\mapsto 2x\e^{x^2-1}\) et celle d
  
  
 
-\begin{exercise}[topic=diff02]Déterminer deux réels $a$ et $b$ tels que la fonction $F:x\mapsto (ax+b)\e^{4x+3}$ soit une primitive de la fonction $f:x\mapsto (8x+14)\e^{4x+3}$ sur $\mathbb{R}$.\end{exercise}
+\begin{exercise}Déterminer deux réels $a$ et $b$ tels que la fonction $F:x\mapsto (ax+b)\e^{4x+3}$ soit une primitive de la fonction $f:x\mapsto (8x+14)\e^{4x+3}$ sur $\mathbb{R}$.\end{exercise}
 
 \begin{solution}
 
@@ -396,7 +392,7 @@ Soit \(f:x\mapsto (ax+b)\e^{4x+3}\). Pour tout réel \(x\), \(f'(x)=a\e^{4x+3}+(
   
 
 
-\begin{exercise}[topic=diff02]Pour tout réel $x$, on pose $f(x)=(-3x^2+2x+12)\e^{1-3x}$. Déterminer trois réels $a$, $b$ et $c$ tels que la fonction $F : x\mapsto (ax^2+bx+c)\e^{1-3x}$ soit une primitive de $f$ sur $\mathbb{R}$.\end{exercise}
+\begin{exercise}Pour tout réel $x$, on pose $f(x)=(-3x^2+2x+12)\e^{1-3x}$. Déterminer trois réels $a$, $b$ et $c$ tels que la fonction $F : x\mapsto (ax^2+bx+c)\e^{1-3x}$ soit une primitive de $f$ sur $\mathbb{R}$.\end{exercise}
 
 
 \begin{solution}
@@ -412,7 +408,7 @@ En prenant \(a=1\), \(b=0\) et \(c=-4\), on obtient \(g'(x)=f(x)\). \(g\) est al
  
 
 
-\begin{exercise}[topic=diff02]Pour tout réel $x$, on pose $F(x)=\dfrac{1}{1+x^2}$ et $f(x)=\dfrac{-2x}{(x^2+1)^2}$. \\
+\begin{exercise}Pour tout réel $x$, on pose $F(x)=\dfrac{1}{1+x^2}$ et $f(x)=\dfrac{-2x}{(x^2+1)^2}$. \\
 Montrer que $F$ est une primitive de $f$ sur $\mathbb{R}$ puis déterminer l'unique primitive $F_0$ de $f$ telle que $F_0(1)=3$.\end{exercise}
 
 \begin{solution}
@@ -429,7 +425,7 @@ Ainsi, \(F_0(0)=F(0)+C=1+C=0\) et donc \(C=-1\). Finalement, pour tout réel \(x
 
 
 
-\begin{exercise}[topic=diff02]Pour tout réel $x$, on pose $f(x)=\dfrac{\e^x}{1+\e^x}$ et $F(x)=\ln(1+\e^x)$.\\
+\begin{exercise}Pour tout réel $x$, on pose $f(x)=\dfrac{\e^x}{1+\e^x}$ et $F(x)=\ln(1+\e^x)$.\\
  Montrer que $F$ est une primitive de $f$ sur $\mathbb{R}$ puis déterminer l'unique primitive $F_0$ de $f$ telle que $F_0(0)=0$.
 \end{exercise}
 
@@ -446,7 +442,7 @@ Finalement, pour tout réel \(x\), \(F_0(x)=\ln(1+\e^x)-\ln(2)=\ln\left(\dfrac{1
 
 
 
-\begin{exercise}[topic=diff02]Déterminer une primitive des fonctions suivantes sur les intervalles donnés.
+\begin{exercise}Déterminer une primitive des fonctions suivantes sur les intervalles donnés.
 
 \renewcommand{\arraystretch}{2}
 \begin{tabularx}{\linewidth}{XX}
@@ -491,7 +487,7 @@ $f_6:x\mapsto \e^{3x}+x^4-\dfrac{1}{x}$ sur $]0;+\infty[$
 
 
 
-\begin{exercise}[topic=diff02]Dans chacun des cas suivantes, déterminer l'unique primitive de la fonction donnée vérifiant la condition indiquée.
+\begin{exercise}Dans chacun des cas suivantes, déterminer l'unique primitive de la fonction donnée vérifiant la condition indiquée.
 
 \renewcommand{\arraystretch}{2}
 \begin{tabularx}{\linewidth}{XX}
@@ -525,7 +521,7 @@ La fonction \(F:x\mapsto \dfrac{2}{3}\e^{3x-4}+x\) est une primitive de \(f_3\) 
 
 
 
-\begin{exercise}[topic=diff02]Donner une primitive des fonctions suivantes en reconnaissant la primitive d'une fonction composée.
+\begin{exercise}Donner une primitive des fonctions suivantes en reconnaissant la primitive d'une fonction composée.
 
 
 \renewcommand{\arraystretch}{2}
@@ -600,7 +596,7 @@ $f_{10}:x \mapsto \dfrac{\e^{\sqrt{x}}}{\sqrt{x}}$ sur $]0;+\infty[$
 
 
 
-\begin{exercise}[topic=diff02]Dans chacun des cas suivants, déterminer l'unique primitive $F$ de la fonction $f$ sur $\mathbb{R}$ qui respecte la condition initiale indiquée.
+\begin{exercise}Dans chacun des cas suivants, déterminer l'unique primitive $F$ de la fonction $f$ sur $\mathbb{R}$ qui respecte la condition initiale indiquée.
 
 \renewcommand{\arraystretch}{2}
 \begin{tabularx}{\linewidth}{XX}
@@ -629,7 +625,7 @@ $f_{10}:x \mapsto \dfrac{\e^{\sqrt{x}}}{\sqrt{x}}$ sur $]0;+\infty[$
 
 
 
-\begin{exercise}[topic=diff02]Pour tout réel $x$ différent de 1 et $-3$, on pose $f(x)=\dfrac{1}{(x-1)(x+3)}$.
+\begin{exercise}Pour tout réel $x$ différent de 1 et $-3$, on pose $f(x)=\dfrac{1}{(x-1)(x+3)}$.
 \begin{enumerate}
 \item Déterminer deux réels $a$ et $b$ tels que pour tout $x \in \mathbb{R}\setminus \{ -3;1\}$, $f(x)=\dfrac{a}{x-1}+\dfrac{b}{x+3}$.
 \item En déduire une primitive de $f$ sur $]1;+\infty[$.
@@ -652,7 +648,7 @@ Une primitive de \(f\) sur \(]1;+\infty[\) est donc \(F:x\mapsto \dfrac{1}{4}\ln
 
 
 
-\begin{exercise}[topic=diff02, subtitle={(Polynésie 2022)}]Sélectionner la réponse correcte. Si $H$ est une primitive d'une fonction $h$ définie et continue sur $\mathbb{R}$, et si $k$ est la fonction définie sur $\mathbb{R}$ par $k(x)=h(2x)$, alors, une primitive $K$ de $k$ est définie sur $\mathbb{R}$ par...
+\begin{exercise}[subtitle={(Polynésie 2022)}]Sélectionner la réponse correcte. Si $H$ est une primitive d'une fonction $h$ définie et continue sur $\mathbb{R}$, et si $k$ est la fonction définie sur $\mathbb{R}$ par $k(x)=h(2x)$, alors, une primitive $K$ de $k$ est définie sur $\mathbb{R}$ par...
 
 \begin{tabularx}{\linewidth}{XXXX}
 \textbf{a.} $K(x)=H(2x)$ & \textbf{b.} $K(x)=2H(2x)$ & \textbf{c.} $K(x)=\dfrac{1}{2}H(2x)$ & \textbf{d.} $K(x)=2H(x)$\end{tabularx}\vspace{-0.5cm}\end{exercise}
@@ -669,13 +665,12 @@ Dérivons chacune des fonctions proposées. Pour tout réel $x$...
 La réponse correcte est la réponse\textbf{ c.}.\end{solution}
 
 
-\printcollection{diff02}
 
 
 \section*{Équations différentielles du premier ordre}
 
 
-\begin{exercise}[topic=diff03]Dans chacun des cas suivants, déterminer l'unique solution $f$ de l'équation différentielle donnée telle que $f(x_0)=y_0$.
+\begin{exercise}Dans chacun des cas suivants, déterminer l'unique solution $f$ de l'équation différentielle donnée telle que $f(x_0)=y_0$.
 
 \renewcommand{\arraystretch}{1.2}
 \begin{tabularx}{\linewidth}{XX}
@@ -707,7 +702,7 @@ On cherche donc le réel \(C\) tel que \(C\e^{-16}=7\). On a donc \(C=7\e^{16}\)
 
 
 
-\begin{exercise}[topic=diff03, subtitle={(Datation au carbone 14)}] Certaines proportions de protons et neutrons dans le noyau d'un atome ne permettent pas la stabilité du noyau. Le noyau est alors dit radioactif. Les noyaux instables se désintègrent spontanément mais on ne peut prévoir à quel instant. Néanmoins, sur des échantillons comportant de très nombreux noyaux radioactifs, on sait que la variations de noyaux radioactifs est proportionnelle au nombre de noyaux présents au temps $t$. 
+\begin{exercise}[subtitle={(Datation au carbone 14)}] Certaines proportions de protons et neutrons dans le noyau d'un atome ne permettent pas la stabilité du noyau. Le noyau est alors dit radioactif. Les noyaux instables se désintègrent spontanément mais on ne peut prévoir à quel instant. Néanmoins, sur des échantillons comportant de très nombreux noyaux radioactifs, on sait que la variations de noyaux radioactifs est proportionnelle au nombre de noyaux présents au temps $t$. 
 
 On note $N_0$ le nombre initial de noyaux radioactifs d'un échantillon et $N(t)$ le nombre de noyaux au temps $t$. Il existe alors un réel $k$ tel que pour tout réel $t>0$, $N'(t)+kN(t)=0$. Cette constante $k$ dépend de l'élément chimique étudiée.
 
@@ -738,7 +733,7 @@ On note $N_0$ le nombre initial de noyaux radioactifs d'un échantillon et $N(t)
 
 
 
-\begin{exercise}[topic=diff03]Déterminer l'ensemble des solutions de l'équation différentielle $(E)\,:\,y'=4y+1$. 
+\begin{exercise}Déterminer l'ensemble des solutions de l'équation différentielle $(E)\,:\,y'=4y+1$. 
 \begin{enumerate}
 \item Déterminer les solutions de l'équation homogène associée $y'=4y$.
 \item Déterminer une solution constante de l'équation $(E)$.
@@ -756,7 +751,7 @@ On note $N_0$ le nombre initial de noyaux radioactifs d'un échantillon et $N(t)
 
 
 
-\begin{exercise}[topic=diff03]Dans chacun des cas suivants, déterminer l'unique solution $f$ de l'équation différentielle donnée telle que $f(x_0)=y_0$.
+\begin{exercise}Dans chacun des cas suivants, déterminer l'unique solution $f$ de l'équation différentielle donnée telle que $f(x_0)=y_0$.
 
 \begin{enumerate}
 \item $y'-3y=2$ avec $x_0=3$ et $y_0=1$
@@ -775,7 +770,7 @@ On note $N_0$ le nombre initial de noyaux radioactifs d'un échantillon et $N(t)
  
  
 
-\begin{exercise}[topic=diff03]Donner l'ensemble des solutions de l'équation différentielle $y''+2y'-3=0$.\end{exercise}
+\begin{exercise}Donner l'ensemble des solutions de l'équation différentielle $y''+2y'-3=0$.\end{exercise}
 
 \begin{solution}
 Notons \(z=y^{\prime}\). Alors \(y\) est solution de \((E)\) si et seulement si \(z\) est solution de l'équation \(z'+2z-3=0\) ou encore \(z'+2z=3\).
@@ -788,7 +783,7 @@ Ainsi, \(y\) est solution de \((E)\) si et seulement si il existe un réel \(C\)
  
  
 
-\begin{exercise}[topic=diff03, subtitle={(Loi de refroidissement de Newton)}] La loi de refroidissement de Newton stipule que le taux de perte de chaleur d'un corps est proportionnel à la différence de température entre ce corps et l'environnement. 
+\begin{exercise}[subtitle={(Loi de refroidissement de Newton)}] La loi de refroidissement de Newton stipule que le taux de perte de chaleur d'un corps est proportionnel à la différence de température entre ce corps et l'environnement. 
 
 On place une tasse de thé bouillant dans une pièce où la température est constante, égale à $20^{\circ}C$. On note $T(t)$ la température du thé après $t$ minutes.
 \begin{enumerate}
@@ -813,7 +808,7 @@ On a alors \(T(0)=C+20=100\) et donc \(C=80\). Ainsi, pour tout réel \(t\), \(T
  
 
 
-\begin{exercise}[topic=diff03, subtitle={(Circuit RC)}]Le condensateur est un composant électronique qui peut stocker des charges électriques sur ses armatures.
+\begin{exercise}[subtitle={(Circuit RC)}]Le condensateur est un composant électronique qui peut stocker des charges électriques sur ses armatures.
 
 On considère un condensateur déchargé de capacité $C$, monté en série avec un conducteur ohmique de résistance $R$ et une différence de potentiel $E$. $R$, $C$ et $U$ sont des réels strictement positifs. On note $u(t)$ la tension aux bornes du condensateur au temps $t$.
 \begin{enumerate}
@@ -836,7 +831,7 @@ Soit dont \(k\) le réel tel que, pour tout réel \(t\), \(u(t)=k\e^{-\frac{t}{R
  \end{solution}
 
 
-\begin{exercise}[topic=diff03, subtitle={(Métropole 2024)}]
+\begin{exercise}[subtitle={(Métropole 2024)}]
 \textit{Les parties A et B sont indépendantes.}
 
 Alain possède une piscine qui contient 50 m$^3$ d'eau. On rappelle que 1 m$^3$ = 1000 L. Pour désinfecter l'eau, il doit ajouter du chlore. 
@@ -861,7 +856,7 @@ On admet que pour tout entier naturel $n$, $v_{n+1} = 0,92v_n +0,3$.
 \item Reproduire et compléter l'algorithme ci-après écrit en langage Python pour que
 la fonction \textbf{alerte\_chlore} renvoie, lorsqu'il existe, le plus petit entier $n$ tel que $v_n > s$.
 
-\input{prog01}
+\input{prog141}
 
 
 \item Quelle valeur obtient-on en saisissant l'instruction \textbf{alerte\_chlore(3)} ? Interpréter ce résultat dans le contexte de l'exercice.
@@ -906,7 +901,7 @@ Déterminer les valeurs de $C$ et $q$ afin que ces deux conditions soient respec
 \item À long terme, le taux de chlore dans la piscine sera proche de 3,75 mg$\cdot$L$^{-1}$, ce qui est bien supérieur au taux recommandé.
 \item On complète le programme Python ainsi :
 
-\input{prog02}
+\input{prog142}
 
 \item L'instruction alerte\_chlore(3) renvoie la valeur 17. Cela signifie qu'en appliquant la méthode d'Alain, le taux de chlore dans la piscine sera supérieur à 3 mg$\cdot$L$^{-1}$.
 
@@ -926,7 +921,7 @@ Déterminer les valeurs de $C$ et $q$ afin que ces deux conditions soient respec
 \end{solution}
 
 
-\begin{exercise}[topic=diff03]
+\begin{exercise}
 Dans une boulangerie, les baguettes sortent du four à 225$^{\circ}$C. La température ambiante de la boulangerie est quant à elle maintenue à 25$^{\circ}$C. 
 
 On admet que l'on peut modéliser l'évolution de la température de la baguette à l'aide d'une fonction $f$ définie sur l'intervalle $[0;+\infty[$ et que cette fonction est solution de l'équation différentielle $(E)\, : \, y'+6y=150$.
@@ -956,7 +951,7 @@ Ce temps est exprimé en heures. Il faut donc attendre $-\dfrac{1}{6}\ln\left(\d
 
 
 
-\begin{exercise}[topic=diff03]On considère l'équation différentielle $(E)\, :\,y'=4y+3x-1$.
+\begin{exercise}On considère l'équation différentielle $(E)\, :\,y'=4y+3x-1$.
 \begin{enumerate}
 \item Donner l'ensemble des solutions de l'équation homogène associée $(H)$.
 \item Soit $\varphi$ une solution de $(E)$ et $f$ une fonction. Montrer que $f$ est solution de $(E)$ si et seulement si $f-\varphi$ est solution de $(H)$.
@@ -982,7 +977,7 @@ Ainsi, $v'(x)-4v(x)=-\dfrac{3}{4}-4\times\left( -\dfrac{3}{4}x+\dfrac{1}{16}\rig
 
 
 
-\begin{exercise}[topic=diff03]On considère l'équation différentielle $(E)\, :\, y'+y=\e^{-x }$.
+\begin{exercise}On considère l'équation différentielle $(E)\, :\, y'+y=\e^{-x }$.
 \begin{enumerate}
 \item Résoudre l'équation homogène associée $(H)\,:\, y'+y=0$.
 \item Soit $\varphi$ une solution de $(E)$ et $f$ une fonction. Montrer que $f$ est solution de $(E)$ si et seulement si $f-\varphi$ est solution de $(H)$.
@@ -1006,7 +1001,7 @@ Ainsi, pour tout réel \(x\), $\varphi'(x)+f(x)=(1-x)\e^{-x}+x\e^{-x}=\e^{-x}$. 
  
  
 
-\begin{exercise}[topic=diff03]On considère l'équation différentielle $(E)\, :\, 2y'+y=(x+1)\e^{-x/2}$.
+\begin{exercise}On considère l'équation différentielle $(E)\, :\, 2y'+y=(x+1)\e^{-x/2}$.
 \begin{enumerate}
 \item Résoudre l'équation différentielle homogène $(H) \,:\, 2y'+y=0$
 \item Soit $\varphi$ une solution de $(E)$ et $f$ une fonction. Montrer que $f$ est solution de $(E)$ si et seulement si $f-\varphi$ est solution de $(H)$.
@@ -1036,7 +1031,7 @@ La fonction \(x\mapsto \left(\dfrac{1}{4}x^2+\dfrac{1}{2}\right)\e^{-\frac{x}{2}
   
   
 
-\begin{exercise}[topic=diff03]Soit $g_1$ et $g_2$ deux fonctions et $a$ un réel non nul.
+\begin{exercise}Soit $g_1$ et $g_2$ deux fonctions et $a$ un réel non nul.
 On considère l'équation $(E)\,:\,y'=ay+g_1+g_2$.
 \begin{enumerate}
 \item Montrer que si $f_1$ est solution de l'équation $y'=ay+g_1$ et $f_2$ est solution de l'équation $y'=ay+g_2$, alors $f_1+f_2$ est solution de $(E)$. C'est le principe de superposition des solutions.
@@ -1055,13 +1050,13 @@ On considère l'équation $(E)\,:\,y'=ay+g_1+g_2$.
 \item Les solutions de l'équation homogène $y'=2y$ sont les fonctions $x \mapsto C\e^{2x}$, pour $C$ réel. \\ Les solutions de $(E)$ sont donc les fonctions $x\mapsto C\e^{2x}-1+\dfrac{1}{2}\e^{3x}$.\end{enumerate}\end{enumerate}
 \end{solution}
 
-\printcollection{diff03}
+
 
 
 \section*{Pour aller plus loin...}
 
 
-\begin{exercise}[topic=diff04, subtitle={(Variation de la constante)}] La méthode de la variation de la constante permet de trouver, dans certains cas, une solution particulière à une équation différentielle. Dans cet exercice, on cherche à résoudre l'équation différentielle 
+\begin{exercise}[subtitle={(Variation de la constante)}] La méthode de la variation de la constante permet de trouver, dans certains cas, une solution particulière à une équation différentielle. Dans cet exercice, on cherche à résoudre l'équation différentielle 
 \[(E)\quad : \quad y'+y=\dfrac{1}{1+\e^x}.\]
 \begin{enumerate}
 \item Résoudre l'équation différentielle homogène associée $y'+y=0$.
@@ -1100,7 +1095,7 @@ Ainsi, pour tout réel \(x\),
  \end{solution}
 
 
-\begin{exercise}[topic=diff04]Déterminer les fonctions $f$ définies et dérivables sur $\mathbb{R}$ telles que pour tout réel $x$, $f'(x)+f(x)=f(0)+f(1)$.\end{exercise}
+\begin{exercise}Déterminer les fonctions $f$ définies et dérivables sur $\mathbb{R}$ telles que pour tout réel $x$, $f'(x)+f(x)=f(0)+f(1)$.\end{exercise}
 
 \begin{solution}
 Si $f$ est une solution de ce problème, c'est une solution d'une équation de la forme $y'+y=c$, où $c$ est une constante. C'est donc une fonction de la forme $f:x\mapsto C\e^{-x}+D$ où $C$ et $D$ sont des constantes.
@@ -1112,7 +1107,7 @@ Ainsi, il existe un réel $C$ tel que, pour tout réel $x$, $f(x)=C\e^{-x}-C(1+\
 Réciproquement, on vérifie facilement que ces fonctions conviennent.
 \end{solution}
 
-\begin{exercise}[topic=diff04, subtitle={(Modèle de Verhulst)}]Le parc Kruger est un parc animalier situé en Afrique du Sud. Fondé à la fin du XIXe siècle, celui-ci accueillit notamment une population d'éléphants africains, une espèce menacée d'extinction à cause du braconnage intensif. 
+\begin{exercise}[subtitle={(Modèle de Verhulst)}]Le parc Kruger est un parc animalier situé en Afrique du Sud. Fondé à la fin du XIXe siècle, celui-ci accueillit notamment une population d'éléphants africains, une espèce menacée d'extinction à cause du braconnage intensif. 
 Le parc accueillait ainsi 10 éléphants en 1905. Les scientifiques ont estimé que la population $P$ au temps $t$, exprimé en années, vérifiait l'équation différentielle
 \[(E) \quad : \quad P' = \dfrac{3}{20}P - \dfrac{P^2}{50000}.\]
 
@@ -1152,7 +1147,7 @@ Le parc accueillait ainsi 10 éléphants en 1905. Les scientifiques ont estimé 
 
 
 
-\begin{exercise}[topic=diff04, subtitle={(Modèle de Gompertz)}]Un laboratoire de recherche étudie l'évolution d'une population animale qui semble en voie de disparition.
+\begin{exercise}[subtitle={(Modèle de Gompertz)}]Un laboratoire de recherche étudie l'évolution d'une population animale qui semble en voie de disparition.
 
 En 2000, une étude est effectuée sur un échantillon de cette population dont l'effectif initial est égal à mille. Cet échantillon évolue et son effectif, exprimé en milliers d'individus, est approché par une fonction $f$ du temps $t$, exprimé en années à partir de l'origine 2000.
 
@@ -1225,7 +1220,7 @@ Or,  \(20 \ln\left( \dfrac{\ln(0.02)-3}{-3} \right) \simeq 16.69\).
 
 \end{solution}
 
-\begin{exercise}[topic=diff04]L'objectif de cet exercice est de déterminer toutes les fonctions $f$ définies et dérivables telles que, pour tous réels $a$ et $b$, on a $(E) \; : \; f(a+b)=f(a)f(b)$.
+\begin{exercise}L'objectif de cet exercice est de déterminer toutes les fonctions $f$ définies et dérivables telles que, pour tous réels $a$ et $b$, on a $(E) \; : \; f(a+b)=f(a)f(b)$.
 \begin{enumerate}
 \item Déterminer les solutions constantes de ce problème.
 \item On suppose désormais que $f$ est une solution de $(E)$ non constante.
@@ -1250,25 +1245,13 @@ Or,  \(20 \ln\left( \dfrac{\ln(0.02)-3}{-3} \right) \simeq 16.69\).
 
 \end{solution}
 
-\printcollection{diff04}
+
 
 \chapter{Corrigés}
 
 
-\section*{Notion d'équation différentielle}
 
-\printsolutions[collection={diff01}, headings={false} ]
-\section*{Primitives}
-
-\printsolutions[collection={diff02}, headings={false} ]
-
-\section*{Équations différentielles du premier ordre}
-
-\printsolutions[collection={diff03}, headings={false} ]
-
-\section*{Pour aller plus loin...}
-
-\printsolutions[collection={diff04}, headings={false} ]
+\printsolutions[headings={false} ]
 
 
 

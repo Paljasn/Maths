@@ -2,10 +2,6 @@
 
 \input{../../structure.tex}
 
-\DeclareExerciseCollection[topic=lim11]{lim11}
-\DeclareExerciseCollection[topic=lim12]{lim12}
-\DeclareExerciseCollection[topic=lim13]{lim13}
-\DeclareExerciseCollection[topic=lim14]{lim14}
 
 \begin{document}
 
@@ -320,7 +316,7 @@ Cet algorithme peut varier sur certains aspects : on peut par exemple avoir une 
 
 \section*{Théorèmes de comparaison et d'encadrement}
 
-\begin{exercise}[topic=lim11]On considère la suite $(u_n)$ définie pour tout entier naturel $n$ par $u_n=((-1)^n-4)n^2$.
+\begin{exercise}On considère la suite $(u_n)$ définie pour tout entier naturel $n$ par $u_n=((-1)^n-4)n^2$.
 \begin{enumerate}
 \item Montrer que pour tout entier naturel $n$, on a $u_n \leqslant -3n^2$.
 \item En déduire la limite de $(u_n)$ en $+\infty$.
@@ -337,7 +333,7 @@ Puisque $\displaystyle\lim_{n \to + \infty} (-3n^2)=-\infty$, on a, par comparai
 
 
 
-\begin{exercise}[topic=lim11]On considère la suite $(u_n)$ définie pour tout entier naturel $n$ par $u_n=\sqrt{n^2+1}$.
+\begin{exercise}On considère la suite $(u_n)$ définie pour tout entier naturel $n$ par $u_n=\sqrt{n^2+1}$.
 \begin{enumerate}
 \item Montrer que pour tout entier naturel $n$, on a $u_n \geqslant n$.
 \item En déduire la limite de $u_n$ en $+\infty$.
@@ -350,7 +346,7 @@ Puisque $\displaystyle\lim_{n \to + \infty} n=+\infty$, on a, par comparaison, $
 
 
 
-\begin{exercise}[topic=lim11]A l'aide d'une majoration ou d'une minoration par une autre suite, déterminer la limite de la suite $(u_n)$ dans chacun des cas suivants.
+\begin{exercise}À l'aide d'une majoration ou d'une minoration par une autre suite, déterminer la limite de la suite $(u_n)$ dans chacun des cas suivants.
 \renewcommand{\arraystretch}{2.2}
 \begin{center}
 \begin{tabularx}{\linewidth}{XXXX}
@@ -374,7 +370,7 @@ Puisque $\displaystyle\lim_{n \to + \infty} \left(n-\dfrac{1}{n}\right)=+\infty$
 \end{solution}
 
 
-\begin{exercise}[topic=lim11]On considère la suite $(u_n)$ définie par $u_0=2$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{u_n+n+2}{2}$.
+\begin{exercise}On considère la suite $(u_n)$ définie par $u_0=2$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{u_n+n+2}{2}$.
 \begin{enumerate}
 \item Calculer $u_1$ et $u_2$.
 \item Montrer par récurrence que pour tout entier naturel $n$, on a $u_n\geqslant n$.
@@ -397,7 +393,7 @@ Or, $\displaystyle\lim_{n\to+\infty}n=+\infty$. D'après le théorème de compar
 \end{solution}
 
 
-\begin{exercise}[topic=lim11] A l'aide d'un encadrement par deux suites convergentes, déterminer la limite de la suite $(u_n)$ dans chacun des cas suivants.
+\begin{exercise} À l'aide d'un encadrement par deux suites convergentes, déterminer la limite de la suite $(u_n)$ dans chacun des cas suivants.
 
 \begin{center}
 \begin{tabularx}{\linewidth}{XXXX}
@@ -413,7 +409,7 @@ Or, $\displaystyle\lim_{n\to+\infty}n=+\infty$. D'après le théorème de compar
 
 
 
-\begin{exercise}[topic=lim11] A l'aide d'un encadrement, d'une majoration ou d'une minoration par une autre suite, déterminer la limite de la suite $(u_n)$ dans chacun des cas suivants.
+\begin{exercise} À l'aide d'un encadrement, d'une majoration ou d'une minoration par une autre suite, déterminer la limite de la suite $(u_n)$ dans chacun des cas suivants.
 \renewcommand{\arraystretch}{2}
 \begin{center}
 \begin{tabularx}{\linewidth}{XXXX}
@@ -434,14 +430,14 @@ Or, $\displaystyle\lim_{n\to+\infty}n=+\infty$. D'après le théorème de compar
 
 
 
-\begin{exercise}[topic=lim11]Pour tout entier naturel $n$, on pose $u_n=\dfrac{6n+2\times (-1)^n}{3n+4\times(-1)^{n+1}}$. Déterminer, si elle existe, $\displaystyle\lim_{n \to + \infty}u_n$.\end{exercise}
+\begin{exercise}Pour tout entier naturel $n$, on pose $u_n=\dfrac{6n+2\times (-1)^n}{3n+4\times(-1)^{n+1}}$. Déterminer, si elle existe, $\displaystyle\lim_{n \to + \infty}u_n$.\end{exercise}
 
 \begin{solution}Pour tout entier naturel non nul $n$, on a $ u_n = \dfrac{6+2\times \dfrac{(-1)^n}{n}}{3+4\times \dfrac{(-1)^{n+1}}{n}} $.
 
 Or, pour tout entier naturel non nul $n$, $-\dfrac{1}{n} \leqslant \dfrac{(-1)^n}{n} \leqslant \dfrac{1}{n}$. Par ailleurs, $\displaystyle \lim_{n\to + \infty} \left(-\dfrac{1}{n}\right)=\displaystyle \lim_{n\to + \infty} \dfrac{1}{n}=0$. D'après le théorème d'encadrement, on a donc $\displaystyle \lim_{n\to + \infty} \dfrac{(-1)^n}{n}=0$ et donc $\displaystyle \lim_{n\to + \infty} u_n = \dfrac{6}{3}=2$.
 \end{solution}
 
-\begin{exercise}[topic=lim11, subtitle={(Métropole 2024)}]Les affirmations suivantes sont-elles vraies ou fausses ? Justifier la réponse.
+\begin{exercise}[subtitle={(Métropole 2024)}]Les affirmations suivantes sont-elles vraies ou fausses ? Justifier la réponse.
 
 On considère les suites $(u_n)$, $(v_n)$ et $(w_n)$ telles que, pour tout entier naturel $n$, on a $u_n \leqslant v_n \leqslant w_n$. De plus, la suite $(u_n)$ converge vers $-1$ et la suite $(w_n)$ converge vers 1.
 
@@ -462,7 +458,7 @@ Finalement, pour tout entier naturel $n$, on a $u_0 \leqslant u_n \leqslant v_n 
 \end{solution}
 
 
-\begin{exercise}[topic=lim11, subtitle={(Métropole 2021)}]On considère la suite \((u_n)\) définie par \(u_0=1\) et, pour tout entier naturel \(n\),
+\begin{exercise}[subtitle={(Métropole 2021)}]On considère la suite \((u_n)\) définie par \(u_0=1\) et, pour tout entier naturel \(n\),
 
 \[u_{n+1}=\dfrac{3}{4}u_n+\dfrac{1}{4}n+1.\]
 \begin{enumerate}
@@ -498,7 +494,7 @@ Et puisque $\dfrac{7}{4}\leqslant 2$, on obtient bien $n+1 \leqslant u_{n+1} \le
 
 
 
-\begin{exercise}[topic=lim11, subtitle={(Métropole 2021)}]
+\begin{exercise}[subtitle={(Métropole 2021)}]
 
 On considère les suites \((u_n)\) et \((v_n)\) définies pour tout entier naturel \(n\) par
 \[\left\{\begin{array}{l}u_0 = v_0=1\\u_{n+1}=u_n+v_n\\v_{n+1}=2u_n+v_n\end{array}\right. .\]
@@ -549,12 +545,12 @@ En divisant par \(u_n^2\), qui est strictement positif, on obtient que $\dfrac{-
  \item Par somme de limite, on obtient que \(\displaystyle\lim_{n\to+\infty}r_n^2=2\). Or, la suite \((r_n)\) est strictement positive, puisque chaque terme est le quotient de deux réels strictement positifs. Il en vient que $\displaystyle\lim_{n\to+\infty}r_n = \displaystyle\lim_{n\to+\infty}\sqrt{r_n^2}=\sqrt{\displaystyle\lim_{n\to+\infty}r_n^2}=\sqrt{2}$.\end{enumerate}\end{enumerate}
  \end{solution}
  
- \printcollection{lim11}
+ 
 
 
 \section*{Suites géométriques}
 
-\begin{exercise}[topic=lim12]Dans chacun des cas suivants, exprimer $u_n$ en fonction de $n$ puis déterminer, si elle existe, sa limite lorsque $n$ tend vers $+\infty$.
+\begin{exercise}Dans chacun des cas suivants, exprimer $u_n$ en fonction de $n$ puis déterminer, si elle existe, sa limite lorsque $n$ tend vers $+\infty$.
 
 \begin{itemize}
 \item $ (u_n)$ est la suite géométrique de raison $q=1.01$ et de premier terme $u_0=10^{-54}$.
@@ -570,7 +566,7 @@ En divisant par \(u_n^2\), qui est strictement positif, on obtient que $\dfrac{-
 
 
 
-\begin{exercise}[topic=lim12] Déterminer, si elle existe, la limite de la suite $(u_n)$ dans chacun des cas suivants.
+\begin{exercise} Déterminer, si elle existe, la limite de la suite $(u_n)$ dans chacun des cas suivants.
 
 \begin{center}
 \begin{tabularx}{\linewidth}{XXX}
@@ -613,7 +609,7 @@ En divisant par \(u_n^2\), qui est strictement positif, on obtient que $\dfrac{-
 
 
 
-\begin{exercise}[topic=lim12]Soit $n$ un entier naturel. On rappelle que pour tout réel $q$ différent de 1, 
+\begin{exercise}Soit $n$ un entier naturel. On rappelle que pour tout réel $q$ différent de 1, 
 \[\displaystyle \sum_{k=0}^{n}q^k= 1+q+q^2+q^3+\ldots + q^n=\dfrac{1-q^{n+1}}{1-q}.\]
 A l'aide de cette égalité, déterminer la limite de la suite $(u_n)$ dans chacun des cas suivants.
 \begin{enumerate}
@@ -633,7 +629,7 @@ Ainsi, $\displaystyle \lim_{n \to +\infty}u_n =\dfrac{32}{3}$.
 
 
 
-\begin{exercise}[topic=lim12, subtitle={(Asie 2024)}]
+\begin{exercise}[subtitle={(Asie 2024)}]
 L'affirmation suivant est-elle vraie ou fausse ? Justifier la réponse.
 
 Soit $(u_n)$ une suite définie sur $\N$ telle que, pour tout entier naturel $n$, on a $u_n\leqslant \dfrac{-9^n+3^n}{7^n}$. Alors, $\displaystyle\lim_{n \to +\infty}u_n=-\infty$.\end{exercise}
@@ -649,7 +645,7 @@ Ainsi, par somme, $\displaystyle\lim_{n\to +\infty}\dfrac{-9^n+3^n}{7^n}=-\infty
 \end{solution}
 
 
-\begin{exercise}[topic=lim12]
+\begin{exercise}
 Soit $a$ et $b$ deux réels positifs. Déterminer la limite de la suite $(u_n)$ définie pour tout entier naturel $n$ par $u_n=a^n-b^n$. On distinguera les cas $a<b$, $a=b$ et $a>b$.
 \newpage \end{exercise}
 
@@ -660,12 +656,12 @@ Soit $a$ et $b$ deux réels positifs. Déterminer la limite de la suite $(u_n)$ 
 \item Si $a<b$ (en particulier, $b\neq 0$), pour tout entier naturel $n$, $u_n=b^n\left(\left( \dfrac{a}{b}\right)^n-1\right)$. Or, puisque $0\leqslant a<b $, cela signifie que $0\leqslant \dfrac{a}{b} \leqslant 1$. Ainsi, $\displaystyle \lim_{n\to + \infty} \left(\dfrac{a}{b}\right)^n=0$, puis $\displaystyle \lim_{n\to + \infty} \left( \left(\dfrac{a}{b}\right)^n-1\right)=-1$ et enfin, $\displaystyle \lim_{n\to + \infty} u_n=-\infty$.
 \end{itemize}\end{solution}
 
- \printcollection{lim12}
+
 
 
 \section*{Convergence des suites monotones}
 
-\begin{exercise}[topic=lim13] On considère la suite $(w_n)$ définie par $w_0=1$ et, pour tout entier $n$, $w_{n+1}=\dfrac{1}{3}w_n+1$. 
+\begin{exercise} On considère la suite $(w_n)$ définie par $w_0=1$ et, pour tout entier $n$, $w_{n+1}=\dfrac{1}{3}w_n+1$. 
 \begin{enumerate}
 \item Montrer que pour tout entier naturel $n$, $w_n\leqslant \dfrac{3}{2}$.
 \item Montrer que la suite $(w_n)$ est croissante.
@@ -692,7 +688,7 @@ Or, $w_n \leqslant \dfrac{3}{2}$ d'où $-\dfrac{2}{3}w_n \geqslant -1$ et $-\dfr
 
 
 
-\begin{exercise}[topic=lim13]On considère la suite $(u_n)$ définie par $u_0=14$ et, pour tout entier naturel $n$, $u_{n+1}=\sqrt{u_n+2}$.
+\begin{exercise}On considère la suite $(u_n)$ définie par $u_0=14$ et, pour tout entier naturel $n$, $u_{n+1}=\sqrt{u_n+2}$.
 \begin{enumerate}
 \item Calculer $u_1$.
 \item Montrer que la suite $(u_n)$ est décroissante et que pour tout entier naturel $n$, $u_n \geqslant 2$.
@@ -723,7 +719,7 @@ La fonction Racine carrée étant croissante sur $\mathbb{R}_+$, on a donc $\sqr
 
 
 
-\begin{exercise}[topic=lim13, subtitle={(Métropole 2022)}]Soit $(u_n)$ une suite telle que pour tout entier naturel $n$, $u_n \leqslant u_{n+1} \leqslant \dfrac{1}{n}$. La suite $(u_n)$ est-elle convergente ?\end{exercise}
+\begin{exercise}[subtitle={(Métropole 2022)}]Soit $(u_n)$ une suite telle que pour tout entier naturel $n$, $u_n \leqslant u_{n+1} \leqslant \dfrac{1}{n}$. La suite $(u_n)$ est-elle convergente ?\end{exercise}
 
 \begin{solution}Puisque pour tout entier naturel non nul $n$, on a $\dfrac{1}{n}\leqslant 1$, alors, pour tout entier naturel $n$, on a $u_n\leqslant u_{n+1} \leqslant 1$. La suite $(u_n)$ est donc croissante et majorée. Elle est donc convergente.\end{solution}
 
@@ -731,7 +727,7 @@ La fonction Racine carrée étant croissante sur $\mathbb{R}_+$, on a donc $\sqr
 
 
 
-\begin{exercise}[topic=lim13]
+\begin{exercise}
 
 Soit $a$ un réel strictement positif. On définit la suite $(u_n)$ par $u_0\in ]\sqrt{a};+\infty[$ et, pour tout entier naturel $n$,
 \[u_{n+1}=\dfrac{1}{2}\left(u_n+\dfrac{a}{u_n}\right).\]
@@ -761,13 +757,12 @@ Pour tout réel $x\geqslant \sqrt{a}$, on pose alors $g(x)=\dfrac{a}{x}-x$. $g$ 
 
 \item On admet que la limite $\ell$ le la suite $(u_n)$ vérifie $f(\ell)=\ell$. On a donc $\ell=\dfrac{\ell}{2}+\dfrac{a}{2\ell}$ soit $\ell^2=a$. $\ell$ étant forcément positive, on a alors $\ell=\sqrt{a}$.\end{enumerate}\end{solution}
 
- \printcollection{lim13}
 
 
 \section*{Exercices de synthèse}
 
 
-\begin{exercise}[topic=lim14, subtitle={(Suite arithmético-géométrique : découverte guidée)}]
+\begin{exercise}[subtitle={(Suite arithmético-géométrique : découverte guidée)}]
 
 On considère la suite $(u_n)$ définie par $u_0=100$ et, pour tout entier naturel $n$, \[u_{n+1}=\dfrac{3}{4}u_n +10.\]
 
@@ -832,7 +827,7 @@ On considère la suite $(u_n)$ définie par $u_0=100$ et, pour tout entier natur
 
 
 
-\begin{exercise}[topic=lim14, subtitle={(Suite arithmético-géométrique : moins guidé...)}]
+\begin{exercise}[subtitle={(Suite arithmético-géométrique : moins guidé...)}]
 
 On considère la suite $(u_n)$ définie par $u_0=20$ et, pour tout entier naturel $n$, \[u_{n+1}=-\dfrac{2}{3}u_n+6\] Pour tout entier naturel $n$, on pose alors $v_n=u_n-3.6$.
 
@@ -860,7 +855,7 @@ v_{n+1}=u_{n+1}-3,6=-\dfrac{2}{3}u_n+6-3,6=-\dfrac{2}{3}u_n+2,4=-\dfrac{2}{3}(v_
 
 
 
-\begin{exercise}[topic=lim14, subtitle={(Métropole 2021)}]
+\begin{exercise}[subtitle={(Métropole 2021)}]
 Cécile a invité des amis à déjeuner sur sa terrasse. Elle a prévu en dessert un assortiment de gâteaux individuels qu'elle a achetés surgelés. Elle sort les gâteaux du congélateur à -19$^{\circ}$C et les apporte sur la terrasse où la température 
 ambiante est de 25$^{\circ}$C. 
 
@@ -886,7 +881,7 @@ plus proche.
 \item  Cécile est une habituée de ces gâteaux, qu'elle aime déguster lorsqu'ils sont encore frais, à la température de 10$^{\circ}$C. Donner un encadrement entre deux entiers  consécutifs du temps en minutes après lequel Cécile doit déguster son gâteau. 
 \item Le programme suivant, écrit en langage Python, doit renvoyer après son exécution la plus petite valeur de l'entier $n$ pour laquelle $T_n\geqslant 10$. Recopier ce programme sur la copie et compléter les lignes incomplètes  afin que le programme renvoie la  valeur attendue.
 
-\input{prog02}
+\input{prog052}
 
 \end{enumerate}
 \end{enumerate}
@@ -928,7 +923,7 @@ La suite $(U_n)$ est donc géométrique, de raison $0,94$. Son premier terme vau
 
 \item Le programme suivant, écrit en langage Python, doit renvoyer après son exécution la plus petite valeur de l'entier $n$ pour laquelle $T_n\geqslant 10$.
 
-\input{prog03}
+\input{prog053}
 
 \end{enumerate}
 \end{enumerate}
@@ -938,7 +933,7 @@ La suite $(U_n)$ est donc géométrique, de raison $0,94$. Son premier terme vau
  
 
 
-\begin{exercise}[topic=lim14, subtitle={(Antilles-Guyane 2018)}]
+\begin{exercise}[subtitle={(Antilles-Guyane 2018)}]
 
 Le directeur d'une réserve marine a recensé 3 000 cétacés dans cette réserve au 1er juin 2017. Il est inquiet car il sait que le classement de la zone en « réserve marine » ne sera pas reconduit si le nombre de cétacés de cette réserve devient inférieur à 2 000.
 Une étude lui permet d'élaborer un modèle selon lequel, chaque année :
@@ -965,7 +960,7 @@ $u_0 = 3000$.
 \item Recopier et compléter la fonction suivante, écrite en Python, pour déterminer l'année à partir de laquelle le
 nombre de cétacés présents dans la réserve marine sera inférieur à 2 000.
 
-\input{prog04}
+\input{prog054}
 
 \item La réserve marine fermera-t-elle un jour ? Si oui, déterminer l'année de la fermeture.\end{enumerate}
 \newpage
@@ -999,7 +994,7 @@ La suite $(a_n)$ est donc géométrique de raison $0.95$ et de premier terme $a_
  \item Puisque $-1<0.95<1$, $\displaystyle\lim_{n \to + \infty}0.95^n=0$ et donc $\displaystyle\lim_{n \to + \infty}u_n=1520$.\end{enumerate}
 \item  
 
-\input{prog05}
+\input{prog055}
 
  \item Puisque $\displaystyle\lim_{n \to + \infty}u_n=1520$, et que la suite $(u_n)$ est décroissante, il arrivera forcément un rang à partir duquel la suite sera sous 2000. Cela arrive au rang 22 : la réserve fermera donc en 2039.\end{enumerate}\end{solution}
  
@@ -1007,7 +1002,7 @@ La suite $(a_n)$ est donc géométrique de raison $0.95$ et de premier terme $a_
  
  
 
-\begin{exercise}[topic=lim14, subtitle={(Polynésie 2013)}]
+\begin{exercise}[subtitle={(Polynésie 2013)}]
 On considère la suite $(u_n)$ définie par $u_0=\dfrac{1}{2}$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{3u_n}{1+2u_n}$.
 
 \begin{enumerate}
@@ -1063,7 +1058,7 @@ La suite $(v_n)$ est géométrique de raison 3.
 
 
 
-\begin{exercise}[topic=lim14, subtitle={(Réunion 2023)}]
+\begin{exercise}[subtitle={(Réunion 2023)}]
 On considère la suite $(u_n)$ définie par $u_0=8$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{6u_n+2}{u_n+5}$.
 \begin{enumerate}
 \item Calculer $u_1$.
@@ -1090,7 +1085,7 @@ Ainsi, pour tout entier naturel $n$, on a $u_{n+1}=f(u_n)$.
 \item On considère la fonction Python seuil ci-dessous, où $A$ est un nombre réel strictement plus grand que 2. Donner, sans justification, la valeur renvoyée par la commande seuil (2.001) puis
 interpréter cette valeur dans le contexte de l'exercice.
 
-\input{prog01.tex}
+\input{prog051.tex}
 
 \end{enumerate}
 \end{exercise}
@@ -1129,28 +1124,13 @@ On a alors $0=\dfrac{\ell-2}{\ell+1}$. Ainsi, $\ell-2=0$ et donc $\ell=2$.
 \end{enumerate}
 \end{solution}
 
- \printcollection{lim14}
 
 
 
 \chapter{Corrigés}
 
 
-\section*{Théorèmes de comparaison et d'encadrement}
-
-\printsolutions[collection={lim11}, headings={false} ]
-
-\section*{Suites géométriques}
-
-\printsolutions[collection={lim12}, headings={false} ]
-
-\section*{Convergence des suites monotones}
-
-\printsolutions[collection={lim13}, headings={false} ]
-
-\section*{Exercices de synthèse}
-
-\printsolutions[collection={lim14}, headings={false} ]
+\printsolutions[headings={false} ]
  
 
 

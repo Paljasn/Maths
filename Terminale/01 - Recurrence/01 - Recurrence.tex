@@ -2,13 +2,10 @@
 
 \input{../../structure.tex}
 
-\DeclareExerciseCollection[topic=rec01]{rec01}
-\DeclareExerciseCollection[topic=rec02]{rec02}
-\DeclareExerciseCollection[topic=rec03]{rec03}
 
 \begin{document}
 
-\chapterimage{Pictures/background}
+\chapterimage{../../Pictures/background}
 \chapter{Cours : Suites et récurrence}
 
 \section{Démonstration par récurrence}
@@ -43,7 +40,7 @@ Pour tout entier $n$, on note $\mathcal{P}(n)$ la proposition qui nous intéress
 
 \begin{minipage}{0.15\linewidth}
 \begin{center}
-\includegraphics[scale=0.15]{"domino"}
+\includegraphics[scale=0.15]{domino}
 \end{center}
 \end{minipage}\hfill\begin{minipage}{0.78\linewidth}
 Le principe du raisonnement par récurrence rappelle les dominos que l'on aligne et que l'on fait tomber, les uns à la suite des autres.
@@ -132,7 +129,7 @@ Nous verrons, lorsque la dérivation n'aura plus de secret pour vous, que cette 
 Les majorants et minorants sont indépendants de $n$ ! Bien que pour tout $n>0$, on ait $n \leqslant n^2$, on ne peut pas dire que la suite $(u_n)$ définie par $u_n=n$ est majorée. Cette indépendance se traduit dans l'ordre des quantificateurs employés dans la définition précédente (le majorant y apparaît avant l'entier $n$).
 
 
-\begin{example} Pour tout $n$, on pose $u_n=\cos (n)$. 
+\begin{example}Pour tout $n$, on pose $u_n=\cos (n)$. 
 
 La suite $(u_n)$ est bornée puisque, pour tout entier $n$, $-1 \leqslant u_n \leqslant 1$.\end{example}
 
@@ -292,7 +289,8 @@ On en conclut donc que $-1 \leqslant u_{n+1} \leqslant u_n \leqslant 5$. $\mathc
 \section*{Principe}
 
 
-\begin{exercise}[topic=rec01] Soit $r$ un réel. On rappelle qu'une suite $(u_n)$ est arithmétique de raison $r$ si pour tout $n\in\mathbb{N}$, $u_{n+1}=u_n+r$. \\ Soit donc $(u_n)$ une suite arithmétique de raison $r$.
+\begin{exercise}
+Soit $r$ un réel. On rappelle qu'une suite $(u_n)$ est arithmétique de raison $r$ si pour tout $n\in\mathbb{N}$, $u_{n+1}=u_n+r$. \\ Soit donc $(u_n)$ une suite arithmétique de raison $r$.
 \begin{enumerate}
 \item Montrer par récurrence que pour tout entier naturel $n$, on a $u_n=u_0+rn$.
 \item \textbf{Application :} On considère la suite $(u_n)$ arithmétique de premier terme $u_0=4$ et de raison $r=8$.
@@ -313,7 +311,8 @@ D'après la question 1, , pour tout entier naturel  $n$, on a $u_n=4+8n$. Ainsi,
 
 
 
-\begin{exercise}[topic=rec01]Soit $q$ un réel. On rappelle qu'une suite $(u_n)$ est géométrique de raison $q$ si pour tout $n\in\mathbb{N}$, $u_{n+1}=q\times u_n$. \\Soit donc $(u_n)$ une suite géométrique de raison $q$.
+\begin{exercise}
+Soit $q$ un réel. On rappelle qu'une suite $(u_n)$ est géométrique de raison $q$ si pour tout $n\in\mathbb{N}$, $u_{n+1}=q\times u_n$. \\Soit donc $(u_n)$ une suite géométrique de raison $q$.
 \begin{enumerate}
 \item Montrer par récurrence que pour tout entier naturel $n$, $u_n=u_0 \times q^n$.
 \item \textbf{Application :} On considère la suite $(u_n)$ géométrique de premier terme $u_0=3$ et de raison $r=-2$.
@@ -334,7 +333,8 @@ D'après la question précédente, on a, pour tout  $n\in\mathbb{N}$, $u_n=3 \ti
 
 
 
-\begin{exercise}[topic=rec01]On considère la suite $(u_n)$ telle que $u_0=12$ et pour tout entier naturel $n$, $u_{n+1}=3u_n-8$.\\ Montrer par récurrence que pour tout entier naturel $n$, on a  $u_n=4+8\times 3^n$.\end{exercise}
+\begin{exercise}
+On considère la suite $(u_n)$ telle que $u_0=12$ et pour tout entier naturel $n$, $u_{n+1}=3u_n-8$.\\ Montrer par récurrence que pour tout entier naturel $n$, on a  $u_n=4+8\times 3^n$.\end{exercise}
 \begin{solution}Pour tout entier naturel $n$, on considère la proposition $P(n)$ : « $u_n=4+8\times 3^n$ ».
 \begin{itemize}
 \item \textbf{Initialisation :} Pour $n=0$, on a bien $4+8\times 3^0=4+8\times 1 = 12 = u_0$. $P(0)$ est vraie.
@@ -345,7 +345,7 @@ D'après la question précédente, on a, pour tout  $n\in\mathbb{N}$, $u_n=3 \ti
 
 
 
-\begin{exercise}[topic=rec01]
+\begin{exercise}
 On considère la suite \((u_n)\) définie par \(u_1=1\) et, pour tout entier naturel \(n\), \[u_{n+1}= \dfrac{u_n}{\sqrt{u_n^2+1}}.\]
 \begin{enumerate}
  	\item Calculer \(u_2\) et \(u_3\)
@@ -365,7 +365,8 @@ Pour tout entier naturel non nul \(n\), on pose \(\mathcal{P}(n)\) : « \(u_n=\d
 \end{itemize}\end{solution}
 
 
-\begin{exercise}[topic=rec01]On considère la suite \((u_n)\) définie par \(u_0=3\) et, pour tout entier naturel \(n\), \(u_{n+1}=\dfrac{u_n-2}{2u_n+5}\).
+\begin{exercise}
+On considère la suite \((u_n)\) définie par \(u_0=3\) et, pour tout entier naturel \(n\), \(u_{n+1}=\dfrac{u_n-2}{2u_n+5}\).
 
 Montrer que pour tout entier naturel \(n\), on a \[u_n = \dfrac{9-8n}{3+8n}.\]\end{exercise}
 \begin{solution}Pour tout entier naturel \(n\), on pose \(\mathcal{P}(n)\) : « \(u_n =\dfrac{9-8n}{3+8n}\) ».
@@ -382,7 +383,8 @@ En factorisant par 3, on obtient finalement $u_{n+1}=\dfrac{3(1-8n)}{3(11+8n)}=\
 \item \textbf{Conclusion} :  \(\mathcal{P}(0)\) est vraie, \(\mathcal{P}\) est héréditaire. D'après le principe de récurrence, \(\mathcal{P}(n)\) est vraie pour tout entier naturel \(n\).\end{itemize}\end{solution}
 
 
-\begin{exercise}[topic=rec01] Montrer par récurrence que, pour tout entier naturel non nul $n$, on a \[1+2+3+\ldots + n=\dfrac{n(n+1)}{2}.\] \end{exercise}
+\begin{exercise}
+Montrer par récurrence que, pour tout entier naturel non nul $n$, on a \[1+2+3+\ldots + n=\dfrac{n(n+1)}{2}.\] \end{exercise}
 \begin{solution}Pour tout entier naturel non nul $n$, on note $\mathcal{P}(n)$ la proposition  « $1+2+3+\ldots + n=\dfrac{n(n+1)}{2}$ ».
 \begin{itemize}
 \item D'une part, la somme de tous les entiers entre 1 et 1 vaut évidemment 1. Par ailleurs, $\dfrac{1\times (1+1)}{2}=1$. $\mathcal{P}(1)$ est vraie.
@@ -393,7 +395,7 @@ $\mathcal{P}(n+1)$ est donc vraie.
 
 
 
-\begin{exercise}[topic=rec01]
+\begin{exercise}
 Soit \(n\) un entier naturel non nul et \[u_n=1+3+5+7+\dots + (2n-1).\]
 \begin{enumerate}
  	\item Calculer \(u_1\), \(u_2\), \(u_3\) et \(u_4\).
@@ -411,7 +413,8 @@ Ainsi, puisque \(u_n=n^2\) par hypothèse de récurrence,
 
 
 
-\begin{exercise}[topic=rec01]On considère les suites $(x_n)$ et $(y_n)$ définies comme suit.
+\begin{exercise}
+On considère les suites $(x_n)$ et $(y_n)$ définies comme suit.
 
 \begin{minipage}{0.45\linewidth}
 $\left\{ \begin{array}{ll}
@@ -440,7 +443,7 @@ En simplifiant, on a donc
 \end{itemize}
 Si l'on se place dans un repère orthonormé, pour tout entier naturel \(n\), le point de coordonnées $(x_n;y_n)$ est sur le cercle de centre l'origine et de rayon 5. \end{solution}
 
-\begin{exercise}[topic=rec01, subtitle={(Suites arithmético-géométriques)}]
+\begin{exercise}[subtitle={(Suites arithmético-géométriques)}]
 
  Soit \(a\) et \(b\) deux réels, avec \(a\) différent de 0 et 1. On considère une suite \((u_n)\) telle que, pour tout \(n\in\mathbb{N}\), 
 \[u_{n+1}=a\,u_n+b.\]
@@ -476,7 +479,7 @@ Or, pour tout entier naturel \(n\), \(c_n=u_n-r\) et donc \(u_n=c_n+r\). On en c
 \[u_n=a^n(u_0-r)+r.\]\end{solution}
 
 
-\begin{exercise}[topic=rec01]
+\begin{exercise}
 On rappelle que pour tout entier naturel $n$, la fonction $f_n : x \mapsto x^n$, définie sur $\mathbb{R}$, est dérivable, de dérivée $f'_n : x \mapsto n\,x^{n-1}$. Nous allons le démontrer par récurrence.
 \begin{enumerate}
 \item Montrer, à l'aide du taux de variation, que les fonctions \(f_1 : x \mapsto x\) et \(f_2 : x \mapsto x^2\) sont dérivables sur \( \mathbb{R}\) et donner leur fonctions dérivées.
@@ -504,11 +507,12 @@ Pour tout réel \(x\),
 \(\mathcal{P}(n+1)\) est donc vraie.
 \item \textbf{Conclusion} : \(\mathcal{P}(2)\) est vraie et \(\mathcal{P}\) est héréditaire. Par récurrence, \(\mathcal{P}(n)\) est vraie pour tout entier naturel \(n\) supérieur ou égal à 2\end{itemize}\end{solution}
 
-\printcollection{rec01}
+
 
 \section*{Suites majorées, minorées, bornées}
 
-\begin{exercise}[topic=rec02]Dans chacun des cas suivants, déterminer si la suite $(u_n)$ est majorée, minorée, bornée.
+\begin{exercise}
+Dans chacun des cas suivants, déterminer si la suite $(u_n)$ est majorée, minorée, bornée.
 
 \renewcommand{\arraystretch}{2.5}
 \begin{tabularx}{\linewidth}{XXX}
@@ -530,7 +534,8 @@ Pour tout réel \(x\),
 \textbf{f.} Pour tout entier naturel $n$, $0 \leqslant n \leqslant n+1$ et donc $ 0\leqslant \dfrac{n}{n+1} \leqslant 1$. La suite $(u_n)$ est bornée.\end{solution}
 
 
-\begin{exercise}[topic=rec02]  On considère la suite $(u_n)$ définie par $u_0=2$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{1}{5}\ u_n + 8$. \\ Montrer par récurrence que pour tout entier naturel $n$, on a $u_n \leqslant 10$.\end{exercise}
+\begin{exercise}
+On considère la suite $(u_n)$ définie par $u_0=2$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{1}{5}\ u_n + 8$. \\ Montrer par récurrence que pour tout entier naturel $n$, on a $u_n \leqslant 10$.\end{exercise}
 
 \begin{solution}Pour tout entier naturel $n$, on considère la proposition $P(n)$ : « $u_n\leqslant 10$ ».
 \begin{itemize}
@@ -539,7 +544,8 @@ Pour tout réel \(x\),
 \item \textbf{Conclusion :} $P(0)$ est vraie. $P$ est héréditaire. Par récurrence, $P(n)$ est vraie pour tout entier naturel $n$.
 \end{itemize}\end{solution}
 
-\begin{exercise}[topic=rec02]On considère la suite $(u_n)$ définie par $u_0=5$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{u_n+3}{2}$. \\ Montrer que, pour tout entier naturel $n$, on a $3 \leqslant u_n \leqslant 5$.\end{exercise}
+\begin{exercise}
+On considère la suite $(u_n)$ définie par $u_0=5$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{u_n+3}{2}$. \\ Montrer que, pour tout entier naturel $n$, on a $3 \leqslant u_n \leqslant 5$.\end{exercise}
 
 
 \begin{solution}Pour tout entier naturel $n$, on considère la proposition $P(n)$ : « $3 \leqslant u_n \leqslant 5$ ».
@@ -550,7 +556,8 @@ Pour tout réel \(x\),
 \end{itemize}\end{solution}
 
 
-\begin{exercise}[topic=rec02]On considère la suite $(u_n)$ définie par $u_0=1$ et, pour tout entier relatif $n$, $u_{n+1}=\dfrac{1}{1+u_n}$.\\ Montrer par récurrence que, pour tout entier naturel $n$, $\dfrac{1}{2} \leqslant u_n \leqslant 1$.
+\begin{exercise}
+On considère la suite $(u_n)$ définie par $u_0=1$ et, pour tout entier relatif $n$, $u_{n+1}=\dfrac{1}{1+u_n}$.\\ Montrer par récurrence que, pour tout entier naturel $n$, $\dfrac{1}{2} \leqslant u_n \leqslant 1$.
 \end{exercise}
 \begin{solution}Pour tout entier naturel $n$, on considère la proposition $P(n)$ : « $\dfrac{1}{2} \leqslant u_n \leqslant 1$ ».
 \begin{itemize}
@@ -564,7 +571,8 @@ On a donc $\dfrac{2}{3} \geqslant \dfrac{1}{1+u_n} \geqslant \dfrac{1}{2}$. Or, 
 \end{itemize}\end{solution}
 
 
-\begin{exercise}[topic=rec02]On considère la suite $(v_n)$ définie par $v_0=0.3$ et, pour tout entier naturel $n$, $v_{n+1}=4v_n-4v_n^2$. 
+\begin{exercise}
+On considère la suite $(v_n)$ définie par $v_0=0.3$ et, pour tout entier naturel $n$, $v_{n+1}=4v_n-4v_n^2$. 
 \begin{enumerate}
 \item Pour tout réel $x\in[0;1]$, on pose $f(x)=4x-4x^2$. On admet que $f$ est dérivable sur $\mathbb{R}$.\\ Donner une expression de $f'(x)$ pour tout réel $x\in [0;1]$.
 \item Étudier le signe de $f'$ sur l'intervalle $[0;1]$.
@@ -591,11 +599,12 @@ Pour tout entier naturel $n$, on pose $P(n)$ : « $0 \leqslant v_n\leqslant 1$ �
 \end{itemize}
 \end{solution}
 
-\printcollection{rec02}
+
 
 \section*{Suites croissantes, suites décroissantes}
 
-\begin{exercise}[topic=rec03]On considère la suite $(u_n)$ définie pour tout entier naturel $n$ par $u_n=2n^2-24n+3$.
+\begin{exercise}
+On considère la suite $(u_n)$ définie pour tout entier naturel $n$ par $u_n=2n^2-24n+3$.
 \begin{enumerate}
 \item Montrer que pour tout entier naturel $n$, $u_{n+1}-u_n = 4n-22$.
 \item En déduire le sens de variations de la suite $(u_n)$.
@@ -610,7 +619,8 @@ Ainsi,
 \[ u_{n+1}-u_n = 2n^2-20n-19-(2n^2-24n+3)=4n-22.\]
 Étudions le signe de $u_{n+1}-u_n$, c'est-à-dire le signe de $4n-22$. On a $4n-22 \geqslant 0$ si et seulement si $n \geqslant 5,5$. Ainsi, $(u_n)$ est décroissante jusqu'au rang 5 puis croissante à partir du rang 6. On a par ailleurs $u_5=-67$ et $u_6=-69$. Ainsi, $(u_n)$ est en fait décroissante jusqu'au rang 6 puis croissante à partir de ce rang. Une autre méthode consiste simplement à étudier les variations de la fonction $x\mapsto 2x^2-24x+3$.\end{solution}
 
-\begin{exercise}[topic=rec03]On considère la suite $(u_n)$ définie par $u_0=5$ et pour tout entier naturel $n$, $u_{n+1}=\dfrac{1}{2}u_n+4$.
+\begin{exercise}
+On considère la suite $(u_n)$ définie par $u_0=5$ et pour tout entier naturel $n$, $u_{n+1}=\dfrac{1}{2}u_n+4$.
 \begin{enumerate}
 \item Montrer par récurrence que, pour tout entier naturel $n$, $u_n \leqslant 8$.
 \item Montrer que pour entier naturel $n$, $u_{n+1}-u_n = -\dfrac{1}{2}u_n+4$.
@@ -627,7 +637,8 @@ Pour tout entier naturel $n$, on pose $P(n)$ : « $u_n \leqslant 8$ ».
 Soit $n$ un entier naturel, on a $u_{n+1}-u_n = \dfrac{1}{2}u_n+4-u_n = -\dfrac{1}{2}u_n+4$.\\
 Puisque pour tout entier naturel $n$, on a $u_n \leqslant 8$, on a donc $-\dfrac{1}{2}u_n \geqslant -\dfrac{1}{2} \times 8$ et $-\dfrac{1}{2}u_n+4 \geqslant -\dfrac{1}{2}\times 8 +4$, c'est-à-dire $u_{n+1}-u_n \geqslant 0$. La suite $(u_n)$ est donc croissante.\end{solution}
 
-\begin{exercise}[topic=rec03]On considère la suite \((u_n)\) définie par \(u_0=1\) et, pour tout entier naturel \(n\), \(u_{n+1}=\dfrac{2u_n}{2+u_n}\).
+\begin{exercise}
+On considère la suite \((u_n)\) définie par \(u_0=1\) et, pour tout entier naturel \(n\), \(u_{n+1}=\dfrac{2u_n}{2+u_n}\).
 \begin{enumerate}
 \item Montrer que pour tout entier naturel \(n\), \(u_n > 0\).
 \item Montrer que la suite \((u_n)\) est strictement décroissante.
@@ -643,7 +654,8 @@ Puisque pour tout entier naturel $n$, on a $u_n \leqslant 8$, on a donc $-\dfrac
 \[\dfrac{u_{n+1}}{u_n} = \dfrac{2u_n}{2+u_n} \times \dfrac{1}{u_n} = \dfrac{2}{2+u_n}.\]
 Or, puisque \(u_n > 0\), il en vient que \( 2+u_n > 2\) et donc que \( \dfrac{2}{2+u_n} < 1\). Ainsi, pour tout entier naturel \(n\), \(\dfrac{u_{n+1}}{u_n} < 1\), et donc \(u_{n+1} < u_n\). La suite \((u_n)\) est strictement décroissante.\end{solution}
 
-\begin{exercise}[topic=rec03]On considère la suite $(u_n)$ définie par $u_0=2$ et pour tout entier naturel $n$, $u_{n+1}=\dfrac{2}{3}u_n-7$. \\Montrer que pour tout entier naturel $n$, $u_n\geqslant -21$ et que la suite $(u_n)$ est décroissante.\end{exercise}
+\begin{exercise}
+On considère la suite $(u_n)$ définie par $u_0=2$ et pour tout entier naturel $n$, $u_{n+1}=\dfrac{2}{3}u_n-7$. \\Montrer que pour tout entier naturel $n$, $u_n\geqslant -21$ et que la suite $(u_n)$ est décroissante.\end{exercise}
 
 
 \begin{solution}
@@ -658,7 +670,8 @@ Pour tout entier naturel $n$, on pose $P(n)$ : « $u_n \geqslant u_{n+1} \geqsla
 \end{itemize}\end{solution}
 
 
-\begin{exercise}[topic=rec03]On considère la suite $(u_n)$ définie par $u_0=5$ et pour tout entier naturel $n$, $u_{n+1}=\sqrt{2u_n-1}$. \\Montrer que pour tout entier naturel $n$, $u_n \geqslant 1$ et que $(u_n)$ est décroissante.\end{exercise}
+\begin{exercise}
+On considère la suite $(u_n)$ définie par $u_0=5$ et pour tout entier naturel $n$, $u_{n+1}=\sqrt{2u_n-1}$. \\Montrer que pour tout entier naturel $n$, $u_n \geqslant 1$ et que $(u_n)$ est décroissante.\end{exercise}
 
 
 \begin{solution}
@@ -672,7 +685,8 @@ Pour tout entier naturel $n$, on pose $P(n)$ : « $u_n \geqslant u_{n+1} \geqsla
 \item \textbf{Conclusion} : $P(0)$ est vraie et $P$ est héréditaire. Par récurrence, $P(n)$ est vraie pour tout $n\in\mathbb{N}$.
 \end{itemize}\end{solution}
 
-\begin{exercise}[topic=rec03,subtitle={(Métropole 2021)}] On considère la suite \((u_n)\) définie par \(u_0=1\) et, pour tout entier naturel \(n\),
+\begin{exercise}[subtitle={(Métropole 2021)}]
+On considère la suite \((u_n)\) définie par \(u_0=1\) et, pour tout entier naturel \(n\),
 \[u_{n+1}=\dfrac{5u_n+4}{u_n+2}.\]
 
 \begin{enumerate}
@@ -696,7 +710,8 @@ Or, \(f(0)=2\), qui est supérieur à 0, \(f(u_n)=u_{n+1}\), \(f(u_{n+1})=u_{n+2
 
 
 
-\begin{exercise}[topic=rec03,subtitle= {(Centres étrangers 2022)}]On considère les suites \((a_n)\) et \((b_n)\) définies par \(a_0= \dfrac{1}{10}\), \(b_0=1\) et, pour tout entier naturel \(n\), \[\left\{\begin{array}{l}a_{n+1}=\mathrm{e}^{-b_n}\\b_{n+1}=\mathrm{e}^{-a_n}\end{array}\right.\]
+\begin{exercise}[subtitle={(Centres étrangers 2022)}]
+On considère les suites \((a_n)\) et \((b_n)\) définies par \(a_0= \dfrac{1}{10}\), \(b_0=1\) et, pour tout entier naturel \(n\), \[\left\{\begin{array}{l}a_{n+1}=\mathrm{e}^{-b_n}\\b_{n+1}=\mathrm{e}^{-a_n}\end{array}\right.\]
 
 On rappelle que la fonction \(x\mapsto e^{-x}\) est décroissante sur \(\mathbb{R}\). Montrer que pour tout entier naturel \(n\), 
 \[ 0 < a_n \leqslant a_{n+1} \leqslant b_{n+1} \leqslant b_n \leqslant 1 .\]\end{exercise}
@@ -720,18 +735,11 @@ Ainsi, puisque \(\mathrm{e}^{-1} > 0\), on a, en lisant cette inégalité dans l
 \item \textbf{Conclusion} : \(P(0)\) est vraie et \(P\) est héréditaire. Par récurrence, \(P(n)\) est vraie pour tout \(n\in\mathbb{N}\).
 \end{itemize}\end{solution}
 
-\printcollection{rec03}
+
 
 \chapter{Correction des exercices}
-\section*{Principe}
-\printsolutions[collection={rec01}, headings={false} ]
 
-\section*{Suites majorées, minorées, bornées}
-\printsolutions[collection={rec02}, headings={false} ]
-
-\section*{Suites croissantes, suites décroissantes}
-
-\printsolutions[collection={rec03}, headings={false} ]
+\printsolutions[headings={false}]
 
 
 

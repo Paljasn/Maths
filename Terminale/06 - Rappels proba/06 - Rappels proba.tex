@@ -2,16 +2,11 @@
 
 \input{../../structure.tex}
 
-\DeclareExerciseCollection[topic=prob01]{prob01}
-\DeclareExerciseCollection[topic=prob02]{prob02}
-\DeclareExerciseCollection[topic=prob03]{prob03}
-
-
 \begin{document}
 
 \chapterimage{../../Pictures/background}
 
-\chapter*{Cours : Rappels de probabilité}
+\chapter{Cours : Rappels de probabilité}
 
 
 
@@ -580,11 +575,11 @@ L'écart-type mesure la "variation moyenne" de la variable aléatoire autour de 
 
 \begin{example}Dans l'exemple précédent, l'écart-type était donc $\sigma(X)=\sqrt{11.7475}\simeq 3.42$.\end{example}
 
-\chapter*{Exercices}
+\chapter{Exercices}
 
 \section*{Probabilités conditionnelles}
 
-\begin{exercise}[topic=prob01, subtitle={(Polynésie 2021)}]
+\begin{exercise}[subtitle={(Polynésie 2021)}]
 
 Un test est mis au point pour détecter une maladie dans un pays.
 Selon les autorités sanitaires de ce pays, 7\% des habitants sont infectés par cette maladie. Parmi les individus infectés, 20\% sont déclarés négatifs.
@@ -669,7 +664,7 @@ Cette probabilité vaut $\mathbb{P}(M) \times \mathbb{P}_M(T)$ soit $0.07 \times
 
 
 
-\begin{exercise}[topic=prob01, subtitle={(Centres étrangers 2021)}]
+\begin{exercise}[subtitle={(Centres étrangers 2021)}]
 
 D'après une étude, les utilisateurs réguliers de transports en commun représentent 17\% de la population française. Parmi ces utilisateurs réguliers, 32\% sont des jeunes âgés  de 18 à 24 ans.
 
@@ -777,7 +772,7 @@ réguliers des transports en commun. On donnera un résultat arrondi à $10^{-3}
 
 
 
-\begin{exercise}[topic=prob01, subtitle={(Métropole 2021)}]
+\begin{exercise}[subtitle={(Métropole 2021)}]
 
 Dans une école de statistiques, le recrutement se fait de deux façons : 
 \begin{itemize}
@@ -848,7 +843,7 @@ On choisit au hasard un candidat à ce concours de recrutement. On note
 
 
 
-\begin{exercise}[topic=prob01]
+\begin{exercise}
 D'année en année, les professeurs doivent rivaliser d'imagination pour inventer des sujets de bac blanc à leurs élèves. Certains sujets comportent des exercices sur les suites et d'autres pas. On s'intéresse à la probabilité de présence d'un exercice sur les suites pour une année donnée et on fait les hypothèses suivantes :
 \begin{itemize}
     \item Le bac blanc de l'année 2021 comporte un exercice sur les suites ;
@@ -1031,7 +1026,7 @@ On rappelle que pour tout entier $n$, $p_n=\mathbb{P}(S_n)$ désigne la probabil
 
 
 
-\begin{exercise}[topic=prob01]
+\begin{exercise}
 Une étude a montré que, pour la bonne santé mentale des lycéens, il était nécessaire que des frites figurent au menu de la cantine au moins 2 semaines sur 3 en moyenne. Dans les cuisines d'un certain lycée, le menu est élaboré de la manière suivante :
 \begin{itemize}
 \item La probabilité qu'il y ait des frites à la cantine la première semaine est de $\frac{4}{5}$.
@@ -1262,12 +1257,11 @@ On rappelle que pour tout entier non nul $n$, $p_n=\mathbb{P}(F_n)$ désigne la 
 
 
 
-\printcollection{prob01}
 
 \section*{Notion de variable aléatoire}
 
 
-\begin{exercise}[topic=prob02]On considère une variable aléatoire $X$ dont la loi est résumée dans un tableau.
+\begin{exercise}On considère une variable aléatoire $X$ dont la loi est résumée dans un tableau.
 
 \begin{center}
 \begin{tabular}{|l|c|c|c|c|}
@@ -1291,7 +1285,7 @@ On a $\mathbb{P}(X\leqslant 3)=\mathbb{P}(X=-2)+\mathbb{P}(X=0)+\mathbb{P}(X=3)=
 
 
 
-\begin{exercise}[topic=prob02]Dans une urne, on place 7 boules vertes, 3 boules rouges et 2 boules bleues. On tire une boule au hasard : si la boule est bleue, on gagne 3 euros. Si elle est rouge, on gagne 1 euro, sinon, on perd un euro. On note $X$ la variable aléatoire qui donne le gain algébrique de ce tirage. Donner la loi de probabilité de la variable $X$.\end{exercise}
+\begin{exercise}Dans une urne, on place 7 boules vertes, 3 boules rouges et 2 boules bleues. On tire une boule au hasard : si la boule est bleue, on gagne 3 euros. Si elle est rouge, on gagne 1 euro, sinon, on perd un euro. On note $X$ la variable aléatoire qui donne le gain algébrique de ce tirage. Donner la loi de probabilité de la variable $X$.\end{exercise}
 
 \begin{solution}La loi de $X$ est résumée dans le tableau suivant.
 
@@ -1307,7 +1301,7 @@ $\mathbb{P}(X=k)$ & $\dfrac{7}{12}$ & $\dfrac{1}{4}$ & $\dfrac{1}{6}$ \\
 
 
 
-\begin{exercise}[topic=prob02]On lance trois fois une pièce de monnaie équilibrée et on regarde le résultat à chaque fois.
+\begin{exercise}On lance trois fois une pièce de monnaie équilibrée et on regarde le résultat à chaque fois.
 \begin{enumerate}
 \item Construire un arbre de probabilités de cette expérience. Combien a-t-on d'issues ? 
 \item On appelle $X$ la variable aléatoire qui compte le nombre de Pile. Donner la loi de probabilité de $X$.
@@ -1513,7 +1507,7 @@ $\mathbb{P}(X=k)$ & $0.064$ & $0.3288$ & $0.432$ & $0.216$ \\
 
 
 
-\begin{exercise}[topic=prob02]On lance deux dés cubiques équilibrés, dont les faces sont numérotées de 1 à 6. On note $X$ le plus grand numéro obtenu. Déterminer la loi de la variable aléatoire $X$.\newpage \end{exercise}
+\begin{exercise}On lance deux dés cubiques équilibrés, dont les faces sont numérotées de 1 à 6. On note $X$ le plus grand numéro obtenu. Déterminer la loi de la variable aléatoire $X$.\newpage \end{exercise}
 
 \begin{solution}La loi de la variable aléatoire $X$ peut être résumée dans le tableau ci-dessous.
 
@@ -1530,7 +1524,7 @@ $\mathbb{P}(X=k)$ & $\frac{1}{36}$ & $\frac{1}{12}$ & $\frac{5}{36}$ & $\frac{7}
 
 
 
-\begin{exercise}[topic=prob02]Donner l'espérance, la variance et l'écart-type de la variable aléatoire $X$, dont la loi est résumée dans le tableau suivant.
+\begin{exercise}Donner l'espérance, la variance et l'écart-type de la variable aléatoire $X$, dont la loi est résumée dans le tableau suivant.
 \begin{center}
 \begin{tabular}{|l|c|c|c|c|}
 \hline
@@ -1547,7 +1541,7 @@ L'écart-type vaut alors $\sigma(X)=\sqrt{9.156}\simeq 3.026$.\end{solution}
 
 
 
-\begin{exercise}[topic=prob02]Paul se rend à la gare en voiture. On note $T$ la variable aléatoire donnant le temps de trajet nécessaire pour se rendre à la gare. La durée du trajet est donnée en minutes. La loi de probabilité de $T$ est donnée par le tableau ci-dessous. Déterminer l'espérance de la variable $T$ et interpréter cette valeur dans le contexte de l'exercice.
+\begin{exercise}Paul se rend à la gare en voiture. On note $T$ la variable aléatoire donnant le temps de trajet nécessaire pour se rendre à la gare. La durée du trajet est donnée en minutes. La loi de probabilité de $T$ est donnée par le tableau ci-dessous. Déterminer l'espérance de la variable $T$ et interpréter cette valeur dans le contexte de l'exercice.
 
 
 \begin{center}
@@ -1564,7 +1558,7 @@ $\mathbb{P}(T=k)$ & 0.14 & 0.13 & 0.13 & 0.12 & 0.12&0.11&0.10&0.08&0.07\\
 
 
 
-\begin{exercise}[topic=prob02] On place 1 boule blanche et $n$ boules noires dans une urne. On tire au hasard une boule dans cette urne. Si elle est blanche, on gagne 10 euros. Sinon, on perd 1 euro. On note $X$ la variable aléatoire donnant le gain d'un joueur, positif ou négatif.
+\begin{exercise}On place 1 boule blanche et $n$ boules noires dans une urne. On tire au hasard une boule dans cette urne. Si elle est blanche, on gagne 10 euros. Sinon, on perd 1 euro. On note $X$ la variable aléatoire donnant le gain d'un joueur, positif ou négatif.
 \begin{enumerate}
 \item Construire le tableau résumant la loi de probabilité de $X$ en fonction de $n$.
 \item Exprimer $E[X]$ en fonction de $n$.
@@ -1585,7 +1579,7 @@ L'espérance de $X$ vaut alors $-\dfrac{n}{n+1}+10 \times \dfrac{1}{n+1}$ soit $
 
 
 
-\begin{exercise}[topic=prob02]On considère un entier naturel $n$ strictement positif. On choisit un nombre uniformément au hasard entre 1 et $n$ inclus et note $X$ le résultat obtenu. Calculer $E[X]$.\end{exercise}
+\begin{exercise}On considère un entier naturel $n$ strictement positif. On choisit un nombre uniformément au hasard entre 1 et $n$ inclus et note $X$ le résultat obtenu. Calculer $E[X]$.\end{exercise}
 
 
 \begin{solution}Les issues sont 1, 2, 3, ..., $n$. 
@@ -1596,7 +1590,7 @@ Or, $1+2+3+\dots + n=\dfrac{n(n+1)}{2}$. Ainsi, $E(X)=\dfrac{1}{n} \times \dfrac
 
 
 
-\begin{exercise}[topic=prob02]Une urne contient $n$ jetons ($n \geqslant 9$) indiscernables au toucher, dont sept sont noirs et les autres sont blancs. On tire successivement et sans remise deux jetons de cette urne et on note $X$ la variable aléatoire indiquant le nombre de couleurs différentes obtenues lors du tirage. Déterminer la valeur de $n$ pour laquelle l'espérance de $X$ est maximale.\end{exercise}
+\begin{exercise}Une urne contient $n$ jetons ($n \geqslant 9$) indiscernables au toucher, dont sept sont noirs et les autres sont blancs. On tire successivement et sans remise deux jetons de cette urne et on note $X$ la variable aléatoire indiquant le nombre de couleurs différentes obtenues lors du tirage. Déterminer la valeur de $n$ pour laquelle l'espérance de $X$ est maximale.\end{exercise}
 
 \begin{solution}
 L'urne contient 7 jetons noirs et $n-7$ jetons blancs. L'arbre suivant permet de modéliser la situation.
@@ -1678,13 +1672,9 @@ L'espérance de $X$ est donc maximale si l'on place 6 ou 7 jetons dans l'urne.
 
 
 
-
-
-\printcollection{prob02}
-
 \section*{Exercices de synthèse}
 
-\begin{exercise}[topic=prob03, subtitle={(Centres étrangers 2022)}]
+\begin{exercise}[subtitle={(Centres étrangers 2022)}]
 Une urne contient des jetons blancs et noirs tous indiscernables au toucher.
 
 Une partie consiste à prélever au hasard successivement et avec remise deux jetons de cette urne. On établit la règle de jeu suivante :
@@ -1789,7 +1779,7 @@ Or, $-36x+252>0$ si et seulement si $x<7$. Ainsi, $f$ est croissante sur $[0;7]$
 
 
 
-\begin{exercise}[topic=prob03, subtitle={(Métropole 2022)}] Un hôtel situé à proximité d'un site touristique dédié à la préhistoire propose deux visites dans
+\begin{exercise}[subtitle={(Métropole 2022)}] Un hôtel situé à proximité d'un site touristique dédié à la préhistoire propose deux visites dans
 les environs, celle d'un musée et celle d'une grotte.
 Une étude a montré que 70\% des clients de l'hôtel visitent le musée. De plus, parmi les clients
 visitant le musée, 60\% visitent la grotte.
@@ -1947,24 +1937,12 @@ $\mathbb{P}(X=k)$ & $0.42$  & $0.24$&$0.28$ & $0.06$\\
 Son espérance vaut alors $E(T)=(12+x) \times 0.42 + x \times 0.24 + 12 \times 0.28 + 0 \times 0.06 = 0.66x+8.4$. Or, $8.4x+0.66\geqslant 15$ si et seulement si $x\geqslant 10$. Le prix de la visite de la grotte doit être fixée à 10 euros.\end{enumerate}\end{solution}
 
 
-\printcollection{prob03}
 
 
-\chapter*{Corrigés}
-
-\section*{Probabilités conditionnelles}
-
-\printsolutions[collection={prob01}, headings={false} ]
-
-\section*{Notion de variable aléatoire}
+\chapter{Corrigés}
 
 
-\printsolutions[collection={prob02}, headings={false} ]
-
-\section*{Exercices de synthèse}
-
-
-\printsolutions[collection={prob03}, headings={false} ]
+\printsolutions[headings={false} ]
 
 
 
