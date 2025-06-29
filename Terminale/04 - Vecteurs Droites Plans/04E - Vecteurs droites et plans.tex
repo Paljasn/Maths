@@ -1,0 +1,708 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/fond}
+
+\chapter{Exercices}
+
+
+\section*{Vecteurs de l'espace}
+
+
+\begin{exercise}\hspace{0pt}
+
+\begin{minipage}{0.5 \linewidth}On considère deux cubes $ABCDEFGH$ et $BIJCFLKG$ placés côte à côte. Compléter les égalités de vecteurs suivantes.
+\vskip10pt
+\begin{tabularx}{\linewidth}{XX}
+ $\overrightarrow{FG} = \overrightarrow{A\ldots}$ & $\overrightarrow{EK}+\overrightarrow{LF}= \overrightarrow{B\ldots}$ \\
+ $\overrightarrow{AB}- \overrightarrow{JC} = \overrightarrow{E\ldots}$ &  $\overrightarrow{AD}+2\overrightarrow{HG}+\overrightarrow{GE}=\overrightarrow{F\ldots}$ \\
+ $\overrightarrow{HC}+\overrightarrow{BK} = \overrightarrow{A\ldots}$ & $\overrightarrow{KL} + \overrightarrow{BI} - \overrightarrow{DF} = \overrightarrow{\ldots A}$
+\end{tabularx}
+
+
+\end{minipage}\hfill \begin{minipage}{0.4\linewidth}
+\includegraphics[scale=2.3]{pave1}
+
+\end{minipage}
+\vspace{-0.5cm}\end{exercise}
+
+\begin{solution}On a  $\overrightarrow{FG} = \overrightarrow{AD}$, $\overrightarrow{EK}+\overrightarrow{LF}= \overrightarrow{BJ}$, $\overrightarrow{AB}- \overrightarrow{JC} = \overrightarrow{EL}$,  $\overrightarrow{AD}+2\overrightarrow{HG}+\overrightarrow{GE}=\overrightarrow{FL}$, $\overrightarrow{HC}+\overrightarrow{BK} = \overrightarrow{AJ}$ et $\overrightarrow{KL} + \overrightarrow{BI} - \overrightarrow{DF} = \overrightarrow{EA}$.\end{solution}
+
+\begin{exercise}
+En utilisant la même figure, exprimer...
+\begin{itemize}
+\item ... le vecteur $\overrightarrow{AK}$ comme combinaison linéaire des vecteurs $\overrightarrow{AB}$ et $\overrightarrow{IK}$.
+\item ... le vecteur $\overrightarrow{AG}$ comme combinaison linéaire des vecteurs $\overrightarrow{AK}$ et $\overrightarrow{JD}$.
+\item ... le vecteur $\overrightarrow{DL}$ comme combinaison linéaire des vecteurs $\overrightarrow{AI}$ et $\overrightarrow{JE}$.
+\item ... le vecteur $\overrightarrow{BK}$ comme combinaison linéaire des vecteurs $\overrightarrow{AI}$, $\overrightarrow{EH}$ et $\overrightarrow{CG}$.
+\end{itemize}\end{exercise}
+
+\begin{solution}On a $\overrightarrow{AK}=2\overrightarrow{AB}+\overrightarrow{IK}$, $\overrightarrow{AG}=\overrightarrow{AK}+\dfrac{1}{2}\overrightarrow{JD}$, $\overrightarrow{DL}=2\overrightarrow{AI}+\overrightarrow{JE}$ et $\overrightarrow{BK}=\dfrac{1}{2}\overrightarrow{AI}+\overrightarrow{EH}+\overrightarrow{CG}$.\end{solution}
+
+
+
+\begin{exercise}
+\vskip10pt
+
+\begin{minipage}{0.3\linewidth}
+ \begin{center}
+\includegraphics[scale=0.35]{cubemilieu}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.6\linewidth}
+On considère un cube ABCDEFGH sur lequel on a placé les milieux des arêtes ainsi que le centre de la face ABCD. Donner...
+\begin{itemize}
+\item Un vecteur égal au vecteur $\overrightarrow{TR}$.
+\item Un vecteur égal au vecteur $\overrightarrow{OJ}$.
+\item Trois vecteurs colinéaires au vecteur $\overrightarrow{ML}$.
+\item Deux vecteurs colinéaires à $\overrightarrow{DK}$.
+\item Deux vecteurs coplanaires à $\overrightarrow{EF}$ et $\overrightarrow{AD}$.
+\end{itemize}\end{minipage}
+\vspace{-0.5cm}\end{exercise}
+
+\begin{solution}On a $\overrightarrow{TR}=\overrightarrow{OQ}$,  $\overrightarrow{OJ}=\overrightarrow{TL}$.
+
+Les vecteurs $\overrightarrow{AC}$, $\overrightarrow{JI}$ et $\overrightarrow{GE}$ sont colinéaires au vecteur $\overrightarrow{ML}$.
+
+Les vecteurs $\overrightarrow{DB}$ et $\overrightarrow{HF}$ sont colinéaires au vecteur $\overrightarrow{DK}$.
+
+Les vecteurs $\overrightarrow{EG}$ et $\overrightarrow{AK}$ sont coplanaires aux vecteurs $\overrightarrow{EF}$ et $\overrightarrow{AD}$. \\ En effet, $\overrightarrow{EG}=\overrightarrow{EF}+\overrightarrow{AD}$ et $\overrightarrow{AK}=\dfrac{1}{2}\overrightarrow{AD}+\dfrac{1}{2}\overrightarrow{EF}$.\end{solution}
+
+\begin{exercise}
+\hspace{0pt}
+\begin{minipage}{0.3\linewidth}
+ \begin{center}
+\includegraphics[scale=1]{pyramide}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.6\linewidth}
+
+On considère une pyramide $SABCD$ à base carrée $ABCD$ et de sommet $S$. 
+\vskip5pt
+On considère les vecteurs $\vec u = \overrightarrow{AC}-\overrightarrow{SA}$, $\vec v = \overrightarrow{AB}$ et $\vec w = 2\overrightarrow{BC} + \overrightarrow{DS}$. Montrer que $\vec u = \vec v + \vec w$.
+
+Que peut-on en déduire sur ces trois vecteurs ?\end{minipage}\end{exercise}
+
+\begin{solution}
+On a $\vec u = \overrightarrow{AC}-\overrightarrow{SA}=\overrightarrow{AC}+\overrightarrow{AS}$.
+
+Par ailleurs, $\vec v + \vec w=\overrightarrow{AB} + 2\overrightarrow{BC} + \overrightarrow{DS}=\overrightarrow{AB} + \overrightarrow{BC} + \overrightarrow{BC}+\overrightarrow{DS}=\overrightarrow{AC}+\overrightarrow{BC}+\overrightarrow{DS}$.
+
+Or, puisque $ABCD$ est un carré, alors $\overrightarrow{BC}=\overrightarrow{AD}$. Ainsi, $\vec v + \vec w = \overrightarrow{AC}+\overrightarrow{AD}+\overrightarrow{DS}=\overrightarrow{AC}
++\overrightarrow{AS}=\vec u$.\end{solution}
+
+
+
+\section*{Droites et plans de l'espace}
+
+\begin{exercise}\hspace{0pt}
+
+\begin{minipage}{0.4\linewidth}
+\includegraphics[scale=1.2]{cube2}
+
+\end{minipage}\hfill  \begin{minipage}{0.5 \linewidth}
+On considère le $ABCDEFGH$ ci-contre, ainsi qu'un point $I$ sur le segment $[AE]$. 
+
+Dans chacun des cas suivants, dire si les droites sont coplanaires ou non. Si oui, préciser si elles sont parallèles ou sécantes. Lorsqu'elles sont sécantes, construire le point d'intersection de ces droites.
+\begin{center}
+\begin{tabular}{lr}
+ $(AB)$ et $(FG)$ & $(AF)$ et $(IE)$  \\
+ $(CD)$ et $(EB)$ &  $(DI)$ et $(EH)$ \\
+ $(IB)$ et $(FA)$ & $(GF)$ et $(DA)$
+\end{tabular}
+\end{center}\end{minipage}
+\end{exercise}
+
+\begin{solution}\hspace{0pt}
+
+\begin{minipage}{0.3\linewidth}
+\includegraphics[scale=0.8]{cube2sol}
+
+\end{minipage}\hfill  \begin{minipage}{0.65 \linewidth}
+
+\begin{itemize}
+\item $(AB)$ et $(FG)$ sont non coplanaires.
+\item  $(AF)$ et $(IE)$  sont coplanaires et sécantes en $A$.
+\item $(CD)$ et $(EB)$ sont non coplanaires.
+\item  $(DI)$ et $(EH)$ sont coplanaires et sécantes en $J$.
+\item $(IB)$ et $(FA)$ sont coplanaires et sécantes en $K$.
+\item $(GF)$ et $(DA)$ sont coplanaires et parallèles.
+\end{itemize}
+\end{minipage}
+\end{solution}
+
+
+\begin{exercise}Sur le cube précédent, déterminer...
+
+\begin{tabularx}{\linewidth}{XX}
+\textbf{a.} l'intersection du plan $(EFH)$ avec le plan $(ADH)$. &  \textbf{b.} un plan parallèle au plan $(BFG)$. \\
+\textbf{c.} l'intersection du plan $(IFB)$ avec le plan $(HDB)$. & \textbf{d.} l'intersection du plan $(GIC)$ avec le plan $(HAD)$. \\
+\textbf{e.} un plan parallèle au plan $(IEB)$. & \textbf{f.}  l'intersection de la droite $(AI)$ et du plan $(FGH)$.
+\end{tabularx}\end{exercise}
+
+\begin{solution}L'intersection du plan $(EFH)$ avec le plan $(ADH)$ est la droite $(EH)$.
+
+Le plan $(AEH)$ est un plan parallèle au plan $(BFG)$.
+
+L'intersection du plan $(IFB)$ avec le plan $(HDB)$ est la droite $(FB)$.
+
+L'intersection du plan $(GIC)$ avec le plan $(HAD)$ est la droite $(AE)$
+
+Le plan $(HCG)$ est un plan parallèle au plan $(IEB)$.
+
+L'intersection de la droite $(AI)$ et du plan $(FGH)$ est le point $E$.
+
+\end{solution}
+
+
+\begin{exercise}\hspace{0pt}
+  \begin{minipage}{0.5 \linewidth}
+On considère une pyramide $SABCD$ de sommet $S$ et de base carrée. On place un point $I$ sur $[DS]$, un point $J$ sur $[AS]$ et un point $K$ sur $[BS]$ de telle sorte que les droites $(IJ)$ et $(AD)$ ne sont pas parallèles, de même que les droites $(IK)$ et $(BD)$.
+
+\end{minipage}\hfill \begin{minipage}{0.4\linewidth}
+\includegraphics[scale=1.3]{pyramide2}
+
+\end{minipage}
+\vskip30pt
+\begin{enumerate}
+\item Justifier que les droites $(IJ)$ et $(AD)$ sont sécantes et construire leur point d'intersection.
+\item Justifier que les droites $(IK)$ et $(BD)$ sont sécantes et construire leur point d'intersection.
+\item Construire alors l'intersection des plans $(ABD)$ et $(IJK)$.
+\item Sans justifier la construction, vérifier que l'intersection des droites $(JK)$ et $(AB)$ se trouve sur cette droite.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}Les points $I$, $J$, $A$ et $D$ sont coplanaires (ils sont sur la face triangulaire de droite). Les droites $(IJ)$ et $(AD)$ sont donc coplanaires. Elles sont non parallèles et donc sécantes.
+
+Les points $I$, $K$, $B$ et $D$ sont coplanaires (ils sont sur un triangle qui coupe le tétraèdre en deux). Les droites $(IK)$ et $(BD)$ sont donc coplanaires. Elles sont non parallèles et donc sécantes.
+
+\begin{center}
+\includegraphics[scale=1.5]{pyramide2sol}
+\end{center}\end{solution}
+
+
+\begin{exercise}[subtitle={(Théorème du toit)}]
+Soit $P_1$ et $P_2$ deux plans sécants et $\Delta$ la droite d'intersection de ces plans. Soit $(d_1)$ une droite du plan $P_1$ et $(d_2)$ une droite du plan $P_2$ telles que $(d_1)$ et $(d_2)$ sont parallèles.
+
+En raisonnant par l'absurde, montrer que $\Delta$ est parallèle aux droites $(d_1)$ et $(d_2)$.
+
+\end{exercise}
+
+\begin{solution}
+Supposons que $\Delta$ n'est pas parallèle à $(d_1)$. Puisque $(d_2)$ est parallèle à $(d_1)$, on en déduit que $\Delta$ n'est pas non plus parallèle à $(d_2)$.
+
+Soit $\vec u$ un vecteur directeur de $\Delta$ et $\vec v$ un vecteur directeur de $(d_1)$, et donc également de $(d_2)$. Les vecteurs $\vec u$ et $\vec v$ sont donc non colinéaires.
+
+Puisque les droites $(d_1)$ et $\Delta$ appartiennent toutes deux au plan $P_1$, les vecteurs $\vec u$ et $\vec v$ forment une base du plan $P_1$.
+
+Par ailleurs, puisque les droites $(d_2)$ et $\Delta$ sont toutes deux contenues dans le plan $P_2$, les vecteurs $\vec u$ et $\vec v$ forment également une base du plan $P_2$. 
+
+Par conséquent, les pans $P_1$ et $P_2$ admettent un même couple de vecteurs de bases, ces deux plans sont donc parallèles : c'est impossible puisque l'on a supposé que ces deux plans étaient sécants.
+
+Par conséquent, la droite $\Delta$ est parallèle à la droite $(d_1)$ et donc à la droite $(d_2)$.
+\end{solution}
+
+
+\section*{Repère de l'espace}
+
+\begin{exercise}
+Dans le cube $ABCDEFGH$ ci-dessous, donner...
+
+\begin{minipage}{0.3\linewidth}
+ \begin{center}
+\includegraphics[scale=1]{cube}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.65\linewidth}
+
+\begin{itemize}
+\item ... les coordonnées du vecteur $\overrightarrow{BH}$ dans le repère $(A;\overrightarrow{AB};\overrightarrow{AD};\overrightarrow{AE})$.
+\vskip5pt
+\item ... les coordonnées du point $F$ dans le repère $(A;\overrightarrow{AB};\overrightarrow{AD};\overrightarrow{AE})$.
+\vskip5pt
+\item ... les coordonnées du vecteur $\overrightarrow{CD}$ dans le repère $(A;\overrightarrow{AC};\overrightarrow{AG};\overrightarrow{AH})$.
+\vskip5pt
+\item ... les coordonnées du point $G$ dans le repère $(B;\overrightarrow{AC};\overrightarrow{AG};\overrightarrow{AH})$.
+\vskip5pt
+\item ...  les coordonnées du point $I$, milieu du segment $[BG]$ dans le repère $(A;\overrightarrow{AB};\overrightarrow{AD};\overrightarrow{AE})$.
+\vskip5pt
+\item ...  les coordonnées du point $J$, milieu du segment $[FH]$ dans le repère $(A;\overrightarrow{AE};\overrightarrow{AD};\overrightarrow{AB})$.
+\end{itemize}
+\end{minipage}\end{exercise}
+
+\begin{solution}
+On a \(\overrightarrow{BH} = - \overrightarrow{AB} + \overrightarrow{AD}+\overrightarrow{AE}\). Ses coordonnées dans le repère \((A;\overrightarrow{AB};\overrightarrow{AD};\overrightarrow{AE})\) sont donc\renewcommand{\arraystretch}{1} \(\renewcommand{\arraystretch}{1}\renewcommand{\arraystretch}{1}\begin{pmatrix}-1 \\ 1 \\ 1 \end{pmatrix}\).
+
+ Les coordonnées du point \(F\) dans le repère \((A;\overrightarrow{AB};\overrightarrow{AD};\overrightarrow{AE})\) sont \((1\,;\,0\,;\,1)\).
+
+On a $\overrightarrow{CD}=0 \overrightarrow{AC} - 1 \overrightarrow{AG} + 1 \overrightarrow{AH}$.  Ses coordonnées dans le repère \((A;\overrightarrow{AC};\overrightarrow{AG};\overrightarrow{AH})\) sont donc \renewcommand{\arraystretch}{1} \(\renewcommand{\arraystretch}{1}\begin{pmatrix}0 \\ -1 \\ 1 \end{pmatrix}\).
+ 
+On a \(\overrightarrow{BG} = 0 \overrightarrow{AC} + 0\overrightarrow{AG}+\overrightarrow{AH}\). Les coordonnées du point \(G\) dans le repère \((B;\overrightarrow{AC};\overrightarrow{AG};\overrightarrow{AH})\) sont \((0\,;\,0\,;\,1)\).
+
+ Les coordonnées du point \(I\), milieu de \([BG]\) dans le repère \((A;\overrightarrow{AB};\overrightarrow{AD};\overrightarrow{AE})\) sont \(\left(1\,;\,\dfrac{1}{2}\,;\,\dfrac{1}{2}\right)\).
+ 
+ Les coordonnées du point \(J\), milieu de \([FH]\) dans le repère \((A;\overrightarrow{AE};\overrightarrow{AD};\overrightarrow{AB})\) sont \(\left(1\,;\,\dfrac{1}{2}\,;\,\dfrac{1}{2}\right)\). Attention à l'ordre des vecteurs !
+\end{solution}
+
+
+\begin{exercise}
+On considère un prisme droit $ABCDEFGHIJKL$ dont la base est un hexagone régulier $ABCDEF$. 
+
+\begin{minipage}{0.3\linewidth}
+ \begin{center}
+\includegraphics[scale=0.3]{prismehexa}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.68\linewidth}
+
+\begin{enumerate}
+\item On se place dans le repère $(A; \overrightarrow{AB}, \overrightarrow{AF},\overrightarrow{AG})$.
+\begin{enumerate}
+\item Donner les coordonnées des points $D$, $E$, $H$ et $J$ dans ce repère.
+\item Donner les coordonnées des vecteurs $\overrightarrow{BK}$ et $\overrightarrow{GD}$ dans ce repère. 
+\end{enumerate}
+\item Reprendre les questions précédentes en se plaçant cette fois dans le repère $(A; \overrightarrow{AB}, \overrightarrow{AE},\overrightarrow{AH})$.
+\end{enumerate}\end{minipage}
+
+\end{exercise}
+
+\begin{solution}
+Dans \((A;\overrightarrow{AB};\overrightarrow{AF};\overrightarrow{AG})\), on a \(D(2\,;\,2\,;\,0)\), \(E(1\,;\,2\,;\,0)\), \(H(1\,;\,0\,;\,1)\), \(J(2\,;\,2\,;\,1)\), \(\overrightarrow{BK}\renewcommand{\arraystretch}{1}\renewcommand{\arraystretch}{1}\begin{pmatrix}0 \\ 2 \\ 1 \end{pmatrix}\) et \(\overrightarrow{GD}\renewcommand{\arraystretch}{1}\renewcommand{\arraystretch}{1}\begin{pmatrix}2 \\ 2 \\ -1\end{pmatrix}\). 
+
+Dans \((A;\overrightarrow{AB};\overrightarrow{AE};\overrightarrow{AH})\), on a \(D(1\,;\,1\,;\,0)\), \(E(0\,;\,1\,;\,0)\), \(H(0\,;\,0\,;\,1)\), \(J(0\,;\,1\,;\,1)\), \(\overrightarrow{BK}\renewcommand{\arraystretch}{1}\renewcommand{\arraystretch}{1}\begin{pmatrix}-2 \\ 1 \\ 1 \end{pmatrix}\) et \(\overrightarrow{GD}\renewcommand{\arraystretch}{1}\renewcommand{\arraystretch}{1}\begin{pmatrix}2 \\ 1 \\ -1\end{pmatrix}\).
+\end{solution}
+
+\begin{exercise}[subtitle={(Centres étrangers 2023)}]\hspace{0pt}
+\begin{minipage}{0.65\linewidth}
+On considère le prisme droit $ABFEDCGH$ de base $ABFE$, rectangle en $A$. On associe à ce prisme le repère $(A\,;\,\vec{\imath}\,,\,\vec{\CMjmath}\,,\,\vec{k})$ tel que \[\vec{\imath}=\dfrac{1}{4}\overrightarrow{AB}$, $\vec{\CMjmath}=\dfrac{1}{4}\overrightarrow{AD}$ et $\vec{k}=\dfrac{1}{8}\overrightarrow{AE}.\]
+
+De plus, on a $\overrightarrow{BF}=\dfrac{1}{2}\overrightarrow{AE}$.
+
+On note $I$ le milieu du segment $[EF]$ et $J$ le milieu du segment $[AE]$.
+
+Donner les coordonnées des points $H$, $I$ et $J$.
+\end{minipage}\hfill\begin{minipage}{0.33\linewidth}
+\begin{center}
+\includegraphics[scale=0.3]{prismeCE23}
+\end{center}
+\end{minipage}\end{exercise}
+
+\begin{solution}
+Le point $H$ a pour coordonnées $(0;4;8)$.
+
+Le point $E$ a pour coordonnées $(0,0,8)$. Le point $F$ a pour coordonnées $(4,0,4)$. Puisque $I$ est le milieu de $[EF]$, ses coordonnées sont $\left(\dfrac{0+4}{2}, \dfrac{0+0}{2}, \dfrac{8+4}{2}\right)$ soit $(2,0,6)$.
+
+Le point $E$ a pour coordonnées $(0,0,8)$. Le point $A$ a pour coordonnées $(0,0,0)$. Puisque $J$ est le milieu de $[AE]$, ses coordonnées sont $\left(\dfrac{0+0}{2}, \dfrac{0+0}{2}, \dfrac{8+0}{2}\right)$ soit $(0,0,4)$.
+\end{solution}
+
+\begin{exercise}On se place dans un repère de l'espace $\Oijk$. On considère les points $A$, $B$, $C$ et $D$ de coordonnées respectives $A(1;-1;2)$, $B(5;1;8)$, $C(-3;2;-1)$ et $D(-1;3;2)$.
+\begin{enumerate}
+\item Déterminer les coordonnées des vecteurs $\overrightarrow{AB}$, $\overrightarrow{AC}$ et $\overrightarrow{CD}$.
+\item Que peut-on en déduire sur les droites $(AB)$ et $(CD)$ ?
+\item Les points $A$, $B$, $C$ et $D$ sont-ils coplanaires ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}
+On a $\coorde{AB}{5-1}{1-(-1)}{8-2}=\coordbe{4}{2}{6}$, $\coorde{AC}{-3-2}{2-(-1)}{-1-2}=\coordbe{-5}{3}{-3}$ et $\coorde{CD}{-1-(-3)}{3-2}{2-(-1)}=\coordbe{2}{1}{3}$.
+
+On remarque que $\overrightarrow{AB}=2\overrightarrow{CD}$. Les vecteurs $\overrightarrow{AB}$ et $\overrightarrow{CD}$ sont colinéaires, les droites $(AB)$ et $(CD)$ sont parallèles.
+
+Par conséquent, ces droites sont également coplanaires. Les points $A$, $B$, $C$ et $D$ sont donc coplanaires.\end{solution}
+
+
+
+
+\begin{exercise}L'espace est muni d'un repère $\Oijk$. On considère les points $A$, $B$ et $C$ de coordonnées respectives $A(1;3;5)$, $B(2;7;-1)$ et $C(5;19;-19)$.
+\begin{enumerate}
+\item Déterminer les coordonnées des vecteurs $\overrightarrow{AB}$ et $\overrightarrow{AC}$.
+\item En déduire que les points $A$, $B$ et $C$ sont alignés.
+\end{enumerate}\end{exercise}
+
+
+\begin{solution}On a $\coorde{AB}{2-1}{7-3}{5-(-1)}=\coordbe{1}{4}{6}$, $\coorde{AC}{5-2}{19-7}{-19-(-1)}=\coordbe{3}{12}{-18}$.
+
+On a $\overrightarrow{AC}=3\overrightarrow{AB}$. Les vecteurs $\overrightarrow{AB}$ et $\overrightarrow{AC}$ sont colinéaires. De plus, les droites $(AB)$ et $(AC)$ ont un point en commun. Ainsi, les points $A$, $B$ et $C$ sont alignés.\end{solution}
+
+
+
+\begin{exercise}On se place dans un repère de l'espace $\Oijk$. On considère les points $A$, $B$ et $C$ de coordonnées respectives $A(2;4;-1)$, $B(3;-2;5)$ et $C(6;7;-2)$.
+\begin{enumerate}
+\item Montrer que les points $A$, $B$ et $C$ ne sont pas alignés.
+\item Déterminer les coordonnées du point $I$, milieu de $[BC]$.
+\item Déterminer les coordonnées du point $J$ tel que $\overrightarrow{AJ}=2\overrightarrow{AB}-3\overrightarrow{AC}$.
+\item Déterminer les coordonnées du point $K$ tel que $C$ soit le milieu de $[AK]$.
+\end{enumerate}\end{exercise}
+
+\begin{solution}
+$\coorde{AB}{3-2}{-2-4}{5-(-1)}=\coordbe{1}{-6}{6}$ et $\coorde{AC}{6-2}{7-4}{-2-(-1)}=\coordbe{4}{3}{1}$. Ces vecteurs ne sont pas colinéaires (on ne passe pas des coordonnées de l'un à l'autre en multipliant par un réel). Les points $A$, $B$ et $C$ ne sont pas alignés.
+
+Le point $I$ a pour coordonnées $\left(\dfrac{3+6}{2} ; \dfrac{-2+7}{2}; \dfrac{5+(-2)}{2}\right)$ soit $\left(\dfrac{9}{2};\dfrac{5}{2};\dfrac{3}{2}\right)$.
+
+Notons $(x;y;z)$ les coordonnées du point $J$. Les coordonnées de $\overrightarrow{AJ}$ sont $\coordbe{x-2}{y-4}{z+1}$. Les coordonnées de $2\overrightarrow{AB}-3\overrightarrow{AC}$ sont $\coordbe{2\times 1 + 4}{2\times (-6)+3}{2\times 6 + 1} = \coordbe{6}{-9}{13}$. On a alors
+
+\begin{itemize}
+\item $x-2=6$ d'où $x=8$ ;
+\item $y-4=-9$ d'où $y=-5$ ;
+\item $z+1=13$ d'où $z=12$.
+\end{itemize}
+Les coordonnées du point $J$ sont $(8;-5;12)$.
+
+Notons $(x;y;z)$ les coordonnées du point $K$. Le milieu de $[AK]$ a pour coordonnées $\left( \dfrac{2+x}{2} ; \dfrac{4+y}{2} ; \dfrac{-1+z}{2}\right)$. Puisqu'il doit s'agir du point $C(6;7;-2)$, on a donc $\dfrac{2+x}{2}=6$ soit $x=10$, $\dfrac{4+y}{2}=7$ d'où  $y=10$ et enfin $\dfrac{-1+z}{2}=-2$ d'où $z=-3$.
+
+Les coordonnées de $K$ sont donc $(10;10;-3)$.
+\end{solution}
+
+
+
+\begin{exercise}L'espace est muni d'un repère $\Oijk$. On considère les points $A(1;2;3)$, $B(3;-1;2)$, $C(0;1;1)$ et $D(5;1;6)$.
+\begin{enumerate}
+\item Déterminer les coordonnées des vecteurs $\overrightarrow{AB}$, $\overrightarrow{AC}$, $\overrightarrow{AD}$.
+\item Montrer que ces trois vecteurs sont coplanaires. Que peut-on en déduire pour les points $A$, $B$ $C$ et $D$ ?
+\end{enumerate}\end{exercise}
+
+
+\begin{solution}On a $\coorde{AB}{3-1}{-1-2}{2-3}=\coordbe{2}{-3}{-1}$, $\coorde{AC}{0-1}{1-2}{1-3}=\coordbe{-1}{-1}{-2}$, $\coorde{AD}{5-1}{1-2}{6-3}=\coordbe{4}{-1}{3}$.
+
+Supposons qu'il existe des réels $\lambda$ et $\mu$ tels que $\overrightarrow{AB}=\lambda \overrightarrow{AC}+\mu \overrightarrow{AD}$ On a alors
+\[ \coordbe{2}{-3}{-1}=\lambda\coordbe{-1}{-1}{-2}+\mu \coordbe{4}{-1}{3} \quad \text{c'est-à-dire}\quad \coordbe{2}{-3}{-1} = \coordbe{-\lambda+4\mu}{-\lambda-\mu}{-2\lambda+3\mu}.\]
+
+D'après la deuxième équation, on a $-3=-\lambda-\mu$ et donc $\lambda = 3-\mu$.
+
+D'après la première équation, on a $-\lambda +4\mu = 2$. On remplace alors $\lambda$ par $3-\mu$ et on a donc $-(3-\mu)+4\mu=2$ soit $-3+\mu+4\mu=2$ ou encore $5\mu = 5$ et donc $\mu=1$.
+
+En remplaçant $\mu$ par 1, on trouve alors $\lambda = 3-1=2$.
+
+On peut alors vérifier que $\overrightarrow{AB}=2\overrightarrow{AC}+\overrightarrow{AD}$. Les vecteurs $\overrightarrow{AB}$, $\overrightarrow{AC}$ et $\overrightarrow{AD}$ sont coplanaires. Les points $A$, $B$, $C$ et $D$ sont donc sur un même plan.\end{solution}
+
+
+
+
+
+\begin{exercise}On se place dans un repère de l'espace $\Oijk$. On considère les points $A$, $B$, $C$, $D$ et $E$ de coordonnées respectives $A(2;2;0)$, $B(0;1;0)$, $C(1;0;1)$, $D(0;0;3)$ et $E(-1;4;0)$.
+\begin{enumerate}
+\item Calculer les coordonnées des vecteurs $\overrightarrow{AB}$, $\overrightarrow{AC}$, $\overrightarrow{AD}$ et $\overrightarrow{AE}$.
+\item Les vecteurs $\overrightarrow{AB}$, $\overrightarrow{AC}$ et $\overrightarrow{AD}$ forment-ils une base de l'espace ?
+\item Donner les coordonnées du point $E$ dans le repère $(A;\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD})$.
+\end{enumerate}\end{exercise}
+
+\begin{solution}On a  \coorde{AB}{-2}{-1}{0}, \coorde{AC}{-1}{-2}{1}, \coorde{AD}{-2}{-2}{3} et \coorde{AE}{-3}{2}{0}.
+
+Cette deuxième question revient à déterminer si ces trois vecteurs sont coplanaires. Supposons qu'il existe deux réels $\lambda$ et $\mu$ tels que $\overrightarrow{AB}=\lambda \overrightarrow{AC}+\mu \overrightarrow{AD}$. En utilisant les coordonnées, on a alors $\coordbe{-2}{-1}{0}=\coordbe{-\lambda-2\mu}{-2\lambda-2\mu}{\lambda+3\mu}$.
+
+\begin{itemize}
+\item En utilisant la troisième égalité, on a $0=\lambda+3\mu$ et donc $\lambda=-3\mu$ ;
+\item En remplaçant $\lambda$ par $-3\mu$ dans la première équation, on a alors $-2=3\mu-2\mu$ soit $-2=\mu$ ;
+\item En remplaçant $\mu$ par $-2$ on a $\lambda = -3\times(-2)=6$ ;
+\item Vérifions les coordonnées de $\lambda \overrightarrow{AC}+\mu \overrightarrow{AD}$ avec $\lambda=6$ et $\mu=-2$. On obtient
+\[\coordbe{-6-2\times(-2)}{-2\times 6-2 \times (-2)}{6+3\times (-2)}=\coordbe{-2}{-8}{0}.\]
+
+ce qui n'est pas le vecteur $\overrightarrow{AB}$. Les vecteurs $\overrightarrow{AB}$, $\overrightarrow{AC}$ et $\overrightarrow{AD}$ ne sont pas coplanaires, ils forment donc une base de l'espace.\end{itemize}
+
+Puisque les vecteurs $\overrightarrow{AB}$, $\overrightarrow{AC}$ et $\overrightarrow{AD}$, il existe un unique triplet de réels $(x,y,z)$ tels que $\overrightarrow{AE}= x \overrightarrow{AB}+y \overrightarrow{AC}+z \overrightarrow{AD}$. Ces réels sont les coordonnées du point $E$ dans le repère $(A;\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD})$. En utilisant les coordonnées des vecteurs, on a alors
+\[ \coordbe{-3}{2}{0} = \coordbe{-2x-y-2z}{-x-2y-2z}{y+3z}.\]
+
+\begin{itemize}
+\item En utilisant la dernière ligne, on a $y+3z=0$ et donc $y=-3z$.
+\item En remplaçant $y$ par $-3z$ dans la deuxième équation, on  obtient $2=-x-2\times(-3z)-2z$ soit $2=-x+6z-2z$ c'est-à-dire $2=-x+4z$. On a donc $x=-2+4z$.
+\item En remplaçant $y$ par $-3z$ et $x$ par $-2+4z$ dans la première équation, on obtient $-3=-2x-y-2z$ soit $-3=-2(-2+4z)-(-3)z-2z$ soit $-3=4-8z+3z-2z$ et donc $-7=-7z$ d'où $z=1$.
+\item Puisque $y=-3z$, on a $y=-3$.
+\item Puisque $x=-2+4z$, $x=-2+4=2$.
+\end{itemize}
+
+
+On calcule alors les coordonnées de $2 \overrightarrow{AB}-3 \overrightarrow{AC}+\overrightarrow{AD}$. elles valent
+\[\coordbe{-2 \times 2-(-3)-2 \times 1}{-2-2\times (-3)-2 \times 1}{-3+3\times 1}=\coordbe{-3}{2}{0}.\]
+qui sont bien les coordonnées de $\overrightarrow{AE}$. Ainsi, $\overrightarrow{AE}= 2\overrightarrow{AB}+-3 \overrightarrow{AC}+ \overrightarrow{AD}$. Les coordonnées de $E$ dans le repère  $(A;\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD})$ sont donc $(2;-3;1)$.\end{solution}
+
+
+
+
+\section*{Représentations paramétriques de droite}
+
+\begin{exercise}
+Donner une représentation paramétrique de la droite passant par le point $A(2;5;-3)$ et dirigée par \renewcommand{\arraystretch}{1}\coorde{u}{3}{2}{-3}
+\end{exercise}
+\begin{solution}Cette droite admet pour représentation paramétrique\renewcommand{\arraystretch}{1} \(\left\{ \begin{array}{l}x=2+3t \\ y=5+2t \\ z = -3-3t \\\end{array}\right., t \in \mathbb{R}\).\end{solution}
+
+
+\begin{exercise}On considère les points $A(1;3,-2)$ et $B(2;5;-4)$. Donner une représentation paramétrique de la droite $(AB)$.\end{exercise}
+\begin{solution}On a \(\overrightarrow{AB} \renewcommand{\arraystretch}{1}\begin{pmatrix}1\\2\\-2\end{pmatrix}\). Une représentation paramétrique de \((AB)\) est\renewcommand{\arraystretch}{1} \(\left\{ \begin{array}{l}x=1+t \\ y=3+2t\\ z = -2-2t \\\end{array}\right., t \in \mathbb{R}\).\end{solution}
+
+
+
+\begin{exercise}On considère les points $A(1;2;7)$ et $B(3;-1;6)$ ainsi que la droite $\Delta$ admettant pour représentation paramétrique \[ \Delta : \left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = 5 -4t \\ y = 1+6t \\ z = -3+2t 
+
+\end{array}\right. ,\; t\in \mathbb{R}\] 
+
+\begin{enumerate}
+\item Le point $A$ appartient-il à la droite $\Delta$ ?
+\item Les droites $(AB)$ et $\Delta$ sont-elles parallèles ?
+\item Donner une représentation paramétrique de la droite $(d)$ passant par le point $C(6;-1;2)$ et parallèle à $\Delta$.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}Le point \(A\) appartient à la droite \(\Delta\) si et seulement s'il existe un réel \(t\) tel que $\renewcommand{\arraystretch}{1}\left\{\begin{array}{l} 1 = 5 -4t \\ 2 = 1+6t \\ z = 7+2t \end{array}\right.$.
+
+	La première ligne donne alors \(t=1\). Mais si \(t=1\), alors la deuxième ligne donne \(2=7\). Ainsi, un tel réel \(t\) n'existe pas : le point \(A\) n'appartient pas à la droite \((AB)\).
+	
+Un vecteur directeur de \((AB)\) est le vecteur \(\overrightarrow{AB}\renewcommand{\arraystretch}{1}\begin{pmatrix}2\\-3\\-1\end{pmatrix}\). Un vecteur directeur de \(\Delta\) est le vecteur \(\vec u \renewcommand{\arraystretch}{1}\begin{pmatrix}-4\\6\\2\end{pmatrix}\). On a \(\vec u = -2 \overrightarrow{AB}\). Les vecteurs \(\vec u\) et \(\overrightarrow{AB}\) sont donc colinéaires : les droites \((AB)\) et \(\Delta\) sont donc parallèles.
+
+La droite $(d)$ admet le vecteur \(\overrightarrow{AB}\renewcommand{\arraystretch}{1}\begin{pmatrix}2\\-3\\-1\end{pmatrix}\) comme vecteur directeur. Une représentation paramétrique de cette droite est donc $\left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = 6 +2t \\ y = -1-3t \\ z = 2-t 
+\end{array}\right. ,\, t\in \mathbb{R}$\end{solution}
+
+
+
+
+\begin{exercise}On considère les droites $(d_1)$ et $(d_2)$ admettant pour représentations paramétriques
+ \[ (d_1) : \left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = -5 +2t \\ y = 11-3t \\ z = 11-2t 
+
+\end{array}\right. ,\; t\in \mathbb{R} \qquad \text{et}\qquad  (d_2) : \left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = 7 -4t' \\ y = 1-2t' \\ z = -2+5t' 
+
+\end{array}\right. ,\; t'\in \mathbb{R}.\] 
+Montrer que les droites $(d_1)$ et $(d_2)$ sont sécantes en un point dont on donnera les coordonnées.\end{exercise}
+
+\begin{solution}
+ Supposons que les droites $(d_1)$ et $(d_2)$ soient sécantes en un point $M(x;y;z)$. Il existe alors deux réels $t$ et $t'$ tels que \renewcommand{\arraystretch}{1}$\left\{ \begin{array}{l}x=-5+2t=7-4t' \\ y=11-3t =1-2t'\\ z = 11-2t=-2+5t' \\
+\end{array}\right.$
+
+En remplaçant la troisième ligne par la somme des lignes 1 et 3, on a alors \renewcommand{\arraystretch}{1}$\left\{ \begin{array}{l}-5+2t=7-4t' \\ 11-3t =1-2t'\\ 6=5+t' \\
+\end{array}\right.$.
+
+On trouve alors $\renewcommand{\arraystretch}{1}\left\{ \begin{array}{l}-5+2t=7-4t' \\ 11-3t =1-2t'\\ t'=1 \\
+\end{array}\right.$ soit $\renewcommand{\arraystretch}{1}\left\{ \begin{array}{l}-5+2t=7-4 \\ 11-3t =1-2\\ t'=1 \\
+\end{array}\right.$  et donc $\renewcommand{\arraystretch}{1}\left\{ \begin{array}{l}t=4\\ t'=1 \\
+\end{array}\right.$.
+
+Vérifions : en remplaçant $t$ par $4$ dans l'équation de $(d_1)$, on obtient le point de coordonnées $(3;-1;3)$. En remplaçant $t'$ par $1$ dans l'équation de $(d_2)$, on obtient le point de coordonnées $(3;-1;3)$.
+
+ Ainsi, les droites $(d_1)$ et $(d_2)$ sont sécantes et les coordonnées du point d'intersection des droites $(d_1)$ et $(d_2)$ sont donc $(3;-1;3)$.
+\end{solution}
+
+
+
+\begin{exercise}
+On considère les droites $(d_1)$ et $(d_2)$ admettant pour représentations paramétriques
+ \[ (d_1) : \left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = 1 +2t \\ y = 3-t \\ z = -5+t
+
+\end{array}\right. ,\; t\in \mathbb{R} \qquad \text{et}\qquad  (d_2) : \left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = 2+t' \\ y = -1 \\ z = 3+6t' 
+
+\end{array}\right. ,\; t'\in \mathbb{R}.\] 
+Montrer que les droites $(d_1)$ et $(d_2)$ ne sont pas coplanaires.
+\end{exercise}
+
+\begin{solution}Un vecteur directeur de $(d_1)$ est $\vec u \begin{pmatrix}2\\-1\\1\end{pmatrix}$. Un vecteur directeur de $(d_2)$ est $\vec v \begin{pmatrix}1\\0\\6\end{pmatrix}$. Ces vecteurs ne sont pas colinéaires, les droites $(d_1)$ est $(d_2)$ ne sont donc pas parallèles.
+
+Supposons que ces droites sont sécantes. Il existe donc deux réels $t$ et $t'$ tels que $\left\{\begin{array}{l} 1 +2t =2+t' \\  3-t =-1\\ -5+t=3+6t'\end{array}\right.$.
+
+La deuxième ligne donne $t=4$. En remplaçant $t$ par 4 dans la première ligne, on obtient $t'=7$. En remplaçant $t$ par 4 dans la troisième ligne on obtient $t'=-\dfrac{2}{3}$. On a donc une contradiction. Par conséquent, les droites $(d_1)$ et $(d_2)$ ne sont pas sécantes.
+
+Finalement, les droites $(d_1)$ et $(d_2)$ n'étant ni parallèles, ni sécantes, elles ne sont pas coplanaires.\end{solution}
+
+
+\section*{Exercices de synthèse}
+
+
+\begin{exercise}\hspace{0pt}
+
+\begin{minipage}{0.6\linewidth}On se place dans un cube $ABCDEFGH$, d'arêtes de longueur 1.
+On note $I$ le milieu du segment $[EF]$.
+
+On considère par ailleurs le point $J$ tel que $\overrightarrow{BJ}=\dfrac{1}{4}\overrightarrow{BF}$ et le point $K$ tel que $\overrightarrow{CK}=\dfrac{1}{3}\overrightarrow{CG}$. 
+
+L'espace est muni du repère $(A;\overrightarrow{AB};\overrightarrow{AD};\overrightarrow{AE})$
+\end{minipage}\hfill\begin{minipage}{0.35\linewidth}
+\begin{center}
+\includegraphics[scale=0.25]{dev1cub1}
+\end{center}
+
+\end{minipage}
+
+\vskip80pt
+\begin{enumerate}
+\item Montrer que les droites $(IJ)$ et $(AB)$ sont sécantes. On note $M$ leur point d'intersection
+\item A l'aide de deux autres droites sécantes, construire sur la figure ci-dessus, en justifiant la construction, l'intersection des plans $(ABC)$ et $(IJK)$
+\item On considère le point $L$ de coordonnées $\left(\dfrac{5}{9};1;1\right)$
+\begin{enumerate}
+\item Sur quelle arête se situe le point $L$ ?
+\item Montrer que les points $I$, $J$, $K$ et $L$ sont coplanaires.
+\item En déduire que les droites $(IK)$ et $(LJ)$ sont sécantes.
+\item Donner une équation paramétrique  de ces deux droites et déterminer les coordonnées de leur point d'intersection.
+\end{enumerate}
+\end{enumerate}\end{exercise}
+
+\begin{solution}\hspace{0pt}
+
+\begin{enumerate}
+\item Les droites $(IJ)$ est $(AB)$ sont coplanaires puisque les 4 points cités se trouvent sur une même face. Par ailleurs, on trouve les coordonnées \coorde{AB}{1}{0}{0} et \coorde{IJ}{1/2}{0}{-3/4}. Ces vecteurs ne sont pas colinéaires : les droites $(IJ)$ et $(AB)$ ne sont donc pas parallèles. Elles sont donc sécantes en un point $M$.
+
+\item Les droites $(JK)$ est $(CB)$ sont coplanaires puisque les 4 points cités se trouvent sur une même face. Par ailleurs, on trouve les coordonnées \coorde{BC}{0}{1}{0} et \coorde{KJ}{0}{-1}{-1/12}. Ces vecteurs ne sont pas colinéaires : les droites $(KJ)$ et $(CB)$ ne sont donc pas parallèles. Elles sont donc sécantes en un point $N$.
+
+Ainsi, les points $M$ et $N$ appartiennent à l'intersection des plans $(ABC)$ et $(IJK)$. L'intersection de ces deux plans est par conséquent la droite $(MN)$.
+
+\begin{center}
+\includegraphics[scale=0.25]{dev1cub1corr}
+\end{center}
+
+\item \begin{enumerate}
+\item Le point $L$ se situe sur l'arête $[HG]$.
+
+\item On a \coorde{IJ}{1/2}{0}{-3/4}, \coorde{IK}{1/2}{1}{-2/3} et \coorde{IL}{1/18}{1}{0}. Supposons qu'il existe deux réels $a$ et $b$ tels que $\overrightarrow{IJ}=a\overrightarrow{IK}+b\overrightarrow{IL}$. On aurait alors
+
+\[ \coordbe{1/2}{0}{-3/4} = \coordbe{a/2+b/18}{a+b}{-2a/3}.\]
+
+D'après la troisième ligne, on a $a=\dfrac{9}{8}$. En utilisant la deuxième ligne, on trouve alors $b=-\dfrac{9}{8}$.
+
+Vérifions : on calcule les coordonnées de $\dfrac{9}{8}\overrightarrow{IK}-\dfrac{9}{8}\overrightarrow{IL}$. On obtient $ \coordbe{9/16 -1/16}{9/8-9/8}{-2/3 \times 9/8}$ soit $\coordbe{1/2}{0}{-3/4}$.
+
+On retrouve bien les coordonnées de $\overrightarrow{IJ}$. Les points $I$, $J$, $K$ et $L$ sont coplanaires.
+
+Ainsi, les droites $(IK)$ et $(LJ)$ sont coplanaires. 
+
+\item Or, elles ne sont pas parallèles. Ces droites sont donc sécantes.
+
+\item On a $(IK)\quad : \quad \left\{ \begin{array}{l}x=\frac{1}{2}+\frac{1}{2}t \\ y=t\\ z=1 -\frac{2}{3}t\\
+\end{array}\right.,\, t\in\mathbb{R}$ et $(LJ) \quad : \quad \left\{ \begin{array}{l}x=\frac{5}{9}+\frac{4}{9}t' \\ y=1-t'\\ z=1 -\frac{3}{4}t'\\
+\end{array}\right.,\, t'\in\mathbb{R}$.
+
+Cherchons donc deux réels $t$ et $t'$ tels que $\left\{ \begin{array}{l}\frac{1}{2}+\frac{1}{2}t=\frac{5}{9}+\frac{4}{9}t' \\ t=1-t'\\ 1 -\frac{2}{3}t=1 -\frac{3}{4}t'\\
+\end{array}\right.,\, t'\in\mathbb{R}$.
+
+En remplaçant $t$ par $1-t'$ dans la dernière équation, on a $-\dfrac{2}{3}(1-t')=-\dfrac{3}{4}t'$ soit $\left(\dfrac{3}{4}+\dfrac{2}{3}\right)t'=\dfrac{2}{3}$ d'où $\dfrac{17}{12}t'
+=\dfrac{2}{3}$ et $t'=\dfrac{12}{17} \times \dfrac{2}{3}=\dfrac{8}{17}$. 
+
+Remplaçons alors $t'$ par $\dfrac{8}{17}$ dans l'équation de la droite $(LJ)$. On a $\frac{5}{9}+\frac{4}{9} \times \dfrac{8}{17} = \dfrac{13}{17}$, $1-\dfrac{8}{17}=\dfrac{9}{17}$ et $1 -\frac{3}{4} \times \dfrac{8}{17}=\dfrac{11}{17}$.
+
+Le point d'intersection des droites $(IK)$ et $(LJ)$ a pour coordonnées $\left(\dfrac{13}{17};\dfrac{9}{17};\dfrac{11}{17}\right)$.\end{enumerate}\end{enumerate}
+\end{solution}
+
+
+
+
+\begin{exercise}On considère un prisme droit $ABCDEFGHIJKL$ dont la base est un hexagone régulier $ABCDEF$. Les droites $(AI)$ et $(BK)$ sont-elles sécantes ?
+ \begin{center}
+\includegraphics[scale=0.3]{prismehexa}
+\end{center}
+\end{exercise}
+\begin{solution}
+On se place dans le repère $(A;\overrightarrow{AB},\overrightarrow{AF},\overrightarrow{AG})$. On a alors les coordonnées des vecteurs suivantes :
+\[ \coorde{AB}{1}{0}{0} \quad \coorde{AI}{2}{1}{1} \quad \coorde{AK}{1}{2}{1}\]
+
+Supposons qu'il existe deux réels $\lambda$ et $\mu$ tels que $\overrightarrow{AB}=\lambda \overrightarrow{AI}+\mu \overrightarrow{AK}$. On a alors
+\[ \coordbe{1}{0}{0}=\coordbe{2\lambda + \mu}{\lambda + 2\mu}{\lambda + \mu}.\]
+
+La dernière ligne nous donne $\lambda = -\mu$. On remplaçant $\lambda$ par $-\mu$ dans la seconde ligne, on a alors $\mu=0$ et donc $\lambda = 0$. Or, si on remplace $\lambda$ et $\mu$ par 0 dans la première ligne, on obtient $1=0$, ce qui est absurde.
+
+Ainsi, les points $A$, $B$, $I$ et $K$ ne sont pas coplanaires. Les droites $(AI)$ et $(BK)$ ne sont donc pas coplanaires. Elles ne peuvent donc pas être sécantes.\end{solution}
+
+
+
+\begin{exercise}[subtitle={(Amérique du Nord 2021)}]
+
+On considère un cube $ABCDEFGH$. Le point $I$ est le milieu du segment $[EF]$, le point $J$ est le milieu du segment $[BC]$ et le point $K$ est le milieu du segment $[AE]$.
+
+\begin{center}
+\includegraphics[scale=1]{amnord1}
+\end{center}
+
+\begin{enumerate}
+\item Les droites $(AI)$ et $(KH)$ sont-elles parallèles ? Justifier votre réponse.
+\end{enumerate}
+Dans la suite, on se place dans le repère orthonormé $(A ; \overrightarrow{AB} ; \overrightarrow{AD}; \overrightarrow{AE})$.
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item Donner les coordonnées des points $I$ et $J$.
+\item Montrer que les vecteurs $\overrightarrow{IJ}$, $\overrightarrow{AE}$ et $\overrightarrow{AC}$ sont coplanaires.
+\end{enumerate}
+On considère les droites $(d_1)$ et $(d_2)$ définies par les représentations paramétriques ci-dessous.
+
+\[ (d_1) : \left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = 3+t \\ y = 8-2t\\ z = -2+3t 
+\end{array}\right. , t\in \mathbb{R} \quad \text{et} \quad (d_2) : \left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = 4+t \\ y = 1+t \\ z = 8+2t
+\end{array}\right. , t\in \mathbb{R}\]
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item Les droites $(d_1)$ et $(d_2)$ sont-elles parallèles ? Justifier votre réponse.
+\end{enumerate}
+\newpage
+\end{exercise}
+
+
+\begin{solution}\hspace{0pt}
+
+\begin{enumerate}
+\item Les points $A$, $I$ et $K$ appartiennent au même plan (la face avant du cube). Le point $H$ n'appartient pas à ce plan. Les points $A$, $I$, $K$ et $H$ ne sont donc pas coplanaires. Les droites $(AI)$ et $(KH)$ ne peuvent donc pas être parallèles.
+\item On a $I\left(\frac{1}{2};0;1\right)$ et $J\left(1;\frac{1}{2};0\right)$.
+\item On a $\overrightarrow{IJ} = \dfrac{1}{2}\overrightarrow{AC} -  \overrightarrow{AE}$. Les vecteurs $\overrightarrow{IJ}$, $\overrightarrow{AE}$ et $\overrightarrow{AC}$ sont coplanaires.
+\item La droite $(d_1)$ est dirigée par le vecteur \coorde{u}{1}{-2}{3}. La droite $(d_2)$ est dirigée par le vecteur \coorde{v}{1}{1}{2}. Ces vecteurs ne sont pas colinéaires. Les droites $(d_1)$ et $(d_2)$ ne sont donc pas parallèles.
+\end{enumerate}\end{solution}
+
+
+\begin{exercise}[subtitle={(Métropole 2021)}]
+
+Cet exercice est un questionnaire à choix multiples. Pour chacune des questions suivantes, une seule des quatre propositions est exacte. Aucune justification n'est demandée.
+
+\begin{center}
+\includegraphics[scale=0.5]{bacmetro21}
+\end{center}
+
+$SABCD$ est une pyramide régulière à base carrée $ABCD$ dont toutes les arêtes ont la même longueur. Le point $I$ est le centre du carré $ABCD$. 
+
+On suppose que $IC=IB=IS=1$. Les points $K$, $L$ et $M$ sont les milieux respectifs des arêtes $[SD]$, $[SC]$ et $[SB]$.
+\vskip10pt
+\begin{enumerate}
+\item Les droites suivantes ne sont pas coplanaires
+\vskip10pt
+\begin{tabularx}{\linewidth}{XXXX}
+\textbf{a.} $(DK)$ et $(SD)$ & \textbf{b.} $(AS)$ et $(IC)$ & \textbf{c.} $(AC)$ et $(SB)$ & \textbf{d.} $(LM)$ et $(AD)$ \end{tabularx}\end{enumerate}
+\vskip10pt
+Pour les questions suivantes, on se place dans le repère orthonormé $(I,\overrightarrow{IC}$, $\overrightarrow{IB}$, $\overrightarrow{IS})$. Dans ce repère, on donne les coordonnées des points suivants :
+
+\begin{center}
+$I(0,0,0)$, $A(-1,0,0)$, $B(0,1,0)$, $C(1,0,0)$, $D(0,-1,0)$, $S(0,0,1)$
+\end{center}
+
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item Les coordonnées du milieu $N$ de $[KL]$ sont...
+
+\vskip10pt
+\begin{tabularx}{\linewidth}{XXXX}
+\textbf{a.} $\left(\dfrac{1}{4},\dfrac{1}{4},\dfrac{1}{2}\right)$ & \textbf{b.} $\left(\dfrac{1}{4},-\dfrac{1}{4},\dfrac{1}{2}\right)$ & \textbf{c.} $\left(-\dfrac{1}{4},\dfrac{1}{4},\dfrac{1}{2}\right)$ & \textbf{d.} $\left(\dfrac{1}{2},\dfrac{1}{2},-1\right)$ \end{tabularx}
+\vskip10pt
+\item Les coordonnées du vecteur $\overrightarrow{AS}$ sont...
+
+\vskip10pt
+\begin{tabularx}{\linewidth}{XXXX}
+\textbf{a.} \renewcommand{\arraystretch}{1}\coordbe{1}{1}{0} & \textbf{b.} \renewcommand{\arraystretch}{1}\coordbe{1}{0}{1} & \textbf{c.} \renewcommand{\arraystretch}{1}\coordbe{2}{1}{-1} & \textbf{d.} \renewcommand{\arraystretch}{1}\coordbe{1}{1}{1} \end{tabularx}
+\vskip10pt
+\item Une représentation paramétrique de la droite $(AS)$ est
+
+\vskip10pt
+\begin{tabularx}{\linewidth}{XX}
+
+\textbf{a.} $\left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = -1 -t \\ y = t \\ z = -t 
+\end{array}\right. , t\in \mathbb{R}$ & \textbf{b.} $\left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = -1 +2t \\ y = 0 \\ z = 1+2t \end{array}\right. , t\in \mathbb{R}$  \\ \textbf{c.} $\left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = t \\ y = 0 \\ z = 1+t \end{array}\right. , t\in \mathbb{R}$ & \textbf{d.} $\left\{\renewcommand{\arraystretch}{1}\begin{array}{l} x = -1 +t \\ y = 1+t \\ z = 1-t \end{array}\right. , t\in \mathbb{R}$ \end{tabularx}
+
+
+\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}
+\textbf{1.} Réponse \textbf{c.} : $(DK)$ et $(SD)$ ont un point en commun et sont donc sécantes. $(AC)$ et $(IC)$ sont sécantes en $A$, $(LM)$ et $(AD)$ sont parallèles et donc coplanaires.
+
+\textbf{2.} Réponse \textbf{a.} : $K$ a pour coordonnées $\left(0;\dfrac{1}{2};\dfrac{1}{2}\right)$, $L$ a pour coordonnées $\left(\dfrac{1}{2};0;\dfrac{1}{2}\right)$. Le point $N$ a donc pour coordonnées la moyenne des coordonnées de ces deux points, soit $\left(\dfrac{1}{4};\dfrac{1}{4};\dfrac{1}{2}\right)$.
+
+\textbf{3.} Réponse \textbf{b.} On a $\overrightarrow{AS}= 1\overrightarrow{IC}+0\overrightarrow{IB}+1\overrightarrow{IS}$. Ses coordonnées sont donc \renewcommand{\arraystretch}{1}\coordbe{1}{0}{1}. Attention à l'ordre des vecteurs de la base !
+
+\textbf{4.} Réponse \textbf{c.} En prenant $t=0$, on retrouve le point $S$. En prenant $t=-1$, on retrouve le point $A$.\end{solution}
+
+
+
+\chapter{Corrigés}
+
+
+\printsolutions[headings={false} ]
+
+\end{document}

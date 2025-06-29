@@ -1,0 +1,321 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+
+
+\chapter{Cours : Continuité}
+
+
+
+\section{Continuité d'une fonction réelle}
+
+\begin{definition}[Continuité] Soit $f$ une fonction définie sur un intervalle $I$. Soit $a\in I$.
+\begin{itemize}
+\item On dit que $f$ est \textit{continue} en $a$ si $f$ admet une limite en $a$, par valeurs supérieures et par valeurs inférieures, et que  $\displaystyle \lim_{x \to a} f(x)=\displaystyle \lim_{x \to a^+} f(x)=\displaystyle \lim_{x \to a^-} f(x)=f(a)$.
+\item On dit que $f$ est \textit{continue} sur $I$ si $f$ est continue en tout réel de $I$.
+\end{itemize}\end{definition}
+
+\begin{example} Jusqu'ici, les fonction de référence rencontrées étaient continues sur leur domaine de définition : fonctions polynômes ou quotients de polynômes, exponentielle, racine carrée, sinus, cosinus, valeur absolue...\end{example}
+
+
+\begin{example}On considère la fonction $f$ dont la courbe représentative $\mathcal{C}_f$ est donnée ci-dessous.
+
+
+\begin{minipage}{0.5\linewidth}\begin{center}
+
+\begin{tikzpicture}[scale=0.5]
+\clip (-8,-1) rectangle (6,6);
+\draw [thick] (-8,0)--(22,0);
+\draw [thick] (0,-4)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+\draw [ thin, dotted] (-8,-4) grid (22,28);
+
+\draw [very thick, ocre, domain = -2:6, samples =200] plot (\x,{4+1/(\x+3)}) ;
+\draw [very thick, ocre, domain = -8:-2, samples =200] plot (\x,{-0.25*\x*\x-2*\x}) ;
+
+\draw [fill=ocre] (-2,3) circle(0.1) ;
+\draw [ocre, thick] (-2.2,4.8) arc (-90:90:0.2) ;
+
+\end{tikzpicture}
+
+\end{center}\end{minipage}\hfill\begin{minipage}{0.45\linewidth}
+
+
+On remarque que 
+\begin{itemize}
+\item $\displaystyle \lim_{x \to (-2)^-}f(x)=$ 
+\item $\displaystyle \lim_{x \to (-2)^+}f(x)=$\end{itemize}
+ Ces deux valeurs sont différentes, la fonction $f$ n'est pas continue en 2. 
+ 
+ Graphiquement, on voit que la courbe de la fonction fait un "saut" en $x=-2$.\end{minipage}\end{example}
+
+\begin{example} On considère la fonction \renewcommand{\arraystretch}{1.2}$f:x\mapsto \left\{ \begin{array}{ll}
+2x+9 & \text{si }x<-2\\
+x^2+1 & \text{si }-2\leqslant x < 3\\
+4x-4 & \text{si } x \geqslant 3
+\end{array}\right.$ définie sur $\mathbb{R}$.
+
+\begin{minipage}{0.7\linewidth}
+La fonction $f$ est continue sur $]-\infty;-2[$, $]-2;3[$ et $]3;+\infty[$. 
+
+Il faut étudier la continuité aux bords de chaque intervalle.
+
+\paragraph{Continuité en $-2$}
+
+\vskip80pt
+
+\paragraph{Continuité en $3$}
+\vskip80pt
+
+\end{minipage}\hfill\begin{minipage}{0.25\linewidth}
+
+
+\begin{tikzpicture}[scale=0.4]
+\clip (-4,-1) rectangle (4,14);
+\draw [thick] (-8,0)--(22,0);
+\draw [thick] (0,-4)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+\draw [ thin, dotted] (-8,-4) grid (22,28);
+
+\draw [very thick, ocre, domain = -4:-2, samples =200] plot (\x,{2*\x+9}) ;
+\draw [very thick, ocre, domain = -2:3, samples =200] plot (\x,{\x*\x+1}) ;
+\draw [very thick, ocre, domain = 3:6, samples =200] plot (\x,{4*\x-4}) ;
+
+\draw [fill=ocre] (3,8) circle(0.1) ;
+\draw [ocre, thick] (3.2,10.2) arc (90:270:0.2) ;
+
+\end{tikzpicture}
+
+\end{minipage}
+\vskip50pt
+
+\end{example}
+
+\newpage
+
+\begin{proposition} La somme et le produit de fonctions continues sur un intervalle $I$ sont continus sur $I$.\end{proposition}
+
+\begin{example} La fonction $x\mapsto \cos(x)(x^2+3\sqrt{x})-\sin(x)e^x$ est continue sur $\mathbb{R}_+$.\end{example}
+
+\begin{theorem} Soit $f$ une fonction définie sur un intervalle $I$. 
+
+Si $f$ est dérivable sur $I$, alors $f$ est également continue sur $I$.\end{theorem}
+
+La réciproque est fausse. La fonction $x\mapsto |x|$ est continue sur $\mathbb{R}$ mais n'est pas dérivable en 0.
+
+\begin{minipage}{0.6\linewidth}
+Il existe par ailleurs des fonctions continues sur $\mathbb{R}$ qui ne sont dérivables nulle part ! 
+
+Les exemples les plus connus sont sans doute les fonctions de Weierstrass. Ce sont des courbes fractales : peu importe le niveau de zoom que l'on peut avoir sur la courbe, on verra toujours de nouveaux détails apparaître.
+\end{minipage}\hfill \begin{minipage}{0.35\linewidth}
+\begin{center}
+\includegraphics[scale=0.15]{weierstrass}
+\end{center}
+\end{minipage}
+
+
+
+\section{Suites et fonction continue}
+
+\begin{proposition}[Image d'une suite convergente] Soit $I$ un intervalle et $(u_n)$ une suite telle que pour tout entier naturel $n$, $u_n \in I$. Soit $g$ une fonction définie sur l'intervalle $I$. 
+
+Si la suite $(u_n)$ est convergente avec $\displaystyle\lim_{n\to +\infty} u_n=\ell \in I$ et si $g$ est \textbf{continue} en $\ell$, alors $\displaystyle\lim_{n\to +\infty} g(u_n)=g(\ell)$
+
+En d'autres termes, $\displaystyle\lim_{n\to +\infty}g(u_n)=g(\displaystyle\lim_{n\to +\infty} u_n)$.\end{proposition}
+
+\begin{example} Pour tout entier naturel non nul $n$, on note $u_n=\sqrt{9+\dfrac{1}{n}}$.
+
+\vskip50pt
+
+\end{example}
+
+L'hypothèse de continuité est primordiale !
+Pour tout réel $x$, notons $\lfloor x \rfloor$ la partie entière du réel $x$, c'est-à-dire le plus grand entier qui soit plus petit que $x$. Par exemple, $\lfloor 1,3 \rfloor = 1$.
+
+Pour tout entier naturel non nul $n$, on note $u_n=1-\dfrac{1}{10^n}$. On a ainsi $u_0=0$, $u_1=0,9$, $u_2=0,999$, $u_3=0,9999$ etc.
+
+\begin{itemize}
+\item Pour tout entier naturel non nul, $\lfloor u_n \rfloor = 0$. On a alors $\displaystyle\lim_{n\to +\infty} \lfloor u_n \rfloor = 0$ ;
+\item La suite $(u_n)$ est convergente et on a $\displaystyle\lim_{n\to +\infty} u_n = 1$. Ainsi, $\lfloor \displaystyle\lim_{n\to +\infty} u_n \rfloor=\lfloor 1 \rfloor=1$ ;
+\item On a donc  $\displaystyle\lim_{n\to +\infty} \lfloor u_n \rfloor \neq \lfloor \displaystyle\lim_{n\to +\infty} u_n \rfloor$. 
+
+On montre en fait que la fonction $x\mapsto  \lfloor x \rfloor$ n'est pas continue en 1.
+\end{itemize}
+
+\newpage
+
+\begin{theorem}[Théorème du point fixe]Soit $I$ un intervalle, $g$ une fonction définie et continue sur $I$ et $(u_n)$ une suite telle que pour tout entier naturel $n$, $u_n \in I$ et $u_{n+1}=g(u_n)$.
+
+On suppose que la suite $(u_n)$ est convergente, de limite $\ell\in I$. Alors $g(\ell)=\ell$.\end{theorem}
+
+\begin{demonstration} Pour tout entier naturel $n$, on a $u_{n+1}=g(u_n)$.
+
+\vskip50pt
+
+\end{demonstration}
+
+\begin{example}On définit la suite $(u_n)$ par $u_0=2$ et, pour tout entier $n$, $u_{n+1}=\sqrt{3u_n+4}$.
+
+Montrons que la suite $(u_n)$ est croissante et que pour tout entier naturel $n$, $2 \leqslant u_n \leqslant 4$.
+
+\vskip320pt
+
+
+\end{example}
+
+\newpage
+\section{Théorème des valeurs intermédiaires}
+
+\subsection{Cas général}
+
+\begin{theorem}[Théorème des valeurs intermédiaires] Soit $f$ une fonction \textbf{continue} sur un intervalle $[a;b]$ et $k$ un réel compris entre $f(a)$ et $f(b)$.
+
+Alors \textbf{il existe} (au moins) un réel $c$ dans $[a;b]$ tel que $f(c)=k$.\end{theorem}
+
+\textbf{Illustration :} On représente une fonction $f$ ci-dessous.
+\begin{center}
+
+\begin{tikzpicture}[scale=0.7]
+\clip (-7,-1.5) rectangle (9,6);
+\draw [thick] (-5,0)--(9,0);
+\draw [thick] (0,-3)--(0,5);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+
+\draw [ocre, very thick] (-4,-1) .. controls (-3,1) and (-3,2) .. (-2,3)
+.. controls (-1,4) and (-2,5) .. (-1,5) .. controls (0,5) and (-1,4) ..
+(0.5,3) .. controls (1,2) and (1,1) .. (2,1) .. controls (2.5,1) and (2,2) ..
+(3,3) .. controls (4,4) and (5,5) .. (6,5) .. controls (7,5) and (7,6) .. (8,4);
+
+\draw [very thick,blue, dashed, domain = -5:9] plot (\x,3);
+\draw [very thick,teal, dashed, domain = -5:9] plot (\x,4);
+\draw [very thick,teal, dashed, domain = -5:9] plot (\x,-1);
+
+\draw [teal] (-5,4) node[left] {$f(b)$};
+\draw [teal] (-5,-1) node[left] {$f(a)$};
+\draw [blue] (-5,3) node[left] {$k$};
+
+\draw [very thick] (-2,3) node {$\times$};
+\draw [very thick] (0.5,3) node {$\times$};
+\draw [very thick] (3,3) node {$\times$};
+
+\draw [dashed] (0.5,3) -- (0.5,0);
+\draw [dashed] (-2,3) -- (-2,0);
+\draw [dashed] (3,3) -- (3,0);
+
+\draw [dashed] (-4,-1) -- (-4,0);
+\draw [dashed] (8,4) -- (8,0);
+
+
+\draw [very thick] (-2,0) node[below] {$c_1$};
+\draw [very thick] (0.5,0) node[below] {$c_2$};
+\draw [very thick] (3,0) node[below] {$c_3$};
+\draw [teal, very thick] (8,0) node[below] {$b$};
+\draw [teal, very thick] (-4,0) node[above] {$a$};
+
+\end{tikzpicture}
+\end{center}
+
+Pour tout réel $k$ compris entre $f(a)$ et $f(b)$, $k$ possède au moins un antécédent par $f$. Dans cet exemple, il y en a trois. Le nom de ce théorème se justifie ainsi : une fonction continue qui passe d'une valeur $f(a)$ à une valeur $f(b)$ passe forcément au moins une fois par toutes les valeurs intermédiaires.
+
+
+
+
+\begin{example} On considère la fonction $f:x\mapsto x^3-3x-1$, définie sur $\mathbb{R}$. La fonction $f$ est une fonction polynômiale, elle est donc continue. De plus, $f(-2)=-1$ et $f(2) = 3$.
+
+Or, $0\in[-1;3]$. Ainsi, d'après le théorème des valeurs intermédiaires, il existe (au moins) un réel $c \in[-2;2]$ tel que $f(c)=0$.
+\end{example}
+
+Ce théorème ne nous donne aucune indication sur le nombre de ces solutions (en réalité, il y en a 3 sur cet intervalle). Nous verrons dans très peu de temps comment pallier ce problème.
+
+Il est également possible d'utiliser les limites dans le théorème des valeurs intermédiaires.
+
+\begin{theorem}[Théorème des valeurs intermédiaires] Soit $f$ une fonction \textbf{continue} sur un intervalle $]a;b[$ telle que $\displaystyle\lim_{x \to a^+}$ et $\displaystyle\lim_{x\to b^-}f(x)$ existent. Soit $k$ un réel strictement compris entre ces deux limites.
+
+Alors \textbf{il existe} (au moins) un réel $c$ dans $]a;b[$ tel que $f(c)=k$.\end{theorem}
+
+
+\begin{example}Soit $a$, $b$, $c$ et $d$ quatre réels avec $a> 0$. On considère la fonction $f:x\mapsto ax^3+bx^2+cx+d$, définie sur $\mathbb{R}$.
+
+Pour tout réel non nul, $f(x)=x^3\left(a+\dfrac{b}{x}+\dfrac{c}{x^2}+\dfrac{d}{x^3}\right)$. Or, $\displaystyle\lim_{x\to +\infty}\left(a+\dfrac{b}{x}+\dfrac{c}{x^2}+\dfrac{d}{x^3}\right)=a>0$ et $\displaystyle\lim_{x\to+\infty}x^3=+\infty$. Ainsi, par produit, $\displaystyle\lim_{x\to+\infty}f(x)=+\infty$. De même, on montrer que $\displaystyle\lim_{x\to -\infty}f(x)=-\infty$.
+
+Or, $0\in ]-\infty;+\infty[$. D'après le théorème des valeurs intermédiaires, il existe un réel $x$ tel que $f(x)=0$. Le même raisonnement vaut pour $a<0$ : nous venons de démontrer que tout polynôme de degré 3 admet au moins une racine réelle.\end{example}
+
+\subsection{Fonctions strictement monotones}
+
+\begin{theorem} Soit $f$ une fonction \textbf{continue} et \textbf{strictement monotone} sur un intervalle $[a;b]$ . Soit $k$ un réel strictement compris entre $f(a)$ et $f(b)$ (ou les limites en $a$ et $b$ de $f$). Alors il existe un \textbf{unique} réel $c \in ]a;b[$ tel que $f(c)=k$.\end{theorem}
+
+Là encore, il est possible d'utiliser les limites de $f$ en $a$ et en $b$ si elles existent.
+
+\begin{example} On considère la fonction $f:x\mapsto \dfrac{e^{x-1}}{x}$, définie sur $I=]0;+\infty[$.
+Montrons que l'équation $f(x)=2$ possède exactement deux solutions sur l'intervalle $]0;+\infty[$.
+
+
+\vskip450pt
+   
+
+
+ \end{example}
+
+\newpage
+
+\subsection{Algorithme de dichotomie}
+
+Le théorème des valeurs intermédiaires nous assure de l'existence de solutions à une certaine équation. En revanche, il ne nous indique en rien la valeur de cette solution. Plusieurs algorithmes nous permettent néanmoins d'obtenir au moins une valeur approchée d'une solution de l'équation qui nous intéresse.
+
+Considérons une fonction $f$ continue sur un intervalle $[a;b]$ et $k$ un réel compris entre $f(a)$ et $f(b)$. Dans cet exemple, on supposera par exemple que $f(a) \leqslant k \leqslant f(b)$. Le théorème des valeurs intermédiaires nous assure de l'existence d'un réel $c$ dans l'intervalle $[a;b]$ tel que $f(c)=k$. L'idée, pour obtenir une valeur approchée d'un tel réel, est d'évaluer la valeur prise par la fonction au milieu de l'intervalle $[a;b]$
+\begin{itemize}
+\item Si $f\left(\dfrac{a+b}{2}\right) < k$, on a alors $f\left(\dfrac{a+b}{2}\right) \leqslant k \leqslant f(b)$. Le théorème des valeurs intermédiaires nous assure alors de l'existence d'une solution à l'équation $f(x)=k$ sur l'intervalle $\left[\dfrac{a+b}{2};b\right]$ ;
+\item Si $f\left(\dfrac{a+b}{2}\right) > k$, on a alors $f(a) \leqslant k \leqslant f\left(\dfrac{a+b}{2}\right)$. Le théorème des valeurs intermédiaires nous assure alors de l'existence d'une solution à l'équation $f(x)=k$ sur l'intervalle $\left[a;\dfrac{a+b}{2}\right]$.
+\end{itemize}
+Dans les deux cas, nous avons trouvé un intervalle deux fois plus petit que l'intervalle $[a;b]$ dans lequel l'équation $f(x)=k$ possède une solution. 
+
+\begin{example}On considère la fonction $f:x\mapsto 3x-e^x$. $f$ est continue, $f(0)=-1$ et $f(1)=3-e>0$. Ainsi, d'après le théorème des valeurs intermédiaires, il existe un réel $c\in[0;1]$ tel que $f(c)=0$.
+
+On calcule alors $f\left(\frac{1}{2}\right)$ : on a $f\left(\frac{1}{2}\right)\simeq -0.15<0$. Ainsi, il existe un réel $c \in \left[ \frac{1}{2} ; 1 \right]$ tel que $f(c)=0$\end{example}
+
+En réitérant le même procédé sur le nouvel intervalle obtenu, on obtiendra alors un intervalle 4 fois plus petit que celui de l'intervalle de départ, puis 8 fois plus petit, 16 fois, 32 fois et ainsi de suite.
+
+On définit en réalité deux suites $(a_n)$ et $(b_n)$ de la manière suivante
+\begin{itemize}
+\item $a_0=a$ et $b_0=b$ ;
+\item Si $f\left(\dfrac{a_n+b_n}{2}\right) < k$, on pose alors $a_{n+1}=\dfrac{a_n+b_n}{2}$ et $b_{n+1}=b_n$ ;
+\item Sinon, on pose $a_{n+1}=a_n$ et $b_{n+1}=\dfrac{a_n+b_n}{2}$.
+\end{itemize}
+
+Ainsi, pour tout entier naturel $n$, il existe une solution à l'équation $f(x)=0$ dans l'intervalle $[a_n;b_n]$. 
+
+De plus, puisque $b_n-a_n=\dfrac{b-a}{2^n}$, la longueur de l'intervalle $[a_n;b_n]$ tend vers zéro : il est donc possible d'avoir une valeur approchée aussi précise que l'on veut à l'aide de cet algorithme. Cet algorithme peut alors être implémenté en Python
+
+\begin{lstlisting}[language=python]
+def dichotomie(a, b, k, f, p) :
+	# f est une fonction continue sur [a;b]
+	# k est un reel tel que f(a) <= k <= f(b)
+	# p designe la precision voulue pour l estimation de la solution
+	while b - a >= p :
+		m = (a + b) / 2
+		if f(m) <= k :
+			a = m
+		else :
+			b = m
+	return a
+\end{lstlisting}
+
+Dans le cas où $f(a) \geqslant k \geqslant f(b)$, il suffit de changer le sens des inégalités.
+
+
+
+
+
+
+
+
+\end{document}

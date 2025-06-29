@@ -1,0 +1,540 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+
+\chapter{Cours : Loi binomiale}
+
+
+\section{Succession d'épreuves indépendantes}
+
+
+
+\begin{definition}[Succession d'épreuves]Soit $n$ un entier naturel. On considère $n$ épreuves aléatoires dont les univers sont respectivement $\Omega_1$, $\Omega_2$, ... , $\Omega_n$.
+
+L'univers $\Omega$ de la succession de ces $n$ épreuves est le produit cartésien $\Omega_1 \times \Omega_2 \times \dots \times \Omega_n$.
+
+Les issues de cette succession d'expériences sont les $n$-uplets $(i_1\, ;\, i_2\,;\,\dots\,;\,i_n)$ de $\Omega_1 \times \Omega_2 \times \dots \times \Omega_n$.\end{definition}
+
+\begin{example}On lance 2 fois un dé à 6 faces, numérotées de $1$ à $6$ et on regarde le numéro obtenu. L'univers de cette expérience est $\{1;2;3;4;5;6\}^2$. L'issue $(1\,;\,3)$ signifie que l'on a obtenu 1 au premier lancer et 3 au deuxième.\end{example}
+
+\begin{definition}[Indépendance mutuelle]Soit $n$ un entier naturel. On considère $n$ épreuves aléatoires dont les univers sont respectivement $\Omega_1$, $\Omega_2$, ... , $\Omega_n$, de lois respectives $\mathbb{P}_1$, $\mathbb{P}_2$, ... , $\mathbb{P}_n$.
+
+Les épreuves sont dites mutuellement indépendantes (ou tout simplement indépendantes) si, pour toute issue $(i_1,i_2,...,i_n)$ de $\Omega_1 \times \Omega_2 \times \dots \times \Omega_n$, on a
+\[ \mathbb{P}((i_1,i_2,...,i_n))=\mathbb{P}_1(i_1) \times \mathbb{P}_2(i_2) \times \dots \times \mathbb{P}_n(i_n).\]
+Autrement dit, la probabilité d'une issue est égale au produit des probabilités de chacune des composantes $i_1$, $i_2$, ..., $i_n$.\end{definition}
+
+\begin{example}M. Lapeyronnie a décidé de faire un petit contrôle surprise à ses élèves. Il place les noms des élèves de la classe dans une urne et une liste d'exercices dans une autre. 
+\begin{itemize}
+\item Il y a 29 élèves dans la classe. Parmi eux, 12 suivent l'option Maths expertes ;
+\item L'urne des exercices en contient 40 : 20 sur les fonctions, 15 sur les suites et 5 sur la géométrie.
+\end{itemize}
+M. Lapeyronnie tire alors simultanément, de manière indépendante, un nom d'élève et un exercice.
+
+\begin{itemize}
+\item La probabilité qu'il s'agisse d'un élève suivant l'option Maths expertes est de $\dfrac{12}{29}$ ;
+\vskip10pt
+\item La probabilité de tirer un exercice de géométrie est de $\dfrac{5}{40}=\dfrac{1}{8}$ ;
+\vskip10pt
+\item La probabilité qu'un élève suivant l'option Maths Expertes soit envoyé au tableau faire un exercice de géométrie est donc de $\dfrac{12}{29} \times \dfrac{1}{8} = \dfrac{3}{58}$.
+\end{itemize}
+\end{example}
+
+Si l'on essaie de représenter une succession de $n$ épreuves indépendantes sous la forme d'un arbre de probabilités, on place alors toujours le même sous-arbre à chaque noeud d'un étage fixé. De plus, cet arbre peut être construit "dans un sens comme dans l'autre".
+\newpage
+\begin{example}Les arbres suivants traduisent la succession des deux épreuves précédentes. 
+
+
+\noindent\begin{minipage}{0.49\linewidth}
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=5cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
+\tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.3cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = []
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,grow=right,sloped]
+\node[bag] { }
+	child {
+        node[bag] {Maths Exp.} 
+        child {
+                node[bag] {Géométrie}
+                edge from parent node[below] {$1/8$}
+            }
+        child {
+               node[bag] {Suites}
+               edge from parent node[above] {$3/8$}
+            }
+        child {
+                node[bag] {Fonctions}
+                edge from parent node[above] {$1/2$}
+            }
+            edge from parent node[above] {$12/29$} 
+    }
+	child {
+        node[bag] {Pas Maths Exp.} 
+        child {
+                node[bag] {Géométrie}
+                edge from parent node[below] {$1/8$}
+            }
+        child {
+               node[bag] {Suites}
+               edge from parent node[above] {$3/8$}
+            }
+        child {
+                node[bag] {Fonctions}
+                edge from parent node[above] {$1/2$}
+            }
+            edge from parent node[above] {$17/29$}  
+    };
+\end{tikzpicture}
+\end{center}
+\end{minipage} \begin{minipage}{0.49\linewidth}
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3cm]
+\tikzstyle{level 2}=[level distance=5cm, sibling distance=2cm]
+\tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.3cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = []
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,grow=right,sloped]
+\node[bag] { }
+	child {
+        node[bag] {Géométrie} 
+        child {
+                node[bag] {Maths Exp.}
+                edge from parent node[below] {$12/29$}
+            }
+        child {
+               node[bag] {Pas Maths Exp.}
+               edge from parent node[above] {$17/29$}
+            }
+            edge from parent node[above] {$1/8$} 
+    }
+	child {
+        node[bag] {Suites} 
+        child {
+                node[bag] {Maths Exp.}
+                edge from parent node[below] {$12/29$}
+            }
+        child {
+               node[bag] {Pas Maths Exp.}
+               edge from parent node[above] {$17/29$}
+            }
+            edge from parent node[above] {$3/8$} 
+    }
+    child {
+        node[bag] {Fonctions} 
+        child {
+                node[bag] {Maths Exp.}
+                edge from parent node[below] {$12/29$}
+            }
+        child {
+               node[bag] {Pas Maths Exp.}
+               edge from parent node[above] {$17/29$}
+            }
+            edge from parent node[above] {$1/2$} 
+    };
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\end{example}
+
+\begin{example}Soit $n$ un entier naturel. On lance $n$ fois un dé équilibré à six faces, numérotées de 1 à 6.
+
+La probabilité de ne jamais obtenir le résultat 6 sur ces $n$ lancers est alors de
+\vskip10pt
+Ainsi, la probabilité d'obtenir une au moins une fois le résultat 6 sur ces $n$ lancers vaut donc
+\vskip10pt
+Par ailleurs, 
+
+\vskip20pt
+
+Si l'on lance un grand nombre de fois un dé classique à six faces, la probabilité d'obtenir au moins une fois le résultat 6 est proche de 1.
+
+On peut alors se demander combien de lances effectuer pour que cette probabilité dépasse 0,99. On cherche alors l'entier $n$ à partir duquel $1-\left(\dfrac{5}{6}\right)^n \geqslant 0,99$.
+
+\vskip150pt
+
+\end{example}
+
+\newpage 
+\section{Epreuve de Bernoulli}
+
+\begin{definition}[Epreuve de Bernoulli]Une épreuve de Bernoulli est une expérience aléatoire dont l'univers ne comporte que deux issues : le succès $S$ et l'échec $\overline{S}$. On note $p$ la probabilité de succès, aussi appelé paramètre de l'épreuve de Bernoulli. La probabilité d'échec vaut donc $1-p$.
+
+Une variable aléatoire $X$ sur cet univers suit une loi de Bernoulli de paramètre $p$ si on a $\mathbb{P}(X=1)=p$ et $\mathbb{P}(X=0)=1-p$. On écrit $X \sim \mathcal{B}(p)$.\end{definition}
+
+
+\noindent\begin{minipage}{0.49\linewidth}
+\begin{center}
+\textbf{Epreuve de Bernoulli}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{0.8\linewidth}{|X|X|X|}
+\hline
+Issue & $S$ & $\overline{S}$\\
+\hline
+Proba & $p$ & $1-p$\\
+\hline
+\end{tabularx}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.49\linewidth}
+\begin{center}
+\textbf{Variable de Bernoulli}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{0.8\linewidth}{|X|X|X|}
+\hline
+$k$ & 1 & 0\\
+\hline
+$\mathbb{P}(X=k)$ & $p$ & $1-p$\\
+\hline
+\end{tabularx}
+\end{center}
+\end{minipage}
+
+
+
+\begin{example}On lance un dé équilibré à 6 faces, numérotées de 1 à 6. Si on considère le succès "Obtenir le nombre 6", cette expérience est une épreuve de Bernoulli de paramètre $p=\dfrac{1}{6}$. \end{example}
+
+\begin{proposition}Soit $X$ une variable aléatoire suivant une loi de Bernoulli de paramètre $p$. L'espérance, la variance et l'écart-type de $X$ valent respectivement \[E[X]=p, \quad V(X)=p(1-p), \quad \sigma(X)=\sqrt{p(1-p)}\]\end{proposition}
+
+
+
+\begin{demonstration} La variable aléatoire $X$ prend les valeurs 0 et 1. De plus $\mathbb{P}(X=0)=1-p$ et \\ $\mathbb{P}(X=1)=p$. Ainsi,
+\[E[X] = \]
+et
+\[V(X)=\mathbb{P}(X=0) \times (0- E[X])^2 + \mathbb{P}(X=1) \times (1- E[X])^2\]
+d'où
+\[V(X)=\]
+\end{demonstration}
+
+\begin{demonstration}[Avec la formule de Koenig-Huygens]
+On sait que $V(X)=E[X^2]-(E[X])^2$.
+
+\vskip50pt
+
+\end{demonstration}
+
+\begin{example} Soit $X$ un variable aléatoire suivant une loi de Bernoulli de paramètre $0,2$. 
+
+On a alors \end{example}
+
+\newpage
+
+\section{Loi binomiale}
+
+\subsection{Schéma de Bernoulli}
+\begin{definition}[Schéma de Bernoulli]Soit $n$ un entier naturel et $p$ un réel compris entre 0 et 1. Un schéma de Bernoulli de paramètres $n$ et $p$ est une succession de $n$ épreuves de Bernoulli \textbf{identiques et indépendantes}, chacune de paramètre $p$.\end{definition}
+
+\begin{example} On lance cinq fois de suite une pièce de monnaie équilibrée. \\On considère comme succès « la pièce tombe sur FACE ». Il s'agit d'un schéma de Bernoulli de paramètres \end{example}
+
+\begin{example}On lance 42 fois de suite un dé. On considère comme succès « le dé tombe sur 5 ou 6 ».\\ Il s'agit d'un schéma de Bernoulli de paramètres\end{example}
+
+\subsection{Coefficients binomiaux}
+
+
+\begin{definition}[Coefficient binomial]Soit $n$ un entier naturel et $k$ un entier compris entre 0 et $n$. 
+
+Le coefficient binomial $\dbinom{n}{k}$ ($k$ parmi $n$) est le nombre de chemins qui, dans un chemin de Bernoulli à $n$ épreuves, aboutissent à exactement $k$ succès.\end{definition}
+
+\begin{example} On considère un schéma de Bernoulli à 3 épreuves.
+
+\tikzstyle{level 1}=[level distance=3cm, sibling distance=4cm]
+\tikzstyle{level 2}=[level distance=3cm, sibling distance=2cm]
+\tikzstyle{level 3}=[level distance=3cm, sibling distance=1cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = []
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,grow=right,sloped]
+\node[bag] { }
+	child {
+        node[bag] {$\overline{S}$} 
+        child {
+                node[bag] {$\overline{S}$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}	
+            }
+        child {
+                node[bag] {$S$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}	
+            }
+            }
+        child {
+        node[bag] {$S$} 
+        child {
+                node[bag] {$\overline{S}$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}	
+            }
+        child {
+                node[bag] {$S$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}	
+            }
+            };
+\end{tikzpicture}
+\end{center}
+
+Pour obtenir 2 succès, il y a 3 chemins possibles : $SS\overline{S}$, $S\overline{S}S$ et $\overline{S}SS$. Ainsi, $\dbinom{3}{2} = 3$.
+
+\end{example}
+
+\begin{proposition}Soit $n$ un entier naturel et $k$ un entier compris entre 0 et $n$. On a alors $\dbinom{n}{k} = \dfrac{n!}{k!(n-k)!}$.\end{proposition}
+
+On retrouve évidemment la formule établie lors du chapitre \textbf{Combinatoire et dénombrement}.
+
+\begin{example} $\dbinom{5}{3} = $\end{example}
+
+
+\subsection{Loi binomiale}
+
+\subsubsection{Définition}
+
+\begin{definition}[Loi binomiale]Soit $n$ un entier naturel et $p$ un réel compris entre 0 et 1. On considère un schéma de Bernoulli à $n$ épreuves de paramètre $p$. On note $X$ la variable aléatoire qui compte le nombre de succès de ce schéma de Bernoulli. On dit que $X$ suit une loi binomiale de paramètres $n$ et $p$.
+
+ On écrit $X\sim \mathcal{B}(n,p)$.\end{definition}
+
+\begin{example}On lance une pièce équilibrée 5 fois de suite et on appelle $X$ la variable aléatoire qui compte le nombre de FACE obtenus.
+
+
+\vskip60pt
+
+\end{example}
+
+\subsubsection{Calcul de probabilités}
+
+\begin{example}On considère un schéma de Bernoulli de paramètres 4 et $p$. Ce schéma peut se traduire par l'arbre suivant :
+
+\tikzstyle{level 1}=[level distance=2cm, sibling distance=8cm]
+\tikzstyle{level 2}=[level distance=2cm, sibling distance=4cm]
+\tikzstyle{level 3}=[level distance=2cm, sibling distance=2cm]
+\tikzstyle{level 4}=[level distance=2cm, sibling distance=1cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = []
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+\noindent \begin{minipage}{0.4\linewidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.7,grow=right,sloped]
+\node[bag] { }
+child { 
+	node[bag] {$\overline{S}$}
+	child {
+        node[bag] {$\overline{S}$} 
+        child {
+                node[bag] {$\overline{S}$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}
+            }
+        child {
+                node[bag] {$S$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}	
+            }
+            }
+        child {
+        node[bag] {$S$} 
+        child {
+                node[bag] {$\overline{S}$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}	
+            }
+        child {
+                node[bag] {$S$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}	
+            }
+            }
+            edge from parent node[above] {$1-p$}
+            }
+child { 
+	node[bag] {$S$}
+	child {
+        node[bag] {$\overline{S}$} 
+        child {
+                node[bag] {$\overline{S}$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}	
+            }
+        child {
+                node[bag] {$S$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}	
+            }
+            }
+        child {
+        node[bag] {$S$} 
+        child {
+                node[bag] {$\overline{S}$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}	
+            }
+        child {
+                node[bag] {$S$}
+                child {
+                	node[bag] {$\overline{S}$}
+                	}
+                child {
+                	node[bag] {$S$}
+                	}	
+            }
+            }
+            edge from parent node[above] {$p$}
+            };
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.55\linewidth}
+Les chemins menant à deux succès sont $SS\overline{S}\overline{S}$, $S\overline{S}S\overline{S}$, $S\overline{S}\overline{S}S$, $\overline{S}\overline{S}SS$, $\overline{S}S\overline{S}S$ et $\overline{S}SS\overline{S}$. De plus,
+
+\begin{itemize}
+\vskip5pt
+\item $\mathbb{P}(SS\overline{S}\overline{S})=p\times p \times (1-p) \times (1-p)=p^2(1-p)^2$ ;
+\vskip5pt
+\item $\mathbb{P}(S\overline{S}S\overline{S})=p\times (1-p) \times p \times (1-p)=p^2(1-p)^2$ ;
+\vskip5pt
+\item $\mathbb{P}(S\overline{S}\overline{S}S)=p\times (1-p) \times (1-p) \times p=p^2(1-p)^2$ ;
+\vskip5pt
+\item $\mathbb{P}(\overline{S}\overline{S}SS)=(1-p)\times (1-p) \times p \times p=p^2(1-p)^2$ ;
+\vskip5pt
+\item $\mathbb{P}(\overline{S}S\overline{S}S)=(1-p)\times p \times (1-p) \times p=p^2(1-p)^2$ ;
+\vskip5pt
+\item $\mathbb{P}(\overline{S}SS\overline{S})=(1-p)\times p \times p \times (1-p)=p^2(1-p)^2$.
+\vskip5pt
+\end{itemize}
+On note $X$ la variable aléatoire qui compte le nombre de succès à l'issue de ce schéma. On a donc
+\[ \mathbb{P}(X=2) = 6 p^2(1-p)^2.\]
+En modifiant cette écriture, on a en réalité
+\[ \mathbb{P}(X=2) = \dbinom{4}{2} p^2(1-p)^{4-2}.\]
+\end{minipage}
+\end{example}
+
+
+\begin{proposition}Soit $n$ un entier naturel, $p$ un réel compris entre 0 et 1 et $X$ une variable aléatoire qui suit une loi binomiale $\mathcal{B}(n,p)$.
+
+Pour tout entier naturel $k$ inférieur ou égal à $n$, $\mathbb{P}(X=k)=\dbinom{n}{k}p^k(1-p)^{n-k}$.\end{proposition}
+
+\begin{demonstration}On considère un schéma de Bernoulli de paramètre $p$ à $n$ épreuves. 
+
+L'ensemble des issues aboutissant à $k$ succès correspond à l'ensemble des $n$-uplets de $\{ S ; \overline{S} \}$ ayant exactement $k$ fois la lettre $S$ : il y en a $\dbinom{n}{k}$. 
+
+Or, chacune de ces issues a pour probabilité $p^k(1-p)^{n-k}$ : chacun des $k$ succès a une probabilité de $p$ et chacun des $n-k$ échecs a une probabilité $1-p$. 
+
+Ainsi, $\mathbb{P}(X=k)=\dbinom{n}{k}p^k(1-p)^{n-k}$.\end{demonstration}
+
+
+\begin{example} On lance 3 fois un dé équilibré à 6 faces, numérotées de 1 à 6.
+
+Quelle est la probabilité d'obtenir exactement 2 fois le nombre 4 ? 
+
+\vskip100pt
+
+
+Quelle est la probabilité d'obtenir au moins une fois le nombre 4 ? 
+
+\vskip150pt
+
+\end{example}
+
+\subsubsection{Avec la calculatrice}
+
+\textbf{Texas Instruments} : Appuyer successivement sur les touches \textbf{2nde} et \textbf{var}.
+\begin{itemize}
+\item Sélectionner \textbf{A binomFdp(} pour calculer une probabilité de la forme $\mathbb{P}(X=k)$.
+\item Sélectionner\textbf{ B binomFrép(} pour calculer une probabilité de la forme $\mathbb{P}(X\leqslant k)$
+\item Pour calculer une probabilité de la forme $\mathbb{P}(X \geqslant k)$, on calculera $1-\mathbb{P}(X \leqslant k-1)$
+\end{itemize}
+Entrer alors les paramètres de la loi binomiale et la valeur du $k$ souhaité puis valider.
+
+\includegraphics[width=0.27\linewidth]{ti01}\hfill \includegraphics[width=0.27\linewidth]{ti02} \hfill \includegraphics[width=0.27\linewidth]{ti03}
+
+\textbf{Numworks} : Sélectionner \textbf{Probabilités} sur l'écran d'accueil, puis Binomiale. Entrer alors les valeurs des paramètres $n$ et $p$ puis valider.\\
+Vous pouvez calculer des probabilités de la forme $\mathbb{P}(X\leqslant k)$, $\mathbb{P}(a\leqslant X \leqslant b)$, $\mathbb{P}(X \geqslant k)$ et $\mathbb{P}(X=k)$ en sélectionnant l'icône en haut à gauche de l'écran.
+
+\vskip5pt
+
+\includegraphics[width=0.23\linewidth]{num01}\hfill \includegraphics[width=0.23\linewidth]{num02}\hfill \includegraphics[width=0.23\linewidth]{num03} \hfill \includegraphics[width=0.23\linewidth]{num05}
+
+\textbf{Casio Graph} : Dans le menu principal, sélectionner \textbf{STAT}. Appuyer ensuite sur \textbf{F5 [DIST]} puis \textbf{F5 [BINM]}.\\
+Pour le calcul de $\mathbb{P}(X=k)$, appuyer sur \textbf{F1 [Bpd]}. Pour le calcul de $\mathbb{P}(X \leqslant k)$, appuyer sur \textbf{F2 [Bcd]}.\\
+Sur l'écran suivant, placer le curseur sur \textbf{Data} et appuyer sur \textbf{F2 [Var]}. Renseigner alors les valeurs des paramètres de la loi binomiale et les valeurs de $k$.
+
+\includegraphics[width=0.23\linewidth]{casio01}\hfill \includegraphics[width=0.23\linewidth]{casio04}\hfill \includegraphics[width=0.23\linewidth]{casio05} \hfill \includegraphics[width=0.23\linewidth]{casio06}
+
+
+\subsubsection{Espérance, variance, écart-type}
+
+\begin{proposition}Soit $X$ une variable aléatoire qui suit une loi binomiale $\mathcal{B}(n,p)$. L'espérance, la variance et l'écart-type de $X$ valent respectivement \[E[X]=np, \quad Var(X)=np(1-p), \quad \sigma(X)=\sqrt{np(1-p)}\]\end{proposition}
+
+\begin{example}Un élève répond au hasard et de manière indépendante à un QCM de 20 questions. Chaque question laisse le choix entre 4 propositions dont une seule est correcte.
+
+\vskip50pt
+\end{example}
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,365 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+
+\chapter{Cours : Fonctions trigonométriques}
+
+Dans tout ce chapitre, on se place dans un repère $\Oij$ orthonormé.
+
+\section{Rappels}
+
+\subsection{Enroulement de la droite des réels}
+
+\begin{definition}
+On appelle cercle trigonométrique le cercle de centre O et de rayon 1 que l'on parcourt dans le sens inverse des aiguilles d'une montre. Ce sens est appelé sens trigonométrique.
+
+On trace la droite des réels à droite de ce cercle trigonométrique, parallèlement à l'axe des ordonnées, puis on l'enroule autour d'une cercle trigonométrique. A chaque point $x$ sur cette droite des réels, on associe ainsi un unique point $M(x)$ sur le cercle.\end{definition}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\draw [thick,->,>=latex] (0,0)--(0,1);
+\draw [thick,->,>=latex] (0,0)--(1,0);
+\draw (0,0.5) node[left] {$\vec{j}$};
+\draw (0.5,0) node[below] {$\vec{i}$};
+\draw (0,0) circle(1);
+\draw [very thick,ocre] (1,0) arc (0:135:1);
+\draw [very thick] (1,-1)--(1,3);
+\draw (0,1) node {$\times$};
+\draw (1,1.57) node {$\times$};
+\draw (1,1.57) node[right] {$\dfrac{\pi}{2}$};
+\draw [ocre, >=latex,->] (0.9,1.57)  to[bend right=20] (0,1.1);
+\draw (1,2.36) node {$\times$};
+\draw (-0.707,0.707) node {$\times$};
+\draw (1,2.36) node[right] {$\dfrac{3\pi}{4}$};
+\draw [ocre, >=latex,->] (0.9,2.36)  to[bend right=20] (-0.707,0.807);
+\draw [very thick,ocre,domain=-1:-0.707] plot (\x,\x+1.414);
+\draw [dashed, thick,ocre,domain=-1.5:-1] plot (\x,\x+1.414);
+\end{tikzpicture}
+\end{center}
+
+\begin{proposition}
+Deux réels dont la différence est le produit de $2\pi$ et d'un nombre entier ont la même image par $M$.
+\end{proposition}
+\subsection{Cosinus et sinus d'un nombre réel}
+
+\begin{definition}
+Soit $x$ un réel et $M(x)$ son image sur le cercle trigonométrique. On appelle :
+\begin{itemize}
+\item Cosinus de $x$, noté $\cos(x)$, l'abscisse de $M(x)$ ;
+\item Sinus de $x$, noté $\sin(x)$, l'ordonnée de $M(x)$.
+\end{itemize}
+\end{definition}
+
+\begin{center}
+\begin{tikzpicture}[scale=2]
+\draw [thick,->,>=latex] (0,-1)--(0,1);
+\draw [thick,->,>=latex] (-1,0)--(1,0);
+\draw (0,0) circle(1);
+\draw (0.5,0.866) node {$\times$};
+\draw (0.5,0.866) node[right] {$M(x)$};
+\draw [dashed] (0.5,0)--(0.5,0.866);
+\draw [dashed] (0,0.866)--(0.5,0.866);
+\draw [very thick, ocre] (0,0)--(0.5,0.866);
+\draw (0,0) node[below left] {$O$};
+\draw (0.5,0) node[below] {$\cos(x)$};
+\draw (0,0.866) node[below left] {$\sin (x)$};
+\draw [very thick] (1,0.1) -- (1,-0.1);
+\draw [very thick] (-1,0.1) -- (-1,-0.1);
+\draw [very thick] (0.1,1) -- (-0.1,1);
+\draw [very thick] (0.1,-1) -- (-0.1,-1);
+\draw (0.5,0) node[above right] {$H$};
+\draw (0.5,0) node {$\times$};
+\end{tikzpicture}
+\end{center}
+
+
+\newpage 
+
+\begin{example}On retiendra en particulier les valeurs remarquables suivantes.
+
+\begin{center}
+\renewcommand{\arraystretch}{2.5}
+\noindent \begin{tabularx}{0.9\linewidth}{|X|XXXXXX|}
+\hline
+Degré & 0 & 30 & 45 & 60 & 90 & 180 \\
+\hline
+Radians &  &  &  &  &  &  \\
+\hline
+Cosinus &  &  &  &  &  & \\
+\hline
+Sinus &  & &  & &  & \\
+\hline
+\end{tabularx}
+\end{center}
+\end{example}
+
+\begin{center}
+
+\begin{tikzpicture}[scale=7]
+\draw [thick,>=latex,->] (0,-1) -- (0,1);
+\draw [thick,>=latex,->] (-1,0) -- (1,0);
+\draw [thick] (0,0) circle (1);
+\draw [very thick, ocre] (0:0) -- (30:1);
+\draw [very thick, blue] (0:0) -- (45:1);
+\draw [very thick, red] (0:0) -- (60:1);
+\draw [very thick, ocre] (0:0) -- (150:1);
+\draw [very thick, blue] (0:0) -- (135:1);
+\draw [very thick, red] (0:0) -- (120:1);
+\draw [very thick, ocre] (0:0) -- (-30:1);
+\draw [very thick, blue] (0:0) -- (-45:1);
+\draw [very thick, red] (0:0) -- (-60:1);
+\draw [very thick, ocre] (0:0) -- (-150:1);
+\draw [very thick, blue] (0:0) -- (-135:1);
+\draw [very thick, red] (0:0) -- (-120:1);
+\draw [dashed,thick,red] (60:1) -- (-60:1);
+\draw [dashed,thick,red] (60:1) -- (120:1);
+\draw [dashed,thick,blue] (45:1) -- (-45:1);
+\draw [dashed,thick,blue] (45:1) -- (135:1);
+\draw [dashed,thick,ocre] (30:1) -- (-30:1);
+\draw [dashed,thick,ocre] (30:1) -- (150:1);
+
+\draw [dashed,thick,red] (120:1) -- (-120:1);
+\draw [dashed,thick,red] (-60:1) -- (-120:1);
+\draw [dashed,thick,blue] (135:1) -- (-135:1);
+\draw [dashed,thick,blue] (-45:1) -- (-135:1);
+\draw [dashed,thick,ocre] (150:1) -- (-150:1);
+\draw [dashed,thick,ocre] (-30:1) -- (-150:1);
+
+\draw [ocre] (0:0.866) node[below left] {$\dfrac{\sqrt{3}}{2}$};
+\draw [blue] (0:0.707) node[below left] {$\dfrac{\sqrt{2}}{2}$};
+\draw [red] (0:0.5) node[below left] {$\dfrac{1}{2}$};
+\draw [red] (90:0.866) node[below left] {$\dfrac{\sqrt{3}}{2}$};
+\draw [blue] (90:0.707) node[below left] {$\dfrac{\sqrt{2}}{2}$};
+\draw [ocre] (90:0.5) node[below left] {$\dfrac{1}{2}$};
+
+\draw [ocre] (180:0.866) node[below right] {$-\dfrac{\sqrt{3}}{2}$};
+\draw [blue] (180:0.707) node[below right] {$-\dfrac{\sqrt{2}}{2}$};
+\draw [red] (180:0.5) node[below right] {$-\dfrac{1}{2}$};
+\draw [red] (-90:0.866) node[below right] {$-\dfrac{\sqrt{3}}{2}$};
+\draw [blue] (-90:0.707) node[below right] {$-\dfrac{\sqrt{2}}{2}$};
+\draw [ocre] (-90:0.5) node[below right] {$-\dfrac{1}{2}$};
+
+\draw [ocre] (30:1) node[right] {$\dfrac{\pi}{6}$};
+\draw [blue] (45:1) node[above right] {$\dfrac{\pi}{4}$};
+\draw [red] (60:1) node[above] {$\dfrac{\pi}{3}$};
+\draw [ocre] (150:1) node[left] {$\dfrac{5\pi}{6}$};
+\draw [blue] (135:1) node[above left] {$\dfrac{3\pi}{4}$};
+\draw [red] (120:1) node[above] {$\dfrac{2\pi}{3}$};
+
+\draw [ocre] (-30:1) node[right] {$-\dfrac{\pi}{6}\, ; \, \dfrac{11\pi}{6}$};
+\draw [blue] (-45:1) node[below right] {$-\dfrac{\pi}{4}\, ; \, \dfrac{7\pi}{4}$};
+\draw [red] (-60:1) node[below right] {$-\dfrac{\pi}{3}\, ; \, \dfrac{5\pi}{3}$};
+\draw [ocre] (-150:1) node[left] {$-\dfrac{5\pi}{6}\, ; \, \dfrac{7\pi}{6}$};
+\draw [blue] (-135:1) node[below left] {$-\dfrac{3\pi}{4}\, ; \, \dfrac{5\pi}{4}$};
+\draw [red] (-120:1) node[below left] {$-\dfrac{2\pi}{3}\, ; \, \dfrac{4\pi}{3}$};
+\end{tikzpicture}
+\newpage
+\end{center}
+\begin{proposition}
+Pour tout réel $x$,
+\[-1\leqslant \cos(x) \leqslant 1 \qquad -1\leqslant \sin(x) \leqslant 1 \qquad \cos(x)^2+\sin(x)^2=1\]
+\vspace{-0.5cm}\end{proposition}
+
+
+\begin{example}On considère la fonction $f:x \mapsto \dfrac{1+x}{2+\sin(x)}$.\\ Donner le domaine de définition de $f$ et sa limite en $+\infty$.
+
+\vskip140pt
+\end{example}
+
+
+\subsection{Résolution d'équation et d'inéquation}
+
+\begin{example}Les solutions de l'équation $\cos(x)=\dfrac{1}{2}$ sur $[-\pi;\pi]$ sont \end{example}
+
+\begin{example}Le solutions de l'équation $\cos(x)=0$ sur $[0;2\pi]$ sont \end{example}
+
+
+
+\begin{example}L'ensemble des solutions de l'inéquation $\cos(x) \leqslant \dfrac{\sqrt{3}}{2}$ sur $[0;2\pi]$ est
+\vskip10pt
+
+Sur l'intervalle $[-\pi;\pi]$ l'ensemble des solutions de cette inéquation est \end{example}
+
+
+
+\begin{center}
+
+\begin{tikzpicture}[scale=2]
+\draw [thick,>=latex,->] (0,-1) -- (0,1);
+\draw [thick,>=latex,->] (-1,0) -- (1,0);
+\draw [very thick, ocre] (0:0) -- (30:1);
+\draw [very thick, ocre] (0:0) -- (-30:1);
+\draw [dashed,thick,red] (0.866,-1.2) -- (0.866,1.2);
+
+\draw [red] (0.866,1.2) node[right] {$x=\dfrac{\sqrt{3}}{2}$};
+\draw [very thick, red] (30:1) arc (30:330:1);
+\draw [ thick, black] (-30:1) arc (-30:30:1);
+
+\draw [ocre] (30:1) node[right] {$\dfrac{\pi}{6}$};
+
+\draw [ocre] (-30:1) node[right] {$-\dfrac{\pi}{6}\, ; \, \dfrac{11\pi}{6}$};
+
+\end{tikzpicture}\end{center}
+
+Il faut donc faire attention à l'intervalle de résolution.. Dans tous les cas, le cercle trigonométrique sera votre plus précieux allié.
+\newpage 
+\section{Fonctions trigonométriques}
+
+\subsection{Définition et variations}
+
+\begin{definition}
+La fonction cosinus est la fonction qui, à tout réel $x$, associe $\cos (x)$.\\
+La fonction sinus est la fonction qui, à tout réel $x$, associe $\sin (x)$.\\
+\end{definition}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\draw [dashed, very thin, gray!40] (-12,-5) grid (12,5);
+\draw [>=latex,->,thick] (-12,0) -- (12,0);
+\draw [>=latex,->,thick] (0,-5) -- (0,5);
+\draw [ocre, very thick,samples=100,domain=-12:12] plot (\x, {4*cos(pi*\x/4 r)}); 
+\draw [very thick] (4,-0.3) -- (4,0.3);
+\draw [very thick] (8,-0.3) -- (8,0.3);
+\draw [very thick] (-4,-0.3) -- (-4,0.3);
+\draw [very thick] (-8,-0.3) -- (-8,0.3);
+\draw [very thick] (0.3,4) -- (-0.3,4);
+\draw [very thick] (0.3,-4) -- (-0.3,-4);
+\draw (4,0) node[below] {$\pi$};
+\draw (-4,0) node[below] {$-\pi$};
+\draw (8,0) node[below] {$2\pi$};
+\draw (-8,0) node[below] {$-2\pi$};
+\draw (0,4) node[above left] {$1$};
+\draw (0,-4) node[left] {$-1$};
+\draw (5,4) node {$y=\cos (x)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+  \begin{tikzpicture}[scale=1]
+  \tikzset{node style/.style = {inner sep = 2pt, outer sep = 2pt}}
+   \tkzTabInit[lgt=2.5]{$x$ / 1 , $\cos$ / 2,$\cos(x)$ / 1}{$-\pi$,$-\dfrac{\pi}{2}$,$0$,$\dfrac{\pi}{2}$, $\pi$}
+
+   \tkzTabVar{-/$-1$,R,+/$1$,R,-/$-1$}
+   \tkzTabIma{1}{3}{2}{0}
+   \tkzTabIma{3}{5}{4}{0}
+   \tkzTabLine{,-,0,,+,,0,- }
+     
+      
+   \end{tikzpicture}  
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\draw [dashed, very thin, gray!40] (-12,-5) grid (12,5);
+\draw [>=latex,->,thick] (-12,0) -- (12,0);
+\draw [>=latex,->,thick] (0,-5) -- (0,5);
+\draw [ocre, very thick,samples=100,domain=-12:12] plot (\x, {4*sin(pi*\x/4 r)}); 
+\draw [very thick] (4,-0.3) -- (4,0.3);
+\draw [very thick] (8,-0.3) -- (8,0.3);
+\draw [very thick] (-4,-0.3) -- (-4,0.3);
+\draw [very thick] (-8,-0.3) -- (-8,0.3);
+\draw [very thick] (0.3,4) -- (-0.3,4);
+\draw [very thick] (0.3,-4) -- (-0.3,-4);
+\draw (4,0) node[below left] {$\pi$};
+\draw (-4,0) node[below right] {$-\pi$};
+\draw (8,0) node[below left] {$2\pi$};
+\draw (-8,0) node[below right] {$-2\pi$};
+\draw (0,4) node[left] {$1$};
+\draw (0,-4) node[left] {$-1$};
+\draw (5,4) node {$y=\sin (x)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+  \begin{tikzpicture}[scale=1]
+  \tikzset{node style/.style = {inner sep = 2pt, outer sep = 2pt}}
+   \tkzTabInit[lgt=2.5]{$x$ / 1 , $\sin$ / 2,$\sin(x)$ / 1}{$-\pi$,$-\dfrac{\pi}{2}$,$0$,$\dfrac{\pi}{2}$, $\pi$}
+
+   \tkzTabVar{+/$0$,-/$-1$,R,+/$1$,-/$0$}
+   \tkzTabIma{2}{4}{3}{0}
+   \tkzTabLine{0,,-,,0,,+,,0 }
+     
+      
+   \end{tikzpicture}  
+\end{center}
+
+\begin{proposition}
+Pour tout $x \in \mathbb{R}$, on a
+\begin{itemize}
+\item $\cos(-x)=\cos (x)$, la fonction cosinus est paire.
+\item $\sin (-x)= -\sin (x)$; la fonction sinus est impaire.
+\end{itemize}
+\vspace{-0.5cm}\end{proposition}
+
+Cela se traduit graphiquement par le fait que la courbe de la fonction cosinus est symétrique par rapport à l'axe des ordonnées alors que la courbe de la fonction sinus est symétrique par rapport à l'origine du repère.
+
+\begin{example}
+$\cos \left( -\dfrac{\pi}{4} \right) = \cos \left( \dfrac{\pi}{4} \right)= \dfrac{\sqrt{2}}{2}\qquad ; \qquad \sin \left( -\dfrac{\pi}{4} \right) = -\sin \left( \dfrac{\pi}{4} \right)= -\dfrac{\sqrt{2}}{2}$ .
+\end{example}
+
+\begin{proposition}Pour tout $x\in\mathbb{R}$ et pour tout $k\in\mathbb{Z}$, on a
+\begin{itemize}
+\item $\cos (x+k\times 2\pi)=\cos (x)$ ;
+\item $\sin (x+k\times 2\pi) = \sin (x)$.
+\end{itemize}
+On dit que les fonctions sinus et cosinus sont $2\pi$-périodiques. \end{proposition}
+
+\begin{example}
+$\cos \left( \dfrac{25\pi}{3}\right)= $
+\end{example}
+
+\subsection{Dérivée des fonctions trigonométriques}
+
+\begin{proposition}Les fonctions $\cos$ et $\sin$ sont dérivables sur $\mathbb{R}$. Par ailleurs, pour tout réel $x$,
+\[\sin'(x)=\cos(x) \qquad \text{et}\qquad \cos'(x)=-\sin(x)\]
+\vspace{-0.5cm}\end{proposition}
+
+\begin{example}On considère la fonction $g: x\mapsto 2\cos(x)-x$ définie sur $I=[-\pi;\pi]$. 
+
+\vskip270pt
+
+\end{example}
+
+
+Il est également possible de dérivée des fonctions composées avec le cosinus ou le sinus.
+\begin{proposition}Soit $u$ une fonction définie et dérivable sur un intervalle $I$. Alors $\sin (u)$ et $\cos(u)$ sont également dérivables sur cet intervalle $I$ et on a
+\[(\sin(u))'=u'\times \cos(u) \qquad \text{et}\qquad (\cos(u))'=-u'\times \sin(u)\]
+\vspace{-0.5cm}\end{proposition}
+
+
+
+\begin{example}Pour tout réel $x$, on pose $f(x)=\sin(3x^2-4x+5)$. 
+
+$f$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $f'(x)=$.\end{example}
+
+\begin{proposition}Soit $a$ un réel non nul.
+\begin{itemize}
+\item Une primitive de $x\mapsto \cos(ax)$ sur $\mathbb{R}$ est $x\mapsto \dfrac{\sin(ax)}{a}$.
+\item Une primitive de $x\mapsto \sin(ax)$ sur $\mathbb{R}$ est $x\mapsto -\dfrac{\cos(ax)}{a}$.
+\end{itemize}\end{proposition}
+
+\begin{demonstration}Il suffit de dériver. Attention au signe !\end{demonstration}
+
+\begin{example}Pour tout réel $x$, on pose $f(x)=3\cos(2x)-5\sin(9x)$.
+Une primitive de $f$ sur $\mathbb{R}$ est la fonction $F$ définie pour tout réel $x$ par $F(x)=$\end{example}
+
+\begin{example}Pour $x\in\mathbb{R}$, on pose $g(x)=\cos(x)\sin(x)$. 
+
+\vskip20pt
+\end{example}
+
+\begin{example}On considère la fonction $f:x\mapsto \sin^3(x)\dx$ définie sur $\mathbb{R}$ et $I=\displaystyle\int_0^{\pi} f(x)\dx$.
+
+\vskip220pt
+\end{example}
+
+
+
+
+\end{document}

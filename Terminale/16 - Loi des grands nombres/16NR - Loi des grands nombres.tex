@@ -1,0 +1,455 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+\DeclareExerciseCollection[topic=lgn01]{lgn01}
+\DeclareExerciseCollection{lgn02}
+\DeclareExerciseCollection{lgn03}
+\DeclareExerciseCollection{lgn04}
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+\chapter{Cours : Loi des grands nombres}
+
+
+\section{Opérations sur les variables aléatoires}
+
+\subsection{Sommes et produits par un réel}
+
+\begin{definition}Soit $X$ une variable aléatoires réelle, définie sur $\Omega$. Soit $a$ un réel non nul et $b$ un réel. 
+
+La variable aléatoire $aX+b$ est définie par : pour tout $\omega \in \Omega$, $(aX+b)(\omega) = a \times X(\omega) +b$
+
+Ainsi, pour tout réel $k$, on a $\mathbb{P}(aX+b=k) = \mathbb{P}\left( X = \dfrac{k-b}{a} \right)$.\end{definition}
+
+\begin{example}On considère une variable aléatoire $X$ dont la loi est résumée dans le tableau suivant.
+
+\renewcommand{\arraystretch}{2.2}
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+$k$ & $-2$& $3$ & $7$ \\
+\hline
+$\mathbb{P}(X=k)$ & $\dfrac{1}{2}$ & $\dfrac{1}{3}$ & $\dfrac{1}{6}$\\
+\hline \end{tabular}
+\end{center}
+On note $Y$ la variable aléatoire telle que $Y=3X-1$.
+\vskip50pt
+\end{example}
+
+
+\begin{example}On considère le jeu suivant : on paye 10 euros puis on lance 4 dés équilibrés à 6 faces, numérotés de 1 à 6. On remporte alors 6 euros par dé qui tombe sur le nombre 6.
+
+Notons $X$ le nombre de 6 obtenus et $Y$ le gain en euros à l'issue de ce jeu. 
+\vskip80pt
+\end{example}
+
+
+\subsection{Variables aléatoires indépendantes}
+
+\begin{definition}Soit $n$ un entier naturel et $X_1$, $X_2$, ..., $X_n$ des variables aléatoires définies sur un univers $\Omega$.
+
+On dit que les variables aléatoires $X_1$, $X_2$, ... $X_n$ sont mutuellement indépendantes (ou tout simplement indépendantes) si, pour tous réels $x_1$, $x_2$, ..., $x_n$, on a
+\[\pp(X=x_1 \cap X_2=x_2 \cap \ldots \cap X_n=x_n)=\pp(X_1=x_1) \times \pp(X_2=x_2) \times \ldots \times \pp(X_n=x_n).\]\end{definition}
+
+\begin{example}On lance trois fois de suite un dé équilibré à six faces, numérotées de 1 à 6.On appelle $X$ le numéro obtenu au premier lancer, $Y$ le numéro obtenu au deuxième lancer et $Z$ le numéro obtenu au troisième lancer. Alors, les variables aléatoires $X$, $Y$, et $Z$ sont indépendantes.
+
+Plus généralement, si l'on considère une succession d'épreuves aléatoires indépendantes, chacune étant reliée à une variable aléatoire réelle, alors ces variables aléatoires sont indépendantes.\end{example}
+
+
+
+\subsection{Somme de deux variables aléatoires}
+
+
+\begin{definition}Soit $X$ et $Y$ deux variables aléatoires réelles définies sur $\Omega$. 
+
+La variable aléatoire $Z=X+Y$ est définie par : pour tout $\omega \in \Omega$,  $Z(\omega) =  X(\omega) + Y(\omega)$.
+
+Par ailleurs, pour tout réel $k$, on a $\pp(Z=k) = \displaystyle \sum_{i+j=k} \mathbb{P}((X=i) \cap (Y=j)).$
+
+Si les variables aléatoires $X$ et $Y$ sont indépendantes, on a alors $\mathbb{P}(Z=k)=\displaystyle\sum_{i+j=k} \mathbb{P}(X=i) \mathbb{P}(Y=j)$.\end{definition}
+
+\begin{example} 
+Un supporter de football a étudié le nombre de buts marqués par son équipe au cours d'une saison. On considère un match au hasard de cette équipe et on appelle $X$ le nombre de buts marqué par cette équipe en première mi-temps de ce match et $Y$ le nombre de buts marqués en second mi-temps. Ainsi, $X+Y$ représente le nombre de buts marqués par l'équipe en question au cours du match.
+
+D'après l'étude de ce supporter, on peut construire l'arbre de probabilités suivant.
+
+\tikzstyle{level 1}=[level distance=3cm, sibling distance=5.5cm]
+\tikzstyle{level 2}=[level distance=4cm, sibling distance=2cm]
+\tikzstyle{level 3}=[level distance=4cm, sibling distance=0.3cm]
+\tikzstyle{level 4}=[level distance=4cm, sibling distance=0.3cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7,grow=right,sloped]
+\draw (3,8,5) node {\textbf{$X$}};
+\draw (7,8,5) node {\textbf{$Y$}};
+\draw (15,8,5) node {\textbf{$X+Y$}};
+\draw (11,8,5) node {\textbf{$(X,Y)$}};
+\node[bag] { }
+    child {
+        node[bag] {2} 
+        child {
+                node[bag] {2}
+                child {
+                node[bag] {(2;2)}
+                child {
+                node[bag] {$4$}}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+                }
+                edge from parent node[above] {$0,2$} 
+               }
+		child {
+                node[bag] {1}
+                child {
+                node[bag] {(2;1)}
+                child {
+                node[bag] {$3$}}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+                }
+                edge from parent node[above] {$0,5$} 
+                }
+		child {
+                node[bag] {0}
+                child {
+                node[bag] {(2;0)}
+                child {
+                node[bag] {$2$}}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+                }
+                edge from parent node[above] {$0,3$} 
+                }
+            edge from parent node[above] {$0,05$} 
+    }
+    child {
+        node[bag] {1} 
+        child {
+                node[bag] {2}
+                child {
+                node[bag] {(1;2)}
+                child {
+                node[bag] {$3$}}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+                }
+                edge from parent node[above] {$0,15$} 
+               }
+		child {
+                node[bag] {1}
+                child {
+                node[bag] {(1;1)}
+                child {
+                node[bag] {$2$}}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+                }
+                edge from parent node[above] {$0,5$} 
+                }
+		child {
+                node[bag] {0}
+                child {
+                node[bag] {(1;0)}
+                child {
+                node[bag] {$1$}}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+                }
+                edge from parent node[above] {$0,35$} 
+                }
+            edge from parent node[above] {$0,4$} 
+    }
+    child {
+        node[bag] {0} 
+        child {
+                node[bag] {2}
+                child {
+                node[bag] {(0;2)}
+                child {
+                node[bag] {$2$}}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+                }
+                edge from parent node[above] {$0,1$} 
+               }
+		child {
+                node[bag] {1}
+                child {
+                node[bag] {(0;1)}
+                child {
+                node[bag] {$1$}}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+                }
+                edge from parent node[above] {$0,6$} 
+                }
+		child {
+                node[bag] {0}
+                child {
+                node[bag] {(0;0)}
+                child {
+                node[bag] {$0$}}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+                }
+                edge from parent node[above] {$0,3$} 
+                }
+            edge from parent node[above] {$0,55$} 
+    }
+    ;
+\end{tikzpicture}
+\end{center}
+
+La variable aléatoire $X+Y$ prend alors les valeurs 0, 1, 2, 3 et 4.
+
+Il est alors possible d'établir la loi de  en s'appuyant sur cet arbre de probabilités. Par exemple, on a
+\[\pp(X+Y=1)=\]
+
+La loi de $X+Y$ peut alors être résumée dans le tableau suivant.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabularx}{0.7\linewidth}{|l|X|X|X|X|X|}
+\hline
+$k$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$\pp(X+Y=k)$ & 0,165 &  &  & 0,085&0,01 \\
+\hline
+\end{tabularx}
+
+\end{center}
+\vspace{-0,5cm}
+\end{example}
+
+
+\vspace{-1cm}
+\section{Espérance et variance d'une somme de variables aléatoires}
+
+\subsection{Cas général}
+
+\begin{proposition}Soit $X$ et $Y$ deux variables aléatoires, $a$ et $b$ deux réels. On a
+\[E(aX+b)=aE(X) + b \qquad \text{et} \qquad E(X+Y)=E(X)+ E(Y).\]
+\vspace{-0,5cm}\end{proposition}
+
+\begin{example} On considère le jeu suivant : la participation est fixée à 8 euros. On lance un dé équilibré à 6 faces, numérotées de 1 à 6 et on remporte deux fois la somme inscrite sur le dé. On considère la variable aléatoire $X$ qui donne le résultat du lancer et $Y$ le gain du joueur, positif ou négatif. 
+\vskip30pt
+\end{example}
+
+\begin{example}On reprend l'exemple précédent de l'étude du supporter. La loi de $X$ s'obtient simplement à l'aide du premier sous-arbre. La loi de $X+Y$ avait été déterminée.
+
+\begin{minipage}{0.35\linewidth}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|l|X|X|X|}
+\hline
+$k$ & 0 & 1 & 2  \\
+\hline
+$\pp(X=k)$ & 0,55 & 0,4 & 0,05  \\
+\hline
+\end{tabularx}
+\end{minipage}\hfill\begin{minipage}{0.6\linewidth}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|l|X|X|X|X|X|}
+\hline
+$k$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$\pp(X+Y=k)$ & 0,165 & 0,47 & 0,27 & 0,085&0,01 \\
+\hline
+\end{tabularx}
+
+\end{minipage}
+
+On a alors 
+\begin{itemize}
+\item $E[X]=$
+\item $E[X+Y]=$
+\end{itemize}
+
+Or, $E[X+Y]=E[X]+E[Y]$. Ainsi, $E[Y]=$
+
+Il est aussi possible de déterminer la loi de la variable aléatoire $Y$. En effet, les événements $\{X=0\}$, $\{X=1\}$ et $\{X=2\}$ forment une partition de l'univers. Ainsi, d'après la formule des probabilités totales,
+\[\pp(Y=0)=\]
+Ainsi, $\pp(Y=0)=0,32$. On calcule de la même manière $\pp(Y=1)$ et $\pp(Y=2)$ pour obtenir le tableau suivant.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{0.6\linewidth}{|l|X|X|X|}
+\hline
+$k$ & 0 & 1 & 2  \\
+\hline
+$\pp(Y=k)$ & 0,32 & 0,555 & 0,125  \\
+\hline
+\end{tabularx}
+\end{center}
+
+On retrouve alors que $E[Y] =$
+\end{example}
+
+\textbf{Remarque} : Dans l'exemple précédent, les variables aléatoires $X$ et $Y$ n'étaient pas indépendantes, et pourtant, l'espérance de la somme pouvait être exprimée comme la somme des espérances.
+
+L'hypothèse d'indépendance des variables aléatoires est toutefois primordiales pour la propriété qui suit.
+
+\begin{proposition}Soit $X$ et $Y$ deux variables aléatoires \textbf{indépendantes}, $a$ un réel.
+\[V(aX)=a^2\times V(X) \qquad\text{et}\qquad  V(X+Y)=V(X)+V(Y).\]\vspace{-0,5cm}
+\end{proposition}
+
+Attention à ne pas se faire piéger lorsque l'on calcule la variance de la somme. \\
+Si $X$ et $Y$ sont deux variables aléatoire réelles indépendantes, alors \[V(X-Y)=V(X)+V(-Y)=V(X)+(-1)^2V(Y)=V(X)+V(Y).\]
+
+\begin{example}Toujours dans l'exemple précédente, on peut comparer les variances de $X$, $Y$ et $X+Y$. 
+
+Calculons la variance de $X$. On rappelle pour cela la formule de Koenig-Huygens : $V(X)=E[X^2]-(E[X])^2$.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{minipage}{0.45\linewidth}
+\begin{tabularx}{\linewidth}{|l|X|X|X|}
+\hline
+$k$ & 0 & 1 & 2  \\
+\hline
+$\pp(X=k)$ & 0,55 & 0,4 & 0,05  \\
+\hline
+\end{tabularx}
+\end{minipage}\hfill\begin{minipage}{0.45\linewidth}
+\begin{tabularx}{\linewidth}{|l|X|X|X|}
+\hline
+$k$ &  &  &   \\
+\hline
+$\pp(X^2=k)$ &  &  &  \\
+\hline
+\end{tabularx}
+\end{minipage}
+
+Ainsi,
+\begin{itemize}
+\item $E[X^2]=$
+\item $V(X)=$
+\end{itemize}
+
+De même, $E[Y^2]=0 \times 0,32 + 1 \times 0,555 + 4 \times 0,125 = 1,055$ et donc $V(Y)=1,055-0,805^2 = 0,406975$.
+
+Enfin, $E[(X+Y)^2]=0\times 0,165 + 1 \times 0,47 + 4 \times 0,27 + 9 \times 0,085 + 16 \times 0,01 = 2,475$\\
+On obtient donc $V(X+Y)=2,475-1,305^2=0,771975$.
+
+En particulier, on voit que $V(X+Y)\neq V(X) + V(Y)$. Ce n'est pas surprenant puisque les variables aléatoires $X$ et $Y$ ne sont pas indépendantes.
+
+\end{example}
+\vspace{-0,5cm}
+\subsection{Applications à la loi binomiale}
+
+\begin{proposition} Soit $X_1$, $X_2$, ..., $X_n$ des variables aléatoires de Bernoulli indépendantes de paramètre $p$. 
+
+Notons $S=X_1+X_2+\ldots + X_n$. La variable aléatoire $S$ suit une loi binomiale de paramètres $n$ et $p$.\end{proposition}
+
+
+\begin{proposition}Soit $X$ une variable aléatoire qui suit une loi binomiale $\mathcal{B}(n,p)$. L'espérance, la variance et l'écart-type de $X$ valent respectivement \[E[X]=np, \quad V(X)=np(1-p), \quad \sigma(X)=\sqrt{np(1-p)}\]
+\vspace{-0,5cm}\end{proposition}
+
+\begin{demonstration}Soit $X$ une variable aléatoire qui suit une loi binomiale $\mathcal{B}(n,p)$. 
+
+On considère des variables aléatoires indépendantes $X_1$, $X_2$, ..., $X_n$  suivant toute une loi de Bernoulli de paramètre $p$. Pour tout entier naturel $i$ compris entre 1 et $p$, on a en particulier $E[X_i]=\qquad$ et $V(X_i)=\qquad$.
+
+On note alors $S=X_1+X_2+\ldots +X_n$. D'après la propriété précédente, $S$ suit également une loi binomiale $\mathcal{B}(n,p)$. $S$ et $X$ sont donc de même loi et ont la même espérance.
+
+Or, on a $E[S] = $\\ De plus, les variables $X_i$ étant indépendants, $V(S)=$\end{demonstration}
+
+\begin{example}On lance 12 dés équilibrées à 6 faces, numérotées de 1 à 6. On note $Y$ la variable aléatoire qui compte le nombre de 6 obtenus. 
+
+\vskip50pt
+\end{example}
+
+
+
+\section{Concentration et loi des grand nombres}
+\subsection{Échantillon de variables aléatoires}
+
+\begin{definition} Un échantillon est un ensemble de variables aléatoires réelles $(X_1, ..., X_n)$ indépendantes et de même loi.
+
+La variable aléatoire moyenne de cette échantillon est la variable aléatoire notée $M_n$ ou $\overline{X}$, définie par 
+\[ M_n = \dfrac{1}{n} (X_1+X_2+\ldots + X_n)\]\end{definition}
+
+
+\begin{proposition}On a alors $\mathbb{E}(M_n)=E[X_1]$, $V(M_n)=\dfrac{1}{n}V(X_1)$ et $\sigma(M_n)=\dfrac{1}{\sqrt{n}}\sigma(X_1)$\end{proposition}
+
+\begin{demonstration}On a en effet
+\vskip130pt
+\end{demonstration}
+
+
+\begin{example} On considère une variable aléatoire $X$ qui suit une loi binomiale de paramètre $3$ et $\dfrac{1}{3}$. 
+
+On rappelle que $E[X]=\qquad \qquad$ et $V(X)=$
+
+On considère un échantillon $(X_1, \ldots, X_{100})$ de variables aléatoires indépendantes de même loi que $X$ et on note $M_{100} = \dfrac{1}{100} (X_1+X_2+\ldots + X_{100})$.
+
+On a alors $E[M_{100}]=\qquad\qquad$ et $V(M_{100})=$\end{example}
+
+On remarque que lorsque $n$ tend vers $+\infty$, la variance de $M_n$ tend vers 0 alors que l'espérance ne change pas. Cela signifie intuitivement que la variable aléatoire $M_n$ se rapproche d'une variable aléatoire "constante".\\ Ce comportement sera précisé plus en détails dans les parties qui suivent.
+
+\newpage
+\subsection{Inégalité de Bienaymé-Tchebychev}
+
+\begin{proposition}[Inégalité de Bienaymé-Tchebychev] Soit $X$ une variable aléatoire réelle. Pour tout réel $\delta$ strictement positif
+\[ \mathbb{P}(|X-E[X]| \geqslant \delta) \leqslant \dfrac{V(x)}{\delta ^2}\]
+\vspace{-0,5cm}\end{proposition}
+
+Cette inégalité illustre le fait que la variance permet de mesurer l'écart d'une variable aléatoire par rapport à son espérance.
+
+\begin{example}Soit $X$ une variable aléatoire d'espérance 10 et de variance 1.
+
+D'après l'inégalité de Bienaymé-Tchebychev, appliquée à $\delta = 4$, on a 
+
+Par ailleurs, les événements $|X-10|\geqslant 4$ et $|X-10|<4$ étant contraires, on a donc \[\pp(|X-10|< 4) = \]
+
+Or, $|X-10|<4$ est équivalent à $X \in ]10-4 ; 10+4[$, c'est-à-dire $X\in ]6 ; 14[$. Finalement, $\pp(X\in ]6 ;14[) \geqslant \dfrac{15}{16}$.\end{example}
+
+\begin{example} On lance 180 fois un dé équilibré à 6 faces, numérotées de 1 à 6. On appelle $X$ la variable aléatoire qui donne le nombre de 1 obtenus. $X$ suit donc une loi binomiale de paramètres $180$ et $\dfrac{1}{6}$.
+
+Ainsi, $E(X)=180 \times \dfrac{1}{6}=30$ et $V(X)=180 \times \dfrac{1}{6} \times \dfrac{5}{6}=25$. 
+
+Lors des précédentes chapitres, nous avons interprété l'espérance comme une moyenne si l'on répète un grand nombre de fois une expérience aléatoire. Ainsi, si on lance 180 fois un dé, on s'attend en moyenne à avoir 30 fois le nombre 6.
+
+Seulement, tout ceci n'est qu'une moyenne, et il est rare de tomber exactement 30 fois sur la face numéro 6. Cependant, il y a une grande probabilité que le nombre de fois que nous obtenons ce nombre 6 soit proche de 30, et l'inégalité de Bienaymé-Tchebychev peut nous fournir une minoration de cette probabilité.
+
+
+On souhaite par exemple minorer la probabilité que $X$ soit compris entre 21 et 39. 
+
+\vskip170pt
+\end{example}
+
+Cette borne n'est pas toujours optimale. En l'occurrence, en faisant les calculs de manière exhaustive, on s'aperçoit que $\mathbb{P}( |X-E(X)| < 10) \simeq 0,9434$, mais ce calcul est un poil plus compliqué...
+
+
+
+\subsection{Inégalité de concentration}
+
+\begin{proposition}[Inégalité de concentration] Soit $(X_1,\ldots,X_n)$ un échantillon de $n$ variables aléatoires indépendantes, et $M_n$ la variable aléatoire moyenne de cette échantillon. Alors, pour tout réel $\delta$ strictement positif,
+\[ \mathbb{P}(|M_n-E(X_1)|\geqslant \delta ) \leqslant \dfrac{V(X_1)}{n\delta^2}\]\end{proposition}
+
+\begin{demonstration} On applique simplement l'inégalité de Bienaymé-Tchebychev à la variable aléatoire $M_n$. Son espérance vaut $E(X_1)$ et sa variance $\dfrac{V(X_1)}{n}$.\end{demonstration}
+
+\begin{example} Soit $X$ une variable aléatoire d'espérance 3 et de variance 100.
+
+ On considère un échantillon $(X_1, \ldots, X_n)$ de variables aléatoires indépendantes de même loi que $X$ et on note $M_n = \dfrac{1}{n} (X_1+X_2+\ldots + X_n)$.
+
+Pour tout entier naturel non nul $n$ et tout réel $\delta$ strictement positif, on a alors $\mathbb{P}(|M_n-E(X_1)|\geqslant \delta ) \leqslant \dfrac{V(X_1)}{n\delta ^2}$,
+
+c'est-à-dire $\mathbb{P}(|M_n-3|\geqslant \delta ) \leqslant \dfrac{100}{n \delta ^2}$.
+
+En particulier, pour $n=100000$ et $\delta=0,1$, on a $\mathbb{P}(|M_n-3|\geqslant 0,1 ) \leqslant $
+
+Ainsi, $\mathbb{P}(|M_n-3|\geqslant 0,1 ) \leqslant 0,1$.
+
+En passant au complémentaire, on obtient alors que $\mathbb{P}(|M_n-3| < 0,1 ) =$
+
+Bien que la variable aléatoire $X$ ait une grande variance, si l'on répète un grand nombre de fois l'expérience aléatoire, la moyenne des résultats est très proche de l'espérance de $X$ : avec probabilité 0,9, la moyenne est entre 2,9 et 3,1.\end{example}
+
+
+\subsection{Loi des grands nombres}
+
+\begin{theorem}[Loi faible des grands nombres] Soit $(X_1,...,X_n)$ un échantillon de $n$ variables aléatoires indépendantes et $M_n$ la variable aléatoire moyenne de cet échantillon. Pour tout réel $\delta$ strictement positif,
+\[ \displaystyle \lim_{n \to + \infty} \mathbb{P}(|M_n-E(X_1)|\geqslant \delta )=0\]\end{theorem}
+
+\begin{demonstration}On applique l'inégalité de concentration à cet échantillon
+\vskip100pt
+\end{demonstration}
+
+
+\end{document}

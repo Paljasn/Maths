@@ -1,0 +1,401 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+
+\chapter{Cours : Convexité}
+
+
+
+\section{Convexité, concavité}
+
+\begin{definition}Soit $f$ une fonction définie sur un intervalle $I$. On note $\mathcal{C}_f$ la courbe représentative de $f$ dans un repère $\Oij$.
+\begin{itemize}
+\item On dit que $f$ est \textit{convexe} sur $I$ si, \textbf{pour tous réels} $a$ et $b$ dans $I$, avec $a<b$, la sécante reliant les deux points de la courbe d'abscisses $a$ et $b$ se trouve au-dessus de la courbe $\mathcal{C}_f$ sur $[a,b]$.
+\item On dit que $f$ est \textit{concave} sur $I$ si,  \textbf{pour tous réels} $a$ et $b$ dans $I$, avec $a<b$, la sécante reliant les deux points de la courbe d'abscisses $a$ et $b$ se trouve en-dessous de la courbe $\mathcal{C}_f$ sur $[a,b]$.
+\end{itemize}\end{definition}
+
+
+
+\begin{minipage}{0.45\linewidth}
+\begin{center}
+\textbf{Fonction convexe}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\clip (-2,-4) rectangle (6,4);
+\draw [ thin, dotted] (-2,-4) grid (6,4);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\draw [very thick, ocre,domain=-3:6,samples=100] plot (\x,{\x*\x/2-2*\x-1});
+\draw [thick, dashed] (0,-1) -- (5,1.5);
+\draw (0,-1) node {$\times$};
+\draw (5,1.5) node {$\times$};
+\draw [thick, dashed] (-1,1.5) -- (2,-3);
+\draw (2,-3) node {$\times$};
+\draw (-1,1.5) node {$\times$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill \begin{minipage}{0.45\linewidth}
+\begin{center}
+\textbf{Fonction concave}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\clip (-2,-4) rectangle (6,4);
+\draw [thin, dotted] (-2,-4) grid (6,4);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\draw [very thick, ocre,domain=-3:6,samples=100] plot (\x,{-(\x*\x/2-2*\x-1)});
+\draw [thick, dashed] (0,1) -- (5,-1.5);
+\draw (0,1) node {$\times$};
+\draw (5,-1.5) node {$\times$};
+\draw [thick, dashed] (-1,-1.5) -- (2,3);
+\draw (2,3) node {$\times$};
+\draw (-1,-1.5) node {$\times$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+
+
+
+
+
+\vskip10pt
+\textbf{Rappel de certaines courbes représentatives}
+\vskip5pt
+\begin{minipage}{0.3\linewidth}
+\begin{center}
+\textbf{$x \mapsto x^2$}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\clip (-3,-2) rectangle (3,3);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.3\linewidth}
+
+\begin{center}
+\textbf{$x \mapsto \dfrac{1}{x}$}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\clip (-3,-2) rectangle (3,3);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.3\linewidth}
+\begin{center}
+\textbf{$x \mapsto x^3$}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\clip (-3,-2) rectangle (3,3);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\begin{minipage}{0.3\linewidth}
+\begin{center}
+\textbf{$x \mapsto \ln(x)$}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\clip (-3,-2) rectangle (3,2);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\linewidth}
+\begin{center}
+\textbf{$x \mapsto \e^x$}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\clip (-3,-1) rectangle (3,3);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}{0.3\linewidth}
+
+\begin{center}
+\textbf{$x \mapsto \sqrt{x}$}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\clip (-3,-1) rectangle (3,3);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\begin{example} Les fonction $x\mapsto x^2$ et $x\mapsto \e^x$ sont\\
+La fonction $x\mapsto \sqrt{x}$ est \\
+La fonction $x\mapsto \ln(x)$ est \\
+La fonction $x\mapsto  x^3$ est 
+\end{example}
+
+\begin{example}Attention : on parle bien de convexité sur un intervalle. Par ailleurs, ce n'est pas parce qu'une fonction $f$ est convexe sur deux intervalles $[a,b]$ et $[b,c]$ que $f$ est aussi convexe sur $[a,c]$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\clip (-3,-2) rectangle (3,4);
+\draw [ thin, dotted] (-4,-2) grid (4,4);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\draw [very thick, ocre,domain=-3:0,samples=100] plot (\x,{(\x+1)^2-1});
+\draw [very thick, ocre,domain=0:3,samples=100] plot (\x,{(\x-1)^2-1});
+\end{tikzpicture}
+\end{center}
+
+La fonction représentée ci-dessus est convexe sur $[-3;0]$ et sur $[0;3]$ mais n'est pas convexe sur $[-3,3]$.\end{example}
+
+
+\section{Fonctions dérivables}
+
+\subsection{Caractérisation des fonctions convexes}
+
+\begin{proposition}Soit $f$ une fonction définie et dérivable sur un intervalle $I$. On note $\mathcal{C}_f$ la courbe représentative de $f$ dans un repère $\Oij$.
+\begin{itemize}
+\item $f$ est convexe sur $I$ si et seulement si la courbe $\mathcal{C}_f$ se trouve au-dessus de toutes ses tangentes aux points d'abscisses $x\in I$.
+\item $f$ est concave sur $I$ si et seulement si la courbe $\mathcal{C}_f$ se trouve en-dessous de toutes ses tangentes aux points d'abscisses $x\in I$.
+\end{itemize}\end{proposition}
+
+\begin{minipage}{0.45\linewidth}
+\begin{center}
+\textbf{Fonction convexe}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\clip (-2,-4) rectangle (6,4);
+\draw [ thin, dotted] (-2,-4) grid (6,4);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\draw [very thick, ocre,domain=-3:6,samples=100] plot (\x,{\x*\x/2-2*\x-1});
+\draw [thick, dashed, domain=-3:6] plot (\x,2*\x-9);
+\draw [thick, dashed,domain=-3:6] plot (\x,-3);
+\draw [thick, dashed,domain=-3:6] plot (\x,-2*\x-1);
+
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill \begin{minipage}{0.45\linewidth}
+\begin{center}
+\textbf{Fonction concave}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\clip (-2,-4) rectangle (6,4);
+\draw [thin, dotted] (-2,-4) grid (6,4);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\draw [very thick, ocre,domain=-3:6,samples=100] plot (\x,{-(\x*\x/2-2*\x-1)});
+\draw [thick, dashed,domain=-3:6] plot (\x,-2*\x+9);
+\draw [thick, dashed,domain=-3:6] plot (\x,3);
+\draw [thick, dashed,domain=-3:6] plot (\x,2*\x+1);
+
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\begin{example} Montrons que la fonction $x\mapsto x^2$ est convexe sur $\mathbb{R}$. Notons $\mathcal{C}_f$ la courbe de $f$ dans un repère $\Oij$. Soit $a$ un réel.
+\begin{itemize}
+\item $f$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $f'(x)=\qquad$.
+\item La tangente à $\mathcal{C}_f$ a pour équation 
+\newpage
+\item Pour tout réel $x$, 
+\[f(x)-(2ax-a^2)=\]
+Ainsi, $\mathcal{C}_f$ est toujours au-dessus de sa tangente à l'abscisse $a$, et ce, peu importe le réel $a$ choisi. $f$ est donc convexe sur $\mathbb{R}$.
+\end{itemize}\end{example}
+
+
+
+
+\begin{proposition}Soit $f$ une fonction dérivable sur un intervalle $I$.
+\begin{itemize}
+\item $f$ est convexe sur $I$ si et seulement si $f'$ est croissante sur $I$.
+\item $f$ est concave sur $I$ si et seulement si $f'$ est décroissante sur $I$.
+\end{itemize}\end{proposition}
+
+De cette propriété vient naturellement la suivante...
+
+\begin{proposition}Soit $f$ une fonction deux fois dérivable sur un intervalle $I$.
+\begin{itemize}
+\item $f$ est convexe sur $I$ si et seulement si pour tout $x\in I$, $f''(x) \geqslant 0$.
+\item $f$ est concave sur $I$ si et seulement si pour tout $x\in I$, $f''(x) \leqslant 0$. 
+\end{itemize}
+\end{proposition}
+
+L'étude de la convexité d'une fonction revient à l'étude de signe de sa dérivée seconde (si celle-ci existe, bien entendu).
+
+\begin{demonstration}\textbf{Si $f''\geqslant 0$, alors $f$ est convexe} : Soit $f$ une fonction deux fois dérivable sur $I$ telle que pour tout $x\in I$, $f''(x) \geqslant 0$.
+
+\vskip200pt
+\end{demonstration}
+\newpage
+\begin{example} Pour tout entier naturel pair $n\geqslant 2$, la fonction $x \mapsto x^n$ est convexe sur $\mathbb{R}$. \\ En effet, la dérivée seconde de cette fonction est la fonction $x\mapsto n(n-1)x^{n-2}$. \\Or, $n$ étant pair, $n-2$ l'est aussi, et pour tout réel $x$, on a donc $x^{n-2}\geqslant 0$.\end{example}
+
+\begin{example}La fonction $f:x\mapsto x^3$ est concave sur $]-\infty ; 0]$ et convexe sur $[0;+\infty[$.
+
+En effet, $f$ est deux fois dérivable sur $\mathbb{R}$ et pour tout réel $x$, $f''(x)=6x$, qui est positif si et seulement si $x$ l'est aussi.\end{example}
+
+\subsection{Point d'inflexion}
+
+\begin{definition}Soit $f$ une fonction dérivable sur un intervalle $I$.
+
+Un \textit{point d'inflexion} est un point où la convexité de la fonction $f$ change. La tangente à la courbe de $f$ en un point d'inflexion traverse la courbe de $f$.\end{definition}
+
+\begin{proposition}Soit $f$ une fonction deux fois dérivable sur un intervalle $I$. 
+\begin{itemize}
+\item Si $f$ présente un point d'inflexion à l'abscisse $a$, alors $f''(a)=0$.
+\item Réciproquement, si $f''(a)=0$ et $f''$ \textbf{change de signe} en $a$, alors $f$ présente un point d'inflexion en $a$.
+\end{itemize}\end{proposition}
+
+Cela rappelle naturellement le cas des extremum locaux. Si $f$ admet un extremum local en $a$, alors $f'(a)=0$. Cependant, si $f'(a)=0$, $f$ admet un extremum local en $a$ seulement si $f'$ change de signe en $a$.
+
+\begin{example}Pour tout réel $x$, on pose $f(x)=\dfrac{x^3}{2}-x+1$. 
+
+\begin{tikzpicture}[scale=0.7]
+\clip (-2,-2) rectangle (2,4);
+\draw [thin, dotted] (-2,-4) grid (6,6);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,6);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\draw [very thick, ocre,domain=-3:6,samples=100] plot (\x,{\x*\x*\x/2-\x+1});
+
+\end{tikzpicture}
+
+
+\end{example}
+
+\textbf{L'annulation de la dérivée seconde n'est pas une condition suffisante de présence d'un point d'inflexion !}
+
+
+\begin{example}Pour tout réel $x$, on pose $g(x)=\dfrac{1}{12}x^4-\dfrac{2}{3}x^3+2x^2$. 
+
+\begin{tikzpicture}[scale=0.5]
+\clip (-2,-1) rectangle (3,5);
+\draw [thin, dotted] (-2,-4) grid (6,6);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,6);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\draw [very thick, ocre,domain=-3:6,samples=100] plot (\x,{\x^4/12-2*\x^3/3+2*\x*\x});
+
+\end{tikzpicture}
+
+
+\end{example}
+
+\newpage
+\section{Inégalités de convexité}
+
+\subsection{Inégalités de milieux}
+
+
+\begin{proposition}Soit $f$ une fonction convexe sur un intervalle $I$. 
+
+Pour tous réels $a$ et $b$ de $I$, $ f\left( \dfrac{a+b}{2} \right) \leqslant \dfrac{f(a)+f(b)}{2}$.
+\end{proposition}
+
+\begin{demonstration}On considère les points $A(a,f(a))$ et $B(b,f(b))$. 
+
+
+\begin{tikzpicture}[scale=0.5]
+\clip (-6,-2) rectangle (3,8);
+\draw [thin, dotted] (-6,-4) grid (6,9);
+\draw [thick] (-6,0)--(7,0);
+\draw [very thick, ocre,domain=-6:6,samples=100] plot (\x,{(\x+5)*(\x+5)/8+1});
+\draw [thick] (-5,-0.1) -- (-5,0.1);
+\draw (-5,0) node[below] {$a$};
+\draw [thick] (2,-0.1) -- (2,0.1);
+\draw (2,0) node[below] {$b$};
+
+
+
+\end{tikzpicture}
+
+
+\end{demonstration}
+
+\begin{example}La fonction exponentielle est convexe sur $\mathbb{R}$. 
+
+Pour tous réels $a$ et $b$,\end{example}
+
+\begin{proposition}Soit $f$ une fonction concave sur un intervalle $I$. 
+
+Pour tous réels $a$ et $b$ de $I$, $ f\left( \dfrac{a+b}{2} \right) \geqslant \dfrac{f(a)+f(b)}{2}$.
+\end{proposition}
+
+\begin{example}La fonction $x\mapsto \sqrt{x}$ est concave sur $\mathbb{R}_+$. 
+
+Ainsi, pour tous réels $a$ et $b$ positifs,\end{example}
+
+\subsection{Inégalités avec les tangentes}
+
+La convexité des fonctions dérivables permet d'établir des inégalités en utilisant les équations des tangentes.
+
+\begin{example}Montrons que pour tout réel $x$, $\e^x\geqslant x+1$.
+
+
+\begin{tikzpicture}[scale=0.5]
+\clip (-4,-1) rectangle (2,6);
+\draw [thin, dotted] (-4,-4) grid (6,6);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,6);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\draw [very thick, ocre,domain=-4:6,samples=100] plot (\x,{exp(\x)});
+\draw [very thick, blue,domain=-3:6,samples=100] plot (\x,1+\x);
+\end{tikzpicture}
+
+
+
+\end{example}
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,411 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+
+\chapter{Cours : Orthogonalité dans l'espace}
+
+
+\section{Produit scalaire de deux vecteurs}
+
+
+\subsection{Définition du produit scalaire}
+
+
+\begin{definition}Soient $\vec u$ et $\vec v$ deux vecteurs de l'espace. On considère des points $A$, $B$ et $C$ tels que $\vec u = \overrightarrow{AB}$ et $\vec v= \overrightarrow{AC}$. L'angle non orienté entre les vecteurs $\vec u$ et $\vec v$, noté $(\vec u;\vec v)$ est  l'angle $\widehat{BAC}$, vu dans le plan $(ABC)$.\end{definition}
+
+\begin{definition}Le produit scalaire de $\vec u$ et $\vec v$ est le \textbf{réel} notée $\vec u \cdot \vec v$ et qui vaut
+\begin{itemize}
+\item 0 si $\vec u$ ou $\vec v$ vaut $\overrightarrow{0}$ ;
+\item $\lvert\lvert\vec u\rvert\rvert \times \lvert\lvert\vec v\rvert\rvert \times \cos (\vec u ; \vec v)$ sinon.
+\end{itemize}\end{definition}
+
+\textbf{Rappel de certaines valeurs remarquables}
+
+\begin{center}
+\renewcommand{\arraystretch}{2.5}
+\noindent \begin{tabularx}{0.9\linewidth}{|X|XXXXXX|}
+\hline
+Degré & 0 & 30 & 45 & 60 & 90 & 180 \\
+\hline
+Radians &  &  &  &  &  &  \\
+\hline
+Cosinus &  &  &  &  &  & \\
+\hline
+Sinus &  &  &  &  & & \\
+\hline
+\end{tabularx}
+\end{center}
+
+
+
+
+\begin{example} Dans un cube $ABCDEFGH$ de côté 1, calculer le produit scalaire $\overrightarrow{AD} \cdot \overrightarrow{BG}$.
+
+
+\includegraphics[scale=0.7]{cube4}
+
+
+\end{example}
+
+\begin{definition}On dit que deux vecteurs $\vec u$ et $\vec v$ sont orthogonaux si $\vec u \cdot \vec v=0$.
+\end{definition}
+
+Le vecteur $\vec 0$ est en particulier orthogonal à tous les autres vecteurs.
+
+\newpage
+\subsection{Propriétés du produit scalaire}
+
+\begin{proposition}Soit $\vec u$, $\vec v$ et $\vec w$ trois vecteurs de l'espace, $k$ et $k'$ deux réels.
+\begin{itemize}
+\item $\vec u \cdot \vec u = \lvert\lvert \vec u\rvert\rvert^2$. En particulier, $\lvert\lvert\vec u\rvert\rvert=\sqrt{\vec u \cdot \vec u}$.
+\item $\vec u \cdot \vec v = \vec v \cdot \vec u$, le produit scalaire est \textbf{symétrique}.
+\item $\vec u \cdot ( k \vec v + k' \vec w)= k (\vec u \cdot \vec v) + k' (\vec u \cdot \vec w)$ et $( k \vec v + k' \vec w)\cdot \vec u= k (\vec v \cdot \vec u) + k' (\vec w \cdot \vec u)$. \\Le produit scalaire est \textbf{bilinéaire}.
+\end{itemize}\end{proposition}
+
+\begin{example} Soit $\vec u$, $\vec v$ et $\vec w$ trois vecteurs tels que $\vec u \cdot \vec v = 3$, $\vec v \cdot \vec w=5$, $\vec u \cdot \vec w = -1$ et $\lvert\lvert\vec u\rvert\rvert=4$. On a
+\[ (\vec u + 2\vec v) \cdot (-3\vec u + 4 \vec w)=\]
+On remplace alors les valeurs par celle de l'énoncé en rappelant que $\vec u \cdot \vec u = \lvert\lvert\vec u\rvert\rvert^2$.
+\[ (\vec u + 2\vec v) \cdot (-3\vec u + 4 \vec w)=\]\vspace{-0.5cm}\end{example}
+
+\subsection{Formules de polarisation}
+
+\begin{proposition}Soit $\vec u$ et $\vec v$ deux vecteurs de l'espace.
+\begin{itemize}
+\item $(\vec{u}+\vec{v})^2=\lvert\lvert\vec{u}\rvert\rvert^2+2\vec{u}\cdot\vec{v}+\lvert\lvert\vec{v}\rvert\rvert^2$ ;
+\item $(\vec{u}-\vec{v})^2=\lvert\lvert\vec{u}\rvert\rvert^2-2\vec{u}\cdot\vec{v}+\lvert\lvert\vec{v}\rvert\rvert^2$ ;
+\item $(\vec{u}+\vec{v})\cdot (\vec{u}-\vec{v})=\lvert\lvert\vec{u}\rvert\rvert^2-\lvert\lvert\vec{v}\rvert\rvert^2$.
+\end{itemize}\end{proposition}
+
+\begin{demonstration} On utilise la bilinéarité du produit scalaire. On a\[(\vec{u}+\vec{v})^2 =  (\vec{u}+\vec{v}) \cdot (\vec{u}+\vec{v})= \vec{u}\cdot\vec{u}+\vec{u}\cdot \vec{v}+\vec{v}\cdot\vec{u}+\vec{v}\cdot \vec{v}=\lvert\lvert\vec{u}\rvert\rvert^2+2\vec{u}\cdot\vec{v}+\lvert\lvert\vec{v}\rvert\rvert^2.\]
+\[(\vec{u}-\vec{v})^2 =  (\vec{u}-\vec{v}) \cdot (\vec{u}-\vec{v})= \vec{u}\cdot\vec{u}-\vec{u}\cdot \vec{v}-\vec{v}\cdot\vec{u}+\vec{v}\cdot \vec{v}=\lvert\lvert\vec{u}\rvert\rvert^2-2\vec{u}\cdot\vec{v}+\lvert\lvert\vec{v}\rvert\rvert^2.\]
+\[(\vec{u}+\vec{v})\cdot (\vec{u}-\vec{v})= \vec{u}\cdot\vec{u}-\vec{u}\cdot \vec{v}+\vec{v}\cdot\vec{u}-\vec{v}\cdot \vec{v}=\lvert\lvert\vec{u}\rvert\rvert^2-\lvert\lvert\vec{v}\rvert\rvert^2.\]
+\end{demonstration}
+
+\begin{proposition}Soit $\vec{u}$ et $\vec{v}$ deux vecteurs de l'espace.
+\begin{itemize}
+\item $\vec{u} \cdot \vec{v}= \dfrac{1}{2}(\lvert\lvert\vec{u}+\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}\rvert\rvert^2-\lvert\lvert\vec{v}\rvert\rvert^2)$ ;
+\item $\vec{u} \cdot \vec{v}= -\dfrac{1}{2}(\lvert\lvert\vec{u}-\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}\rvert\rvert^2-\lvert\lvert\vec{v}\rvert\rvert^2)$ ;
+\item $\vec{u} \cdot \vec{v} = \dfrac{1}{4}( \lvert\lvert\vec{u}+\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}-\vec{v}\rvert\rvert^2 )$.
+\end{itemize}\end{proposition}
+
+\begin{demonstration} Soit $\vec{u}$ et $\vec{v}$ deux vecteurs du plan. D'après la propriété précédente, on a 
+\[\lvert\lvert\vec{u}+\vec{v}\rvert\rvert^2=\lvert\lvert\vec{u}\rvert\rvert^2+2\vec{u}\cdot\vec{v}+\lvert\lvert\vec{v}\rvert\rvert^2\quad\text{et}\quad \lvert\lvert\vec{u}-\vec{v}\rvert\rvert^2=\lvert\lvert\vec{u}\rvert\rvert^2-2\vec{u}\cdot\vec{v}+\lvert\lvert\vec{v}\rvert\rvert^2.\]
+En isolant $\vec{u}\cdot \vec{v}$ dans ces deux expressions, on retrouve les deux premiers points. De plus, en soustrayant ces deux égalités, on trouve que
+\[\lvert\lvert\vec{u}+\vec{v}\rvert\rvert^2-\lvert\lvert\vec{u}-\vec{v}\rvert\rvert^2=4\vec{u}\cdot\vec{v}.\]
+Il suffit de diviser par 4 pour retrouver la dernière égalité recherchée.\end{demonstration}
+
+\begin{example}Soit $A$, $B$ et $C$ trois points de l'espace tels que $AB=5$, $BC=7$ et $AC=8$. On a
+\[\overrightarrow{AB}\cdot \overrightarrow{AC}=\]
+Or, $\overrightarrow{AB}-\overrightarrow{AC}=\overrightarrow{AB}+\overrightarrow{CA}=\overrightarrow{CB}$, d'où
+\[\overrightarrow{AB}\cdot \overrightarrow{AC}=\]\vspace{-0.5cm}\end{example}
+
+
+\section{Base orthonormée}
+
+\begin{definition}Soit $\Oijk$ un repère de l'espace.
+\begin{itemize}
+\item On dit que la base $(\vec{\imath}, \vec{\CMjmath}, \vec k)$ est orthonormée si
+\begin{itemize}
+\item $\vec{\imath} \cdot \vec{\CMjmath} = \vec{\imath} \cdot \vec k = \vec{\CMjmath} \cdot \vec k = 0$ ;
+\item $\lvert\lvert\vec{\imath}\rvert\rvert=\lvert\lvert\vec{\CMjmath}\rvert\rvert=\lvert\lvert\vec k\rvert\rvert = 1$.
+\end{itemize}
+\item On dit alors que le repère $\Oijk$ est un repère orthonormé.
+\end{itemize}\end{definition}
+
+Une famille orthonormée de trois vecteurs forme forcément une base de l'espace.
+
+\begin{example} Si on considère un cube $ABCDEFGH$ de côté 1, le repère $(A;\overrightarrow{AB},\overrightarrow{AD}, \overrightarrow{AE})$ est un repère orthonormé de l'espace.\end{example}
+
+\begin{proposition}On se place dans un repère orthonormé $\Oijk$. 
+
+On considère deux vecteurs \renewcommand{\arraystretch}{1}\coorde{u}{x}{y}{z} et \renewcommand{\arraystretch}{1}\coorde{v}{x'}{y'}{z'}. Alors, $\vec u \cdot \vec v =xx'+yy'+zz'$.\end{proposition}
+
+\begin{demonstration} Il suffit de revenir à la définition de coordonnées. On a
+\[ \vec u \cdot \vec v = (x\vec{\imath} + y \vec{\CMjmath} + z \vec k) \cdot (x' \vec{\imath} + y' \vec{\CMjmath} + z' \vec k).\]
+On développe alors
+\[ \vec u \cdot \vec v = xx' \vec{\imath} \cdot \vec{\imath} +  xy' \vec{\imath} \cdot \vec{\CMjmath} +  xz' \vec{\imath} \cdot \vec k +  yx' \vec{\CMjmath} \cdot \vec{\imath} +  yy' \vec{\CMjmath} \cdot \vec{\CMjmath} +  yz' \vec{\CMjmath} \cdot \vec k +  zx' \vec k \cdot \vec{\imath} +  zy' \vec k \cdot \vec{\CMjmath} +  zz' \vec k \cdot \vec k .\]
+Or, la base $(\vec{\imath}, \vec{\CMjmath}, \vec k)$ est orthonormé, les seuls produits scalaires non nuls sont $\vec{\imath} \cdot \vec{\imath}$, $\vec{\CMjmath} \cdot \vec{\CMjmath}$, et $\vec k \cdot \vec k$ qui valent 1. Ainsi, 
+\[ \vec u \cdot \vec v =xx'+yy'+zz'.\]\vspace{-0.5cm}\end{demonstration}
+
+\begin{example} Dans un repère orthonormé $\Oijk$, on considère les vecteurs \renewcommand{\arraystretch}{1}\coorde{u}{3}{-1}{2} et \renewcommand{\arraystretch}{1}\coorde{v}{5}{3}{-6}.
+\[ \vec u \cdot \vec v = \]
+Les vecteurs $\vec u$ et $\vec v$ sont orthogonaux.\end{example}
+
+\begin{proposition} On se place dans un repère orthonormé $\Oijk$. Soit \renewcommand{\arraystretch}{1}\coorde{u}{x}{y}{z} un vecteur de l'espace. 
+
+Alors $ \lvert\lvert\vec u\rvert\rvert = \sqrt{ \vec u \cdot \vec u} =  \sqrt{x^2+y^2+z^2}$.
+
+En particulier, si $A(x_A,y_A,z_A)$ et $B(x_B, y_B, z_B)$ sont deux points de l'espace, alors
+\[ AB = \sqrt{(x_B-x_A)^2+(y_B-y_A)^2+(z_B-z_A)^2} .\]\end{proposition}
+
+\begin{example} On se place dans un repère orthonormé $\Oijk$. Soit $A(1;2;5)$ et $B(3;3;3)$. On a alors
+\[ AB = \]\end{example}
+
+
+
+\section{Orthogonalité}
+
+\subsection{Droites orthogonales}
+
+\begin{definition}Soit $(d)$ et $(d')$ deux droites de l'espace. On dit que $(d)$ et $(d')$ sont orthogonales si les parallèles à ces deux droites passant par un même point sont perpendiculaires.\end{definition}
+
+\begin{example} On considère un cube $ABCDEFGH$.
+
+\begin{center}
+\includegraphics[scale=1]{cube}
+\end{center}
+
+Les droites $(AB)$ et $(CG)$ sont orthogonales. En effet, la parallèle à $(CG)$ passant par $B$ est la droite $(BF)$ qui est perpendiculaire à la droite $(AB)$.\end{example}
+\newpage
+\begin{proposition}Deux droites $(d)$ et $(d')$, dirigées respectivement par les vecteurs $\vec u$ et $\vec v$, sont orthogonales si et seulement si $\vec u \cdot \vec v = 0$.\end{proposition}
+
+\begin{example}On se place dans un repère orthonormé $(O,\vec{\imath}, \vec{\CMjmath}, \vec k)$. On considère les droites $(d_1)$ et $(d_2)$ définies par les représentations paramétriques suivantes.
+
+\[ (d_1)\, ; \, \left\{ \renewcommand{\arraystretch}{1}\begin{array}{l}x=1-2t\\y=3+t\\z=2-t\end{array}\right. \quad \text{et} \quad (d_2)\, ; \, \left\{ \renewcommand{\arraystretch}{1}\begin{array}{l}x=5-3t\\y=3-2t\\z=2+4t\end{array}\right.\]
+
+La droite $(d_1)$ est dirigée par le vecteur $\qquad\qquad$ et la droite $(d_2)$  par le vecteur 
+\vskip20pt
+
+Le repère étant orthonormé, on peut calculer le produit scalaire de ces deux vecteurs comme suit :
+\[ \vec u \cdot \vec v \]
+Les vecteurs $\vec u$ et $\vec v$ sont orthogonaux. Les droites $(d_1)$ et $(d_2)$ sont donc orthogonales.\end{example}
+
+\subsection{Droite orthogonale à un plan}
+
+\begin{definition}Soit $(d)$ une droite et $\mathcal{P}$ un plan de l'espace. On dit que $(d)$ est orthogonale au plan $\mathcal{P}$ si elle est orthogonale à toute droite contenue dans le plan $\mathcal{P}$.\end{definition}
+
+\begin{proposition}[Théorème de la porte]Soit $(d)$ une droite de vecteur directeur $\vec u$ et $\mathcal{P}$ un plan de l'espace dirigé par les vecteurs $\vec v_1$ et $\vec v_2$. La droite $(d)$ est orthogonale au plan $\mathcal{P}$ si et seulement si $\vec u \cdot \vec v_1 = \vec u \cdot \vec v_2 = 0$.\end{proposition}
+
+Il suffit donc de montrer qu'une droite est orthogonale à deux droites sécantes d'un plan pour montrer qu'elle est en fait orthogonale à toute droites de ce plan.
+
+
+\begin{example} On se place dans un repère orthonormé $\Oijk$. 
+
+On considère les vecteurs \renewcommand{\arraystretch}{1}\coorde{v_1}{1}{2}{3} et \renewcommand{\arraystretch}{1}\coorde{v_2}{1}{0}{1} ainsi que deux points $A(2;5;2)$ et $B(5;8;-1)$.
+
+On note $\mathcal{P}$ le plan passant par le point $O$ et dirigé par les vecteurs $\vec v_1$ et $\vec v_2$ (ces vecteurs n'étant pas colinéaires, on définit bien ainsi un plan). La droite $(AB)$ est orthogonale au plan $\mathcal{P}$. En effet,
+
+\vskip100pt
+
+\end{example}
+
+\newpage
+
+\subsection{Vecteur normal à un plan}
+
+\begin{definition}Soit $\mathcal{P}$ un plan et $\vec n$ un vecteur non nul.
+On dit que $\vec n$ est un vecteur normal au plan $\mathcal{P}$ s'il est orthogonal à tout vecteur directeur du plan $\mathcal{P}$.\end{definition}
+
+De la même manière que ce que l'on faisait avec les droites orthogonales à un plan, pour montrer qu'un vecteur est normal à un plan, il suffit de montrer qu'il est orthogonal à deux vecteurs non colinéaires de ce plan.
+
+\begin{example}On se place dans un repère orthonormé $\Oijk$. On considère le plan $\mathcal{P}$ passant par $O$ et dirigé par les vecteurs \renewcommand{\arraystretch}{1}\coorde{v_1}{3}{2}{6} et \renewcommand{\arraystretch}{1}\coorde{v_2}{1}{-3}{2}. Le vecteur \renewcommand{\arraystretch}{1}\coorde{u}{2}{0}{-1} est  normal au plan $\mathcal{P}$. En effet,
+\begin{itemize}
+\item Les vecteurs $\vec{v_1}$ et $\vec{v}_2$ ne sont pas colinéaires. Ils définissent donc bien un plan.
+\item Puisque l'on est dans un repère orthonormé, il est possible de calculer le produit scalaire à l'aide des coordonnées,
+\item $ \vec u \cdot \vec v_1 = $
+\item $\vec u \cdot \vec v_2 = $
+\end{itemize}
+Ainsi, $\vec u$ est orthogonal à $\vec v_1$ et $\vec v_2$. $\vec u$ est donc un vecteur normal au plan $\mathcal{P}$.\end{example}
+
+\begin{proposition}Deux plans sont parallèles si et seulement si un vecteur normal au premier est normal au second.\end{proposition}
+
+\begin{example}On se place dans un repère orthonormé $\Oijk$. 
+
+On considère le plan $\mathcal{P}_2$ passant par $A(2;5;9)$, dirigé par \renewcommand{\arraystretch}{1}\coorde{w_1}{5}{4}{10} et \renewcommand{\arraystretch}{1}\coorde{w_2}{-2}{7}{-4}. 
+
+Le vecteur \renewcommand{\arraystretch}{1}\coorde{u}{2}{0}{-1}, qui était normal au plan $\mathcal{P}$ de l'exemple précédent, est aussi normal au plan $\mathcal{P}_2$.\\ En effet, les vecteurs $\vec{w_1}$ et $\vec{w}_2$ ne sont pas colinéaires et définissent donc bien un plan.
+De plus, puisque l'on est dans un repère orthonormé, il est possible de calculer le produit scalaire à l'aide des coordonnées,
+\begin{itemize}\item $ \vec u \cdot \vec w_1 = 2 \times 5 + 0 \times 4 + (-1) \times 10 = 0$ ;
+\item $\vec u \cdot \vec w_2 = 2 \times (-2) + 0 \times 7 + (-1) \times (-4) = 0$.
+\end{itemize}
+Ainsi, $\vec u$ est orthogonal à $\vec w_1$ et $\vec w_2$. $\vec u$ est donc un vecteur normal au plan $\mathcal{P}_2$. Les plans $\mathcal{P}$ et $\mathcal{P}_2$ admettent un même vecteur normal, ils sont donc parallèles.\end{example}
+
+
+\begin{definition}Deux plans sont perpendiculaires si le premier plan contient une droite orthogonale au second plan.\end{definition}
+
+Le concept de plans perpendiculaires peut être trompeur. Par exemple, deux plans perpendiculaires peuvent contenir des droites parallèles. En revanche, il est possible de caractériser la perpendicularité de deux plans en utilisant leurs vecteurs normaux.
+
+\begin{proposition} Deux plans sont perpendiculaires si un vecteur normal à l'un est orthogonal à un vecteur normal du second.
+\end{proposition}
+
+
+\newpage
+
+\section{Equation cartésienne d'un plan}
+
+Dans toute cette partie et dans la suivante, l'espace est muni d'un repère orthonormé $\Oijk$.
+
+\subsection{Equation cartésienne}
+
+\begin{proposition}Soit $\vec n$ un vecteur de l'espace et $A$ un point de l'espace. L'ensemble des points $M$ tel que $\overrightarrow{AM}\cdot \vec{n}=0$ est le plan passant par $A$ admettant le vecteur $\vec n$ comme vecteur normal.
+
+Réciproquement, soit $\mathcal{P}$ un plan de l'espace, $A$ un point de $\mathcal{P}$ et $\vec n$ un vecteur normal à $\mathcal{P}$. $\mathcal{P}$ est l'ensemble des points $M$ tels que $\overrightarrow{AM} \cdot \vec n=0$.\end{proposition}
+
+Il est donc possible de décrire un plan à l'aide d'un point et d'un vecteur normal.
+
+\begin{proposition}Soit $A (x_A,y_A,z_A)$ un point de l'espace et $\renewcommand{\arraystretch}{1}\coorde{n}{a}{b}{c}$ un vecteur non nul.
+
+On note $\mathcal{P}$ le plan passant par le point $A$ et admettant le vecteur $\vec n$ comme vecteur normal.
+
+Un point $M(x,y,z)$ appartient au plan $\mathcal{P}$ si et seulement si\[ a(x-x_A)+b(y-y_A)+c(z-z_A)=0.\]
+
+Cette équation est appelée équation cartésienne du plan $\mathcal{P}$.
+
+
+Réciproquement, si $a$, $b$, $c$ et $d$ sont quatre réels fixés, avec $(a,b,c)\neq (0,0,0)$, l'ensemble des points $M(x;y;z)$ vérifiant $ax+by+cz+d=0$ est un plan auquel le vecteur \renewcommand{\arraystretch}{1}\coorde{n}{a}{b}{c} est  normal.\end{proposition}
+
+\begin{demonstration} Soit $M(x;y;z)$ un point de l'espace. Le point $M$ appartient au plan $\mathcal{P}$ passant par $A (x_A,y_A,z_A)$ et de vecteur normal \renewcommand{\arraystretch}{1}\coorde{n}{a}{b}{c} si et seulement si $\overrightarrow{AM}\cdot \vec n =0$. Puisque le repère que l'on considère est orthonormé,
+\[\overrightarrow{AM}\cdot \vec n =  \renewcommand{\arraystretch}{1}\coordbe{x-x_A}{y-y_A}{z-z_A} \cdot \renewcommand{\arraystretch}{1}\coordbe{a}{b}{c}= a(x-x_A)+b(y-y_A)+c(z-z_A).\]
+Ainsi, le point $M$ appartient au plan $\mathcal{P}$ si et seulement si $ a(x-x_A)+b(y-y_A)+c(z-z_A)=0$.
+
+Réciproquement, $a$, $b$, $c$ et $d$ quatre réels fixés, avec $(a,b,c)\neq (0,0,0)$. On supposera par exemple que $a\neq 0$. On note alors $\vec n$ le vecteur de coordonnées $\renewcommand{\arraystretch}{1}\coordbe{a}{b}{c}$.
+
+D'une part, l'ensemble $\mathcal{E}$ des points de l'espace vérifiant $ax+by+cz+d=0$ n'est pas vide. En effet, le point $A\left( -\frac{d}{a} ; 0 ; 0\right)$ appartient à cet ensemble. 
+
+Soit $M(x;y;z)$ un point de l'espace et $A \in \mathcal{E}$. On a alors $ax_A+by_A+cz_A=-d$. Ainsi, 
+\[ M\in \mathcal{E} \Leftrightarrow ax+by+cz+d=0 \Leftrightarrow ax+by+cz-ax_a-by_A-cz_A=0 \Leftrightarrow a(x-x_A)+b(y-y_A)+c(z-z_A)=0 \]
+
+C'est-à-dire $M \in \mathcal{E}$ si et seulement si $\overrightarrow{AM} \cdot \vec n = 0$. L'ensemble $\mathcal{E}$ est donc un plan admettant $\vec n$ comme vecteur normal.\end{demonstration}
+
+
+\begin{example}On considère le plan $\mathcal{P}$ d'équation cartésienne $3x+2y-3z+1=0$.\\ Ce plan admet le vecteur $\qquad\qquad$ comme vecteur normal.
+
+\vskip30pt
+Considérons le point $A(1;1;2)$. 
+
+\vskip20pt
+
+En revanche, le point $B(1;5;0)$ n'appartient pas à ce plan :\end{example}
+
+
+\begin{example} Le plan $\mathcal{P}$ passant par $A(1;5;7)$ et admettant le vecteur \renewcommand{\arraystretch}{1}\coorde{n}{4}{-2}{3} admet pour équation cartésienne 
+
+\vskip20pt
+\end{example}
+Il est aussi possible de raisonner comme suit : tout plan admettant le vecteur \renewcommand{\arraystretch}{1}\coorde{n}{4}{-2}{3} comme vecteur normal admet une équation cartésienne de la forme $4x-2y+3z+d=0$ pour un certain réel $d$. Pour que ce plan passe par le point $A$, il faut que les coordonnées de $A$ vérifient cette équation.
+
+Autrement dit, $4 \times 1 -2 \times 5 + 3 \times 7 + d =0$, soit $15+d=0$ et donc $d=-15$.
+
+
+
+
+
+\subsection{Application : intersection d'une droite et d'un plan}
+
+
+
+\begin{example}On considère le plan $\mathcal{P}$ d'équation $2x+5y-3z+1=0$ et la droite $(d)$ de représentation paramétrique  $\left\{ \begin{array}{l}x=2-t \\ y=5+t \\ z = -2-2t \\\end{array}\right., t \in \mathbb{R}$. Soit $M(x;y;z)$ un point de l'espace.
+
+\vskip200pt \end{example}
+\newpage
+
+
+\section{Projeté orthogonal}
+
+\subsection{Projeté orthogonal sur une droite}
+
+\begin{definition}Soit $A$ un point de l'espace et $(d)$ une droite de l'espace, dirigée par un vecteur $\vec u$.
+On appelle projeté orthogonal de $A$ sur $(d)$ le point $H$ de la droite $(d)$ tel que $\overrightarrow{AH} \cdot \vec{u}=0$. En particulier,
+\begin{itemize}
+\item Si $A$ appartient à la droite $(d)$, ce point est son propre projeté,
+\item sinon, la droite $(AH)$ est perpendiculaire à la droite $(d)$.
+\end{itemize}\end{definition}
+
+\begin{center}
+\includegraphics[scale=0.3]{projort}
+\end{center}
+
+$H$ est en fait l'intersection de la droite $(d)$ et du plan $\mathcal{P}$ qui passe par le point $A$ et auquel la droite $(d)$ est normale. Si l'on connaît un point et un vecteur directeur de la droite $(d)$, il est alors possible de déterminer sa représentation paramétrique, déterminer l'équation cartésienne du plan $\mathcal{P}$, puis d'en déterminer le point d'intersection avec la méthode vue précédemment : nous déterminons ainsi le projeté orthogonal de $A$ sur $(d)$.
+
+\begin{example}Soit $(d)$ la droite de représentation paramétrique  $\left\{ \begin{array}{l}x=1-t \\ y=3+t \\ z = 1-2t \\\end{array}\right., t \in \mathbb{R}$ et $A$ le point de coordonnées $(3;3;3)$. On vérifie facilement que le point $A$ n'appartient pas à la droite $(d)$.
+
+Un vecteur directeur de la droite $(d)$ est le vecteur $\vec n\renewcommand{\arraystretch}{1}\begin{pmatrix}-1\\1\\-2\end{pmatrix}$. Notons alors $\mathcal{P}$ le plan passant par $A$ est donc $\vec u$ est un vecteur normal : la droite $(d)$ sera ainsi orthogonale à ce plan $\mathcal{P}$. 
+
+Une équation cartésienne du plan $\mathcal{P}$ est donc 
+
+\vskip30pt
+
+Le projeté orthogonal de $A$ sur $(d)$ est le point d'intersection de $(d)$ et de $\mathcal{P}$.
+
+\vskip100pt \end{example}
+\newpage
+
+\subsection{Projeté orthogonal sur un plan}
+\begin{definition}Soit $A$ un point de l'espace, $\mathcal{P}$ un plan de l'espace et $\vec n$ un vecteur normal de $\mathcal{P}$. Le projeté orthogonal de $A$ sur $\mathcal{P}$ est le point d'intersection $H$ du plan $\mathcal{P}$ et de la droite passant par $A$ et dirigée par le vecteur $\vec n$. En particulier
+\begin{itemize}
+\item Si $A$ appartient au plan $\mathcal{P}$, ce point est son propre projeté
+\item sinon, le vecteur $\overrightarrow{AH}$ est normal au plan $\mathcal{P}$
+\end{itemize}\end{definition}
+
+\begin{center}
+\includegraphics[scale=0.3]{projort2}
+\end{center}
+
+
+\begin{example} On se place dans un repère orthonormé $\Oijk$. On considère le point $A$ de coordonnées $(1;3;6)$, le point $B$ de coordonnées $(1;1;1)$ et le plan $\mathcal{P}$ passant par $B$ et dirigé par \renewcommand{\arraystretch}{1}\coorde{v_1}{1}{0}{0} et \renewcommand{\arraystretch}{1}\coorde{v_2}{1}{10}{-4}. Ces deux vecteurs n'étant pas colinéaires, on définit bien ainsi un plan.
+
+\begin{itemize}
+\item Les coordonnées du vecteur $\overrightarrow{AB}$ sont $\renewcommand{\arraystretch}{1}\coorde{AB}{0}{-2}{-5}$.
+\item Puisque l'on est dans un repère orthonormé, il est possible de calculer le produit scalaire à l'aide des coordonnées,
+\begin{itemize}
+\item $\overrightarrow{AB}\cdot \vec v_1 = 0 \times 1 + (-2) \times 0 + (-5) \times 0 = 0$ ;
+\item $\overrightarrow{AB}\cdot \vec v_1 = 0 \times 2 + (-2) \times 10 + (-5) \times (-4) = 0$ ;
+\end{itemize}
+\item Ainsi, $B$ appartient au plan $\mathcal{P}$ et le vecteur $\overrightarrow{AB}$ est normal au plan $\mathcal{P}$. $B$ est donc le projeté orthogonal de $A$ sur $\mathcal{P}$.
+\end{itemize}\end{example}
+
+Là encore, une méthode similaire à la précédente peut être utilisée pour déterminer par le calcul les coordonnées du projeté orthogonal d'un point sur un plan. Si l'on connaît l'équation cartésienne d'un plan $\mathcal{P}$ ainsi que les coordonnées d'un point $A$ n'appartenant pas à ce plan, il est possible de déterminer les coordonnées du projeté orthogonal de $A$ sur $\mathcal{P}$. 
+
+Pour cela, on identifie un vecteur $\vec n$ normal à $\mathcal{P}$ et on détermine une représentation paramétrique de la droite passant par $A$ et admettant $\vec n$ comme vecteur directeur : cette droite est orthogonale au plan $\mathcal{P}$. Il nous reste alors à déterminer les coordonnées du point d'intersection de cette droite et de ce plan pour obtenir le projeté orthogonal de $A$ sur $\mathcal{P}$.
+
+\newpage
+\subsection{Distance à une droite ou un plan}
+
+\begin{definition}Soit $A$ un point de l'espace et $(d)$ une droite (ou $\mathcal{P}$ un plan). 
+
+On appelle distance de $A$ à $(d)$ (ou à $\mathcal{P}$) la plus petite distance $AM$ pour $M$ un point de la droite $(d)$ (ou du plan $\mathcal{P}$).\end{definition}
+
+\begin{example}Soit $A(2,1,3)$ et $(d)$ la droite de représentation paramétrique $\left\{ \begin{array}{l}x=1-t \\ y=5+t \\ z = -2-2t \\\end{array}\right., t \in \mathbb{R}$. \\Soit $M$ un point de paramètre $t$ de cette droite. On a alors
+\[AM^2=\]
+Développons alors cette expression. On a
+\[AM^2=\]
+Ainsi, $AM=\sqrt{6t^2+30t+42}$. Or, pour tout réel $t$, $6t^2+30t+42>0$. On rappelle que si $u$ est une fonction définie, dérivable et strictement positive sur $\mathbb{R}$, alors la fonction $\sqrt{u}$ est dérivable sur $\mathbb{R}$ et $(\sqrt{u})'=\dfrac{u'}{2\sqrt{u}}$. Ainsi, la fonction $f:x\mapsto \sqrt{6t^2+30t+42}$ est donc définie et dérivable sur $\mathbb{R}$ et, pour tout réel $t$, 
+\[f'(t)= \]
+
+
+\vskip300pt
+
+\end{example}
+
+\newpage
+
+\begin{proposition}Soit $\mathcal{S}$ un plan ou une droite de l'espace.
+
+Soit $A$ un point de l'espace et $H$ le projeté orthogonal de $A$ sur $\mathcal{S}$.
+
+Pour tout point $K$ de l'ensemble $\mathcal{S}$ ,on a $AK \geqslant AH$ : le projeté orthogonal de $A$ sur $\mathcal{S}$ est le point de l'ensemble $\mathcal{S}$ qui est le plus proche du point $A$. La distance du point $A$ à l'ensemble $\mathcal{S}$ est alors égale à la distance $AH$.\end{proposition}
+
+\begin{demonstration} Soit $K$ un point de $\mathcal{S}$. 
+
+\vskip150pt
+
+\end{demonstration}
+
+\begin{example}On considère la droite $(d)$ et le point $A$ de l'exemple précédent. On a vu que la distance de $A$ à $(d)$ valait $\dfrac{3\sqrt{2}}{2}$ et que cette distance était atteinte pour le paramètre $t=-\dfrac{5}{2}$ dans la représentation paramétrique de $(d)$ donnée.
+
+Ainsi, le point le plus proche du point $A$ est le point de coordonnées $(x;y;z)$ avec
+\[\left\{\renewcommand{\arraystretch}{2} \begin{array}{l}x=1-\left(-\dfrac{5}{2}\right)=\dfrac{7}{2} \\ y=5+\left(-\dfrac{5}{2}\right)=\dfrac{5}{2} \\ z = -2-2 \times \left(-\dfrac{5}{2}\right)=3 \\\end{array}\right. .\]
+
+Le point $H\left(\dfrac{7}{2};\dfrac{5}{2};3\right)$ est donc le projeté orthogonal du point $A$ sur la droite $(d)$.\end{example}
+
+
+
+
+
+\end{document}

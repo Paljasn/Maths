@@ -1,0 +1,641 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+
+
+\chapter{Cours : Limites de fonction}
+
+
+Dans tout ce chapitre, $D$ désigne une partie de $\mathbb{R}$ et $f$ est une fonction définie sur $D$.
+
+
+\section{Limite en l'infini}
+
+\subsection{Limite infinie en l'infini}
+
+\begin{definition}On suppose qu'il existe un réel $a$ tel que $[a;+\infty [ \subset D$.
+\begin{itemize}
+\item On dit que $f$ a pour limite $+\infty$ en $+\infty$ si, pour tout réel $A$, il existe un réel $x_0 \in D$ tel que, pour tout $x \in D$,  si $x  \geqslant x_0$, alors $f(x) \geqslant A$. On notera $\displaystyle \lim_{x \to +\infty} f(x)=+\infty$.
+\item On dit que $f$ a pour limite $-\infty$ en $+\infty$ si, pour tout réel $A$, il existe un réel $x_0 \in D$ tel que, pour tout $x \in D$, si $x  \geqslant x_0$, alors $f(x) \leqslant A$. On notera $\displaystyle \lim_{x \to +\infty} f(x)=-\infty$.\end{itemize}\end{definition}
+
+Cette définition est très similaire à celle rencontrée pour les limites de suites : pour n'importe quel réel $A$, aussi grand soit-il, à partir d'une certaine valeur du réel $x$, $f(x)$ est plus grand que ce réel $A$.
+
+\begin{example}  On représente ici la courbe d'une fonction $f$ dans un repère.
+
+\begin{minipage}{0.55\linewidth}
+
+ 
+Pour n'importe quel  réel $A$, aussi grand que l'on veut, on peut trouver un $x_0$ à partir duquel la courbe est toujours au-dessus de la droite d'équation $y=A$. 
+
+On a  $\displaystyle \lim_{x \to +\infty} f(x)=+\infty$ .
+\end{minipage}\hfill\begin{minipage}{0.35\linewidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\clip (-3,-0.5) rectangle (4,4.5);
+\draw [fill=ocre!20] (-2,2) -- (4,2) -- (4,4.5) -- (-2,4.5) -- cycle;
+
+\draw [very thick, ocre, domain = -2:37] plot (\x,2);
+\draw [blue, very thick,domain=-2:4,samples=100] plot (\x,{\x*\x*\x/3-\x*\x-\x/3+3});
+
+\draw  [ocre](-2,2) node[left] {$A$};
+\draw  (3,0) node[below] {$x_0$};
+\draw [thick, dashed] (3,0) -- (3,2);
+\draw (3,2) node {$\times$};
+\draw [thick] (-2,0)--(4,0);
+\draw [thick] (0,-2)--(0,5);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+
+
+\end{tikzpicture}
+\end{center}
+\end{minipage}\end{example}
+
+
+
+
+
+\begin{definition}On suppose qu'il existe un réel $a$ tel que $]-\infty ; a ] \subset D$.
+\begin{itemize}
+\item On dit que $f$ a pour limite $+\infty$ en $-\infty$ si, pour tout réel $A$, il existe un réel $x_0 \in D$ tel que, pour tout $x \in D$, si $x  \leqslant x_0$, alors $f(x) \geqslant A$. On notera $\displaystyle \lim_{x \to -\infty} f(x)=+\infty$.
+\item On dit que $f$ a pour limite $-\infty$ en $-\infty$ si, pour tout réel $A$, il existe un réel $x_0 \in D$ tel que, pour tout $x \in D$, si $x  \leqslant x_0$, alors $f(x) \leqslant A$. On notera $\displaystyle \lim_{x \to -\infty} f(x)=-\infty$.\end{itemize}\end{definition}
+
+\begin{example}
+ On représente ici une fonction $f$ dans un repère.
+ 
+\begin{minipage}{0.55\linewidth}
+ Pour n'importe quel $A$, aussi grand que l'on veut, on peut trouver un $x_0$ en-dessous duquel la courbe est toujours au-dessus de la droite d'équation $y=A$. 
+
+On a  $\displaystyle \lim_{x \to -\infty} f(x)=+\infty$ .
+
+\end{minipage}\hfill\begin{minipage}{0.35\linewidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\clip (-5,-0.5) rectangle (2,4.5);
+\draw [fill=ocre!20] (-4,2) -- (2,2) -- (2,4.5) -- (-4,4.5) -- cycle;
+
+\draw [very thick, ocre, domain = -4:37] plot (\x,2);
+\draw [blue, very thick,domain=-4:2,samples=100] plot (\x,{-\x*\x*\x/3-\x*\x+\x/3+3});
+
+\draw  [ocre](-4,2) node[left] {$A$};
+\draw  (-3,0) node[below] {$x_0$};
+\draw [thick, dashed] (-3,0) -- (-3,2);
+\draw (-3,2) node {$\times$};
+\draw [thick] (-4,0)--(4,0);
+\draw [thick] (0,-2)--(0,5);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+
+
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{example}
+
+
+Il s'agit de la principale différence avec les suites : pour les suites, l'indice $n$ ne pouvait que tendre vers $+\infty$. Dans le cas des fonctions, le réel $x$ peut aller vers $+\infty$ mais aussi $-\infty$ et d'autres valeurs réelles entre les deux, comme nous le verrons plus tard dans ce chapitre...
+
+
+\subsection{Limite finie en l'infini}
+
+\begin{definition}On suppose qu'il existe un réel $a$ tel que $[a;+\infty [ \subset D$. Soit $l\in\mathbb{R}$.
+\begin{itemize}
+\item On dit que $f$ a pour limite $\ell$ en $+\infty$ (ou que $f(x)$ tend vers $\ell$ lorsque $x$ tend vers $+\infty$) si, pour tout $\varepsilon>0$, il existe un réel $x_0$ tel que, si $x \geqslant x_0$, alors $f(x) \in ]\ell-\varepsilon ; \ell+\varepsilon [$.\\ Si une telle limite existe, elle est unique. On note alors $\displaystyle \lim_{x \to +\infty} f(x)=\ell$.
+\item On dit que $f$ a pour limite $\ell$ en $-\infty$ (ou que $f(x)$ tend vers $\ell$ lorsque $x$ tend vers $-\infty$) si, pour tout $\varepsilon>0$, il existe un réel $x_0$ tel que, si $x \leqslant x_0$, alors $f(x) \in ]\ell-\varepsilon ; \ell+\varepsilon [$.\\ Si une telle limite existe, elle est unique. On note alors $\displaystyle \lim_{x \to -\infty} f(x)=\ell$.
+\end{itemize}\end{definition}
+
+\begin{example} Une fonction $f$ est représentée ci-dessous. Pour n'importe quel $\varepsilon>0$, on peut trouver un réel $x_0$ à partir duquel on a toujours $f(x) \in ]2-\varepsilon ; 2+\varepsilon [$. On a  $\displaystyle \lim_{x \to +\infty} f(x)=2$.
+
+\begin{center}
+
+\begin{tikzpicture}[scale=0.5]
+\clip (-3,-1) rectangle (25,4);
+\draw [thick] (0,0)--(22,0);
+\draw [thick] (0,-2)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+
+\draw [fill=ocre!20] (0,1.6) -- (22,1.6) -- (22,2.4) -- (0,2.4) -- cycle;
+\draw [very thick, ocre, domain = 0:22] plot (\x,1.6);
+\draw [very thick, ocre, domain = 0:22] plot (\x,2.4);
+\draw [very thick, dashed, domain = 0:22] plot (\x,2);
+\draw [very thick, blue, domain = 0.1:22, samples =200] plot (\x,{2+3*cos(2*deg(\x))/\x}) ;
+\draw [ thin, dotted] (0,-2) grid (22,28);
+\draw  [thick] (6.5,2.4) node {$\times$};
+\draw [thick, dashed] (6.5, 2.4) -- (6.5,0);
+\draw  [thick] (6.5,0) node[below] {$x_0$};
+
+\draw  [ocre](0,1.6) node[left] {$l-\varepsilon$};
+\draw  [ocre](0,2.4) node[ left] {$l+\varepsilon$};
+\draw  (22,2) node[right] {$l$};
+
+\end{tikzpicture}
+\end{center}\end{example}
+
+
+\begin{definition} On se place dans un repère $(0;\vec i, \vec j)$ orthonormé.
+\begin{itemize}
+\item Si $\displaystyle \lim_{x \to +\infty} f(x)=\ell$, on dit que la droite d'équation $y=l$ est asymptote à la courbe de $f$ en $+\infty$
+\item Si $\displaystyle \lim_{x \to -\infty} f(x)=\ell$, on dit que la droite d'équation $y=l$ est asymptote à la courbe de $f$ en $-\infty$\end{itemize} \end{definition}
+
+\begin{example}Dans le cas précédent, la droite d'équation $y=2$ est asymptote à la courbe de $f$ en $+\infty$.\end{example}
+
+
+Comme dans le cas des suites, il est parfois utile de préciser le comportement d'une fonction qui admet une limite finie en $+\infty$.
+
+\begin{definition}On suppose qu'il existe un réel $a$ tel que $[a;+\infty [ \subset D$. Soit $l\in\mathbb{R}$.
+\begin{itemize}
+\item On dit que $f(x)$ tend vers $\ell$ par valeurs supérieures lorsque $x$ tend vers $+\infty$ si, pour tout $\varepsilon>0$, il existe un réel $x_0$ tel que, si $x \geqslant x_0$, alors $f(x) \in ]\ell ; \ell+\varepsilon [$. Autrement dit, la limite de $f$ en $+\infty$ vaut $\ell$ et $f(x)$ reste supérieur à $\ell$ à partir d'un certain réel. On note alors $\displaystyle \lim_{x \to +\infty} f(x)=\ell^+$.
+\item On dit que $f(x)$ tend vers $\ell$ par valeurs inférieures lorsque $x$ tend vers $+\infty$ si, pour tout $\varepsilon>0$, il existe un réel $x_0$ tel que, si $x \geqslant x_0$, alors $f(x) \in ]\ell-\varepsilon ; \ell [$. Autrement dit, la limite de $f$ en $+\infty$ vaut $\ell$ et $f(x)$ reste inférieur à $\ell$ à partir d'un certain réel. On note alors $\displaystyle \lim_{x \to +\infty} f(x)=\ell^-$.
+\end{itemize}\end{definition}
+
+Attention, ce n'est pas parce que $\displaystyle \lim_{x \to +\infty} f(x)=\ell$ qu'on a forcément $\displaystyle \lim_{x \to +\infty} f(x)=\ell^+$ ou $\displaystyle \lim_{x \to +\infty} f(x)=\ell^-$. Les valeurs de $f(x)$ peuvent osciller autour de $\ell$, lui étant parfois supérieures, parfois inférieures.
+
+Les mêmes définitions s'étendent naturellement pour les limites en $-\infty$.
+
+\begin{example}On a représenté la courbe d'une fonction $f$ dans un repère.
+
+\begin{minipage}{0.65\linewidth}
+Il semblerait que $\displaystyle\lim_{x\to +\infty}f(x)=\qquad$ et $\displaystyle\lim_{x\to -\infty}f(x)=\qquad$
+
+La droite d'équation $y=2$ est asymptote à la courbe de $f$ en $+\infty$.
+
+La droite d'équation $y=-1$ est asymptote à la courbe de $f$ en $-\infty$.
+\end{minipage}\hfill \begin{minipage}{0.3\linewidth}
+\begin{flushright}
+
+\begin{tikzpicture}[scale=0.5]
+\clip (-5,-2) rectangle (5,3);
+\draw [thick] (-10,0)--(22,0);
+\draw [thick] (0,-2)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+
+\draw [very thick, ocre, domain = -5:5, samples =200] plot (\x,{3/(1+exp(-\x))-1}) ;
+\draw [thin, dotted] (-10,-2) grid (22,28);
+
+\end{tikzpicture}
+\end{flushright}\end{minipage}\end{example}
+
+
+\subsection{Limites usuelles}
+
+\begin{proposition}Soit $n$ un entier naturel non nul.
+\[\displaystyle \lim_{x \to +\infty} x^n = \qquad \qquad \displaystyle \lim_{x \to +\infty} \dfrac{1}{x^n} = \]
+\textbf{Si $n$ est pair}, \[\displaystyle \lim_{x \to -\infty} x^n =  \qquad \qquad \displaystyle \lim_{x \to -\infty} \dfrac{1}{x^n}=\]
+\textbf{Si $n$ est impair}, 
+\[\displaystyle \lim_{x \to -\infty} x^n =  \qquad \qquad \displaystyle \lim_{x \to -\infty} \dfrac{1}{x^n}=\]
+Enfin, 
+\[\displaystyle \lim_{x \to +\infty} \sqrt{x} =  \qquad \qquad \displaystyle \lim_{x \to +\infty} \e^x =  \qquad \qquad \displaystyle \lim_{x \to -\infty} \e^x = \]
+\end{proposition}
+
+Il est important de visualiser les courbes représentatives de ces fonctions. Celles-ci vous permettront de bien garder ces limites usuelles en tête.
+
+\begin{minipage}{0.2\linewidth}
+\begin{center}
+\textbf{$x \mapsto x^n$, $n$ pair}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+\clip (-4,-1) rectangle (4,4);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.2\linewidth}
+
+\begin{center}
+\textbf{$x \mapsto \frac{1}{x^n}$, $n$ pair}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+\clip (-4,-1) rectangle (4,4);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}{0.2\linewidth}
+\begin{center}
+\textbf{$x \mapsto \e^x$}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+\clip (-4,-1) rectangle (4,4);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\end{tikzpicture}
+\end{center}\end{minipage}
+
+
+\vskip10pt
+
+\begin{minipage}{0.2\linewidth}
+\begin{center}
+\textbf{$x \mapsto x^n$, $n$ impair}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+\clip (-4,-3) rectangle (4,3);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.2\linewidth}
+\begin{center}
+\textbf{$x \mapsto \frac{1}{x^n}$, $n$ impair}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+\clip (-4,-3) rectangle (4,3);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.2\linewidth}
+\begin{center}
+\textbf{$x \mapsto \sqrt{x}$}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+\clip (-4,-3) rectangle (4,3);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+
+
+
+\section{Limite en un point}
+
+\subsection{Limite finie en un point}
+
+\begin{definition}Soit $a \in D$ et $l$ un réel.
+
+On dit que $f(x)$ tend vers $\ell$ lorsque $x$ tend vers $a$  si, pour tout $\varepsilon>0$, il existe un réel $\delta >0$ tel que, si $x\in ]a - \delta ; a+\delta[$, alors $f(x) \in ]\ell-\varepsilon : \ell+ \varepsilon [$.
+
+Autrement dit, tout intervalle ouvert centré en $\ell$ contient toutes les valeurs de $x$ lorsque $x$ est suffisamment proche de $a$.
+
+Si elle existe, une telle limite est unique. On note alors $\displaystyle \lim_{x \to a} f(x) =\ell $\end{definition}
+
+Certaines fonctions admettent une limite finie différente si l'on se rapproche de $a$ par valeurs supérieurs ou par valeurs inférieures. Nous aurons l'occasion d'en discuter plus amplement dans le chapitre suivant.
+
+\subsection{Limite infinie en un point}
+
+\begin{definition}Soit $a \in D$ ou sur un bord de $D$.
+\begin{itemize}
+\item On dit que $f(x)$ tend vers $+\infty$ lorsque $x$ tend vers $a$  si, pour tout réel $A$, il existe un réel $\delta >0$ tel que, si $x\in ]a - \delta ; a+\delta[\cap D$, alors $f(x) > A$. Autrement dit, l'intervalle $]A;+\infty[$ contient toutes les valeurs de $f(x)$ lorsque $x$ est suffisamment proche de $a$. On note alors $\displaystyle \lim_{x \to a} f(x) =+\infty $.
+\item On dit que $f(x)$ tend vers $-\infty$ lorsque $x$ tend vers $a$  si, pour tout réel $A$, il existe un réel $\delta >0$ tel que, si $x\in ]a - \delta ; a+\delta[\cap D$, alors $f(x) < A$. On note alors $\displaystyle \lim_{x \to a} f(x) =-\infty $.
+\end{itemize}
+\end{definition}
+
+\begin{example} On a tracé ci-dessous la représentation graphique d'une fonction $f$.
+
+\begin{center}
+
+\begin{tikzpicture}[scale=0.5]
+\clip (-3,-3) rectangle (6,7);
+\draw [thick] (-2,0)--(22,0);
+\draw [thick] (0,-2)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+\draw [ thin, dotted] (-2,-2) grid (22,28);
+
+\draw [fill=ocre!20] (1.5,3) -- (2.5,3) -- (2.5,7) -- (1.5,7) -- cycle;
+\draw [very thick, blue, domain = -2:1.8, samples =200] plot (\x,{1/((\x-2)*(\x-2))-1}) ;
+\draw [very thick, blue, domain = 2.2:6, samples =200] plot (\x,{1/((\x-2)*(\x-2))-1}) ;
+
+\draw [very thick,ocre, dashed, domain = -2:22] plot (\x,3);
+
+\draw [thick, ocre] (1.5,-2) -- (1.5,7);
+\draw [thick, ocre] (2.5,-2) -- (2.5,7);
+\draw [very thick, dashed] (2,-2) -- (2,7);
+
+\draw  [ocre](1.5,-2) node[below left] {$a-\delta$};
+\draw  [ocre](2.5,-2) node[below right] {$a+\delta$};
+\draw  (2,-2) node[below] {$a$};
+\draw  (-2,3) node[left] {$A$};
+
+\end{tikzpicture}
+\end{center}
+
+Pour n'importe quelle valeur du réel $A$, on peut trouver un intervalle centré sur $a$ tel que toute valeur de $f(x)$ est supérieur à $A$ pour n'importe quel $x$ pris dans cet intervalle. Ce raisonnement vaut peu importe la valeur du réel $A$ : on a $\displaystyle \lim_{x \to a} f(x) =+\infty $.\end{example}
+
+
+Tout comme précédemment, le comportement de la fonction $f$ peut varier selon si l'on approche du réel $a$ par valeurs inférieures ou supérieures. Il nous faut donc distinguer ces deux cas.
+
+\newpage
+
+\begin{definition}Soit $a \in D$ ou sur un bord de $D$.
+\begin{itemize}
+\item On dit que $f(x)$ tend vers $+\infty$ lorsque $x$ tend vers $a$ par valeurs inférieures  si, pour tout réel $A$, il existe un réel $\delta >0$ tel que, si $x\in ]a - \delta ; a[\cap D$, alors $f(x) > A$. Autrement dit, l'intervalle $]A;+\infty[$ contient toutes les valeurs de $f(x)$ lorsque $x$ est suffisamment proche de $a$ tout en lui étant inférieur. On note alors $\displaystyle \lim_{x \to a^-} f(x) =+\infty $.
+\item On dit que $f(x)$ tend vers $+\infty$ lorsque $x$ tend vers $a$ par valeurs supérieures  si, pour tout réel $A$, il existe un réel $\delta >0$ tel que, si $x\in ]a ; a+\delta[\cap D$, alors $f(x) > A$. Autrement dit, l'intervalle $]A;+\infty[$ contient toutes les valeurs de $f(x)$ lorsque $x$ est suffisamment proche de $a$ tout en lui étant supérieur. On note alors $\displaystyle \lim_{x \to a^+} f(x) =+\infty $.
+\end{itemize}
+\end{definition}
+
+Là encore, ces définitions peuvent s'étendre pour une limite valant $-\infty$.
+
+
+\begin{example} On considère la fonction $f:x\mapsto \dfrac{1}{x-1}$, définie sur $\mathbb{R} \setminus \{1\}$, dont on a tracé ci-dessous la courbe dans un repère.
+
+\begin{minipage}{0.3\linewidth}
+\begin{center}
+
+\begin{tikzpicture}[scale=0.5]
+\clip (-3,-3) rectangle (6,3);
+\draw [thick] (-2,0)--(22,0);
+\draw [thick] (0,-3)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+\draw [ thin, dotted] (-2,-3) grid (22,28);
+
+\draw [very thick, ocre, domain = -2:0.8, samples =200] plot (\x,{1/(\x-1)}) ;
+\draw [very thick, ocre, domain = 1.2:6, samples =200] plot (\x,{1/((\x-1)}) ;
+
+\draw [very thick, dashed] (1,-3) -- (1,7);
+
+
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.65\linewidth}
+
+Il semblerait que, lorsque l'on s'approche de $1$ par valeurs supérieures, la limite soit $+\infty$, ce que l'on notera $\displaystyle \lim_{x \to 1^+} f(x) =+\infty $.
+\vskip5pt
+En revanche, lorsque l'on s'approche de $1$ par valeurs inférieures, la limite semble être $-\infty$, ce que l'on note $\displaystyle \lim_{x \to 1^-} f(x) =-\infty $. \end{minipage}
+\end{example}
+
+
+
+\begin{definition}Lorsque la limite d'une fonction $f$ est infinie en un point $a$, on dit que la droite d'équation $x=a$ est une asymptote verticale à la courbe représentative de $f$.\end{definition}
+
+\begin{example} Dans l'exemple précédent, la droite d'équation $x=1$ est asymptote à la courbe de $f$.\end{example}
+
+
+\section{Opérations sur les limites}
+
+Les opérations sur les limites sont similaires à celles connues sur les suites. Dans cette partie, $f$ et $g$ sont deux fonctions définies au voisinages de $a$, $a$ pouvant être un réel, $+\infty$ ou $-\infty$. $l_1$ et $l_2$ sont deux réels.
+
+\subsection{Limite de la somme}
+
+\begin{proposition}[Limite de la somme] On a :
+
+\begin{center}
+\begin{tabularx}{\linewidth}{|l|X|X|X|X|X|X|}
+\hline
+$\displaystyle \lim_{x \to a} f(x)$ & $l_1$ & $l_1$ & $l_1$ & $+\infty$ & $-\infty$ & $ +\infty$\\
+\hline
+$\displaystyle \lim_{x \to a} g(x)$ & $l_2$ & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ \\
+\hline
+$\displaystyle \lim_{x \to a} (f(x)+g(x))$ &  &  &  &  &   & \textbf{FI}\\
+\hline
+\end{tabularx}
+\end{center}\end{proposition}
+
+\newpage
+
+
+\subsection{Limite du produit}
+
+
+\begin{proposition}[Limite du produit].
+\begin{center}
+
+\begin{tabularx}{\linewidth}{|l|X|X|X|X|}
+\hline
+$\displaystyle \lim_{x \to a} f(x)$ & $l_1 $ & $l_1 \neq 0$ & $\infty$ & $0$ \\
+\hline
+$\displaystyle \lim_{x \to a} g(x)$ & $l_2$ & $\infty$ &  $\infty$ & $\infty$ \\
+\hline
+$\displaystyle \lim_{x \to a} (f(x)\,g(x))$ &  &  &  &  \\
+\hline
+\end{tabularx}
+
+ \textbf{r.s. : Règle des signes}
+ \end{center} \vspace{-1cm}
+\end{proposition}
+
+\begin{example}On considère la fonction $f$ définie pour tout réel $x$ non nul par $f(x)=x^2-x+\dfrac{1}{x}$.
+\vskip120pt
+
+\end{example}
+
+\subsection{Limite du quotient}
+
+\begin{proposition}[Limite du quotient] Dans cette partie, on suppose $l_2 \neq 0$.
+\begin{center}
+
+\begin{tabularx}{\linewidth}{|l|X|X|X|X|X|X|}
+\hline
+$\displaystyle \lim_{x \to a} f(x)$ & $l_1 $ & $l_1$ & $l_1 \neq 0$ & $\infty$ & 0 & $\infty$ \\
+\hline
+$\displaystyle \lim_{x \to a} g(x)$ & $l_2$ & $\infty$ &  $0^+$ ou $0^-$ & $l_2$, $0^+$ ou $0^-$  & $0$ & $\infty$ \\
+\hline
+$\displaystyle \lim_{x \to a} \left(\dfrac{f(x)}{g(x)}\right)$ &  &  &  &  & &  \\
+\hline
+\end{tabularx}
+
+ \textbf{r.s. : Règle des signes}
+ \end{center} \vspace{-1cm}
+\end{proposition}
+
+\begin{example}Pour tout réel $x$, on pose $f(x)=\dfrac{1-2x^4}{1+x^2}$. L'étude des limites en $+\infty$ et $-\infty$ de $f$ aboutit à une forme indéterminée. Or, pour tout réel non nul $x$,
+\[f(x)= \]
+
+\vskip80pt
+\end{example}
+\newpage
+\begin{example}On considère la fonction $f$ définie pour tout réel $x\neq 2$ par $f(x)=\dfrac{3x+1}{2x-4}$.
+
+\vskip100pt
+
+\end{example}
+
+
+\begin{example} On considère la fonction $f:x\mapsto \sqrt{x} + \dfrac{1}{1-x}$, définie sur $[0;1[ \cup ]1;+\infty[$.
+
+\textbf{Pour calculer la limite en $1^+$ :}
+\begin{itemize}
+\item $\displaystyle \lim_{x \to 1^+} \sqrt{x} = $.
+\item $\displaystyle \lim_{x \to 1} (1-x)=\qquad$. Par ailleurs, si $x \geqslant 1$, alors $1-x \leqslant 0$ et donc $\displaystyle \lim_{x \to 1^+} (1-x)=\qquad $. 
+
+Ainsi, par quotient de limites, $\displaystyle \lim_{x \to 1^+} \dfrac{1}{1-x}=\qquad$.
+\item Par somme de limites, $\displaystyle \lim_{x \to 1^+} f(x)=\qquad$.
+
+\end{itemize}
+
+
+\textbf{Pour calculer la limite en $1^-$ :}
+\begin{itemize}
+\item $\displaystyle \lim_{x \to 1^-} \sqrt{x} = \qquad $.
+\item $\displaystyle \lim_{x \to 1} (x-1)=\qquad $. Par ailleurs, si $x \leqslant 1$, alors $1-x \geqslant 0$ et donc $\displaystyle \lim_{x \to 1^-} (1-x)=\qquad $. 
+
+Ainsi, par quotient de limites, $\displaystyle \lim_{x \to 1^+} \dfrac{1}{1-x}=\qquad$.
+\item Par somme de limites, $\displaystyle \lim_{x \to 1^-} f(x)=\qquad$.
+\end{itemize}
+
+\textbf{Pour calculer la limite en $+\infty$ :}
+\begin{itemize}
+\item $\displaystyle \lim_{x \to +\infty} \sqrt{x} =\qquad$. 
+\item $\displaystyle \lim_{x \to +\infty} (1-x)= \qquad$, ainsi, par quotient de limites, $\displaystyle \lim_{x \to +\infty} \dfrac{1}{1-x}=\qquad$.
+\item Par somme de limites, $\displaystyle \lim_{x \to +\infty} f(x)=\qquad$.
+\end{itemize}
+
+Représenter la courbe de la fonction $f$ dans un graphique (par exemple, dans un logiciel de géométrie ou sur une calculatrice) permet de confirmer ou d'infirmer les calculs.
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\clip (-1,-4) rectangle (7,5);
+\draw [thick] (-2,0)--(22,0);
+\draw [thick] (0,-4)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+\draw [ thin, dotted] (-2,-4) grid (22,28);
+
+\draw [very thick, ocre, domain = 0:0.9, samples =200] plot (\x,{sqrt(\x)+1/(1-\x)}) ;
+\draw [very thick, ocre, domain = 1.1:7, samples =200] plot (\x,{{sqrt(\x)+1/(1-\x)}}) ;
+
+
+\end{tikzpicture}
+\end{center}
+\vspace{-1cm}
+\end{example}
+\newpage 
+\subsection{Composition de limites}
+
+\begin{proposition}Soit $a$, $b$ et $c$ des réels ou $\pm \infty$. Soit $f$ et $g$ des fonctions définies sur $\mathbb{R}$.
+On suppose que $\displaystyle\lim_{x \to a}f(x)=b$ et $\displaystyle\lim_{X \to b}g(X)=c$. Alors $\displaystyle\lim_{x \to a}(g \circ f)(x)=c$.
+\end{proposition}
+
+
+\begin{example} On considère la fonction $f:x\mapsto \e^{-2x^2-3x-5}$. 
+\vskip50pt
+\end{example}
+
+
+
+\section{Comparaison de limites}
+
+\begin{theorem}[Théorème de comparaison]Soit $a$ un réel ou $\pm \infty$. Soit $f$ et $g$ deux fonctions définies sur un intervalle $I$ dont $a$ est un élément ou un bord.
+\begin{itemize}
+\item Si, pour tout $x\in I$, $f(x)\geqslant g(x)$ et $\displaystyle \lim_{x \to a} g(x)=+\infty$, alors $\displaystyle \lim_{x \to a} f(x)=+\infty$.
+\item Si, pour tout $x\in I$, $f(x)\leqslant g(x)$ et $\displaystyle \lim_{x \to a} g(x)=-\infty$, alors $\displaystyle \lim_{x \to a} f(x)=-\infty$.
+\end{itemize}\end{theorem}
+
+\begin{example}Pour tout réel $x$, on pose $f(x)=(2+\cos(x))\e^x$. 
+
+\vskip80pt
+\end{example}
+
+\begin{example}On souhaite montrer que, justement, $\displaystyle \lim_{x \to +\infty}\e^x=+\infty$. 
+
+\vskip180pt
+\end{example}
+
+\newpage
+
+
+\begin{theorem}[Théorème d'encadrement]Soit $a$ un réel. Soit $f$, $g$ et $h$ trois fonctions définies sur un intervalle $I$ dont $a$ est un élément ou un bord.
+
+Si, pour tout $x\in I$, $f(x)\leqslant g(x)\leqslant$ et si $f$ et $h$ admettent une même limite \textbf{finie} $l$ en $a$, alors $g$ admet également une limite finie en $a$ et $\displaystyle \lim_{x \to +\infty} g(x)=l$.
+\end{theorem}
+
+\begin{example}Pour tout réel non nul $x$, on pose $f(x)=\dfrac{\cos(x)}{x}$.
+
+ \vskip50pt
+ \end{example}
+ 
+\begin{example}Pour tout réel non nul $x$, on pose $g(x)=x\,\sin\left(\dfrac{1}{x}\right)$. On souhaite déterminer $\displaystyle\lim_{x \to 0^+}f(x)$.
+
+\vskip50pt
+\end{example}
+
+
+\section{Croissances comparées}
+
+\begin{proposition}[Croissances comparées -- fonction exponentielle] Soit $n$ un entier naturel.
+\[\displaystyle \lim_{x \to +\infty} \dfrac{\e^x}{x^n}=+\infty \qquad \qquad \displaystyle \lim_{x \to -\infty} x^n\,\e^x =0\]
+
+\vspace{-0.5cm}\end{proposition}
+
+
+\begin{example} Pour tout réel $x$, on pose $f(x)=\dfrac{\e^x-x}{\e^x}$.
+\vskip40pt
+\end{example}
+
+Cette proposition peut être vue comme la limite de nouvelles fonctions, les fonctions $x\mapsto \dfrac{\e^x}{x^n}$ et $x\mapsto x^n\,\e^x$. Il est alors possible d'utiliser tous les résultats précédents, en particuliers ceux sur la composition. Par exemple, si l'on considère une fonction $u$ telle que $\displaystyle\lim_{x \to a}u(x)=+\infty$, alors on aura $\displaystyle\lim_{x \to a}\dfrac{\e^{u(x)}}{u(x)}=+\infty$.
+
+\textbf{Il est important de bien avoir la même expression dans l'exponentielle et au dénominateur !}
+
+\begin{example}On considère la fonction $f : x\mapsto \dfrac{\e^{-2x+4}}{3x^3}$, définie sur $\mathbb{R}^*$. On souhaite déterminer $\displaystyle\lim_{x \to -\infty}f(x)$. Pour cela, il semble naturel de faire intervenir une croissance comparée. Seulement, les expressions dans l'exponentielle et au dénominateur sont différentes, il faut donc transformer légèrement cette écriture pour se ramener aux fonctions mentionnées dans la propriété.
+
+Pour tout réel non nul $x$, 
+\[\dfrac{\e^{-2x+4}}{3x^3} = \]
+
+\vskip40pt
+\end{example}
+
+
+
+\section{Approfondissement : Asymptotes obliques}
+
+\begin{definition}Soit $a$ un réel et $f$ une fonction définie sur $]a;+\infty[$. Soit $m$ et $p$ des réels. 
+
+On dit que la droite d'équation $y=mx+p$ est asymptote à la courbe représentative de $f$ en $+\infty$ si \[\displaystyle \lim_{x \to +\infty} (f(x)-(mx+p))=0.\]\end{definition}
+
+
+\begin{example} On considère la fonction $f:x\mapsto \dfrac{x^2+3x-3}{2x-2}$, définie sur $\mathbb{R}\setminus \{1\}$. Pour tout $x\neq 1$, 
+\[f(x)-\left(\dfrac{1}{2}x+2\right)=\dfrac{x^2+3x-3}{2x-2}-\dfrac{\left(\dfrac{1}{2}x+2\right)(2x-2)}{2x-2}=\dfrac{x^2+3x-3-x^2-4x+x+4}{2x-2}=\dfrac{1}{2x-2}.\]
+
+Ainsi, $\displaystyle \lim_{x \to +\infty} \left(f(x)-\left(\dfrac{1}{2}x+2\right)\right)=0$ et $\displaystyle \lim_{x \to -\infty} \left(f(x)-\left(\dfrac{1}{2}x+2\right)\right)=0$. 
+
+La droite d'équation $y=\dfrac{1}{2}x+2$ est asymptote à la courbe représentative de $f$ en $+\infty$ et en $-\infty$.
+
+Il est également possible, en étudiant le signe de $f(x)-\left(\dfrac{1}{2}x+2\right)$, de déterminer la position relative de la courbe de $f$ par rapport à son asymptote.
+Ainsi, 
+\[ f(x)-\left(\dfrac{1}{2}x+2\right) \leqslant 0 \Leftrightarrow \dfrac{1}{2x-2} \leqslant 0 \Leftrightarrow 2x-2 \leqslant 0 \Leftrightarrow x\leqslant 1.\]
+
+La courbe de $f$ est en-dessous de son asymptote en $-\infty$ et est au-dessus en $+\infty$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\clip (-4,-2) rectangle (6,6);
+\draw [thick] (-4,0)--(22,0);
+\draw [thick] (0,-4)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+\draw [ thin, dotted] (-4,-4) grid (22,28);
+
+\draw [very thick, ocre, domain = -4:0.9, samples =200] plot (\x,{(\x*\x+3*\x-3)/(2*\x-2)}) ;
+\draw [very thick, ocre, domain = 1.1:7, samples =200] plot (\x,{(\x*\x+3*\x-3)/(2*\x-2)}) ;
+\draw [very thick, blue, dashed, domain = -4:7, samples =200] plot (\x,{\x/2+2}) ;
+\draw [blue] (3,2) node {$y=\dfrac{1}{2}x+2$};
+
+\end{tikzpicture}
+\end{center}
+\vspace{-1cm}\end{example}
+
+
+
+\end{document}

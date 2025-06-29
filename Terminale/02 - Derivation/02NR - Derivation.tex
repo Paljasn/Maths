@@ -1,0 +1,214 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+\chapter{Cours : Compléments sur la dérivation}
+
+\section{Rappels sur la dérivation}
+
+\subsection{Fonction dérivée}
+
+\begin{definition}Soit $f$ une fonction définie sur un intervalle $I$, $a\in I$ et $h$ un réel non nul tel que $a+h \in I$. 
+
+\begin{itemize}
+\item On dit que $f$ est dérivable en $a$ si le taux de variation $\dfrac{f(a+h)-f(a)}{h}$ admet une limite finie lorsque $h$ tend vers 0. Cette limite est appelée \textit{nombre dérivé de $f$ en $a$ }et est notée $f'(a)$.
+\[ f'(a)=\lim_{h \to 0} \dfrac{f(a+h)-f(a)}{h}. \]
+\item On dit que $f$ est dérivable sur $I$ si $f$ est dérivable en tout $a\in I$. On appelle alors \textit{fonction dérivée} de $f$ sur $I$ la fonction
+\[f' : \left\{ \begin{array}{rcl}
+I & \longrightarrow & \mathbb{R}\\
+x & \longmapsto & f'(x).
+\end{array}\right.\]\end{itemize}\end{definition}
+
+\begin{example}On considère la fonction $f : x \mapsto x^2$, définie sur $\mathbb{R}$. Soit $x$ un réel et $h$ un réel non nul.
+\[ \dfrac{f(x+h)-f(x)}{h}=\]
+Lorsque $h$ se rapproche de 0, cette quantité tend vers \\Ainsi, $f$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $f'(x)=$\end{example}
+
+\subsection{Dérivées usuelles}
+
+
+\renewcommand{\arraystretch}{2}
+\begin{center}
+\begin{tabularx}{\linewidth}{|X|X|X|X|}
+\hline
+$f:x\mapsto$ & Définie sur & Dérivable sur & $f':x \mapsto $ \\
+\hline
+$k\in\mathbb{R}$  & $\mathbb{R}$ & $\mathbb{R}$ & \\
+$mx+p$, $m$ et $p$ réels &  $\mathbb{R}$ & $\mathbb{R}$ & \\
+$x^2$ &  $\mathbb{R}$ & $\mathbb{R}$ & \\
+$x^n$ pour $n\in\mathbb{N}^*$ & $\mathbb{R}$ & $\mathbb{R}$ & \\
+$\dfrac{1}{x}$ & $]-\infty;0[$ et $]0;+\infty[$ & $]-\infty;0[$ et $]0;+\infty[$ & \\
+$\dfrac{1}{x^n}$ pour $n\in\mathbb{N}^*$ & $]-\infty;0[$ et $]0;+\infty[$& $]-\infty;0[$ et $]0;+\infty[$ &\\
+$\sqrt{x}$ & $[0;+\infty[$ & $\left]0;+\infty \right[$ & \\
+$\exp (ax+b)$, $a$ et $b$ réels & $\mathbb{R}$ & $\mathbb{R}$ & \\
+\hline\end{tabularx}
+\end{center}
+
+\subsection{Opérations sur les dérivées}
+
+\begin{theorem}Soit $I$ un intervalle, $u$ et $v$ deux fonctions dérivables sur $I$, $k$ un réel. Alors les fonctions $k\,u$, $u+v$ et $uv$ sont dérivables sur $I$. Si de plus, $v$ ne s'annule pas sur $I$, alors la fonction $\dfrac{u}{v}$ est également dérivable sur $I$. On a alors
+\begin{center}
+\begin{tabularx}{0.6\linewidth}{XX}
+$(k\,u)' = $ & $(u+v)'=$ \\
+$(uv)'=$ & $\left(\dfrac{u}{v}\right)' = $
+
+\end{tabularx}
+\end{center}
+\vspace{-0.5cm}
+\end{theorem}
+
+\begin{example}On considère la fonction $f:x\mapsto (x^2-3x+1)\exp(3x+1)$, définie sur $\mathbb{R}$. \\ Pour tout réel $x$, on pose alors $u(x)=x^2-3x+1$ et $v(x)=\exp(3x+1)$. 
+
+\begin{itemize}
+\item $u$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $u'(x)=$
+\item $v$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $v'(x)=$
+\end{itemize}
+
+On a $f=uv$. Ainsi, $f$ est un produit de fonctions dérivables sur $\mathbb{R}$ et est donc dérivable sur $\mathbb{R}$. \\ De plus, on a $f'=u'v+uv'$. Ainsi, pour tout réel $x$, 
+\[ f'(x)=\]
+\vspace{-0.5cm}\end{example}
+
+\subsection{Tangente à la courbe}
+
+\begin{definition}[Tangente à la courbe] Soit $f$ une fonction dérivable en $a$. On note $\mathcal{C}_f$ la courbe de $f$ dans un repère orthonormé $\Oij$. 
+
+La tangente à $\mathcal{C}_f$ au point d'abscisse $a$ est la droite de coefficient directeur $f'(a)$ et passant par le point de coordonnée $(a;f(a))$.\end{definition} 
+
+\begin{proposition}Soit $f$ une fonction dérivable en $a$. La tangente à $\mathcal{C}_f$ au point d'abscisse $a$ a pour équation 
+\[ y =\]\end{proposition}
+
+\begin{example}Pour tout réel $x$, posons $f(x)=\dfrac{x^2}{2}-2x-1$. Déterminons l'équation de la tangente à $\mathcal{C}_f$ au point d'abscisse 4 
+
+\begin{flushright}
+\begin{tikzpicture}[scale=0.5]
+\clip (-2,-4) rectangle (6,4);
+\draw [thin, dotted] (-2,-4) grid (6,4);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\draw [very thick, ocre,domain=-3:6,samples=100] plot (\x,{\x*\x/2-2*\x-1});
+\draw [very thick, blue, dashed,domain=-3:6] plot (\x,2*\x-9);
+\draw [thick] (4,-1) node {$\times$};
+\end{tikzpicture}
+\end{flushright}
+\vspace{-1cm}
+ \end{example}
+
+
+
+\subsection{Variations d'une fonction}
+
+\begin{proposition}Soit $f$ une fonction dérivable sur un intervalle $I$.
+\begin{itemize}
+\item Si, pour tout $x\in I$, $f'(x) \geqslant 0$, alors $f$ est croissante sur $I$.
+\item Si, pour tout $x\in I$, $f'(x) \leqslant 0$, alors $f$ est décroissante sur $I$.
+\item Si, pour tout $x\in I$, $f'(x) =0$, alors $f$ est constante sur $I$.
+\end{itemize}\end{proposition}
+
+\begin{example}On considère la fonction $f:x\mapsto (x^2-3x+1)\exp(3x+1)$ étudiée précédemment. 
+
+On a vu que pour tout réel $x$, on a $f'(x)=(3x^2-7x)\exp(3x+1)=x(3x-7)\exp(3x+1)$.
+
+$f'(x)$ étant écrite sous forme factorisée, on peut alors construire le tableau de signes de $f'$ et en déduire les variations de $f$.
+
+
+\vskip220pt
+
+
+\end{example}
+
+
+\section{Dérivée seconde}
+
+\begin{definition}[Dérivée seconde] Soit $f$ une fonction dérivable sur un intervalle $I$ telle que sa fonction dérivée $f'$ est également dérivable sur $I$ (on dit également  que $f$ est deux fois dérivable sur $I$).
+
+On appelle fonction \textit{dérivée seconde} de $f$ la fonction dérivée de $f'$. Cette fonction est notée $f''$.
+\[ \text{Pour tout } x \in I, \, f''(x)=(f')'(x).\]\end{definition}
+
+\begin{example}Pour tout réel $x$, on pose $f(x)=(2x+1)\e^{3x-2}$. Posons, pour tout réel $x$, $u_1(x)=2x+1$ et $v_1(x)=\e^{3x-2}$.
+\begin{itemize}
+\item $u_1$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $u_1'(x)=$
+\item $v_1$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $v_1'(x)=$
+\end{itemize}
+Ainsi, $f$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$,
+\[ f'(x)=\]
+Posons alors, pour tout réel $x$, $u_2(x)=6x+5$ et $v_2(x)=e^{3x-2}$.
+\begin{itemize}
+\item $u_2$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $u_2'(x)=$
+\item $v_2$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $v_2'(x)=$
+\end{itemize}
+Ainsi, $f'$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$,
+\[ f''(x)=\]
+\end{example}
+
+
+
+\section{Composition de fonctions}
+
+
+\begin{definition}[Fonction composée]  Soit $I$ et $J$ deux parties de $\mathbb{R}$.\\ Soit $f$ une fonction définie sur $J$ et $g$ une fonction définie sur $I$ telle que pour tout réel $x$, $g(x) \in J$.
+
+On définit la \textit{fonction composée} de $f$ et $g$ notée $f \circ g$ par 
+\[ \text{Pour tout } x \in I, \; f \circ g (x)= f(g(x)).\]\end{definition}
+ L'idée derrière la composition de fonctions est simplement d'appliquer successivement plusieurs fonctions.
+ \[f \circ g \,:\, x \overset{g}{\longmapsto} g(x) \overset{f}{\longmapsto} f[g(x)]\]
+
+\begin{example} Pour tout réel $x$, on note $f(x)=x^2$ et $g(x)=x+3$. Alors, pour tout réel $x$,
+\begin{itemize}
+\item $f \circ g (x)= $
+\item $g \circ f(x)=$
+\end{itemize}\end{example}
+
+Attention ! En général, on n'a pas $f \circ g = g \circ f$ ! Ces deux fonctions ne sont d'ailleurs pas forcément définies sur le même ensemble.
+
+\begin{proposition}Soit $I$ et $J$ deux intervalles, $f$ une fonction définie et dérivable sur $J$ et $g$ une fonction définie et dérivable sur $I$ telle que pour tout $x \in I$, $g(x) \in J$. Alors $f \circ g$ est dérivable et pour tout réel $x$ dans $I$,
+\[ (f \circ g)' (x)= g'(x) \times (f' \circ g)(x).\]
+\vspace{-0.5cm}\end{proposition}
+
+
+
+\begin{example}On considère la fonction $f$ définie pour tout réel $x$ par $f(x)=\e^{x^2+3x-2}$. 
+Pour tout réel $x$, on pose alors $u(x)=\e^x$ et $v(x)=x^2+3x-2$. Pour tout réel $x$, on a alors  $f(x)= u(v(x)) = u \circ v (x)$.
+
+\begin{itemize}
+\item $v$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $v'(x)=$
+\item $u$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, $u'(x)=$
+\end{itemize}
+Ainsi, $f$ est dérivable sur $\mathbb{R}$ et pour tout réel $x$, 
+\[ f'(x)=\]\end{example}
+\begin{proposition}[Cas particuliers] Soit $u$ une fonction définie et dérivable sur un intervalle $I$
+\begin{itemize}
+\item Pour tout entier naturel $n$, $u^n$ est dérivable sur $I$ et $(u^n)'=$
+\vskip10pt
+\item $e^u$ est dérivable sur $I$ et $(\e^u)'=$
+\vskip10pt
+\item Si pour tout réel $x\in I$, $u(x)>0$, alors $\sqrt{u}$ est dérivable sur $I$ et $(\sqrt{u})' =$
+\vskip10pt
+\item Si pour tout réel $x$, $u(x) \neq 0$, $\dfrac{1}{u}$ est dérivable sur $I$ et $\left(\dfrac{1}{u}\right)=$
+\end{itemize}\end{proposition}
+
+\begin{example}Pour tout réel $x$, posons $f(x)=(4x+1)^9$.
+
+Pour tout réel $x$, on pose $u(x)=4x+1$. $u$ est dérivable sur $\mathbb{R}$. Or, $f=u^9$.
+
+ Ainsi, $f$ est dérivable sur $\mathbb{R}$ et $f'=\qquad\qquad\qquad$, c'est-à-dire que pour tout réel $x$, on a
+\[ f'(x)= \]\end{example}
+
+\begin{example}Pour tout réel $x$, posons $f(x)=\dfrac{1}{x^2+1}$. 
+
+Pour tout réel $x$, on pose alors $u(x)=x^2+1$. $u$ est dérivable sur $\mathbb{R}$ et ne s'annule pas. Or, $f=\dfrac{1}{u}$.
+
+ Ainsi, $f$ est dérivable sur $\mathbb{R}$ et $f'=\qquad\qquad\qquad $, c'est-à-dire que pour tout $x\in \mathbb{R}$, on a
+\[ f'(x)=\]\end{example}
+
+\begin{example}On considère la fonction $f$ définie pour tout réel $x\in[-2;2]$ par $f(x)=\sqrt{4-x^2}$.
+
+Bien que la fonction $f$ soit définie sur l'intervalle fermé $[-2;2]$, elle n'est en revanche dérivable que sur l'intervalle ouvert $]-2;2[$. Pour tout réel $x\in]-2;2[$, on a
+\[f'(x)=\]\end{example}
+
+
+\end{document}

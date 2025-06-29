@@ -1,0 +1,218 @@
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+\chapter{Cours : Suites et récurrence}
+
+\section{Démonstration par récurrence}
+
+\textbf{Exemple introductif, tiré de l'épreuve de spécialité de Polynésie 2022} : On considère la suite \((u_n)\) définie par \(u_0=1\) et, pour tout entier naturel \(n\), \[u_{n+1}=\dfrac{u_n}{1+u_n}.\]
+
+A l'aide de cette expression, il est possible de calculer les termes de la suite de proche en proche.
+\begin{itemize}
+\item \(u_1 = \)
+\vskip5pt
+\item \(u_2=  \)
+\vskip5pt
+\item \(u_3= \)
+\vskip5pt
+\item \(\ldots\)
+\end{itemize}
+
+Toutefois, il n'est pas possible de calculer \(u_{50}\) sans calculer tous les termes précédents... On souhaiterait déterminer une expression de \(u_n\) en fonction de \(n\) pour tout entier naturel \(n\).
+
+D'après les premiers termes de notre suite, il semblerait que pour tout entier naturel \(n\), on ait \(u_{\color{red}{n}}=\) 
+
+Cette formule fonctionne pour les rangs 0, 1, 2 et 3 mais qu'en est-il pour le reste ? 
+
+Un moyen de s'assurer que cette formule fonctionne pour tous les rangs est de la démontrer par récurrence.
+
+\begin{definition}Lorsque l'on souhaite démontrer une proposition mathématique qui dépend d'un entier $n$, il est parfois possible de démontrer cette proposition par récurrence.
+
+Pour tout entier $n$, on note $\mathcal{P}(n)$ la proposition qui nous intéresse. La démonstration par récurrence comporte trois étapes :
+\begin{itemize}
+\item \textbf{Initialisation} : On montre qu'il existe un entier $n_0$ pour lequel $\mathcal{P}(n_0)$ est vraie ;
+\item \textbf{Hérédité} : on montre que, si pour un entier $n\geqslant n_0$, $\mathcal{P}(n)$ est vraie, alors $\mathcal{P}(n+1)$ l'est également ;
+\item \textbf{Conclusion} : on en conclut que pour tout entier $n\geqslant n_0$, la proposition $\mathcal{P}(n)$ est vraie.
+\end{itemize}\end{definition}
+
+\begin{minipage}{0.15\linewidth}
+\begin{center}
+\includegraphics[scale=0.15]{domino}
+\end{center}
+\end{minipage}\hfill\begin{minipage}{0.78\linewidth}
+Le principe du raisonnement par récurrence rappelle les dominos que l'on aligne et que l'on fait tomber, les uns à la suite des autres.
+
+\vskip5pt
+On positionne les dominos de telle sorte que, dès que l'un tombe, peu importe lequel, il entraîne le suivant dans sa chute. C'est \textbf{l'hérédité}. Seulement, encore faut-il faire effectivement tomber le premier domino, sans quoi rien ne se passe : c'est \textbf{l'initialisation}.
+
+\vskip5pt
+Si ces deux conditions sont remplies, on est certain qu'à la fin, tous les dominos seront tombés : c'est notre \textbf{conclusion}.\end{minipage}
+
+\newpage
+\begin{example}
+On considère la suite \((u_n)\) définie par \(u_0=1\) et, pour tout entier naturel \(n\), $u_{n+1}=\dfrac{u_n}{1+u_n}$.
+\vskip300pt
+\end{example}
+
+
+Une propriété utile qui peut être démontrée par récurrence est la suivante. Souvenez-vous en, elle reviendra dans un prochain chapitre !
+
+\begin{proposition}[Inégalité de Bernoulli] Soit $a$ un réel strictement positif. \\ Pour tout entier naturel $n$, on a $(1+a)^n \geqslant 1+na$.\end{proposition}
+
+\begin{demonstration}Nous allons démontrer cette propriété par récurrence. Fixons-nous un réel $a$ strictement positif. 
+\vskip200pt
+\end{demonstration}
+
+
+\begin{minipage}{0.3\linewidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.7,x={(3cm,0cm)},y={(0cm,1cm)}]
+\clip (-0.5,-1) rectangle (1.5,5);
+\draw [thin, dotted] (-2,-4) grid[xstep=1,ystep=1] (6,7);
+\draw [thick] (-4,0)--(7,0);
+\draw [thick] (0,-4) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\draw [very thick, ocre,domain=-1:6,samples=100] plot (\x,{(1+\x)^3});
+\draw [very thick, blue, dashed,domain=-1:6] plot (\x,1+3*\x);
+\draw [blue] (1,2) node[above] {$y=1+nx$};
+\draw [ocre] (0,4) node[above] {$y=(1+x)^n$};
+\end{tikzpicture}
+\end{center}\end{minipage}\hfill
+\begin{minipage}{0.65\linewidth}
+Une interprétation graphique de cette inégalité est possible.
+
+La droite d'équation $y=1+nx$ n'est autre que la tangente à la courbe d'équation $y=(1+x)^n$ à l'abscisse 0. L'inégalité de Bernoulli dit donc que la courbe se trouve au-dessus de la tangente lorsque $x>0$.
+\vskip5pt
+Nous verrons, lorsque la dérivation n'aura plus de secret pour vous, que cette remarque nous fournira une autre démonstration de l'inégalité de Bernoulli.
+\end{minipage}
+
+
+
+\section{Suites majorées, minorées, bornées}
+
+\begin{definition}[Suites majorées, minorées, bornées] Soit $(u_n)$ une suite réelle. On dit que...
+\begin{itemize}
+\item ...$(u_n)$ est \textit{majorée} s'il existe un réel $M$ tel que, pour tout entier naturel $n$, $u_n \leqslant M$.\\ Un tel réel $M$ est alors appelé \textit{majorant} de la suite $(u_n)$.
+\item ...$(u_n)$ est \textit{minorée} s'il existe un réel $m$ tel que, pour tout entier naturel $n$, $u_n \geqslant m$.\\ Un tel réel $m$ est alors appelé \textit{minorant} de la suite $(u_n)$.
+\item ...$(u_n)$ est \textit{bornée} si $(u_n)$ est à la fois majorée et minorée.
+\end{itemize}\end{definition}
+
+Les majorants et minorants sont indépendants de $n$ ! Bien que pour tout $n>0$, on ait $n \leqslant n^2$, on ne peut pas dire que la suite $(u_n)$ définie par $u_n=n$ est majorée. Cette indépendance se traduit dans l'ordre des quantificateurs employés dans la définition précédente (le majorant y apparaît avant l'entier $n$).
+
+
+\begin{example}Pour tout $n$, on pose $u_n=\cos (n)$. 
+
+La suite $(u_n)$ est \end{example}
+
+\begin{example} Pour tout entier naturel $n$, on pose $v_n=n^2+1$.
+
+La suite $(v_n)$ est
+
+En revanche, elle n'est pas majorée. \end{example}
+
+\begin{example} Pour tout entier naturel $n$, on pose $w_n=(-1)^n \, n$. Cette suite n'est ni majorée, ni minorée.\end{example}
+
+Lorsqu'une suite est définie par récurrence, une majoration ou une minoration de cette suite peut elle-même être démontrée par récurrence.
+
+\begin{example} On considère la suite $(u_n)$ définie par $u_0 = 5$ et pour tout entier naturel $n$, $u_{n+1}=0.5u_n + 2$. Pour tout entier naturel $n$, on note $\mathcal{P}(n)$ la proposition « $u_n \geqslant 4$ ».
+
+
+\vskip100pt
+\end{example}
+
+\newpage
+
+Si l'on se donne une fonction $f$ définie sur un ensemble $I$ et une suite $(u_n)$ à valeurs dans $I$ telle que, pour tout entier naturel $n$, $u_{n+1}=f(u_n)$, l'étude de la fonction $f$ pourra également nous fournir des informations sur la suite $(u_n)$ étudiée.
+
+\begin{example}On considère une fonction $f$ définie sur $\mathbb{R}$ et dont le tableau de variations est le suivant.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzset{node style/.style = {inner sep = 2pt, outer sep = 2pt}}
+   \tkzTabInit{$x$ / 1 , $f$ / 2}{$-\infty$, $-1$, $3$,$+\infty$}
+   \tkzTabVar{-/$ $,+/$3$,-/$0$,+/$ $}
+\end{tikzpicture}\end{center}
+
+On considère alors la suite $(u_n)$ définie par $u_0=1$ et, pour tout entier naturel $n$, $u_{n+1}=f(u_n)$. 
+
+Pour tout entier naturel $n$, on considère la proposition $\mathcal{P}(n)$ : « $0 \leqslant u_n \leqslant 3$ ».
+\vskip200pt
+\end{example}
+
+
+
+\section{Suites croissantes, suites décroissantes}
+
+\begin{definition}[Variations d'une suite]Soit $(u_n)$ une suite réelle et $n_0$ un entier naturel.
+
+\begin{itemize}
+\item On dit que $(u_n)$ est \textit{croissante} à partir de $n_0$ si, pour tout entier naturel $n\geqslant n_0$, $u_{n+1} \geqslant u_n$.
+\item On dit que $(u_n)$ est \textit{décroissante} à partir de $n_0$ si, pour tout entier naturel $n\geqslant n_0$, $u_{n+1} \leqslant u_n$.
+\end{itemize}\end{definition}
+
+Étudier la croissance ou la décroissance d'une suite revient donc souvent à étudier le signe de $u_{n+1}-u_n$.
+
+\begin{example}On considère la suite $(u_n)$ définie pour tout entier naturel $n$ par $u_n=n^2-n$. 
+
+Pour tout entier naturel $n$,
+\[u_{n+1}-u_n = \]
+La suite $(u_n)$ est donc \end{example}
+\newpage
+\begin{proposition}Soit $(u_n)$ une suite \textbf{strictement positive} et $n_0$ un entier naturel. 
+\begin{itemize}
+\item $(u_n)$ est croissante à partir de $n_0$ si, pour tout entier naturel $n\geqslant n_0$, $\dfrac{u_{n+1}}{u_n} \geqslant 1$.
+\vskip5pt
+\item $(u_n)$ est décroissante à partir de $n_0$ si, pour tout entier naturel $n\geqslant n_0$, $\dfrac{u_{n+1}}{u_n} \leqslant 1$.
+\end{itemize}
+\end{proposition}
+
+\begin{example}On considère la suite $(u_n)$ définie pour tout entier naturel non nul $n$ par $u_n=\dfrac{2^n}{n}$. 
+
+Pour tout entier naturel non nul $n$, on a $u_n>0$ et 
+\[\dfrac{u_{n+1}}{u_n}=\]
+\vskip50pt
+\end{example}
+
+Encore une fois, lorsqu'une suite est définie par récurrence, ses variations peuvent également être étudiées par récurrence.
+
+\begin{example}On considère la suite $(u_n)$ définie par $u_0=4$ et pour tout $n\in\mathbb{N}$, $u_{n+1}=\sqrt{5+u_n}$.
+
+Pour tout entier naturel $n$, on note $\mathcal{P}(n)$ la proposition $0\leqslant u_{n+1} \leqslant u_n$. Montrer que $\mathcal{P}(n)$ est vraie pour tout entier naturel $n$ démontrera que la suite $(u_n)$ est décroissante et minorée par 0, un résultat qui nous intéressera fortement dans un prochain chapitre...
+\vskip250pt
+\end{example}
+\newpage
+Comme précédemment, si l'on dispose d'une fonction $f$ que l'on sait étudier et d'une suite $(u_n)$ telle que pour tout entier naturel $n$, $u_{n+1}=f(u_n)$, il est sans doute possible d'utiliser les informations que nous avons sur la fonction pour en déduire des informations sur notre suite.
+
+\textbf{Attention ! Ce n'est pas parce que la fonction $f$ est croissante que la suite le sera également !}
+
+
+\begin{example}On considère une fonction $f$ définie sur $\mathbb{R}$ et dont le tableau de variations est le suivant.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tikzset{node style/.style = {inner sep = 2pt, outer sep = 2pt}}
+   \tkzTabInit{$x$ / 1 , $f$ / 2}{$-\infty$, $-1$, $5$,$+\infty$}
+   \tkzTabVar{+/$ $,-/$1$,+/$5$,-/$ $}
+   \tkzTabVal{2}{3}{0.5}{$3$}{$2$}
+\end{tikzpicture}\end{center}
+
+On considère alors la suite $(u_n)$ définie par $u_0=3$ et, pour tout entier naturel $n$, $u_{n+1}=f(u_n)$. 
+
+On souhaite montrer que la suite $(u_n)$ est décroissante et bornée par $-1$ et $5$. Pour tout entier naturel $n$, on considère alors la proposition $\mathcal{P}(n)$ : « $-1 \leqslant u_{n+1} \leqslant u_n \leqslant 5$ ».
+\vskip250pt
+
+\end{example}
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,375 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/fond}
+
+
+
+\chapter{Géométrie dans l'espace}
+
+\section{Vecteurs de l'espace}
+
+\subsection{Vecteurs et translations}
+
+\begin{definition}Un vecteur de l'espace est un objet mathématique caractérisé par une direction de l'espace, un sens et une longueur, également appelée norme.
+
+Deux vecteurs sont égaux s'ils ont la même direction, la même norme et le même sens.\end{definition}
+
+\begin{definition}Soit $\vec u$ un vecteur de l'espace. On appelle translation de vecteur $\vec u$ la transformation de l'espace qui, à tout point $M$, associe l'unique point $M'$ tel que $\vec u = \overrightarrow{MM'}$.\end{definition} 
+
+Toutes les notions vues en géométrie plane sur les vecteurs s'étendent dans l'espace : égalité de vecteurs, somme de vecteurs, produit d'un réel par un vecteur, relation de Chasles, vecteur nul, etc...
+
+Il est donc fortement conseillé de revoir ces notions de la classe de Seconde avant de passer à la suite de ce chapitre.
+
+\begin{definition} Soit $\vec u_1$, $ \vec u_2$, $\ldots$, $\vec u_n$ des vecteurs et $\lambda_1$, $\lambda_2$, $\ldots$, $\lambda_n$ des réels.
+
+Le vecteur $\vec u$ défini par $\vec u = \lambda_1 \vec u_1 + \lambda_2 \vec u_2 + \ldots + \lambda_n \vec u_n = \displaystyle\sum_{i=1}^n \lambda_i \vec u_i$ est appelé combinaison linéaire des vecteurs $\vec u_1$, $\vec u_2$, $\ldots$, $\vec u_n$.\end{definition}
+\begin{example}
+On considère deux cubes $ABCDEFGH$ et $BIJCFLKG$ placés côte à côte.
+
+\begin{minipage}{0.4\linewidth}
+\includegraphics[scale=2]{pave1}
+
+\end{minipage}\begin{minipage}{0.55 \linewidth}
+ On a les égalités de vecteurs suivantes
+\begin{itemize}
+\item $\overrightarrow{EH} =$ ;
+\item $\overrightarrow{HG}+\overrightarrow{KI}= $ ;
+\item $\overrightarrow{EF}+\overrightarrow{AD}+\overrightarrow{KB}+2\overrightarrow{DC}=$.
+\end{itemize}
+\end{minipage}
+
+\end{example}
+
+
+\begin{definition}Soit $\vec u$ et $\vec v$ deux vecteurs de l'espace.
+
+On dit que $\vec u$ et $\vec v$ sont \textbf{colinéaires} s'il existe un nombre réel $\lambda$ tel que $\vec u = \lambda \vec v$ ou $\vec v = \lambda \vec u$.\end{definition}
+
+Le vecteur nul est ainsi colinéaire à tout vecteur de l'espace.
+
+\begin{example}Sur la figure précédente, on a $\overrightarrow{AI}=2\overrightarrow{HG}$. Les vecteurs $\overrightarrow{AI}$ et $\overrightarrow{HG}$ sont donc colinéaires.\end{example}
+
+\newpage
+
+\begin{definition}Soit $\vec u$, $\vec v$ et $\vec w$ trois vecteurs de l'espace tels que $\vec v$ et $\vec w$ \textbf{ne sont pas colinéaires}. 
+
+On dit que $\vec u$, $\vec v$ et $\vec w$ sont coplanaires s'il existe deux réels $\lambda$ et $\mu$ tels que $\vec u = \lambda \vec v+ \mu \vec w$.\end{definition}
+
+\begin{example} Sur la configuration suivante...
+
+\begin{center}
+\includegraphics[scale=1.2]{pavebase}
+\end{center}
+
+Les vecteurs $\overrightarrow{AC}$, $\overrightarrow{EL}$ et $\overrightarrow{FG}$ sont coplanaires. En effet, on a $\overrightarrow{EL}=$\end{example}
+
+
+\section{Droites et plans de l'espace}
+
+\subsection{Droites de l'espace}
+
+
+\begin{definition} Soit $\vec u$ un vecteur non nul et $A$ un point de l'espace. La droite de vecteur directeur $\vec u$ passant par $A$ est l'ensemble des points $M$ tels que $\overrightarrow{AM}$ et $\vec u$ sont colinéaires.\end{definition}
+
+Une droite est donc entièrement déterminée par un point et un vecteur non nul. On dit que $(A ; \vec u)$ est un repère de la droite passant par $A$ dirigée par $\vec u$. Une droite peut également être déterminée par deux points distincts.
+
+La définition d'une droite à l'aide des vecteurs permet d'exploiter la colinéarité pour résoudre des problèmes d'alignement de points ou de parallélisme de droites.
+
+\begin{proposition}Deux droites de l'espace de vecteurs directeurs respectifs $\vec u$ et $\vec v$ sont parallèles si et seulement si $\vec u$ et $\vec v$ sont colinéaires.\end{proposition}
+
+\begin{proposition}Soit $A$, $B$ et $C$ trois points de l'espace. Les points $A$, $B$ et $C$ sont alignés si et seulement si les vecteurs $\overrightarrow{AB}$ et $\overrightarrow{AC}$ sont colinéaires.\end{proposition}
+
+\subsection{Plans de l'espace}
+
+\begin{definition} Soit $\vec u$ et $\vec v$ deux vecteurs non colinéaires et $A$ un point du plan.
+
+Le plan passant par $A$ et dirigé par les vecteurs $\vec u$ et $\vec v$ est l'ensemble des points $M$ pour lesquels le vecteur $\overrightarrow{AM}$ s'exprime comme une combinaison linéaire des vecteurs $\vec u$ et $\vec v$.
+
+Autrement dit, $M$ appartient au plan passant par $A$, dirigé par $\vec u$ et $\vec v$ si et seulement s'il existe deux réels $\lambda$ et $\mu$ tels que 
+\[ \overrightarrow{AM}= \lambda \vec u + \mu \vec v .\]
+On dit que $(\vec u ; \vec v)$ est une \textbf{base} de ce plan et que $(A ; \vec u, \vec v)$ est un \textbf{repère} de ce plan.\end{definition}
+
+Cette définition implique que par trois points \textbf{non alignés} de l'espace passe un unique plan. 
+
+
+\newpage
+\begin{definition}Soit $A$, $B$, $C$ et $D$ quatre points de l'espace. On dit que $A$, $B$, $C$ et $D$ sont coplanaires s'il existe un plan de l'espace passant par ces quatre points.\end{definition}
+
+\begin{proposition}Soit $A$, $B$, $C$ et $D$ quatre points de l'espace. Les points $A$, $B$, $C$ et $D$ sont coplanaires si et seulement si les vecteurs $\overrightarrow{AB}$, $\overrightarrow{AC}$ et $\overrightarrow{AD}$ sont coplanaires.\end{proposition}
+
+\begin{example}On considère un cube $ABCDEFGH$ ainsi que les points $I$, $J$, $K$ et $L$, milieux respectifs des segments $[AB]$, $[AE]$, $[CG]$ et $[EH]$
+
+\begin{center}
+\includegraphics[scale=0.3]{cubecoplan}
+\end{center}
+
+Les points $I$, $J$, $K$ et $L$ sont coplanaires : ces quatre points appartiennent à un même plan.
+
+Pour le démontrer formellement, nous allons exprimer le vecteur $\overrightarrow{JK}$ comme une combinaison linéaire des vecteurs $\overrightarrow{JI}$ et $\overrightarrow{JL}$.
+
+\begin{center}
+\includegraphics[scale=0.3]{cubecoplan2}
+\end{center}
+
+\vskip120pt
+
+\end{example}
+\newpage
+\subsection{Positions relatives}
+
+\subsubsection{Positions relatives de deux droites}
+
+\begin{definition} Soit $A$, $B$, $C$ et $D$ quatre points distincts de l'espace. Les droites $(AB)$ et $(CD)$ sont dites coplanaires si les points $A$, $B$, $C$ et $D$ sont coplanaires.
+
+Autrement dit, il existe un plan qui contiennent les droites $(AB)$ et $(CD)$.\end{definition}
+
+\begin{proposition}Deux droites de l'espace coplanaires sont...
+\begin{itemize}
+\item parallèles ou confondues si leurs vecteurs directeurs sont colinéaires,
+\item sécantes en un unique point sinon.
+\end{itemize}\end{proposition}
+
+
+\begin{example}On considère un cube $ABCDEFGH$ ainsi qu'un point $I$ sur le segment $[BF]$.
+
+\begin{minipage}{0.4\linewidth}
+\includegraphics[scale=1.2]{cube1}
+
+\end{minipage}\begin{minipage}{0.6 \linewidth}
+\begin{itemize}
+\item Les droites $(AB)$ et $(EF)$ 
+\item Les droites $(AB)$ et $(CG)$ 
+\item Les droites $(HI)$ et $(BD)$ 
+\end{itemize}
+\end{minipage}
+
+\end{example}
+
+
+
+\subsubsection{Positions relatives d'une droite et d'un plan}
+
+\begin{proposition}Une droite est...
+\begin{itemize}
+\item parallèle ou contenue dans un plan si tout vecteur de la droite est aussi un vecteur directeur du plan,
+\item sécante au plan en un unique point sinon.
+\end{itemize}\end{proposition}
+
+\begin{minipage}{0.45\linewidth}\begin{center}
+\textbf{Droite sécante à un plan}
+\end{center}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{relatif4}
+\end{center}
+\end{minipage}\hfill \begin{minipage}{0.45\linewidth}\begin{center}
+\textbf{Droite parallèle à un plan}
+\end{center}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{relatif3}
+\end{center}
+\end{minipage}
+
+\begin{example}Dans le cube précédent, la droite $(AE)$ est parallèle au plan $(BDH)$. En revanche, cette droite est sécante au plan $(IGH)$.\end{example}
+
+\newpage
+
+\subsubsection{Positions relatives de deux plans}
+
+\begin{proposition}Deux plans de l'espace sont...
+\begin{itemize}
+\item parallèles ou confondus si les vecteurs directeurs de l'un sont aussi directeurs de l'autre,
+\item sécants sinon. L'intersection de ces deux plans est alors une droite.
+\end{itemize}\vspace{-0.5cm}\end{proposition}
+
+\begin{minipage}{0.45\linewidth}\begin{center}
+\textbf{Plans sécants selon une droite}
+\end{center}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{relatif1}
+\end{center}
+\end{minipage}\hfill \begin{minipage}{0.45\linewidth}\begin{center}
+\textbf{Plans parallèles}
+\end{center}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{relatif2}
+\end{center}
+\end{minipage}
+
+Il suffit donc de connaître deux points d'intersection $A$ et $B$  de deux plans pour déterminer toute leur intersection qui n'est autre que la droite $(AB)$.
+
+\begin{example}On considère le cube $ABCDEFGH$ suivant ainsi que trois points : $I$ sur le segment $[BF]$, $J$ sur le segment $[CG]$ et $K$ sur le segment $[AE]$  de telles sorte que les droites $(IK)$ et $(AB)$ ne sont pas parallèles, de même que les droites $(IJ)$ et $(BC)$.
+
+\begin{center}
+\includegraphics[scale=0.9]{cube3}
+\end{center}
+
+Construisons l'intersection des plans $(IJK)$ et $(ABC)$.
+
+\vskip180pt
+
+\end{example}
+
+\begin{proposition}Pour montrer que deux plans $\mathcal{P}$ et $\mathcal{P}'$ sont parallèles, il suffit de trouver deux droites sécantes non confondues $(d_1)$ et $(d_2)$ de $\mathcal{P}$ et deux droites sécantes non confondues $(\delta_1)$ et $(\delta_2)$ de $\mathcal{P}'$ telles que $(d_1)$ est parallèle à $(\delta_1)$ et $(d_2)$ est parallèle à $(\delta_2)$.\end{proposition}
+
+\section{Repère de l'espace}
+
+\begin{definition}Un repère de l'espace est un quadruplet $\Oijk$ où
+\begin{itemize}
+\item $O$ est un point de l'espace ;
+\item $\vec{\imath}$, $\vec {\CMjmath}$ et $\vec k$ sont des vecteurs non coplanaires.
+\end{itemize}
+On dit que les vecteurs $\vec{\imath}$, $\vec {\CMjmath}$ et $\vec k$ forment une base de l'espace.\end{definition}
+
+
+
+\begin{proposition}Soit $\vec u$ un vecteur de l'espace et  $\Oijk$ un repère de l'espace. 
+
+Il existe un unique triplet de réel $(x;y;z)$ tel que $\vec u = x \vec {\imath} + y \vec {\CMjmath} + z \vec k$.
+
+$x$, $y$ et $z$ sont appelés les coordonnées du vecteur $\vec u$. On notera $\vec u\renewcommand{\arraystretch}{1} \renewcommand{\arraystretch}{1}\begin{pmatrix}x\\y\\z\end{pmatrix}$. \end{proposition}
+
+\begin{example}On considère deux cubes $ABCDEFGH$ et $BIJCFLKG$ placés côte à côte.
+
+\begin{center}
+\includegraphics[scale=2]{pave2}
+\end{center}
+
+On a en effet $\overrightarrow{AG}=\ldots\overrightarrow{AI}+\ldots\overrightarrow{AD}+\ldots\overrightarrow{AE}.$
+
+Les coordonnées du vecteur $\overrightarrow{AG}$ dans le repère $(A;\overrightarrow{AI}, \overrightarrow{AD}, \overrightarrow{AE})$ sont 
+\vskip10pt
+\end{example}
+
+\begin{definition}Soit $M$ un point de l'espace et $(O;\vec i , \vec j ,\vec k)$ un repère de l'espace. Les coordonnées du point $M$ sont les réels $(x;y;z)$ tels que le vecteur $\overrightarrow{OM}$ a pour coordonnées \renewcommand{\arraystretch}{1}\coordbe{x}{y}{z}. On notera $M(x;y;z)$. \end{definition}
+
+\begin{example}Dans la figure précédente, on a  $\overrightarrow{AK}=\overrightarrow{AB}+\overrightarrow{AC}+\overrightarrow{AE}$ 
+
+Le point $K$ a pour coordonnées $(1,1,1)$ dans le repère $(A;\overrightarrow{AB}, \overrightarrow{AC}, \overrightarrow{AE})$.
+\end{example}
+
+\begin{proposition}Dans un repère  $\Oijk$, on considère les points $A(x_A;y_A;z_A)$ et $B(x_B;y_B;z_B)$.
+\begin{itemize}
+\item Le vecteur $\overrightarrow{AB}$ a pour coordonnées \renewcommand{\arraystretch}{1}\coordbe{x_B-x_A}{y_B-y_A}{z_B-z_A}.
+\item Le point $I$, milieu de $[AB]$, a pour coordonnées $\left( \dfrac{x_A+x_B}{2} ; \dfrac{y_A+y_B}{2} ; \dfrac{z_A+z_B}{2} \right)$.
+\end{itemize}\end{proposition}
+
+\begin{demonstration}On a $\overrightarrow{OA}=x_A\vec {\imath} + y_A \vec \vec {\CMjmath} + z_A \vec k$ et $\overrightarrow{OB}=x_B\vec \vec {\imath} + y_B \vec {\CMjmath} + z_B \vec k$. Or, d'après la relation de Chasles, $\overrightarrow{AB}=\overrightarrow{AO}+\overrightarrow{OB}=\overrightarrow{OB}- \overrightarrow{OA}$. Ainsi,
+\[\overrightarrow{AB} = x_B\vec {\imath} + y_B \vec {\CMjmath} + z_B \vec k - (x_A\vec {\imath} + y_A \vec {\CMjmath} + z_A \vec k)=(x_B-x_A)\vec {\imath} + (y_B-y_A)\vec {\CMjmath} + (z_B - z_A)\vec k.\]
+On retrouve bien le résultat attendu. Par ailleurs, si $I(x_I,y_I,z_I)$ est le milieu de $[AB]$, alors $\overrightarrow{AI}=\overrightarrow{IB}$. 
+
+On a donc, en regardant la première coordonnée de ces deux vecteurs, $x_I - x_A = x_B - x_I$ d'où $x_I=\dfrac{x_A+x_B}{2}$. 
+
+En faisant de même avec les deuxièmes et troisièmes coordonnées, on retrouve la formule attendue.\end{demonstration}
+
+\begin{example}On se place dans un repère $\Oijk$. On considère les points $A(1;3;-4)$ et $B(2;7;-1)$. On note $I$ le milieu du segment $[AB]$.
+\begin{itemize}
+\item Le vecteur $\overrightarrow{AB}$ a pour coordonnées 
+\vskip15pt
+\item Le point $I$ a pour coordonnées 
+\vskip15pt
+\end{itemize}\end{example}
+
+\begin{proposition}Dans un repère  $\Oijk$, on considère les vecteurs $\renewcommand{\arraystretch}{1}\coorde{u}{x}{y}{z}$ et $\renewcommand{\arraystretch}{1}\coorde{v}{x'}{y'}{z'}$. 
+
+Soit $\lambda$ et $\mu$ des réels. Le vecteur $\lambda \vec u + \mu \vec v$ a pour coordonnées \renewcommand{\arraystretch}{1}\coordbe{\lambda x + \mu x'}{\lambda y + \mu y'}{\lambda y + \mu y'}.\end{proposition}
+
+\begin{example}On se place dans un repère de l'espace $\Oijk$. 
+
+Les vecteurs \renewcommand{\arraystretch}{1}\coorde{u}{2}{5}{-3} et \renewcommand{\arraystretch}{1}\coorde{v}{-6}{-15}{9} sont colinéaires. En effet, .\end{example}
+
+\begin{example} Dans le repère  $\Oijk$, on considère les vecteurs \renewcommand{\arraystretch}{1}\coorde{u}{0}{6}{3} \renewcommand{\arraystretch}{1}\coorde{v}{2}{4}{-7}, \renewcommand{\arraystretch}{1}\coorde{w}{-1}{1}{5} . 
+
+Les vecteurs $\vec u$, $\vec v$ et $\vec w$ sont-ils coplanaires ? 
+
+D'une part, les vecteurs $\vec v$ et $\vec w$ ne sont pas colinéaires puisque leurs coordonnées ne sont pas proportionnelles.
+\vskip20pt
+Cherchons alors, s'ils existent, deux réels $\lambda$ et $\mu$ tels que $\vec u = \lambda \vec v + \mu \vec w$. 
+
+\vskip180pt
+
+\end{example}
+
+
+\section{Représentation paramétrique de droite}
+
+\begin{proposition}L'espace est muni d'un repère $\Oijk$.
+
+Soit $A (x_A,y_A,z_A)$ un point de l'espace et $\renewcommand{\arraystretch}{1}\coorde{u}{a}{b}{c}$ un vecteur non nul de l'espace.
+
+On note $(d)$ la droite passant par le point $A$ et dirigée par $\vec u$.
+
+Un point $M(x,y,z)$ appartient à la droite $(d)$ si et seulement s'il existe un réel $t$ tel que $\renewcommand{\arraystretch}{1}\left\{ \begin{array}{l}x=x_A+ta \\ y=y_A+tb \\ z = z_A + tc \\
+
+\end{array}\right.$.
+\end{proposition}
+
+\begin{demonstration} Le point $M$ appartient à la droite $(d)$ si et seulement si les vecteurs $\overrightarrow{AM}$ et $\vec u$ sont colinéaires. Puisque $\vec u$ est non nul, cela revient à dire qu'il existe un réel $t$ tel que $\overrightarrow{AM}=t \vec u$.
+
+
+Ainsi, \renewcommand{\arraystretch}{1}\coordbe{x-x_A}{y-y_A}{z-z_A} = \renewcommand{\arraystretch}{1}\coordbe{ta}{tb}{tc} ou encore $\left\{ \begin{array}{l}x=x_A+ta \\ y=y_A+tb \\ z = z_A + tc \\
+
+\end{array}\right.$.\end{demonstration}
+
+\begin{definition}Soit $A (x_A,y_A,z_A)$ un point de l'espace, $\renewcommand{\arraystretch}{1}\coorde{u}{a}{b}{c}$ un vecteur non nul de l'espace et $(d)$ la droite passant par le point $A$ et dirigée par $\vec u$.
+
+Le système $ \left\{ \renewcommand{\arraystretch}{1}\begin{array}{l}x=x_A+ta \\ y=y_A+tb \\ z = z_A + tc \\
+
+\end{array}\right.,\,t\in\mathbb{R}$ est appelé représentation paramétrique de la droite $(d)$.
+
+\end{definition}
+
+\textbf{Attention ! Une représentation paramétrique de droite n'est pas unique !}
+\newpage
+\begin{example} La droite passant par le point $A(2;1;3)$ et dirigée par le vecteur \renewcommand{\arraystretch}{1}\coorde{u}{1}{-3}{2} admet pour représentation paramétrique 
+\vskip30pt
+\end{example}
+
+\begin{example}On considère la droite admettant pour représentation paramétrique $ \left\{\renewcommand{\arraystretch}{1} \begin{array}{l}x=5-2t \\ y=8-4t \\ z =3+t \\
+
+\end{array}\right., t \in \mathbb{R}$.
+Cette droite passe par le point $\qquad\qquad$ et est dirigée par le vecteur 
+\vskip20pt
+Pour chaque valeur du paramètre $t$, on peut obtenir les coordonnées d'un point de la droite. En prenant par exemple $t=2$, on obtient que cette droite passe par le point de coordonnées
+\vskip10pt
+Réciproquement, le point $B(-1;-4;5)$ appartient-il à cette droite ? 
+
+Supposons que ce soit le cas. Il existe alors un réel $t$ tel que
+
+\vskip20pt
+
+La résolution de ces équations donne successivement 
+
+Il n'y a pas une unique valeur de $t$ qui est trouvée : le point $B$ n'appartient donc pas à la droite considérée.\end{example}
+
+\begin{example}On considère les droites $(d)\,:\,\left\{ \renewcommand{\arraystretch}{1}\begin{array}{l}x=4-t \\ y=11-3t \\ z = 9-2t \\
+\end{array}\right.,\, t \in \mathbb{R}$ et $(d')\,:\,\left\{ \renewcommand{\arraystretch}{1}\begin{array}{l}x=2+k \\ y=6+4k \\ z = -2-5k \\
+\end{array}\right.,\, k \in \mathbb{R}$.
+
+On souhaite déterminer, s'il existe, le point d'intersection de ces droites. Il faut donc trouver deux paramètres $t$ et $k$ qui correspondent à un même point pour ces deux droites. Cela nous amène à résoudre le système suivant :
+\[\left\{\renewcommand{\arraystretch}{1}\begin{array}{l}4-t=2+k \\ 11-3t=6+4k \\ 9-2t=-2-5k \\\end{array}\right.\]
+
+\vskip60pt
+La solution que l'on trouve est unique, les droites sont donc sécantes en un point. Pour trouver les coordonnées de ce point, on remplace le paramètre $t$ ou $k$ dans la représentation paramétrique de la droite correspondante (le mieux étant de le faire pour les deux pour contrôler nos calculs).
+\vskip30pt
+
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

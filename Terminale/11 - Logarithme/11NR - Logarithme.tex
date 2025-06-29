@@ -1,0 +1,195 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+
+\chapter{Cours : Logarithme népérien}
+
+\section{Logarithme népérien}
+
+\begin{definition} Soit $a$ un réel strictement positif. On appelle \textit{logarithme népérien} de $a$, noté $\ln (a)$, l'unique solution de l'équation $e^x =a$, d'inconnue $x \in \mathbb{R}$.\end{definition}
+
+\begin{demonstration}Derrière cette définition se cache une démonstration : une telle solution existe-t-elle ? Si elle existe, cette solution est-elle unique ?
+
+\vskip50pt
+\end{demonstration}
+
+\begin{example}$\ln (1)=$\end{example}
+
+\begin{example} $\ln(e)=\qquad$, $\ln(e^2)=\qquad$.\end{example}
+
+\begin{proposition}Pour tout réel $a>0$, $e^{\ln (a)} = a$.
+
+Pour tout réel $a$, $\ln(e^a)=a$.
+
+\end{proposition}
+
+\begin{demonstration}Soit $a$ un réel strictement positif. 
+\vskip50pt
+\end{demonstration}
+
+
+\begin{example}On cherche à résoudre l'équation $3e^x-6=0$, d'inconnue $x\in \mathbb{R}$. 
+
+\vskip50pt
+\end{example}
+
+
+\textbf{Attention} : il n'existe pas de logarithme népérien de réels négatifs !
+
+\begin{example}On cherche à résoudre l'équation $\ln(x+2)+3=0$. 
+
+\vskip50pt
+\end{example}
+\newpage
+
+\section{Propriétés algébriques}
+
+\begin{proposition}Soit $a$ et $b$ des réels strictement positifs. On a
+\[\ln (ab)=\ln(a)+\ln (b).\]\vspace{-0.5cm}\end{proposition}
+
+\begin{demonstration}
+Soit $a$ et $b$ des réels strictement positifs. 
+\vskip50pt
+\end{demonstration}
+
+\begin{example}On a $\ln(2)+\ln(3)+\ln(4)=$\end{example}
+
+\begin{example}Soit $x$ un réel. Alors,
+\[\ln(1+e^{-x})+x=\]\end{example}
+
+\begin{proposition}Soit $a$ et $b$ des réels strictement positifs. Alors,
+\[\ln\left(\dfrac{1}{a}\right)=-\ln(a) \qquad \qquad \ln (ab)=\ln(a)+\ln (b).\]\vspace{-0.5cm}\end{proposition}
+
+\begin{demonstration} :
+\vskip40pt
+\end{demonstration}
+
+\begin{example}On a $\ln(21)-\ln(7)=$\end{example}
+
+\begin{proposition}Soit $a$ un réel strictement positif. Alors,
+\[\ln (\sqrt{a})=\dfrac{1}{2}\ln(a).\]\vspace{-0.5cm}\end{proposition}
+
+\begin{demonstration}Soit $a>0$.
+
+\vskip50pt
+\end{demonstration}
+
+\begin{proposition}Soit $a$ un réel strictement positif. Pour tout entier \textbf{relatif} $n$
+\[\ln(a^n)=n\,\ln(a).\]\vspace{-0.5cm}\end{proposition}
+
+\begin{demonstration}Soit $a>0$. Pour tout entier naturel $n$, on pose $\mathcal{P}(n)$ la proposition $\ln(a^n)=n\,\ln(a)$.
+
+\vskip180pt
+
+\end{demonstration}
+
+\begin{example}On souhaite simplifier $\ln(12)+\ln(3)-2\ln(6)$.
+
+\vskip30pt
+\end{example}
+
+\begin{example}On a $\dfrac{\ln(10000)}{\ln(0.001)}=$\end{example}
+
+
+\section{Fonction logarithme népérien}
+
+
+\begin{definition}On appelle \textit{fonction logarithme népérien} la fonction $x\mapsto \ln(x)$ définie pour tout réel $x$ strictement positif.
+
+Cette fonction est la \textit{fonction réciproque} de la fonction exponentielle.\end{definition}
+
+\subsection{Limites}
+
+\begin{proposition}On a les limites suivantes :
+\[ \lim_{x\to 0^+}\ln(x)=-\infty \quad\text{et} \lim_{x\to +\infty} \ln(x) = +\infty \]
+De plus, pour tout entier naturel $n$,
+\[ \lim_{x\to 0^+}x^n\,\ln(x) = 0\quad \text{et}\lim_{x\to +\infty} \dfrac{\ln(x)}{x^n}=0\]
+La puissance de $x$ l'emporte sur le logarithme en cas d'indéterminée : ce sont les croissances comparées au logarithme.\end{proposition}
+
+\begin{demonstration}[Au programme : $ \displaystyle\lim_{x\to 0^+}x\,\ln(x)$]
+
+Pour $x>0$, posons $X=\ln(x)$. 
+
+\end{demonstration}
+
+\newpage
+
+\subsection{Dérivabilité}
+
+
+\begin{proposition}La fonction $\ln$ est dérivable sur $]0;+\infty[$ et pour tout réel $x>0$, $\ln'(x)=\dfrac{1}{x}$.\end{proposition}
+
+La fonction $\ln$ est donc également continue sur $]0;+\infty[$.
+
+\begin{demonstration}[Au programme]On admet que $\ln$ est dérivable sur $]0;+\infty[$.
+
+
+\vskip100pt
+\end{demonstration}
+
+\begin{example}Pour tour réel $x>0$, on pose $f(x)=e^x \ln(x)$.
+
+\vskip100pt
+
+\end{example}
+
+On en déduit naturellement la propriété suivante.
+
+\begin{proposition}Soit $u$ une fonction définie sur un intervalle $I$ telle que pour tout réel $x\in I$, $u(x)>0$. 
+
+Alors $\ln(u)$ est dérivable et $(\ln(u))'=\dfrac{u'}{u}$\end{proposition}
+
+\begin{example}Pour tout réel $x$, on pose $u(x)=x^2-2x+5$ et  $f(x)=\ln(u(x))=\ln(x^2-2x+5)$.
+\vskip150pt
+\end{example}
+
+Puisque $\ln(u)$ n'est définie que lorsque $u$ est strictement positive, on en déduit que $u$ et $\ln(u)$ ont les mêmes variations.
+\newpage
+\subsection{Étude de la fonction $\ln$}
+
+\begin{proposition}La fonction $\ln$ est strictement croissante sur $]0;+\infty [$.\end{proposition}
+
+\begin{demonstration}La fonction $\ln$ est dérivable sur $]0;+\infty[$ et pour tout réel $x>0$, $\ln'(x)=\dfrac{1}{x}$ qui est strictement positif. $\ln$ est donc strictement croissante.\end{demonstration}
+
+La stricte croissance du logarithme nous est notamment utile pour déterminer le signe d'une expression mettant en jeu des logarithmes, et en particulier...
+
+\begin{proposition}Soit $x$ et $y$ deux réels strictement positifs. Alors $\ln(x)\geqslant\ln(y)$ si et seulement si $x\geqslant y$.\\
+En particulier, $\ln(x) \geqslant 0$ si et seulement si $x\geqslant 1$.\end{proposition}
+
+\begin{example}On souhaite déterminer l'entier $n$ à partir duquel $3-12 \times 0.9^n \geqslant 2.9$.
+
+
+\vskip200pt
+\end{example}
+
+\begin{proposition}La courbe de la fonction $\ln$ est symétrique à la courbe de la fonction $\exp$ par rapport à la droite d'équation $y=x$.\end{proposition}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\clip (-5,-5) rectangle (5,5);
+\draw [thin, dotted] (-5,-5) grid (5,5);
+\draw [thick] (-5,0)--(7,0);
+\draw [thick] (0,-5) -- (0,5);
+\draw [very thick,->,>=latex] (0,0)--(0,1);
+\draw [very thick,->,>=latex] (0,0)--(1,0);
+\draw [very thick, ocre,domain=-5:6,samples=100] plot (\x,{exp(\x)});
+\draw [very thick, blue,domain=0.01:6,samples=100] plot (\x,{ln(\x)});
+\draw [ thick, dashed,domain=-5:6,samples=100] plot (\x,{\x});
+\draw [thick,ocre] (-3,1) node[above right] {$y=\exp(x)$};
+\draw [thick, blue] (2,-3) node[above] {$y=\ln(x)$};
+\end{tikzpicture}
+\end{center}
+
+Cette propriété est vraie pour toutes les fonctions réciproques l'une de l'autre. Par exemple, vous pouvez observer le même phénomène en regardant les courbes des fonctions $x\mapsto x^2$ et $x\mapsto \sqrt{x}$ sur $[0;+\infty[$. Autre exemple, la fonction inverse, qui est sa propre réciproque. La courbe de cette fonction est elle-même symétrique par rapport à la droite d'équation $y=x$.
+
+
+
+
+\end{document}

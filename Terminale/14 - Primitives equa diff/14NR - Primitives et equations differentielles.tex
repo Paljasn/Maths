@@ -1,0 +1,237 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+
+\chapter{Cours : Primitives et équations différentielles}
+
+
+\section{Notion d'équation différentielle}
+
+\begin{definition}[Équation différentielle]Une équation différentielle est une équation dont l'inconnue est une fonction notée $y$ et qui fait intervenir les dérivées de cette fonction.\end{definition}
+
+\begin{example}On considère la fonction $f$ définie pour tout réel $x$ par $f(x)=\e^{4x-2}$. 
+
+$f$ est solution de l'équation différentielle $y'=4y$. 
+
+\vskip30pt
+\end{example}
+
+\begin{example}On considère la fonction $f$ définie pour tout réel $x$ par $f(x)=\ln(1+\e^x)\e^{-x}$. 
+
+$f$ est solution de l'équation différentielle $y'+y=\dfrac{1}{1+\e^x}$. En effet :
+
+\vskip200pt
+\end{example}
+
+
+\section{Primitive d'une fonction continue}
+
+
+
+\begin{definition}Soit $f$ une fonction définie et continue sur un intervalle $I$ et $F$ une fonction dérivable sur cet intervalle. On dit que $F$ est une \textit{primitive} de $f$ sur $I$ si $F'=f$. 
+
+Autrement dit, $F$ est solution de l'équation différentielle $y'=f$.\end{definition}
+
+
+\begin{example} Pour tout réel $x$, on pose $f(x)=6x^2+4x+3$ et $F(x)=2x^3+2x^2+3x-7$. On a bien pour tout réel $x$, $F'(x)=f(x)$. $F$ est une primitive de $f$ sur $\mathbb{R}$.\end{example}
+
+
+
+\begin{theorem}Toute fonction continue sur un intervalle $I$ admet des primitives.\end{theorem}
+
+Ce résultat sera démontré (en partie) dans un prochain chapitre. Patience !
+
+\begin{proposition}Soit $f$ une fonction continue sur un intervalle $I$, $F_1$ et $F_2$ deux primitives de $f$ sur $I$. 
+
+Alors $F_1-F_2$ est constante : deux primitives d'une même fonction continue sur un intervalle différent d'une constante.\end{proposition}
+
+\begin{demonstration} Soit $F_1$ et $F_2$ deux primitives de $f$ sur $I$.
+
+\vskip50pt
+\end{demonstration}
+
+\begin{proposition}Soit $I$ un intervalle, $x_0\in I$, $y_0 \in \mathbb{R}$ et $f$ une fonction continue sur $I$. Il existe une unique primitive $F$ de $f$ sur $I$ tel que $F(x_0)=y_0$.
+
+L'équation différentielle $y'=f$ ayant pour condition initiale $y(x_0)=y_0$ possède une unique solution.\end{proposition}
+
+
+\begin{example} Pour tout réel $x$, on pose $f(x)=\dfrac{2x}{x^2+1}$ et $F(x)=\ln(x^2+1)$. 
+
+$F$ est une primitive de $f$ sur $\mathbb{R}$. En effet, pour tout réel $x$, $F'(x)=f(x)$.
+
+On cherche alors l'unique primitive $F_0$ de $f$ qui vaut 5 en 0. 
+
+\vskip90pt
+
+\vspace{-0.5cm}\end{example}
+
+
+
+\begin{proposition}Primitives usuelles
+\vskip10pt
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{|X|X|X|}
+
+\hline
+Fonction $f$ & \textbf{UNE} Primitive $F$ & Intervalle $I$ \\
+\hline
+$x \mapsto x^n$, $n\in \mathbb{N}$ &  & $\mathbb{R}$ \\
+\hline
+$x \mapsto \dfrac{1}{x^n}$, $n\in \mathbb{N}\setminus\{0;1\}$ & & $]-\infty;0[$ et $]0;+\infty[$ \\
+\hline
+$x\mapsto \dfrac{1}{\sqrt{x}}$ &  & $]0;+\infty[$ \\
+\hline
+$x \mapsto \e^{ax+b}$, $a\in \mathbb{R}^*$, $b\in \mathbb{R}$ &  & $\mathbb{R}$ \\
+\hline
+$x \mapsto \dfrac{1}{x}$ &  & $]0;+\infty[$ \\
+\hline
+\end{tabularx}\end{proposition}
+
+Le conseil de la leçon : Une fois que vous avez détermine une primitive, dérivez-la ! Vous devez obtenir la fonction de départ. Il est bien plus facile de dériver que de primitiver.
+
+\newpage
+\begin{proposition}Soit $f$ et $g$ deux fonctions continues sur un intervalle $I$, $\lambda$, $F$ une primitive de $f$ et $G$ une primitive de $g$. Alors,
+\begin{itemize}
+\item $F+G$ est une primitive de $f+g$ ;
+\item $\lambda\,F$ est une primitive de $\lambda\,f$.
+\end{itemize}\end{proposition}
+
+\begin{example}Une primitive de la fonction $f:x\mapsto \e^{2x-1}+5x^2+\dfrac{3}{x^2}$ sur $I=]0;+\infty[$ est la fonction
+\vskip20pt\end{example}
+
+
+
+\begin{proposition}L'essentiel : Soit $f$ une fonction dérivable sur un intervalle $I$ et $g$ une fonction dérivable sur un intervalle $J$ telle que pour tout réel $x\in J$, $g(x)\in I$.
+
+$f \circ g$ est une primitive de $g' \times (f' \circ g)$ sur $J$.\end{proposition}
+
+Certaines "formes" de fonction sont à reconnaître pour en calculer les primitives. 
+
+\begin{itemize}
+\item Une primitive d'une fonction de la forme $-\dfrac{u'}{u^2}$ où $u$ est une fonction qui ne s'annule pas est 
+\vskip10pt
+\item Une primitive d'une fonction de la forme $\dfrac{u'}{2\sqrt{u}}$ où $u$ est une fonction strictement positive est 
+\vskip10pt
+\item Une primitive d'une fonction de la forme $u'\e^u$ est 
+\vskip10pt
+\item Une primitive d'une fonction de la forme $\dfrac{u'}{u}$ où $u$ est une fonction strictement positive est 
+\end{itemize}
+
+
+\begin{example} Pour tout réel $x$, on pose $f(x)=(2x+1)\e^{x^2+x-2}$.
+
+\vskip30pt
+\end{example}
+
+\begin{example}Pour tout réel $x$, on pose $f(x)=\dfrac{2\e^{2x}}{1+\e^{2x}}$. Posons, pour tout réel $x$, $u(x)=1+\e^{2x}$. 
+
+\vskip50pt
+\end{example}
+
+Malheureusement, certaines fonctions n'admettent pas de primitive pouvant être exprimées à l'aide de fonctions usuelles : il s'agit là d'un théorème démontré par Liouville dans les années 1830.
+
+L'exemple le plus notable est la fonction $x\mapsto \e^{-x^2}$, très utilisée en probabilités et dont les applications dans d'autres domaines se comptent par centaines (citons ainsi la balistique, l'évaluation du quotient intellectuel, le traitement du signal,  le cours de la bourse...).
+
+\section{Equation différentielle  du premier ordre}
+
+\subsection{Equations différentielles homogènes $y'+ay=0$}
+
+\begin{definition}Soit $a$ un réel. L'équation $y'+ay=0$ ayant pour inconnue une fonction dérivable $y$ sur $\mathbb{R}$ s'appelle "équation différentielle \textbf{homogène} du premier ordre, à coefficients constants".\end{definition}
+
+\begin{proposition}Soit $a$ un réel.
+
+Les solutions l'équation $y'+ay=0$ sont les fonctions $f$ définies pour tout réel $x$ par $f(x)=C\e^{-ax}$ où $C$ est un réel quelconque.
+
+De plus, pour tous réels $x_0$ et $y_0$, il existe une unique solution $f_0$ de cette équation différentielle telle que $f(x_0)=y_0$.\end{proposition}
+
+\begin{demonstration} Soit $C$ un réel. Pour tout réel $x$, on pose alors $f(x)=C\e^{-ax}$.
+
+\vskip100pt
+
+\end{demonstration}
+
+\begin{example} Les solutions de l'équation $y'-2y=0$ sont les fonctions 
+
+Cherchons l'unique solution $f_0$ de cette équation telle que $f_0(3)=1$. 
+
+\vskip60pt
+
+\end{example}
+
+Ce théorème signifie que si l'on regarde l'ensemble des courbes des fonctions solutions de l'équation $y'=ay$ et que l'on s'intéresse à un point du plan, il existe une unique courbe qui passe par ce point. En particulier, toute fonction solution qui s'annule n'est autre que la fonction nulle.
+
+\begin{center}
+\includegraphics[scale=1.2]{equadiff}
+\end{center}
+
+\subsection{Equation différentielle $y'+ay=b$, avec $b$ réel}
+
+\begin{definition} Soit $a$ et $b$ deux réels. L'équation $y'+ay=b$ ayant pour inconnue une fonction $y$ dérivable sur $\mathbb{R}$ s'appelle  "équation différentielle du premier ordre, à coefficients constants et à second membre constant".\end{definition}
+
+\begin{proposition}Soit $a$ et $b$ deux réels.
+
+Les solutions de l'équation différentielle $y'+ay=b$ sont les fonctions $f$ définies pour tout réel $x$ par $f(x)=C\e^{-ax}+\dfrac{b}{a}$ où $C$ est un réel quelconque.
+
+De plus, pour tous réels $x_0$ et $y_0$, il existe une unique solution $f_0$ de cette équation telle que $f_0(x_0)=y_0$.\end{proposition}
+
+\begin{demonstration} Cherchons tout d'abord une solution constante $\varphi$ à cette équation.\vskip200pt
+
+\end{demonstration}
+
+
+
+\begin{example} On cherche à résoudre l'équation $y'-5y=-2$ puis déterminer l'unique solution $f_0$ de cette équation telle que $f_0(7)=12$. 
+
+\vskip150pt
+\end{example}
+
+
+\begin{proposition}[Formule magique] Pour résoudre une équation du type $y'+ay=b$...
+\begin{center}
+\textbf{SOLUTION GÉNÉRALE = SOLUTION HOMOGÈNE + SOLUTION CONSTANTE}
+\end{center}\vspace{-0.5cm}\end{proposition}
+
+
+\subsection{Equation différentielle $y'+ay=g$, où $g$ est une fonction}
+
+\begin{definition}Soit $a$ un réel non nul et $g$ une fonction définie sur $\mathbb{R}$. L'équation $y'=ay+g$ s'appelle "équation différentielle linéaire du premier ordre avec second membre".\end{definition}
+
+\begin{proposition}Soit $a$ un réel non nul et $g$ une fonction définie sur $\mathbb{R}$. 
+
+Soit $\varphi$ une solution particulière de cette équation. Alors $f$ est solution de l'équation $y'+ay=g$ si et seulement si $f-\varphi$ est solution de l'équation homogène associée $y'+ay=0$.
+
+Autrement dit, toute solution de l'équation $y'+ay=g$ est de la forme $f+\varphi$, où $f$ est solution de l'équation $y'+ay=0$ et $\varphi$ est \textbf{UNE} solution de l'équation $y'+ay=g$.\end{proposition}
+
+
+\begin{demonstration}La démonstration est en tout point semblable à celle qui a conduit à l'ensemble des fonctions solutions de l'équation $y'+ay=b$. Faisons-la donc à nouveau. 
+
+\vskip170pt
+
+\end{demonstration}
+
+\begin{example} On considère l'équation différentielle $y'-2y=-6x^2+13$ et $\varphi :x \mapsto 3x^2+3x-5$.
+
+\vskip170pt
+
+\end{example}
+
+\begin{proposition}[Formule magique] Pour résoudre une équation du type $y'+ay+g$...
+\begin{center}
+\textbf{SOLUTION GÉNÉRALE = SOLUTION HOMOGÈNE + SOLUTION PARTICULIÈRE}
+\end{center}\vspace{-0.5cm}\end{proposition}
+
+
+
+
+
+
+
+
+\end{document}

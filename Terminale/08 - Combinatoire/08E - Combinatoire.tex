@@ -1,0 +1,650 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+\chapter{Exercices}
+
+\section*{Cardinal d'ensembles}
+
+\begin{exercise}On considère l'ensemble $A=\{5;9;13\}$. Déterminer l'ensemble $B$, disjoint de $A$, tel que $A\cup B =\{1;2;5;8;9;13;14\}$.\end{exercise}
+
+\begin{solution} On prend les éléments de $A \cup B$ qui ne sont pas dans $A$. $B=\{1;2;8;14\}$.\end{solution}
+
+
+\begin{exercise}On considère deux ensembles $A$ et $B$.
+\begin{itemize}
+\item Si $\Card(A)=18$, $\Card(B)=23$, $A$ et $B$ étant disjoints, que vaut $\Card(A \cup B)$ ?
+\item Si $\Card(A)=12$, $\Card(B)=47$ et $\Card(A \cup B) = 58$, $A$ et $B$ sont-ils disjoints ?
+\item Si $\Card(A)=14$ et $\Card(A \cup B) = 27$, quel est le nombre minimal d'éléments dans $B$ ?
+\end{itemize}\end{exercise}
+
+\begin{solution}\hspace{0pt}
+\begin{itemize}
+\item Puisque $A$ et $B$ sont disjoints, $\Card(A \cup B)=\Card(A) + \Card(B) = 18 + 23 = 41$.
+\item On a $\Card(A)+\Card(B)=47+12=59 \neq \Card(A \cup B)$, $A$ et $B$ ne sont pas disjoints.
+\item $B$ comporte au moins $27-24=13$ éléments.\end{itemize}
+\end{solution}
+
+
+
+\begin{exercise}À leur entrée en L1, les étudiants choisissent une langue (anglais ou allemand) et une option (informatique, chimie ou astronomie). Dans un groupe d'étudiants, 12 étudiants sont inscrits en astronomie, 15 en chimie, 16 étudient l'allemand. Par ailleurs, 8 inscrits en astronomie et 3 inscrits en informatique étudient l'anglais, 6 inscrits en chimie étudient l'allemand.
+
+Indiquer la répartition des étudiants par discipline, ainsi que le nombre total d'étudiants dans le groupe.\end{exercise}
+
+
+
+\begin{solution}Il est possible de résoudre cet exercice en utilisant un tableau.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & Informatique & Chimie & Astronomie & Total \\
+ \hline
+ Anglais &3&9&8&20 \\
+ \hline
+ Allemand &6&6&4&16\\
+ \hline
+ Total &9&15&12&36 \\
+ \hline \end{tabular}
+\end{center}\end{solution}
+
+
+
+
+\begin{exercise}Pour tout entier naturel $n$, on note $A_n$ l'ensemble des solutions de l'équation $x^2-n=0$. 
+
+Déterminer $\Card(A_0 \cup A_1 \cup A_2 \cup \ldots \cup A_n)$.	
+\end{exercise}
+
+\begin{solution}Pour tout entier naturel $n$, on note $A_n$ l'ensemble des solutions de l'équation $x^2-n=0$. Ainsi, $A_0=\{0\}$ et pour tout entier naturel non nul, $A_n=\{-\sqrt{n} ; \sqrt{n}\}$. Ces ensembles sont disjoints et de cardinal 2.
+
+Ainsi, $\Card(A_0 \cup A_1  \cup \ldots \cup A_n)=\Card(A_0)+\Card(A_1)+\ldots + \Card(A_n)=1+2+2+\ldots + 2=2n+1$.\end{solution}
+
+
+
+
+
+\begin{exercise}Soit $A=\{5;7\}$ et $B=\{7;9;10\}$. Donner l'ensemble des éléments de $A\times B$, de $B \times A$, de $A^3$ et de $B^2$.\end{exercise}
+
+\begin{solution} On a
+\begin{itemize}
+\item $A\times B=\{(5;7), (5;9), (5;10), (7;7), (7;9), (7;10)\}$, 
+\item $B \times A = \{(7;5),(7;7), (9;5), (9;7), (10;5), (10;7)\}$, 
+\item $A^3 = \{(5;5;5),(5;5;7),(5;7;5), (5;7;7), (7;5;5),(7;5;7),(7;7;5),(7;7;7)\}$,
+\item $B^2=\{(7;7),(7;9),(7;10),(9;7),(9;9),(9;10),(10;7),(10;9),(10;10)\}$.
+\end{itemize}\end{solution}
+
+
+
+\begin{exercise}
+Soit $A$ et $B$ deux ensembles finis tels que $\Card(A \times B)=299$ et 
+$\Card(A \cup B)=37$. Les ensembles $A$ et $B$ sont-ils disjoints ?\end{exercise}
+
+\begin{solution}$299 = 1 \times 299 = 13 \times 23$. Les seules possibilités pour les cardinaux de $A$ et $B$ sont donc 1, 13, 23 et 299.
+
+ Or, $13+23=39$ et $1+299=300$, qui sont différents de 37. Ainsi, $A$ et $B$ ne sont pas disjoints.
+\end{solution}
+
+
+
+\begin{exercise}Parmi tous les nombres de 1 à 1000, combien s'écrivent avec le chiffre 9 ?\end{exercise}
+
+\begin{solution}Comptons le nombre de nombres n'ayant aucun 9 dans leur écriture. Il y a 9 choix pour le premier chiffre, 9 pour le deuxième, 9 pour le troisième soit $9^3=729$ possibilités. Ainsi, les nombres qui s'écrivent avec un 9 sont au nombre de $1000-729=271$.\newpage \end{solution}
+
+
+
+
+\begin{exercise}En informatique, un octet est une succession de 8 bits, chaque bit ne pouvant prendre que deux valeurs, 0 ou 1. Un octet est donc un 8-uplet de  $\{0;1\}$.
+\begin{enumerate}
+\item Combien d'octets différents existe-t-il ?
+\item Dans le système RGB, une couleur est codée à l'aide de 3 octets désignant respectivement les niveaux de rouge, de vert et de bleu. Combien de couleurs différentes est-il ainsi possible de coder ?
+\item Une adresse IPv4 est codée sur 4 octets. On considère un sous-réseau dont le masque est 255.255.0.0, c'est-à-dire que toutes les adresses IP des ordinateurs de ce sous-réseau commencent par les deux mêmes octets. Par ailleurs, les adresses se terminant par les octets 0.0 et 255.255 sont réservées respectivement au réseau et au broadcast. Combien de machines différentes peut-on brancher sur un tel réseau ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}Il existe $2^8$ soit 256 octets. Il est alors possible de coder $256^3$ soit 16777216 couleurs dans le système RGB.
+
+Pour établir une adresse IPv4 de ce sous-réseau, on a 256 possibilités pour le troisième octet et 256 pour le quatrième. Il faut alors retirer les deux adresses réservées. Il est alors possible de connecter $256^2-2$ soit $65534$ machines au réseau.\end{solution}
+
+
+
+
+\begin{exercise}Dans un restaurant figurent au menu
+\begin{itemize}
+\item 12 entrées : 3 avec viande, 3 avec poisson et 6 végétariennes ;
+\item 20 plats : 10 avec viande, 6 avec poisson et 4 végétariens.
+\end{itemize}
+Un client commande au hasard de manière uniforme et indépendante une entrée et un plat.
+\begin{enumerate}
+\item Quelle est la probabilité que le menu de ce client soit végétarien ?
+\item Quelle est la probabilité que son menu soit composé d'une entrée et d'un plat tous deux sans poisson ?
+\item Quelle est la probabilité que l'entrée et le plat soit de nature différente (par exemple une entrée avec viande et un plat végétarien) ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}Il y a $12 \times 20$ soit $240$ menus au total. Il y a par ailleurs $6 \times 4$ menus végétariens. \\La probabilité que le menu soit végétarien est de $\dfrac{24}{240}$ soit $\dfrac{1}{10}$.
+
+Il y a 9 entrées sans poissons et 14 plats sans poissons, soit $9\times 14$ menus sans poisson. \\La probabilité que le menu soit sans poisson est de $\dfrac{9\times 14}{240}=\dfrac{21}{40}$.
+
+Le nombres de menus ayant entrée et plat différents est $3 \times 10+3 \times 14 +6 \times 16$ soit 168. \\La probabilité de l'événement recherché est donc $\dfrac{168}{240}$ soit $\dfrac{7}{10}$.\end{solution}
+
+
+
+
+
+\begin{exercise}Un trigramme est une figure composée de trois lignes parallèles, chacune pouvant être coupée en deux morceaux ou non. Le drapeau de la Corée du Sud présente par exemple quatre trigrammes entourant un Taiju bleu et rouge.
+\begin{enumerate}
+\item Combien de trigrammes différents peut-on constituer ?
+
+\item Construire les trigrammes ne figurant pas sur le drapeau.
+
+\begin{center}
+\includegraphics[scale=0.25]{coree}
+\end{center}
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}Il est possible de constituer 8 trigrammes. \end{solution}
+
+
+
+\section*{Arrangements et permutations}
+
+\begin{exercise}On considère l'ensemble $A=\{1;3;7;11\}$. Donner tous les 2-arrangements de $A$. Combien y en a-t-il ?\end{exercise}
+
+\begin{solution}Les 2-arrangements de $A$ sont (1;3), (1;7), (1;11), (3;1), (3;7); (3;11), (7;1), (7;3), (7;11), (11;1), (11;3), (11;7). Il y en a 12.\end{solution}
+
+
+
+\begin{exercise}On considère l'ensemble $A=\{c;o;s\}$ Donner toutes les permutations de $A$. Combien y en a-t-il ?\end{exercise}
+
+\begin{solution}Les permutations de $A$ sont (s;i;n), (s;n;i), (i;s;n), (i;n;s), (i;s;n), (i;n;s). Il y en a 6.\end{solution}
+
+
+
+
+\begin{exercise}
+On considère l'ensemble $A=\{1;3;7;9;11\}$.
+\begin{enumerate}
+\item Donner deux éléments de $A^3$. Combien en existe-t-il ?
+\item Donner deux 3-arrangements d'éléments de $A$. Combien en existe-t-il ?
+\item Donner deux permutations de $A$. Combien en existe-t-il ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}\hspace{0pt}
+\vspace{-0.5cm}
+\begin{itemize}
+\item $(1;3;3)$ et $(7;7;1)$ sont deux éléments de $A^3$. Il en existe $5^3$ soit 125.
+\item $(1;7;11)$ et $(7;9;1)$ sont deux 3-arrangements d'éléments de $A$. Il en existe $5 \times 4 \times 3 = 60$.
+\item $(1;7;3;11;9)$ et $(11;9;3;7;1)$ sont deux permutations de $A$. Il en existe $5!=120$.
+\end{itemize}\end{solution}
+
+
+
+\begin{exercise}Une course de 8 athlètes a lieu. 
+\begin{enumerate}
+\item Combien y a-t-il de podiums possibles ? 
+\item Combien y a-t-il de classements complets possibles ?
+\item Anne a participé à la course et a terminé sur le podium. Sachant cette information, combien de classements complets sont possibles ?
+\end{enumerate}\newpage \end{exercise}
+
+\begin{solution}Il y a $8 \times 7 \times 6$ soit 336 podiums possibles. Il y a $8!$ soit 40320 classements possibles.
+
+Classons les 7 autres personnes : il y a 7! classement possibles. Il faut alors insérer Anne en première, deuxième ou troisième position. Le nombre de classements complets vaut alors $3 \times 7!$ soit 15120.\end{solution}
+
+
+
+
+\begin{exercise}Le professeur souhaite envoyer ses élèves au tableau pour corriger des exercices. Il y a 3 exercices à corriger et 30 élèves dans la classe.
+\begin{enumerate}
+\item Combien y a-t-il de configurations possibles si un même élève ne peut pas venir deux fois au tableau ?
+\item Même question si un élève peut être interrogé sur plusieurs exercices.
+\end{enumerate}\end{exercise}
+
+
+\begin{solution}Si un élève ne peut pas venir deux fois au tableau, il y a 30 possibilités pour le premier élèves, 29 pour le deuxième et 28 pour le troisième, soit un total de $30 \times 29 \times 28=24360$ configurations.
+
+Si, en revanche, un élève peut passer plusieurs fois, il y a 30 choix pour chaque exercice, soit un total de $30^3=27000$ configurations.\newpage \end{solution}
+
+
+
+\begin{exercise}Deux groupes d'étudiants se rendent au cinéma. Le premier est composé de 6 personnes et le deuxième de 4 personnes. Les étudiants s'installent sur une rangée de dix places.
+\begin{enumerate}
+\item Combien de configurations différentes existe-t-il ?
+\item Les deux groupes ne veulent pas être séparés. Combien de configurations sont possibles ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}Il existe $10!=3628800$ configurations possibles.
+
+Si les étudiants ne souhaitent pas se séparer, il y a deux situations possibles.
+\begin{itemize}
+\item On place le premier groupe puis le deuxième. Il y a $6!$ manières de placer le premier groupe et $4!$ pour le deuxième.
+\item On place le deuxième groupe puis le premier, on obtient le même nombre de placements.
+\item Le nombre de configurations possibles est donc de $2 \times 6! \times 4! = 34560$.
+\end{itemize}\end{solution}
+
+
+
+
+\begin{exercise}
+On dispose des lettres de SAINTEX. On souhaite construire de nouveaux mots à l'aide de ces lettres, sans s'intéresser au sens de ces mots. On peut par exemple former les mots EXTIA ou SINETAX.
+\begin{enumerate}
+\item Combien de mots de 4 lettres peut-on former si toutes les lettres peuvent être utilisées autant de fois que l'on veut ?
+\item Combien de mots de 4 lettres peut-on former si chaque lettre ne peut être utilisée qu'une seule fois ?
+\item Combien de mots de 6 lettres ne commençant pas par la lettre X peut-on former, chaque lettre pouvant être utilisée autant de fois que l'on veut ?
+\item Combien de mots de 4 lettres comportant la lettre I existe-t-il, chaque lettre ne pouvant être utilisée qu'une seule fois ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}\hspace{0pt}
+\vspace{-0.5cm}
+\begin{enumerate}
+\item On peut former $7^4=2401$ mots.
+\item On peut former $7 \times 6 \times 5 \times 4 = 840$ mots.
+\item Il y a 6 choix pour la première lettre, puis 7 pour la deuxième, 7 pour la troisième et ainsi de suite. Le nombre de mots est de $6 \times 7^5 = 100842$.
+\item On divise les mots selon la position de la lettre I.
+\begin{itemize}
+\item Si elle est en première position, on a alors 6 choix pour la deuxième lettre, 5 pour la troisième, 4 pour la quatrième, soit 120 possibilités.
+\item Le même raisonnement vaut si le O est en position 2, 3 ou 4.
+\item Il y a donc 480 possibilités au total.
+\end{itemize}
+\end{enumerate}\end{solution}
+
+
+
+\begin{exercise}[subtitle={(Amérique du Sud 2009)}]
+
+On considère un questionnaire comportant cinq questions. Pour chacune des cinq questions posées, trois propositions de réponses sont faites (A, B et C), une seule d'entre elles étant exacte.
+
+Un candidat répond à toutes les questions posées en écrivant un mot réponse
+de cinq lettres.
+Par exemple, le mot BBAAC signifie que le candidat a répondu B aux première et deuxième questions, A aux troisième et quatrième questions et C à la
+cinquième question.
+\begin{enumerate}
+\item Combien y-a-t'il de mots-réponses possible à ce questionnaire ?
+\item On suppose que le candidat répond au hasard à chacune des cinq questions de ce questionnaire. Calculer la probabilité des évènements suivants :
+\begin{itemize}
+\item E : " le candidat a exactement une réponse exacte ".
+\item F : " le candidat n'a aucune réponse exacte ".
+\item G : " le mot-réponse du candidat est un palindrome " (On précise qu'un
+palindrome est un mot pouvant se lire indifféremment de gauche à droite
+ou de droite à gauche : par exemple, BACAB est un palindrome).\end{itemize}
+\end{enumerate}\end{exercise}
+
+
+\begin{solution}\hspace{0pt}
+\vspace{-0.5cm}
+\begin{enumerate}
+\item Il y a à chaque fois 3 choix par question, soit $3^5$ mots-réponses possibles.
+\item 
+\begin{itemize}
+\item  On distingue selon la position de la bonne réponse.
+\begin{itemize}
+\item S'il s'agit de la première réponse, il y a $1 \times 2 \times 2 \times 2 \times 2 = 16$ mots-réponses possibles.
+\item Le même raisonnement tient s'il s'agit de la deuxième, troisième, quatrième ou cinquième réponse.
+\item Au total 80 mots-réponses contiennent exactement une bonne réponse.
+\end{itemize}
+La probabilité d'avoir exactement une bonne réponse est donc de $\dfrac{80}{243}$.
+\item Il y a deux mauvaises réponses par question. La probabilité de n'avoir aucune réponse exacte est donc $\dfrac{2^5}{243}=\dfrac{32}{243}$.
+\item Il y a 3 choix pour la première lettre, 3 pour la deuxième et 3 pour la troisième. Il n'y a qu'un choix pour la quatrième qui doit être la même que la deuxième et un seul choix également pour la cinquième qui doit être la même que la première. \\La probabilité d'avoir un palindrome est donc de $\dfrac{3^3}{3^5}=\dfrac{1}{3^2}=\dfrac{1}{9}$.\end{itemize}
+\end{enumerate}\end{solution}
+
+\begin{exercise}[subtitle={(Centres étrangers 2024)}]
+
+Un sac opaque contient huit jetons numérotés de 1 à 8, indiscernables au toucher.
+
+À trois reprises, un joueur pioche un jeton dans ce sac, note son numéro, puis le remet dans le sac. Dans ce contexte, on appelle « tirage » la liste ordonnée des trois numéros obtenus.
+Par exemple, si le joueur pioche le jeton numéro 4, puis le jeton numéro 5, puis le jeton numéro 1, alors le tirage correspondant est (4; 5; 1).
+\begin{enumerate}
+\item Déterminer le nombre de tirages possibles.
+\item\begin{enumerate}
+\item Déterminer le nombre de tirages sans répétition de numéro.
+\item En déduire le nombre de tirages contenant au moins une répétition de numéro.\end{enumerate}\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}
+L'ordre des tirages est pris en compte et il y a remise entre chaque tirage. Nous avons 8 possibilités pour le premier tirage, 8 pour le deuxième et 8 pour le troisième. Il y a donc $8^3=512$ tirages. possibles.
+
+Le nombre de tirages sans répétition est de $8 \times 7 \times 6 =336$. Le nombre de tirage contenant au moins une répétition est donc de $512-336=176$.\newpage\end{solution}
+
+
+
+
+\section*{Combinaisons d'un ensemble fini}
+
+\begin{exercise}Soit $A=\{1;2;3;4\}$. donner toutes les parties de $A$ à 2 éléments et en déduire la valeur de $\dbinom{4}{2}$.\end{exercise}
+
+\begin{solution}Les parties de $A$ à deux éléments sont $\{1;2\}$, $\{1;3\}$, $\{1;4\}$, $\{2;3\}$, $\{2;4\}$ et $\{3;4\}$.\end{solution}
+
+
+
+\begin{exercise}Donner les valeurs de $\dbinom{6}{3}$, $\dbinom{10}{7}$, $\dbinom{14}{11}$,  $\dbinom{9}{4}$, $\dbinom{9}{5}$ et $\dbinom{8}{3}$.\end{exercise}
+
+\begin{solution}\hspace{0pt}
+ \begin{itemize}
+ \item $\dbinom{6}{3}=\dfrac{6!}{3!3!}=\dfrac{6 \times 5 \times 4 \times 3!}{(3 \times 2 \times 1)3!}=5 \times 4 =20$.
+
+\item $\dbinom{10}{7}=\dfrac{10!}{7!3!}=\dfrac{10 \times 9 \times 8 \times 7!}{(3 \times 2 \times 1)7!}=\dfrac{10 \times 9 \times 8}{3 \times 2} = 5 \times 3 \times 8 = 120$.
+
+\item $\dbinom{14}{11}=\dfrac{14!}{11!3!}=\dfrac{14 \times 13 \times 12 \times 11!}{11! \times (3 \times 2 \times 1)}=14 \times 13 \times 2 = 364$.
+
+\item $\dbinom{9}{4}=\dfrac{9!}{4!5!}=\dfrac{9 \times 8 \times 7 \times 6 \times 5!}{5!(4 \times 3 \times 2 \times 1)}=3 \times 7 \times 6 = 126$.
+
+\item $\dbinom{9}{5}=\dfrac{9!}{5!4!}=126$ d'après le calcul précédent.
+
+\item $\dbinom{8}{3}=\dfrac{8!}{3!5!}=\dfrac{8 \times 7 \times 6 \times 5!}{5!(1 \times 2 \times 3)}=8\times 7 = 56$.\end{itemize}
+\end{solution}
+
+
+
+
+\begin{exercise}Calculer les coefficients binomiaux : $\dbinom{31}{2}$, $\dbinom{279}{279}$, $\dbinom{1457}{0}$, $\dbinom{4321}{4320}$, $\dbinom{101}{99}$.\end{exercise}
+
+
+\begin{solution}$\dbinom{31}{2}=\dfrac{31 \times 30 }{2} = 465$, $\dbinom{279}{279}=1$, $\dbinom{1457}{0}=1$, $\dbinom{4321}{4320}=4321$, $\dbinom{101}{99}=\dfrac{101 \times 100}{2}=5050$.\end{solution}
+
+
+
+
+\begin{exercise}Pour tout entier naturel $n$, on pose $u_n=\dbinom{2n}{n}$. Montrer que la suite $(u_n)$ est strictement croissante.\end{exercise}
+
+\begin{solution}Pour tout entier naturel $n$, $u_n>0$. Pour savoir si $u_{n+1} \geqslant u_n$, on regarde donc si $\dfrac{u_{n+1}}{u_n}\geqslant 1$.
+\[ \dfrac{u_{n+1}}{u_n}=\dfrac{\dbinom{2n+2}{n+1}}{\dbinom{2n}{n}}=\dfrac{(2n+2)!}{(n+1)!(n+1)!} \times \dfrac{n! n!}{(2n)!}=\dfrac{(2n+2) \times (2n+1) \times (2n)!}{n! \times (n+1) \times n! \times (n+1)} \times \dfrac{n! n!}{(2n)!}.\]
+En simplifiant, on trouve alors
+\[ \dfrac{u_{n+1}}{u_n}=\dfrac{(2n+2)(2n+1)}{(n+1)(n+1)}=\dfrac{2(n+1)(2n+1)}{(n+1)(n+1)}=\dfrac{2(2n+1)}{n+1}.\]
+
+Or, pour tout entier naturel $n$, $2n+1 \geqslant n+1$ et donc $\dfrac{u_{n+1}}{u_n}\geqslant 1$. La suite $(u_n)$ est croissante. \end{solution}
+
+
+
+\begin{exercise}Pour préparer le prochain devoir de mathématiques, le professeur donne une liste de dix exercices et vous recommande d'en travailler cinq.
+\begin{enumerate}
+\item Combien de combinaisons d'exercice pouvez-vous construire ?
+\item Le professeur insiste sur le fait que l'exercice 8 est à le travailler absolument. Il vous reste donc 4 exercices à choisir. Combien de combinaisons pouvez-vous construire ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}Il faut choisir 5 exercices parmi 10 soit 
+\[ \dbinom{10}{5}=\dfrac{10!}{5!5!}=\dfrac{10 \times 9 \times 8 \times 7 \times 6 \times 5!}{5!\times 5!}= \dfrac{10 \times 9 \times 8 \times 7 \times 6 }{ 5!}=252\text{ possibilités.}\]
+Si l'exercice 8 est imposé, il faut choisir 4 exercices parmi les 9 restants, soit
+\[ \dbinom{9}{4}=\dfrac{9!}{4!5!}=\dfrac{9 \times 8 \times 7 \times 6 \times 5!}{4!\times 5!}=126 \text{ possibilités.}\]\end{solution}
+
+
+
+
+\begin{exercise}Dans une grille de loto, il faut choisir cinq nombres de 1 à 49 ainsi qu'un nombre chance allant de 1 à 10. De combien de manières différentes peut-on remplir sa grille de loto ?\end{exercise}
+
+\begin{solution}On a donc $\dbinom{49}{5} \times \dbinom{10}{1} = 19068840$ manières de remplir une grille de loto.\end{solution}
+
+
+
+\begin{exercise}On considère un jeu de 32 cartes. Chaque carte possède une couleur (Cœur, Pique, trèfle, Carreau) et une valeur (As, Roi, Dame, Valet, 10, 9, 8, 7). Une main est un ensemble de 5 cartes tirées dans ce paquet, sans tenir compte de l'ordre des cartes tirées. Déterminer le nombre de mains :
+\begin{itemize}
+\item comportant exactement 3 cœurs ;
+\item comportant exactement un roi et exactement deux dames ;
+\item comportant au plus 2 roi.
+\end{itemize}
+ \end{exercise}
+
+\begin{solution}Pour obtenir une main comptant exactement 3 cœurs
+\begin{itemize}
+\item On choisit 3 cœurs parmi les 8 : $\dbinom{8}{3}=56$ ;
+\item On choisit 2 cartes parmi les 24 restantes : $\dbinom{24}{2}=276$ ;
+\item Le nombre total de mains ayant exactement 3 cœurs est donc de $56 \times 276 = 	15456$.
+\end{itemize}
+
+Pour obtenir une main ayant exactement un roi et deux dames
+\begin{itemize}
+\item On choisit un roi parmi 4 puis deux dames parmi 4 : $\dbinom{4}{1} \dbinom{4}{2}=4 \times 6 = 24$ ;
+\item On choisit 2 cartes parmi les 24 restantes : $\dbinom{24}{2}=276$ ;
+\item Le nombre total de mains comptant exactement un roi et deux dames est donc de $4 \times 6 \times 276=6624$.\end{itemize}
+
+Pour obtenir une main contenant au plus deux rois, on compte les mains ayant exactement 0, 1 ou 2 roi et on ajoute les différents cas.
+\begin{itemize}
+\item Aucun roi : On choisit 5 cartes parmi les 28 qui ne sont pas des rois, soit $\dbinom{28}{5}=98280$ ;
+\item Un roi : On choisit un roi parmi 4 puis 4 cartes parmi les 28 restantes, soit $\dbinom{4}{1} \times \dbinom{28}{4}=81900$ ;
+\item Deux rois : On choisit deux rois parmi 4 puis 3 cartes parmi les 28 restantes, soit $\dbinom{4}{2} \times \dbinom{28}{3}=19656$ ;
+\item Le nombre total de mains comportant au plus deux rois vaut donc $98280+81900+19656=199836$.
+\end{itemize}\end{solution}
+
+
+
+
+
+%\begin{exercise}
+%On lance simultanément dix pièces de monnaies et on regarde de quel côté elles tombent.
+%\begin{enumerate}
+%\item Combien de configurations avec 3 pièces tombant sur FACE existe-t-il ?
+%\item Combien de configurations avec au plus 3 pièces tombant sur FACE existe-t-il ?
+%\end{enumerate}\end{exercise}
+%
+%\begin{solution}Il existe $\dbinom{10}{3}=120$ configurations avec 3 pièces tombant sur FACE. 
+%
+%Il existe $\dbinom{10}{0}+\dbinom{10}{1}+\dbinom{10}{2}+\dbinom{10}{3}=1+10+45+120=176$ configurations avec au plus 3 pièces tombant sur FACE.\end{solution}
+
+
+
+
+
+\begin{exercise}Un entraîneur doit constituer une équipe de football. Il a à sa disposition 3 gardiens de buts, 8 défenseurs, 6 milieux de terrain et 6 attaquants. Il doit alors constituer une équipe en désignant 1 gardien, 4 défenseurs, 3 milieux de terrain et 3 attaquants. Combien d'équipes peut-il ainsi construire ?\end{exercise}
+
+\begin{solution}Le nombre d'équipes est de $\dbinom{3}{1} \times \dbinom{8}{4} \times \dbinom{6}{3} \times \dbinom{6}{3} = 84000$.\end{solution}
+
+
+
+
+\begin{exercise}En entrant en première, il vous a été demandé de choisir trois spécialités parmi les douze proposées.
+\begin{enumerate}
+\item Combien de choix différents pouviez-vous faire ?
+\item Un élève de seconde sait qu'il devra abandonner une spécialité en terminale. Il décide donc de choisir deux spécialités qu'il conservera et une qu'il abandonnera. Combien a-t-il de choix ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}Il fallait choisir 3 spécialités parmi 12. Le nombre de choix est donc de $\dbinom{12}{3}=\dfrac{12!}{3!9!}=\dfrac{12 \times 11 \times 10}{3!}=220$.
+
+On choisit 3 spécialités parmi 12 puis une parmi les 3 qu'on abandonnera. \\Le nombre de choix est donc de $\dbinom{12}{3} \times \dbinom{3}{1}=220 \times 3 = 660$.\end{solution}
+
+
+
+\section*{Exercices de synthèse}
+
+
+
+\begin{exercise}
+Une association sportive propose diverses activités telles que le football, le handball, l'athlétisme etc. Ces activités sont au nombre de 20. Sur sa fiche d'inscription, chaque adhérent doit alors choisir 3 activités au maximum parmi ces 20.
+
+\begin{enumerate}
+\item Si la préférence des activités n'entre pas en compte, combien de fiches différentes peut-on former ?
+\item Face à l'affluence grandissante, l'association à ses adhérents de classer ces 3 disciplines au maximum selon les préférences de l'adhérent. Combien de fiches différentes peut-on alors former ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}Si la préférence des activités n'entre pas en compte, chaque adhérent choisi 1, 2 ou 3 activités parmi 20. Il y a donc $\dbinom{20}{1}+\dbinom{20}{2}+\dbinom{20}{3}=20+190+1140=1350$ fiches différentes.
+
+Supposons que l'ordre compte : si l'adhérent choisit une seule discipline, il a 20 choix. S'il en choisit deux, il a 20 choix pour la première et 19 pour la deuxième soit $20 \times 19 = 380$ choix au total. S'il en choisit trois, il a $20 \times 19 \times 18=6840$ choix. Au total, il y a 7240 fiches possibles.\end{solution}
+
+
+
+\begin{exercise}Parmi tous les nombres entiers entre 1 et $10^9$, combien ont une somme de chiffres qui vaut 3 ?\end{exercise}
+
+\begin{solution}Notons d'abord que $10^9$ n'est pas une solution. On regarde donc tous les nombres composés de 9 chiffres (quitte à compléter avec des 0 devant les nombres). Pour avoir un nombre dont la somme des chiffres vaut 3, il y a trois possibilités :
+\begin{itemize}
+\item Il est composé de huit 0 et d'un 3 : il y a alors 9 possibilités pour placer le chiffre 3 dans ce nombre ;
+\item Il est composé de sept 0, d'un 1 et d'un 2 : il y a alors 9 possibilités pour placer le chiffre 1 et 8 possibilités pour placer le chiffre 2, soit 72 possibilités au total ;
+\item Il est composé de six 0 et de trois 1 : il faut placer trois fois le chiffre 1 parmi neuf emplacements. Cela donne $\dbinom{9}{3}$ possibilités, soit 84.
+\end{itemize}
+
+Au total, il y a 165 nombres entres 1 et $10^9$ dont la somme des chiffres vaut 2.\end{solution}
+
+
+
+
+\begin{exercise}
+Une assemblée de 30 personnes souhaite élire une délégation de 4 personnes pour les représenter à un congrès.
+\begin{enumerate}
+\item Combien de délégations peut-on ainsi désigner ?
+\item Alice et Bob ne se supportent pas. Si l'un d'eux fait partie de la délégation, l'autre refusera d'y participer. Combien de possibilités reste-t-il ?
+\item Alice et Bob acceptent finalement de mettre leur différend de côté. Cependant, les inséparables Camille et Dominique imposent que si l'un d'entre eux fait partie de la délégation, alors l'autre doit en être également. Combien de possibilités reste-t-il ?
+\end{enumerate}
+ \end{exercise}
+
+\begin{solution}\hspace{0pt}
+\vspace{-0.5cm}
+\begin{enumerate}
+\item On peut désigner $\dbinom{30}{4}=27405$ délégations différentes.
+
+\item On distingue les cas :
+\begin{itemize}
+\item Aucun ne fait partie de la délégation. On choisit donc 4 personnes parmi 28 : $\dbinom{28}{4}=20475$ ;
+\item Alice fait partie de la délégation et pas Bob. \\ Il reste à choisir 3 personnes parmi 28, soit $\dbinom{28}{3}=3276$ possibilités ;
+\item Bop fait partie de la délégation et pas Alice. On a de nouveau 3276 possibilités.
+\item Au total, il y a $20475+3276+3276=27027$ délégations possibles.
+\end{itemize}
+Une autre technique consiste à compter les délégations où Alice et Bob font tous deux parties de la délégation et de retrancher ce nombre au total. Si les deux font partie de la délégation, on doit encore choisir 2 membres parmi les 28 restants, soit $\dbinom{28}{2}=378$ possibilités. Il y a donc $27405-378=27027$ délégations convenables.
+
+\item On distingue les cas
+\begin{itemize}
+\item Camille et Dominique font tous deux partie de la délégation. Il faut encore choisir deux membres parmi les 28 restants, soit $\dbinom{28}{2}=378$
+\item Camille et Dominique n'en font pas partie. On choisit donc 4 membres parmi les 28 restants, soit $\dbinom{28}{4}=20475$ possibilités
+\item En tout, on a donc $20475+378=20853$ possibilités.
+\end{itemize}
+
+\end{enumerate}
+\newpage
+\end{solution}
+
+
+
+
+\begin{exercise}
+Soit $n$ un entier naturel non nul et $A$ un ensemble fini de cardinal $n$. Pour tout $k\leqslant n$, on note $P_k$ l'ensemble des parties de $A$ ayant $k$ éléments.
+\begin{enumerate}
+\item Rappeler le cardinal de $P_k$. Que vaut l'union des $P_k$ pour $k$ allant de 0 à $n$ ? Est-elle disjointe ?
+\item En déduire que $\dbinom{n}{0} + \dbinom{n}{1} + \ldots + \dbinom{n}{n} =\displaystyle\sum_{k=0}^{n} \dbinom{n}{k} = 2^n$.
+\end{enumerate}\end{exercise}
+
+\begin{solution}Le cardinal de $P_k$ vaut $\dbinom{n}{k}$. Or, l'union des $P_k$ vaut $\mathcal{P}(A)$ et cette union est disjointe.
+
+Ainsi, $\Card(\mathcal{P}(A))=\Card(P_0 \cup P_1 \cup \dots \cup P_n)=\Card(P_0)+\Card(P_1) + \dots + \Card(P_n)$ et donc $2^n = \dbinom{n}{0} + \dbinom{n}{1} + \ldots + \dbinom{n}{n}$.\end{solution}
+
+
+
+
+\begin{exercise}Dans une assemblée de $n$ personnes, on souhaite élire $k$ personnes dans une commission. L'une de ces $k$ personnes en sera la présidente.
+\begin{enumerate}
+\item Combien de commissions avec son président peut-on ainsi constituer ?
+\item On procède différemment : on choisit d'abord le président de la commission puis on choisit les autres membres parmi les personnes restantes. De combien de manières peut-on procéder ?
+\item En déduire que $n \dbinom{n-1}{k-1} = k \dbinom{n}{k}$.
+\item Retrouver cette égalité à l'aide de la formule sur les coefficients binomiaux.\end{enumerate} \end{exercise}
+
+\begin{solution}On choisit $k$ personnes parmi les $n$ personnes. Puis, parmi ces $k$ personnes, on en choisit une qui sera la présidente. Le nombre de choix est $\dbinom{n}{k} \times \dbinom{k}{1}$ soit $k \dbinom{n}{k}$.
+
+ On choisit 1 personne pour présider l'assemblée parmi les $n$ personnes. Pour la suite, on choisit alors $k-1$ personnes sur les $n-1$ présentes pour constituer la commission.\\ Le nombre de choix est donc $\dbinom{n}{1} \times \dbinom{n-1}{k-1}=n \dbinom{n-1}{k-1}$.
+ 
+ On a déterminé le nombre de manières d'élire un comité et un président de deux manières différentes, ces deux quantités sont donc égales. On a donc bien $ n \dbinom{n-1}{k-1} = k \dbinom{n}{k}$.
+ 
+ Pour tout entier naturel non nul $n$ et pour tout entier naturel $k$ compris entre 1 et $n$,
+\[ n \dbinom{n-1}{k-1} = \dfrac{n \times (n-1)!}{(k-1)!(n-1-(k-1))!}=\dfrac{n!}{(k-1)!(n-k)!}.\]
+
+On multiplie en haut et en bas par $k$
+\[  n \dbinom{n-1}{k-1}=k\times \dfrac{n!}{k\times (k-1)!(n-k)!}=k\times \dfrac{n!}{k!(n-k)!}= k \dbinom{n}{k} .\]\end{solution}
+
+
+
+
+\begin{exercise}Soit $n\in \N$. On s'intéresse aux mots de taille $2n$ comportant exactement $n$ fois la lettre A et $n$ fois la lettre B.
+
+\begin{enumerate}
+\item Combien de tels mots peut-on construire ?
+\item \begin{enumerate}
+\item Combien de tels mots contenant 0 fois la lettre $A$ parmi les $n$ premières lettres peut-on construire ?
+\item Combien de tels mots contenant 1 fois la lettre $A$ parmi les $n$ premières lettres peut-on construire ?
+\item Soit $k\geqslant n$. Combien de tels mots contenant $k$ fois la lettre $A$ parmi les $n$ premières lettres peut-on construire ?
+\end{enumerate}
+\item A l'aide des question précédentes, simplifier l'expression $\dbinom{n}{0}^2+\dbinom{n}{1}^2+\dots+\dbinom{n}{n}^2$.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}Parmi les $2n$ emplacements pour les lettres, on en choisit $n$ pour placer les A : les autres recevront la lettre B. Il y a donc $\dbinom{2n}{n}$ tels mots.
+
+\begin{itemize}
+\item Il n'y a qu'un seul mot qui comporte 0 fois la lettre A parmi les $n$ premières.
+\item On choisit 1 lettre parmi les $n$ premières pour placer la lettre A puis $n-1$ lettres parmi les $n$ dernières pour placer la lettre A. On aura bien au total $n$ fois la lettre A. Il y a $\dbinom{n}{1}\dbinom{n}{n-1}$ mots de ce type.
+\item On choisit $k$ lettres parmi les $n$ premières pour placer la lettre A puis $n-k$ lettres parmi les $n$ dernières pour placer la lettre A. On aura bien au total $n$ fois la lettre A. Il y a $\dbinom{n}{k}\dbinom{n}{n-k}$ mots de ce type.
+\end{itemize}
+
+On note $E$ l'ensemble des mots recherchés et $E_k$ l'ensemble des mots contenant $k$ fois la lettre $A$ parmi les $n$ premières lettres. Les ensembles $E_k$ sont disjoints et leur union fait $E$. Ainsi, $\Card(E)=\Card(E_0)+\Card(E_1)+\dots + \Card(E_n)$. \\Or, pour tout entier naturel $k$, $\Card(E_k)=\dbinom{n}{k}\dbinom{n}{n-k}$, mais $\dbinom{n}{k}=\dbinom{n}{n-k}$. 
+
+Finalement, $\Card(E_k)=\dbinom{n}{k}^2$ et on en déduit que  $\dbinom{n}{0}^2+\dbinom{n}{1}^2+\dots+\dbinom{n}{n}^2=\dbinom{2n}{n}$.\end{solution}
+
+\begin{exercise}Outre des baguettes croustillantes et de délicieux croissants, le boulanger vend également d'autres produits. On trouve ainsi 10 sortes de pâtisseries différentes, 4 types de cookies, 12 types de boissons ainsi que 15 sandwichs différents.
+
+\begin{enumerate}
+\item La vitrine du boulanger n'étant pas assez grande pour accueillir tous les types de sandwichs en même temps, le boulanger doit en choisir 8 qu'il pourra exposer et ainsi mettre en avant.  L'ordre dans lequel il place les sandwichs dans la vitrine étant important, combien de choix s'offrent au boulanger pour réaliser sa présentation ?
+\item Une formule est composée d'un sandwich, d'une boisson et d'un dessert, ce-dernier pouvant être une pâtisserie ou un cookie. Combien de formules différentes peut-on ainsi constituer ?
+\item Un client un peu gourmand souhaite goûter à un échantillon des produits du boulanger. Il compte ainsi commander 3 gâteaux et 2 cookies, tous différents les uns des autres pour varier les plaisirs. Combien de choix s'offrent à lui pour réaliser sa commande ?
+\item Face au succès des cookies, notre boulanger-mathématicien décide de lancer un service de cookies personnalisés. Chaque client peut alors choisir une base de cookie (nature ou chocolat) et les ingrédients à mettre dessus. 5 ingrédients sont disponibles et les clients peuvent choisir d'en mettre autant qu'ils veulent sur leur gâteau. Ils peuvent ainsi tout à fait choisir de n'en mettre aucun comme de mettre les 5 en même temps. Combien de recettes de cookies différentes est-il alors possible de créer ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}\begin{enumerate}
+\item L'ordre est important et il n'y a pas de répétitions : il s'agit d'un arrangement. Le boulanger a donc 15 choix pour le premier sandwich, 14 pour le deuxième, 13 pour le troisième etc. La nombre de possibilités vaut donc $15 \times 14 \times 13 \times 12 \times 11 \times 10 \times 9 \times 8$ soit 259 459 200. 
+\item Il y a 15 choix de sandwich, 12 choix de boissons et 14 choix de dessert. Le nombre de formules est donc de $15 \times 12 \times 14$ soit 2520.
+\item Le client choisit 3 pâtisseries parmi 10 et 2 cookies parmi 4. Le nombre de possibilités vaut donc $\dbinom{10}{3} \dbinom{4}{2}$, soit 720.
+\item Il y a deux chois de bases. Pour choisir les ingrédients, on a alors $2^5$ possibilités (pour chaque ingrédient, on a 2 choix : le prendre ou pas). Le nombre total de cookies que l'on peut former est donc $2  \times 2^5$ soit 64. 
+\end{enumerate}
+\end{solution}
+
+
+
+\begin{exercise}Lors de la Seconde Guerre Mondiale, les Allemands utilisaient la machine Enigma pour s'envoyer des messages chiffrés, incompréhensibles pour leurs opposants. Cette machine chiffrait les informations en faisant passer un courant électrique à travers différentes composants. 
+
+Le chiffrement d'Enigma était réputé inviolable, la machine nécessitant de nombreux réglages. Pour déchiffrer les messages interceptés, il fallait retrouver tous les réglages utilisés par les Allemands pour l'envoyer. Pour ne rien arranger aux affaires des Alliés, ces réglages étaient modifiés chaque jour.
+
+\begin{enumerate}
+\item Le premier élément de la machine est une série de trois rotors qui permettent de réaliser les premières connexions électriques. Ces rotors sont choisis parmi cinq modèles et l'ordre de positionnement des rotors dans la machine est important. Combien de configurations différentes ces rotors permettent-ils ?
+\item Chaque rotor peut alors être placé sur 26 positions différentes, correspondant aux 26 lettres de l'alphabet. La position d'un rotor n'influence pas la position des autres, ceux-ci sont totalement indépendants. Les trois rotors étant choisis, combien de positions différentes peut-on donner au mécanisme formé par ces trois rotors ?
+\item La dernière étape consiste à réaliser un câblage sur un tableau de connexion. Six lettres resteront inchangées. Les vingt restantes seront reliées par paire à l'aide de câbles.
+\begin{enumerate}
+\item Combien de manières a-t-on de choisir les six lettres inchangées ?
+\item Parmi les vingt lettres restantes, on en choisit deux que l'on relie à l'aide du câble numéro 1. Combien a-t-on de choix différents ?
+\item Parmi les dix-huit lettres restantes, on en choisit de nouveau 2 qui seront reliées par le câble numéro 2. Combien a-t-on de choix différents ?
+\item On poursuit ainsi jusqu'à ce que les vingt lettres soient toutes reliées. En remarquant que l'ordre de câblage n'a pas d'importance (inverser le câble 1 et le câble 2 donnera le même résultat), donner le nombre de câblages de la machine Enigma.
+\end{enumerate}
+\item En déduire un ordre de grandeur du nombre de configurations de la machine Enigma.
+\item En supposant qu'un ordinateur soit capable de tester un milliard de configurations par seconde, combien d'années faudrait-il pour passer en revue toutes les configurations d'Enigma ?
+\end{enumerate}\end{exercise}
+
+\begin{solution}\hspace{0pt}
+\begin{enumerate}
+\item  Il y a donc 5 possibilités pour le premier rotor, 4 pour le deuxième, 3 pour le troisième, soit $5\times 4 \times 3 = 60$ possibilités pour les rotors.
+
+\item Cela donne 26 placements pour le premier rotor, 26 pour le deuxième et 26 pour le troisième, soit un total de $26 \times 26 \times 26 = 17576$ possibilités.
+\item 
+\begin{enumerate}
+\item Il y a $\binom{26}{6}$ manières de choisir 6 lettres parmi 26, soit $\dfrac{26!}{6!	20!}$, c'est-à-dire 230230 possibilités.
+\item Il y a $\binom{20}{2}$ choix possibles.
+\item Il y a alors $\binom{18}{2}$ possibilités.
+
+\item 
+On a alors $\binom{20}{2} \times \binom{18}{2} \times \binom{16}{2}\times \binom{14}{2}\times \binom{12}{2}\times \binom{10}{2}\times \binom{8}{2}\times \binom{6}{2}\times \binom{4}{2}\times \binom{16}{2}$ possibilités.
+
+Cette écriture est simplifiable, puisque ce nombre vaut
+\[\dfrac{20 \times 19}{2} \times \dfrac{18 \times 17}{2} \times \dfrac{16 \times 15}{2} \times \dfrac{14 \times 13}{2} \times \dfrac{12 \times 11}{2} \times \dfrac{10 \times 9}{2} \times \dfrac{8 \times 7}{2} \times \dfrac{6 \times 5}{2} \times \dfrac{4 \times 3}{2} \times \dfrac{2 \times 1}{2} = \dfrac{20!}{2^{10}}.\] 
+
+Or, l'ordre des câbles n'a pas d'importance : les lettres reliées par le câble 1 auraient pu l'être par le câble 2. Au total, on peut permuter les 10 câbles de $10!$ façons différentes. Le nombre de câblages d'Enigma vaut donc $\dfrac{20!}{2^{10} \times 10!}$ soit 654729075
+\item Le nombre de configurations de la machine Enigma vaut donc $60 \times 17576 \times 230230 \times 654729075$soit environ $1.59 \times 10^{20}$ configurations possibles !
+
+\item En supposant qu'un ordinateur soit capable de tester un milliard de configurations par seconde, il faudrait environ $\dfrac{1.59 \times 10^{20}}{10^9 \times 60 \times 60 \times 24 \times 365}$ soit 5040 années !
+
+\end{enumerate}
+\end{enumerate}
+\end{solution}
+
+
+
+\chapter{Corrigés}
+
+
+\printsolutions[headings={false} ]
+
+\end{document}

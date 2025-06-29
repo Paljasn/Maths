@@ -1,0 +1,304 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+\chapter{Cours : Comparaisons des limites}
+
+\section{Théorèmes de comparaison et d'encadrement}
+
+\subsection{Théorèmes de comparaison}
+
+\begin{theorem}[Théorème de comparaison 1]On considère deux suites réelles $(u_n)$ et $(v_n)$. On suppose qu'il existe un entier naturel $N$ tel que, pour tout entier $n \geqslant N$, on a $u_n \leqslant v_n$. 
+
+Si  $\displaystyle \lim_{n \to +\infty} u_n = +\infty$, alors  $\displaystyle \lim_{n \to +\infty} v_n = +\infty $.\end{theorem}
+
+Il n'y a rien de surprenant ici, si l'on fait preuve d'un brin de logique. Si une suite est plus grande qu'une suite qui devient plus grande que n'importe quel réel, alors elle devient elle-même plus grande que n'importe quel réel.
+
+\begin{demonstration} Soit $N$ un entier naturel tel que, pour tout $n\geqslant N$, $u_n \leqslant v_n$.
+
+\vskip50pt
+
+\end{demonstration}
+
+\begin{example} Pour tout entier naturel $n$, on pose $v_n=n+\cos (n)$.
+
+\vskip30pt
+\end{example}
+
+
+\begin{theorem}[Théorème de comparaison 2]On considère deux suites réelles $(u_n)$ et $(v_n)$. On suppose qu'il existe un entier naturel $N$ tel que, pour tout entier $n \geqslant N$, on a $u_n \geqslant v_n$. 
+
+Si  $\displaystyle \lim_{n \to +\infty} u_n = -\infty$, alors  $\displaystyle \lim_{n \to +\infty} v_n = -\infty $.\end{theorem}
+
+Il s'agit d'une version similaire au premier théorème de comparaison : une suite plus petite qu'une suite qui tend vers $-\infty$ tend également vers $-\infty$. La démonstration de ce résultat est d'ailleurs tout à fait similaire.
+
+\begin{example}Pour tout entier naturel $n$, on pose $v_n=(\cos(n)-2)n$.
+
+\vskip30pt \end{example}
+
+Dans les deux exemples précédents, il était possible d'encadrer les termes de la suite dont on souhaitait déterminer la limite. Ainsi, pour ce dernier exemple, on aurait pu préciser que, pour tout entier naturel $n$, $-3n \leqslant v_n \leqslant -n$. Cet encadrement est tout à fait juste mais seule l'une de ces inégalités (en l'occurrence, celle de droite), permet d'établir la limite de la suite. Être supérieur à une suite qui tend vers $-\infty$ n'a rien d'incroyable, alors qu'être inférieur à une telle suite est plus « exceptionnel ».
+
+Toutefois, le prochain théorème ne pourra pas se contenter d'une simple inégalité...
+
+\subsection{Théorème d'encadrement}
+
+\begin{theorem}On considère trois suites $(u_n)$, $(v_n)$ et $(w_n)$. On suppose qu'il existe un entier naturel $N$ tel que, pour tout entier $n\geqslant N$, on a $u_n \leqslant v_n \leqslant w_n$.
+
+Si les suites $(u_n)$ et $(w_n)$ sont convergentes et sont \textbf{de même limite} $\ell$, alors la suite $(v_n)$ est également convergente et $\displaystyle\lim_{n\to+\infty}v_n=\ell$.\end{theorem}
+
+
+
+\textbf{Illustration} : Sur l'exemple suivant, trois suites $(u_n)$, $(v_n)$ et $(w_n)$ sont représentées. Pour tout entier naturel $n$, $u_n \leqslant v_n \leqslant w_n$. Si l'on sait que $(u_n)$ et $(w_n)$ sont convergentes de même limite, on en déduit la convergence et limite de la suite $(v_n)$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\clip (-1,-2) rectangle (18,4);
+\draw [thick] (0,0)--(22,0);
+\draw [thick] (0,-2)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+\draw [very thick, dashed, domain = 0:22] plot (\x,1);
+\foreach \k in {1,2,...,21} {\draw [very thick, ocre] (\k,{1+2*cos(2*deg(\k))/sqrt(\k)}) node {$\bullet$};}
+\foreach \k in {1,2,...,21} {\draw [very thick, blue] (\k,{1+2/sqrt(\k)}) node {$\times$};}
+\foreach \k in {1,2,...,21} {\draw [very thick, olive] (\k,{1-2/sqrt(\k)}) node {$\times$};}
+
+\draw [blue] (10,2.5) node[right] {$(w_n)$};
+\draw [olive] (10,-0.5) node[right] {$(u_n)$};
+\draw [ocre] (1,1.5) node[right] {$(v_n)$};
+
+\end{tikzpicture}
+\end{center}
+
+Ce théorème est également appelé « théorème des gendarmes ». Les suites $(w_n)$ et $(u_n)$ jouent ici le rôle des gendarmes qui encerclent leur cible, la suite $(v_n)$. Peu à peu, les gendarmes se dirigent vers la prison. La suite $(v_n)$, encerclée, n'a d'autre choix que de les suivre. D'autres noms plus ou moins évocateurs sont donnés à ce théorème : théorème des carabiniers ou théorème du sandwich par exemple.
+
+Remarquons que ce théorème est avant tout un théorème qui établit la convergence d'une suite ! Encadrer les termes d'une suite par ceux de deux suites convergentes ne garantit pas la convergence de la suite encadrée. 
+
+\textbf{Si toutefois, la suite est convergente}, alors la limite de cette suite est comprise (au sens large) entre les limites des suites encadrantes. La convergence doit cependant être établi au préalable.
+
+\begin{demonstration} Notons $N$ l'entier à partir duquel on a, pour tout $n\geqslant N$, $u_n \leqslant v_n \leqslant w_n$. Notons $\ell$ la limite commune des suites $(u_n)$ et $(w_n)$. Soit $\varepsilon$ un réel strictement positif.
+\begin{itemize}
+\item Puisque $\displaystyle \lim_{n \to +\infty} u_n=\ell$, il existe un entier $N_u$ à partir duquel tous les termes de la suite $(u_n)$ sont dans l'intervalle $]\ell-\varepsilon\, ; \, \ell +\varepsilon [$. En particulier, tous ces termes sont supérieurs à $\ell-\varepsilon$.
+\item Puisque $\displaystyle \lim_{n \to +\infty} w_n=\ell$, il existe un entier $N_w$ à partir duquel tous les termes de la suite $(w_n)$ sont dans l'intervalle $]\ell-\varepsilon\, ; \, \ell +\varepsilon [$. En particulier, tous ces termes sont inférieurs à $\ell+\varepsilon$.
+
+\end{itemize}
+
+Notons alors $N_v=\max(N,N_u, N_w)$. Cet entier est supérieur aux trois entiers $N$, $N_u$ et $N_w$ : les trois propriétés précédentes sont donc vérifiées.
+
+Ainsi, pour tout entier $n\geqslant N_v$, on a $\ell-\varepsilon \leqslant u_n \leqslant v_n \leqslant w_n \leqslant \ell+\varepsilon$ et en particulier,  $\ell-\varepsilon\leqslant v_n \leqslant \ell+\varepsilon$.
+
+Pour tout $n \geqslant N_v$, on a alors $v_n \in ]\ell-\varepsilon\, ; \, \ell +\varepsilon [$. On a bien montré que la suite $(v_n)$ converge et $\displaystyle \lim_{n \to +\infty} v_n = \ell$\end{demonstration}
+\newpage 
+\begin{example} Pour tout $n>0$, on pose $u_n=3+\dfrac{\cos (n)}{n}$.
+
+\vskip50pt \end{example}
+
+
+
+\section{Suites géométriques}
+
+
+\begin{proposition}[Rappel : Inégalité de Bernoulli] Soit $a$ un réel strictement positif. 
+
+Pour tout entier naturel $n$, on a $(1+a)^n \geqslant 1+na$\end{proposition}
+
+\begin{proposition}Soit $q$ un réel. On s'intéresse au comportement de la suite $(q^n)$ selon la valeur de $q$.
+
+\begin{minipage}{0.45\linewidth}
+$\bullet \quad$ Si $q>1$, $\displaystyle \lim_{n \to +\infty} q^n = + \infty$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\clip (-1,-1) rectangle (11,6);
+\draw [thick] (0,0)--(10,0);
+\draw [thick] (0,-2)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,1);
+
+\foreach \k in {0,1,...,9} {\draw [ocre, very thick] (\k,{1.2^\k}) node {$\times$};}
+\end{tikzpicture}
+\end{center}
+
+$\bullet \quad$ Si $q=1$, $\displaystyle \lim_{n \to +\infty} q^n = 1$.
+
+\end{minipage}\hfill\begin{minipage}{0.5\linewidth}
+
+$\bullet \quad$ Si $-1 < q < 1$, $\displaystyle \lim_{n \to +\infty} q^n =0 $.
+
+\begin{tikzpicture}[scale=0.5]
+\clip (-1,-1) rectangle (11,2.5);
+\draw [thick] (0,0)--(22,0);
+\draw [thick] (0,-2)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,2);
+\draw (8,1.5) node {$0<q<1$};
+\foreach \k in {0,1,...,10} {\draw [ocre, very thick] (\k,{2*0.8^\k}) node {$\times$};}
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=0.5]
+\clip (-1,-2) rectangle (11,2.5);
+\draw [thick] (0,0)--(22,0);
+\draw [thick] (0,-2)--(0,28);
+\draw [->, very thick] (0,0)--(1,0);
+\draw [->,very thick] (0,0)--(0,2);
+\draw (8,1.5) node {$-1<q<0$};
+\foreach \k in {0,1,...,10} {\draw [ocre, very thick] (\k,{2*(-0.8)^\k}) node {$\times$};}
+\end{tikzpicture}
+
+$\bullet \quad$ Si $q \leqslant -1$, la suite $(q^n)$ n'admet pas de limite.
+
+\end{minipage}
+
+\end{proposition}
+
+\begin{demonstration} Traitons séparément les différents cas mentionnés ici :
+
+\textbf{Premier cas} : $q>1$ :
+
+\vskip60pt
+
+\textbf{Deuxième cas} : $0 < q < 1$
+
+\vskip60pt
+
+\textbf{Troisième cas} : $-1 < q <0$
+
+
+
+\newpage
+
+\textbf{Quatrième cas} : $q \leqslant -1$
+
+Dans ce cas, $q^2 \geqslant 1$.
+\begin{itemize}
+\item D'une part, pour tout entier naturel $k$, $q^{2k}=(q^2)^k$. Ainsi, $\displaystyle \lim_{k \to +\infty} q^{2k} = +\infty$.
+\item D'autre part, pour tout entier naturel $k$, $q^{2k+1}=q\times (q^2)^k$. On en déduit que $\displaystyle \lim_{k \to +\infty} q^{2k+1} = -\infty$.
+\item Les termes de rangs pairs de la suite $(q^n)$ tendent vers $+\infty$ et les termes de rangs impairs tendent vers $-\infty$. La suite $(q^n)$ ne peut admettre de limite, finie ou infinie.
+\end{itemize}\end{demonstration}
+
+\begin{example} On considère la suite géométrique $(u_n)$ de premier terme $u_0=-2$ et de raison $q=4$.
+\vskip30pt
+\end{example}
+
+\begin{example} Soit $q$ un réel tel que $-1< q < 1$. 
+
+Pour tout entier naturel $n$, on note $u_n=1+q+q^2+q^3+\ldots + q^n = \displaystyle \sum_{k=0}^n q^k$.
+\vskip100pt
+\end{example}
+
+\begin{example}Pour tout entier naturel $n$, on pose $u_n = \dfrac{1-4^n}{2+3^n}$. 
+
+\vskip100pt
+\end{example}
+
+
+\newpage
+
+\section{Convergence des suites monotones}
+
+\subsection{Théorème de convergence}
+
+\begin{theorem}[Convergence des suites monotones] Soit $(u_n)$ une suite croissante.
+\begin{itemize}
+\item Si la suite $(u_n)$ est majorée par un réel $M$, alors la suite $(u_n)$ est convergente et $\displaystyle \lim_{n \to +\infty} u_n \leqslant M$.
+\item Si la suite $(u_n)$ n'est pas majorée, alors $\displaystyle \lim_{n \to +\infty} = +\infty$.
+\end{itemize} \end{theorem}
+
+
+\begin{demonstration}[Second point uniquement] Supposons que la suite $(u_n)$ ne soit pas majorée. 
+
+\vskip50pt
+\end{demonstration}
+
+
+\textbf{Attention à ne pas dire}, dans le cas où la suite est croissante est majorée par $L$, que la limite vaut $L$ ! \\
+Ce raisonnement peut être mis en défaut assez simplement : si une suite est majorée par $L$, alors elle l'est aussi par $L+1$, ce qui signifierait qu'elle tendrait aussi vers $L+1$ ? Le calcul de la limite demandera au moins une étape supplémentaire.
+
+
+\begin{example} On considère la suite $(u_n)$ définie par $u_0=1$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{1}{5}u_n+4$. On peut montrer par récurrence que la suite $(u_n)$ est croissante et que pour tout entier $n$, $u_n \leqslant 5$. On admettra ces deux points pour la suite de l'exemple
+
+Ainsi, la suite $(u_n)$ est croissante et majorée. 
+
+\vskip170pt
+
+\end{example}
+
+\textbf{ Il est important de montrer que la suite converge avant de passer à la limite.} 
+ 
+ En effet, prenons la suite $(v_n)$ définie par $v_0=1$ et pour tout entier $n$, $v_{n+1}=2v_n+3$. D'après le même raisonnement, si $(v_n)$ admet pour limite $\ell$, alors $\ell=2\ell+3$, soit $\ell=-3$... ce qui est absurde : on voit facilement que pour tout entier $n$, $v_n>0$. On a même $\displaystyle \lim_{n \to +\infty} v_n = +\infty$ !
+
+\begin{theorem}[Convergence des suites monotones] Soit $(u_n)$ une suite décroissante.
+\begin{itemize}
+\item Si la suite $(u_n)$ est minorée par un réel $m$, alors la suite $(u_n)$ est convergente et $\displaystyle \lim_{n \to +\infty} u_n \geqslant m$.
+\item Si la suite $(u_n)$ n'est pas minorée, alors $\displaystyle \lim_{n \to +\infty} = -\infty$.
+\end{itemize} \end{theorem}
+
+
+\subsection{Algorithme de seuil}
+
+Lorsqu'une suite est strictement monotone, il est courant de rechercher la valeur à partir de laquelle elle dépassera un certain seuil. Il est possible de résoudre un tel problème à l'aide d'une résolution d'équation ou d'un algorithme.
+
+\begin{example}On considère la suite $(u_n)$ définie par $u_0=9$ et, pour tout entier naturel $n$, $u_{n+1}=\dfrac{u_n}{2}+1$.
+
+On peut montrer, par exemple par récurrence, que cette suite est strictement décroissante et que, pour tout entier naturel $n$, $u_n \geqslant 2$. La suite $(u_n)$ étant décroissante et minorée, on en déduit qu'elle est convergente. Un autre calcul permettra de montrer que $\ell = \displaystyle \lim_{n \to +\infty} u_n=2$.
+
+D'après la définition de la limite, pour tout $\varepsilon >0$, il existe un entier $N$ tel que, pour tout $n>N$, on a $u_n \in ]2-\varepsilon ; 2+\varepsilon [$. La suite $(u_n)$ étant ici décroissante, il suffit de trouver le premier rang $n$ pour lequel $u_n \leqslant 2+\varepsilon$ : les termes suivants seront forcément compris entre 2, qui est la limite, et $2+\varepsilon$.
+
+\begin{itemize}
+\item On commence au rang $n=0$ et on prend comme valeur initiale de la suite celle de $u_0$.
+\item Tant que la valeur actuelle $u_n$ de la suite est supérieure à $2+\varepsilon$ on calcule la valeur suivante de la suite et on incrémente le rang de 1.
+\item Si la valeur actuelle de $u_n$ est inférieure à $2+\varepsilon$, alors on s'arrête ici et on renvoie la valeur du rang $n$.
+\end{itemize}
+
+\textbf{Pseudo-algorithme}
+
+\begin{center}
+\fbox{\begin{minipage}{0.6\linewidth}Variable d'entrée : $\varepsilon$ \\
+$U = 9$\\
+$N=0$\\
+Tant que $U > 2+\varepsilon$\\
+\indent  $\quad U \leftarrow U/2+1$\\
+\indent $\quad N \leftarrow N+1$\\
+Fin Tant que\\
+Renvoyer $N$\end{minipage}
+}
+\end{center}
+
+La valeur de $n$ est stockée dans la variable $N$ et celle de $u_n$ est stockée dans la variable $U$. A chaque étape, le terme suivant de la suite est calculé : $N$ est augmenté de 1 et on applique la relation de récurrence de la suite $(u_n)$ pour mettre à jour la valeur de $U$. Le programme renvoie alors la première valeur de $n$ telle que $u_n$ n'est pas strictement supérieur à $2+\varepsilon$. On peut alors construire une fonction en Python qui prend en paramètres un réel $E$ positif ou nul et qui renvoie cet entier $n$.
+
+\begin{lstlisting}[language=python]
+def seuil(E):
+	U = 9
+	N = 0
+	while U > 2 + E:
+		U = U/2 + 1
+		N = N + 1
+	return N
+\end{lstlisting}
+
+Dans notre cas, l'exécution de l'instruction \textbf{seuil(0.001)} renvoie la valeur 13. Cela signifie que $u_{13}$ est le premier terme de la suite inférieur ou égal à 2.001.\end{example}
+
+Cet algorithme peut varier sur certains aspects : on peut par exemple avoir une suite croissante, auquel cas on souhaitera le premier terme supérieur à une valeur donnée. On peut également donner en entrée la valeur à franchir plutôt que la différence entre la limite et les valeurs des termes de la suite. Cependant, la construction d'un tel algorithme est toujours la même.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,587 @@
+\documentclass[11pt,fleqn, openany]{book} % Default font size and left-justified equations
+
+\input{../../structure.tex}
+
+\begin{document}
+
+\chapterimage{../../Pictures/background}
+
+\chapter{Cours : Rappels de probabilité}
+
+
+
+Avant de s'engager sur le programme de terminale, faisons quelques rappels de probabilités de l'année de Première.
+
+Dans tout ce chapitre, on note $\Omega$ l'univers non vide d'une expérience aléatoire.\\
+On rappelle que pour deux événements $A$ et $B$ de $\Omega$, l'événement $A \cap B$ est l'événement qui est réalisé lorsque « à la fois $A$ et $B$ sont réalisés ».\\De plus, l'événement $\bar{A}$, appelé contraire de $A$, est réalisé si et seulement si $A$ ne l'est pas.
+
+$\mathbb{P}(A)$ désignera la probabilité de l'événement $A$. On a alors $\mathbb{P}(\overline{A})=1-\mathbb{P}(A)$.
+
+
+\section{Probabilité conditionnelle}
+
+\begin{definition}[Probabilité conditionnelle]Soit $A$ et $B$ deux événements tels que $\mathbb{P}(A)\neq 0$. On appelle probabilité conditionnelle de $B$ sachant $A$, la quantité
+\[ \mathbb{P}_A(B)=\dfrac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)}.\]\end{definition}
+
+\begin{example} On considère l'univers $\Omega = \{ 1;2;3;4;5;6\}$. On tire un nombre uniformément au hasard sur $\Omega$. On  considère les événements
+\begin{itemize}
+\item $A$ : le nombre est pair ;
+\item $B$ : le nombre est supérieur ou égal à 3.
+\end{itemize}
+Puisque l'on est en situation d'équiprobabilité, on a alors $\mathbb{P}(A)=\qquad\qquad$ et $\mathbb{P}(B)=$\\
+Par ailleurs, $A\cap B = \qquad $. Ainsi, $\mathbb{P}(A \cap B) = $\\
+Appliquant la définition, on trouve donc 
+\[ \mathbb{P}_A(B)=\dfrac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)}=\qquad\qquad\qquad
+\text{et} 
+\quad \mathbb{P}_B(A)=\dfrac{\mathbb{P}(B\cap A)}{\mathbb{P}(B)}=\]
+\end{example}
+
+Cette probabilité s'interprète comme la probabilité de l'événement $B$ sachant que l'événement $A$ est réalisé.
+
+\begin{example}Une entreprise commande à une société de sondage une enquête sur la satisfaction de ses clients. Lors du premier appel téléphonique, la probabilité qu'un client réponde est de 0,25. Si le client répond à l'appel, la probabilité qu'il réponde au questionnaire de la société est de 0,3. On note $R$ l'événement « la personne répond à l'appel » et $Q$ l'événement « la personne répond au questionnaire ». 
+
+D'après l'énoncé, on a $\mathbb{P}(R)=\qquad\qquad$ et $\mathbb{P}_R(Q)=\qquad\qquad$. Ainsi, la probabilité qu'une personne prise au hasard réponde à l'appel puis au questionnaire vaut $\mathbb{P}(R \cap Q) = \mathbb{P}(R) \times \mathbb{P}_R(Q)=$\end{example}
+
+\newpage
+
+\subsection{Construction d'un arbre pondéré}
+
+\begin{proposition}[Règle de la somme] Dans un arbre pondéré, la somme des probabilités issues d'un nœud est égale à 1.
+\end{proposition}
+
+\begin{example} On considère une succession de deux expériences aléatoires dont l'arbre pondéré associé est représenté ci-dessous.
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=4cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=1.5cm]
+\tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.3cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,grow=right,sloped]
+\node[bag] { }
+    child {
+        node[bag] {C} 
+        child {
+                node[bag] {F}
+                edge from parent node[below] {$0,3$}
+            }
+        child {
+               node[bag] {E}
+               edge from parent node[above] {$0,4$}
+            }
+        child {
+                node[bag] {D}
+                edge from parent [very thick, red]
+            }
+            edge from parent node[above] {$0,6$} 
+    }
+    child {
+        node[bag] {B}        
+            child {
+                node[bag] {F}
+                edge from parent [black] node[below] {$0,2$}
+            }
+            child {
+                node[bag] {E}
+                 child{
+                	node[bag] {$B\cap E$}
+                	edge from parent [dashed,->]
+                	}
+                edge from parent [black] node[above] {$0,4$}
+            }
+            child {
+                node[bag] {D}
+                edge from parent [black] node[above] {$0,4$}
+            }
+            edge from parent [thick, blue]
+    }
+     child {
+        node[bag] {A}        
+            child {
+                node[bag] {F}
+                edge from parent node[below] {$0,1$}
+            }
+            child {
+                node[bag] {E}
+                edge from parent node[above] {$0,1$}
+            }
+            child {
+                node[bag] {D}
+                child{
+                	node[bag] {$A\cap D$}
+                	edge from parent [dashed,->]
+                	}
+                edge from parent node[above] {$0,8$}
+            }
+            edge from parent node[above] {$0,3$}
+        };
+\end{tikzpicture}
+\end{center}
+
+
+
+\begin{itemize}
+\item Sur cet arbre, on voit que $\mathbb{P}(A)=\qquad\qquad$ et $\mathbb{P}(C)=$
+\item Puisque la somme des probabilités issues d'une branche vaut 1, on a $\mathbb{P}(A)+\mathbb{P}(B)+\mathbb{P}(C)=1$, soit $\mathbb{P}(B)=$
+\item La probabilité conditionnelle $\mathbb{P}_A(D)$ se lit sur la branche qui relie $A$ à $D$. Ainsi, $\mathbb{P}_A(D)=$.
+\item La somme des probabilités issues du nœud $C$ doit valoir 1. \\ On a donc $\mathbb{P}_C(D)+\mathbb{P}_C(E)+\mathbb{P}_C(F)=1$. Ainsi, $\mathbb{P}_C(D)=$
+\end{itemize}\end{example}
+
+
+\begin{proposition}[Règle du produit] Dans un arbre pondéré la probabilité d'une issue est égale au produit des probabilités du chemin aboutissant à cette issue
+\end{proposition}
+
+\begin{example}Pour obtenir l'issue $A\cap D$, on passe par les sommets $A$ puis $D$.
+
+On a alors $\mathbb{P}(A\cap D)=$\end{example}
+
+On retrouve la relation $\mathbb{P}(A \cap D)= \mathbb{P}(A) \times \mathbb{P}_A(D)$.
+\newpage
+\subsection{Formule des probabilités totales}
+
+\begin{definition}[Partition]Soit $\Omega$ l'univers d'une expérience aléatoire. \\On dit que les événements $A_1$, $A_2$, ..., $A_n$ forment une partition de $\Omega$ lorsque
+\begin{itemize}
+\item Les ensembles $A_1$, $A_2$, ..., $A_n$ sont non vides ;
+\item Les ensembles $A_1$, $A_2$, ..., $A_n$ sont deux à deux disjoints ;
+\item $A_1\cup A_2\cup \ldots \cup A_n = \Omega$.
+\end{itemize}
+Dans le cadre des probabilités, on parle également de \textbf{système complet d'événements}.\end{definition}
+
+\begin{example}On considère $\Omega = \{1;2;3;4;5;6;7;8\}$ ainsi que les événements $A_1=\{1;3\}$, \\ $A_2=\{2;4;5;6;7\}$ et $A_3=\{8\}$. $A_1$, $A_2$ et $A_3$ forment une partition de $\Omega$.\end{example}
+
+\begin{proposition}[Formule des probabilités totales] On considère un événement $B$ et une partition $A_1$, $A_2$, ..., $A_n$ de l'univers $\Omega$. Alors,
+\[ \mathbb{P}(B)=\mathbb{P}(B \cap A_1) + \mathbb{P}(B \cap A_2) + \ldots + \mathbb{P}(B \cap A_n) = \sum_{i=1}^{n} \mathbb{P}(B\cap A_i).\]
+\end{proposition}
+
+
+\begin{example} On reprend l'exemple de la partie précédente. On souhaite calculer la probabilité $\mathbb{P}(D)$. Pour cela, on regarde l'ensemble des branches qui contiennent l'événement $D$.
+
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=4cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=1.5cm]
+\tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.3cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7,grow=right,sloped]
+\node[bag] { }
+    child {
+        node[bag] {C} 
+        child {
+                node[bag] {F}
+                edge from parent node[below] {$0.3$}
+            }
+        child {
+               node[bag] {E}
+               edge from parent node[above] {$0.4$}
+            }
+        child {
+                node[bag] {D}
+                child{
+                	node[bag] {$C\cap D$}
+                	edge from parent [dashed,->]
+                	}
+                edge from parent node[above] {$0.3$}
+            }
+            edge from parent node[above] {$0.6$} 
+    }
+    child {
+        node[bag] {B}        
+            child {
+                node[bag] {F}
+                edge from parent [black] node[below] {$0.2$}
+            }
+            child {
+                node[bag] {E}
+                edge from parent [black] node[above] {$0.4$}
+            }
+            child {
+                node[bag] {D}
+                    child{
+                	node[bag] {$B\cap D$}
+                	edge from parent [dashed,->]
+                	}
+                edge from parent [black] node[above] {$0.4$}
+            }
+            edge from parent node[above] {$0.1$}
+    }
+     child {
+        node[bag] {A}        
+            child {
+                node[bag] {F}
+                edge from parent node[below] {$0.1$}
+            }
+            child {
+                node[bag] {E}
+                edge from parent node[above] {$0.1$}
+            }
+            child {
+                node[bag] {D}
+                child{
+                	node[bag] {$A\cap D$}
+                	edge from parent [dashed,->]
+                	}
+                edge from parent node[above] {$0.8$}
+            }
+            edge from parent node[above] {$0.3$}
+        };
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}
+\item $A$, $B$ et $C$ forment une partition de $\Omega$.
+\item On a $\mathbb{P}(D)=\mathbb{P}(A\cap D) + \mathbb{P}(B\cap D) + \mathbb{P}(C\cap D)$. De plus,
+\begin{itemize}
+\item $\mathbb{P}(A\cap D)=$ 
+\item $\mathbb{P}(B\cap D)=$ 
+\item $\mathbb{P}(C\cap D)=$
+\end{itemize}
+\item Ainsi, $\mathbb{P}(D)=$
+\end{itemize}
+\vspace{-0.5cm}
+\end{example}
+
+
+\section{Variable aléatoire réelle}
+
+\subsection{Variable aléatoire}
+
+\begin{definition}On appelle variable aléatoire réelle toute fonction définie sur l'univers $\Omega$ d'une expérience aléatoire et à valeurs dans $\mathbb{R}$.\\
+Les variables aléatoires sont en général notées $X$.\end{definition}
+
+\begin{minipage}{0.55\linewidth}\begin{example}On choisit un nombre entier au hasard entre 1 et 6 compris. L'univers de l'expérience aléatoire est donc l'ensemble $\{1;2;3;4;5;6\}$.
+
+Si le nombre obtenu est 6, on gagne 2 points. Si le nombre est impair, on perd 1 point. Dans les autres cas, on ne gagne ni ne perd aucun point.\\
+On appelle $X$ la variable aléatoire qui donne le nombre de points gagnés selon le résultat.
+\begin{itemize}
+\item Si on obtient le nombre 1, on perd 1 point. \\On a ainsi $X(1)=$.
+\item Si on obtient le nombre 6, on gagne 2 points. \\On a ainsi $X(6)=$.
+\item On a également $X(2)=\qquad\qquad$, $X(3)=\qquad\qquad$, $X(4)=\qquad\qquad$ et $X(5)=\qquad\qquad$.
+\end{itemize}\end{example}
+\end{minipage}\hfill\begin{minipage}{0.43\linewidth}
+
+\tikzstyle{level 1}=[level distance=2.5cm, sibling distance=1.5cm]
+\tikzstyle{level 2}=[level distance=4.2cm, sibling distance=1.5cm]
+\tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.3cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,grow=right,sloped]
+\draw (3,5) node {\textbf{Univers}};
+\draw (7,5) node {\textbf{Variable}};
+\draw (7,4.8) node[below] {\textbf{aléatoire}};
+\node[bag] { }
+    child {
+        node[bag] {6} 
+        child {
+                node[bag] {2}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+	child {
+        node[bag] {5} 
+        child {
+                node[bag] {$-1$}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+    child {
+        node[bag] {4} 
+        child {
+                node[bag] {0}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+    child {
+        node[bag] {3} 
+        child {
+                node[bag] {$-1$}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+    child {
+        node[bag] {2} 
+        child {
+                node[bag] {0}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+    child {
+        node[bag] {1} 
+        child {
+                node[bag] {$-1$}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+    ;
+\end{tikzpicture}
+\end{center}\end{minipage}
+
+
+\begin{definition}Soit $X$ une variable aléatoire réelle sur un univers $\Omega$ et $a$ un réel.\\
+On note $\{X=a\}$ l'événement qui regroupe toutes les issues $\omega$ de $\Omega$ telle que $X(\omega)=a$.\\
+On peut définir de la même manière les événements $\{X<a\}$, $\{X\leqslant a\}$, $\{X\geqslant a\}$...\end{definition}
+
+\begin{example}On reprend l'exemple précédent.
+\begin{itemize}
+\item L'événement $\{X=-1\}$ correspond aux issues qui font perdre un point, soit les issues
+\item L'événement $\{X\geqslant 0\}$ correspond aux issues qui font gagner 0 point ou plus, soit les issues
+\end{itemize}\end{example}
+
+\subsection{Loi d'une variable aléatoire}
+
+
+\begin{definition}Soit $X$ une variable aléatoire réelle sur un univers fini $\Omega$.\\
+La loi de probabilité de $X$ est la fonction qui, à chaque réel $k$, associe la probabilité  $\mathbb{P}(X=k)$.\end{definition}
+
+On rappelle que \textbf{la somme des probabilités doit valoir 1} !
+
+\begin{example}On choisit uniformément au hasard un nombre entier entre 1 et 8 compris.
+
+\begin{itemize}
+\item Si le nombre obtenu est supérieur ou égal à 6, on gagne 2 points.
+\item Si le nombre obtenu est inférieur ou égal à 4, on perd 3 points.
+\item Si le nombre obtenu est 5, on gagne 5 points.
+\end{itemize}
+On note $X$ la variable aléatoire qui donne le nombre de points gagnés après l'expérience.\\
+
+
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=1cm]
+\tikzstyle{level 2}=[level distance=5cm, sibling distance=1.5cm]
+\tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.3cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,grow=right,sloped]
+\draw (3.5,4.5) node {\textbf{Univers}};
+\draw (8.5,4.5) node {\textbf{Variable aléatoire $X$}};
+\node[bag] { }
+	child {
+        node[bag] {8} 
+        child {
+                node[bag] {$2$}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+    child {
+        node[bag] {7} 
+        child {
+                node[bag] {$2$}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+    child {
+        node[bag] {6} 
+        child {
+                node[bag] {2}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+	child {
+        node[bag] {5} 
+        child {
+                node[bag] {$5$}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+    child {
+        node[bag] {4} 
+        child {
+                node[bag] {$-3$}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+    child {
+        node[bag] {3} 
+        child {
+                node[bag] {$-3$}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+    child {
+        node[bag] {2} 
+        child {
+                node[bag] {$-3$}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$ $} 
+    }
+    child {
+        node[bag] {1} 
+        child {
+                node[bag] {$-3$}
+                edge from parent[dashed,->,>=latex] node[below] {$ $}
+            }
+            edge from parent node[above] {$1/8$} 
+    }
+    ;
+\end{tikzpicture}
+\end{center}
+
+$X$ peut donc prendre trois valeurs : $-3$, $2$ ou $5$. 
+
+Pour déterminer la loi de $X$, il faut donc déterminer $\mathbb{P}(X=-3)$, $\mathbb{P}(X=2)$ et $\mathbb{P}(X=5)$.
+\begin{itemize}
+\item L'événement $\{X=-3\}$ est composé des issues 1, 2, 3 et 4. \\ Puisque l'on est en situation d'équiprobabilité, $\mathbb{P}(X=-3)=\dfrac{4}{8}=\dfrac{1}{2}$.
+\vskip5pt
+\item L'événement $\{X=2\}$ est composé des issues 6, 7 et 8. \\ Puisque l'on est en situation d'équiprobabilité, $\mathbb{P}(X=2)=\dfrac{3}{8}$.
+\vskip5pt
+\item L'événement $\{X=5\}$ est composé de l'issue 5. \\ Puisque l'on est en situation d'équiprobabilité, $\mathbb{P}(X=-3)=\dfrac{1}{8}$.
+\end{itemize}
+On peut résumer la loi de la variable aléatoire $X$ dans un tableau.
+\renewcommand{\arraystretch}{2.2}
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+$k$ & $-3$ & $2$ & $5$ \\
+\hline
+$\mathbb{P}(X=k)$ & $\dfrac{1}{2}$ & $\dfrac{3}{8}$ & $\dfrac{1}{8}$ \\
+\hline \end{tabular}
+\end{center}
+\end{example}
+
+
+\subsection{Espérance d'une variable aléatoire réelle}
+
+\begin{definition}Soit $X$ une variable aléatoire. On note $x_1$, $x_2$, ..., $x_n$ les valeurs prises par $X$.\\
+Pour $i$ allant de $1$ à $n$, on note $p_i$ la probabilité $\mathbb{P}(X=x_i)$. L'espérance de $X$, notée $E[X]$, est la valeur
+\[ E[X]= p_1x_1+p_2x_2+\ldots + p_n x_n = \sum _{i=1}^{n} p_i x_i.\]\end{definition}
+
+Il s'agit en quelque sorte de la moyenne des valeurs prises par la variable aléatoire $X$, pondérées par leurs probabilités. Nous verrons dans un prochain chapitre que le terme de moyenne prendra tout son sens...
+\newpage
+\begin{example}On considère une variable aléatoire $X$ dont la loi est donnée par le tableau suivant.
+
+\renewcommand{\arraystretch}{2.2}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+$k$ & $-1$& $2$ & $3$ & $8$ \\
+\hline
+$\mathbb{P}(X=k)$ & $\dfrac{1}{3}$ & $\dfrac{1}{4}$ & $\dfrac{1}{6}$ & $\dfrac{1}{4}$\\
+\hline \end{tabular}
+\end{center}
+
+
+L'espérance de la variable aléatoire $X$ vaut :
+\[ E[X]=\]
+
+« En moyenne », la variable aléatoire $X$ vaut \end{example}
+
+\subsection{Variance et écart-type d'une variable aléatoire réelle}
+
+\begin{definition}Soit $X$ une variable aléatoire. On note $x_1$, $x_2$, ..., $x_n$ les valeurs prises par la variable aléatoire $X$.
+La variance $X$, notée $V(X)$, est la valeur
+\[ V(X)= p_1(x_1-E[X])^2+p_2(x_2-E[X])^2+\ldots + p_n( x_n-E[X])^2 = \sum _{i=1}^{n} p_i (x_i-E[X])^2.\]
+Cette quantité mesure la dispersion de la variable aléatoire autour de l'espérance.\end{definition}
+
+\textbf{Remarque :} On a en fait $V(X)= E[ (X-E[X])^2 ]$.
+
+\begin{example}On considère une variable aléatoire $X$ dont la loi est donnée par le tableau suivant.
+
+\renewcommand{\arraystretch}{2.2}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+$k$ & $-3$& $1$ & $4$ & $9$ \\
+\hline
+$\mathbb{P}(X=k)$ & $0.6$ & $0.2$ & $0.15$ & $0.05$\\
+\hline \end{tabular}
+\end{center}
+
+Dans un premier temps, on calcule l'espérance de la variable aléatoire $X$.
+\[E[X] =\]
+
+Pour calculer la variance,
+\begin{itemize}
+\item Pour chaque valeur de la variable aléatoire, on retire l'espérance. On dit que l'on centre la variable aléatoire ;
+\item On met chaque nombre obtenu au carré ;
+\item Chaque nombre est multiplié par sa probabilité ;
+\item On ajoute alors chacun des nombres obtenus.
+\end{itemize}
+\newpage
+Dans ce cas,
+\renewcommand{\arraystretch}{2.2}
+\begin{center}
+\begin{tabularx}{0.9 \linewidth}{|l|X|X|X|X|}
+\hline
+$x_i$ & $-3$& $1$ & $4$ & $9$ \\
+\hline
+$x_i-E[X]$ & &  &  &  \\
+\hline
+$(x_i-E[X])^2$ & &  &  & \\
+\hline
+$p_i$ & $0.6$ & $0.2$ & $0.15$ & $0.05$\\
+\hline
+$p_i(x_i-E[X])^2$ &  &  &  & \\
+\hline \end{tabularx}
+\end{center}
+
+La variance de $X$ vaut donc 
+\[ V(X) =\]\end{example}
+
+\begin{proposition}[Formule de König-Huygens]
+Soit $X$ une variable aléatoire. On a alors
+\[V(X)=E[X^2]-(E[X])^2.\]
+\end{proposition}
+
+\begin{example}
+Reprenons l'exemple précédent. Pour déterminer la loi de $X^2$, il suffit de mettre les valeurs prises par la variable aléatoire au carré. On a alors
+
+\renewcommand{\arraystretch}{2.2}
+\begin{center}
+\begin{tabularx}{0.9\linewidth}{|l|X|X|X|X|}
+\hline
+$k$ & &  & & \\
+\hline
+$\mathbb{P}(X^2=k)$ &  &  &  & \\
+\hline \end{tabularx}
+\end{center}
+
+Ainsi, $E[X^2]=$
+
+On a donc $V(X)=E[X^2]-(E[X])^2=$ 
+
+On retrouve bien la valeur précédente.
+
+\end{example}
+
+\begin{definition} Soit $X$ une variable aléatoire réelle. On appelle écart-type de $X$, noté $\sigma(X)$ (sigma), la valeur
+\[ \sigma (X)= \sqrt{V(X)}.\]\end{definition}
+
+L'écart-type mesure la "variation moyenne" de la variable aléatoire autour de l'espérance.
+
+\begin{example}Dans l'exemple précédent, l'écart-type était donc $\sigma(X)=$\end{example}
+
+
+
+
+
+
+
+\end{document}
